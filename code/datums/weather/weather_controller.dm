@@ -113,3 +113,9 @@
 		/datum/weather/sandstorm/rockplanet = 20,
 		/datum/weather/snowfall = 5,
 	)
+
+/datum/weather_controller/waterplanet
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm = 50,
+		/datum/weather/rain/heavy/storm/blocking = 30,
+	)

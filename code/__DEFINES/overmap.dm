@@ -29,8 +29,15 @@
 #define DYNAMIC_WORLD_BEACHPLANET "beachplanet"
 #define DYNAMIC_WORLD_WASTEPLANET "wasteplanet"
 
+#define DYNAMIC_WORLD_WATERPLANET "waterplanet" //minor planets
+#define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
+#define DYNAMIC_WORLD_PHORON_GIANT "phorongiant"
+#define DYNAMIC_WORLD_DUSTBALL "phorongiant"
+#define DYNAMIC_WORLD_MOON "moon"
+
 #define DYNAMIC_WORLD_REEBE "reebe" //celestial bodies
 #define DYNAMIC_WORLD_ASTEROID "asteroid"
+#define DYNAMIC_WORLD_MINOR_PLANET "minor"
 #define DYNAMIC_WORLD_SPACERUIN "space"
 
 //Possible ship states

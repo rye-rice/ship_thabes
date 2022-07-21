@@ -47,3 +47,18 @@
 	desc = "Storm with rain and lightning."
 	weather_message = "<span class='warning'>The clouds blacken and the sky starts to flash as thunder strikes down!</span>"
 	thunder_chance = 10
+
+/datum/weather/rain/heavy/storm/blocking
+	name = "severte storm"
+	desc = "Massive storm that blocks vision."
+	opacity_in_main_stage = TRUE
+	thunder_chance = 60
+
+	telegraph_message = "<span class='notice'>It starts to fog up, the clouds hinting at a severe storm...</span>"
+	telegraph_overlay = "smoke"
+
+	weather_message = "<span class='userdanger'>It starts pouring! You can't see a thing!</span>"
+	weather_overlay = "rain_high"
+
+	end_message = "<span class='notice'>The downpour dies down...</span>"
+	end_overlay = "smoke"

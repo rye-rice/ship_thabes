@@ -222,6 +222,20 @@
 			surface = /turf/open/floor/plating/asteroid/sand/lit
 			planet_template = /datum/planet/beach
 			weather_controller_type = /datum/weather_controller/lush
+		if(DYNAMIC_WORLD_WATERPLANET)
+			Rename("aqua planet")
+			token.desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
+			planet = DYNAMIC_WORLD_WATERPLANET
+			token.icon_state = "globe"
+			token.color = LIGHT_COLOR_DARK_BLUE
+			planet_name = gen_planet_name()
+
+			ruin_list = null // minor planets have no ruins
+			mapgen = /datum/map_generator/planet_generator/snow
+			target_area = /area/overmap_encounter/planetoid/waterplanet
+			surface = /turf/open/water/beach/deep
+			planet_template = /datum/planet/waterplanet
+			weather_controller_type = /datum/weather_controller/waterplanet
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
 			token.desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -262,6 +276,8 @@
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
+
+/datum/overmap/dynamic/proc/choose_random_asteroid()
 
 /datum/overmap/dynamic/proc/gen_planet_name()
 	. = ""
@@ -342,6 +358,11 @@
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
+
+/area/overmap_encounter/planetoid/waterplanet
+	name = "\improper Water Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_FOREST
+	ambientsounds = MINING
 
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
 	area_flags = UNIQUE_AREA

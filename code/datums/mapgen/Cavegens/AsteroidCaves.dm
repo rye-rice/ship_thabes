@@ -21,33 +21,33 @@
 	var/maxy
 	var/minx
 	var/miny
-	for(var/turf/T as anything in turfs)
+	for(var/turf/current_turf as anything in turfs)
 		//Gets the min/max X value
-		if(T.x < minx || !minx)
-			minx = T.x
-		else if(T.x > maxx)
-			maxx = T.x
+		if(current_turf.x < minx || !minx)
+			minx = current_turf.x
+		else if(current_turf.x > maxx)
+			maxx = current_turf.x
 
 		//Gets the min/max Y value
-		if(T.y < miny || !miny)
-			miny = T.y
-		else if(T.y > maxy)
-			maxy = T.y
+		if(current_turf.y < miny || !miny)
+			miny = current_turf.y
+		else if(current_turf.y > maxy)
+			maxy = current_turf.y
 
 	var/midx = minx + (maxx - minx) / 2
 	var/midy = miny + (maxy - miny) / 2
-	var/radius = min(maxx - minx, maxy - miny) / 2
+	var/radius = min(maxx - minx, maxy - miny) / 3
 
 	var/list/turfs_to_gen = list()
 	var/area/asteroid/asteroid_area = GLOB.areas_by_type[/area/asteroid] || new
-	for(var/turf/T as anything in turfs)
+	for(var/turf/current_turf as anything in turfs)
 		var/randradius = rand(radius - 2, radius + 2) * rand(radius - 2, radius + 2)
-		if((T.y - midy) ** 2 + (T.x - midx) ** 2 >= randradius)
+		if((current_turf.y - midy) ** 2 + (current_turf.x - midx) ** 2 >= randradius)
 			continue
-		turfs_to_gen += T
-		var/area/old_area = get_area(T)
-		asteroid_area.contents += T
-		T.change_area(old_area, asteroid_area)
+		turfs_to_gen += current_turf
+		var/area/old_area = get_area(current_turf)
+		asteroid_area.contents += current_turf
+		current_turf.change_area(old_area, asteroid_area)
 
 	return ..(turfs_to_gen)
 
