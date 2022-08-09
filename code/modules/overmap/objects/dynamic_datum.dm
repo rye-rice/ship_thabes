@@ -1,9 +1,9 @@
 /**
-  * # Dynamic Overmap Encounters
-  *
-  * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
-  * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
-  */
+ * # Dynamic Overmap Encounters
+ *
+ * These overmap objects can be docked with and will create a dynamically generated area of many different types depending on the planet variable.
+ * When undocked with, it checks if there's anyone left on the planet, and if not, will move to another random location and wait to create a new encounter.
+ */
 /datum/overmap/dynamic
 	name = "weak energy signature"
 	char_rep = "?"
@@ -25,6 +25,8 @@
 	var/force_encounter
 	///List of ruins to potentially generate
 	var/list/ruin_list
+	/// list of ruins and their target turf, indexed by name
+	var/list/ruin_turfs
 	///The mapgenerator itself
 	var/datum/map_generator/mapgen
 	///The area it will generate in
@@ -41,11 +43,12 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
-/datum/overmap/dynamic/Initialize(position, ...)
+/datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
 	. = ..()
-	choose_level_type()
+
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
 	vlevel_width = CONFIG_GET(number/overmap_encounter_size)
+	choose_level_type(load_now)
 
 /datum/overmap/dynamic/Destroy()
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -54,6 +57,7 @@
 	if(mapzone)
 		mapzone.clear_reservation()
 		QDEL_NULL(mapzone)
+	ruin_turfs = null
 	return ..()
 
 /datum/overmap/dynamic/get_jump_to_turf()
@@ -103,9 +107,9 @@
 	choose_level_type()
 
 /**
-  * Chooses a type of level for the dynamic level to use.
-  */
-/datum/overmap/dynamic/proc/choose_level_type() //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
+ * Chooses a type of level for the dynamic level to use.
+ */
+/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
 	var/chosen
 	if(!probabilities)
 		probabilities = list(DYNAMIC_WORLD_LAVA = min(length(SSmapping.lava_ruins_templates), 20),
@@ -256,7 +260,9 @@
 			token.color = COLOR_GRAY
 
 			ruin_list = null // asteroid ruins when
+			surface = null
 			mapgen = /datum/map_generator/cave_generator/asteroid
+			weather_controller_type = null
 		if(DYNAMIC_WORLD_SPACERUIN)
 			Rename("weak energy signal")
 			token.desc = "A very weak energy signal emenating from space."
@@ -264,15 +270,20 @@
 			token.icon_state = "strange_event"
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
+			surface = null
+			mapgen = null
+			weather_controller_type = null
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
 
-	#ifndef QUICK_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
-	load_level() //Load the level whenever it's randomised
-	#endif
+// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
+// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
+// 	if(load_now)
+// 		load_level() //Load the level whenever it's randomised
+// #endif
 
 	if(!preserve_level)
 		token.desc += "It may not still be here if you leave it."
@@ -293,9 +304,9 @@
 			. += "[pick(GLOB.planet_prefixes)] [pick(GLOB.planet_names)]"
 
 /**
-  * Load a level for a ship that's visiting the level.
-  * * visiting shuttle - The docking port of the shuttle visiting the level.
-  */
+ * Load a level for a ship that's visiting the level.
+ * * visiting shuttle - The docking port of the shuttle visiting the level.
+ */
 /datum/overmap/dynamic/proc/load_level()
 	if(mapzone)
 		return TRUE
@@ -305,6 +316,7 @@
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
 	reserve_docks = dynamic_encounter_values[2]
+	ruin_turfs = dynamic_encounter_values[3]
 	return TRUE
 
 /area/overmap_encounter
