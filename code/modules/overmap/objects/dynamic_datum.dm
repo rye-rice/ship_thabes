@@ -240,6 +240,20 @@
 			surface = /turf/open/water/beach/deep
 			planet_template = /datum/planet/waterplanet
 			weather_controller_type = /datum/weather_controller/waterplanet
+		if(DYNAMIC_WORLD_DESERT)
+			Rename("desert planet")
+			token.desc = "A very weak energy signal originating from a very hot and harsh planet."
+			planet = DYNAMIC_WORLD_DESERT
+			token.icon_state = "globe"
+			token.color = "#f3c282"
+			planet_name = gen_planet_name()
+
+			ruin_list = null // minor planets have no ruins
+			mapgen = /datum/map_generator/planet_generator/sand
+			target_area = /area/overmap_encounter/planetoid/desert
+			surface = /turf/open/floor/plating/asteroid/desert/lit
+			planet_template = /datum/planet/desert
+			weather_controller_type = /datum/weather_controller/desert_yellow
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
 			token.desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -382,7 +396,7 @@
 
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_HANGAR
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe
@@ -390,6 +404,11 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | UNIQUE_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
+
+/area/overmap_encounter/planetoid/desert
+	name = "\improper Desert Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = DESERT
 
 /datum/overmap/dynamic/empty
 	name = "Empty Space"

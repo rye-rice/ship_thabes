@@ -792,3 +792,18 @@
 		/obj/item/stack/ore/silver = 7, /obj/item/stack/ore/plasma = 15, /obj/item/stack/ore/iron = 55, /obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/bluespace_crystal = 1)
 	mineralChance = 30
+
+/turf/closed/mineral/random/desert
+	name = "canyon wall"
+	icon = 'icons/turf/walls/desert.dmi'
+	smooth_icon = 'icons/turf/walls/desert.dmi'
+	icon_state = "desert-0"
+	base_icon_state = "desert"
+	initial_gas_mix = DESERT_DEFAULT_ATMOS
+	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
+	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
+	turf_type = /turf/open/floor/plating/asteroid/dry_seafloor
+	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor
+	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 6, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 20,
+		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 6,
+		/obj/item/stack/ore/bluespace_crystal = 1)

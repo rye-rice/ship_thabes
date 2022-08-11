@@ -90,6 +90,9 @@
 /datum/weather_controller/desert
 	possible_weathers = list(/datum/weather/sandstorm = 100)
 
+/datum/weather_controller/desert_yellow
+	possible_weathers = list(/datum/weather/sandstorm/desert = 100)
+
 /datum/weather_controller/lush
 	possible_weathers = list(
 		/datum/weather/rain = 30,

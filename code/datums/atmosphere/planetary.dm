@@ -48,3 +48,19 @@
 	minimum_temp = 180
 	maximum_temp = 180
 
+/datum/atmosphere/desert
+	id = DESERT_DEFAULT_ATMOS
+	base_gases = list(
+		GAS_O2=20,
+		GAS_N2=80,
+	)
+	normal_gases = list(
+		GAS_O2=5,
+		GAS_N2=5,
+	)
+
+	minimum_pressure = ONE_ATMOSPHERE
+	maximum_pressure = ONE_ATMOSPHERE + 50
+
+	minimum_temp = T20C + 20
+	maximum_temp = T20C + 80
