@@ -59,6 +59,8 @@
 		GAS_N2=5,
 	)
 
+	restricted_chance = 0
+
 	minimum_pressure = ONE_ATMOSPHERE
 	maximum_pressure = ONE_ATMOSPHERE + 50
 
