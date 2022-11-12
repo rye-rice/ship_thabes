@@ -226,6 +226,7 @@
 			surface = /turf/open/floor/plating/asteroid/sand/lit
 			planet_template = /datum/planet/beach
 			weather_controller_type = /datum/weather_controller/lush
+
 		if(DYNAMIC_WORLD_WATERPLANET)
 			Rename("aqua planet")
 			token.desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
@@ -284,7 +285,7 @@
 			token.icon_state = "strange_event"
 			token.color = null
 			ruin_list = SSmapping.space_ruins_templates
-			surface = null
+			surface = /turf/open/space
 			mapgen = null
 			weather_controller_type = null
 
@@ -396,7 +397,7 @@
 
 /area/overmap_encounter/planetoid/wasteplanet
 	name = "\improper Waste Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
 
 /area/overmap_encounter/planetoid/reebe

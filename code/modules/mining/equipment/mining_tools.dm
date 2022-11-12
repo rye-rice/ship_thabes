@@ -204,10 +204,8 @@
 /obj/item/shovel/spoon
 	name = "comically large spoon"
 	desc = "Digs out only a spoonfull"
-	icon_state = "spoon"
 	item_state = "spoon"
-	lefthand_file = 'whitesands/icons/mob/inhands/equipment/mining_lefthand.dmi'
-	righthand_file = 'whitesands/icons/mob/inhands/equipment/mining_righthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 6
 	throwforce = 2
 	toolspeed = 0.8

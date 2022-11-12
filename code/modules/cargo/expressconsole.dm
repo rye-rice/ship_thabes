@@ -62,7 +62,7 @@
 	else if(istype(W, /obj/item/holochip))
 		var/obj/item/holochip/H = W
 		value = H.credits
-	if(value)
+	if(value && charge_account)
 		charge_account.adjust_money(value)
 		to_chat(user, "<span class='notice'>You deposit [W]. The Vessel Budget is now [charge_account.account_balance] cr.</span>")
 		qdel(W)
@@ -85,7 +85,7 @@
 				"name" = P.group, // mmhm
 				"packs" = list()  // sometimes, I return it so much, I rip the manifest
 			) // see, my quartermaster taught me a few things too
-		if((P.hidden) || (P.special)) // like, how not to rip the manifest
+		if((P.hidden)) // like, how not to rip the manifest
 			continue// by using someone else's crate
 		meme_pack_data[P.group]["packs"] += list(list(
 			"name" = P.name,

@@ -65,12 +65,6 @@
 //some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26	//Used to trigger removal from a processing list
 
-// Cargo-related stuff.
-#define MANIFEST_ERROR_CHANCE 5
-#define MANIFEST_ERROR_NAME 1
-#define MANIFEST_ERROR_CONTENTS 2
-#define MANIFEST_ERROR_ITEM 4
-
 #define TRANSITIONEDGE 7 //Distance from edge to move to another z-level
 
 #define BE_CLOSE TRUE //in the case of a silicon, to select if they need to be next to the atom
@@ -301,6 +295,9 @@ GLOBAL_LIST_INIT(pda_styles, sortList(list(MONO, VT, ORBITRON, SHARE)))
 #define debug2_world_log(msg) if (GLOB.Debug2) log_world("DEBUG: [msg]")
 
 #define INCREMENT_TALLY(L, stat) if(L[stat]){L[stat]++}else{L[stat] = 1}
+
+/// Removes characters incompatible with file names.
+#define SANITIZE_FILENAME(text) (GLOB.filename_forbidden_chars.Replace(text, ""))
 
 //TODO Move to a pref
 #define STATION_GOAL_BUDGET 1

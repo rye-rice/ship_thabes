@@ -6,7 +6,7 @@
 		/obj/structure/flora/rock/icy = 2,
 		/obj/structure/flora/rock/pile/icy = 2,
 		/obj/structure/flora/grass/both = 6,
-		/obj/structure/flora/ash/chilly = 2
+		/obj/structure/flora/ash/chilly = 2,
 	)
 	flora_spawn_chance = 10
 	mob_spawn_chance = 1
@@ -122,7 +122,7 @@
 		/obj/structure/flora/ash/leaf_shroom = 1,
 		/obj/structure/flora/ash/cap_shroom = 1,
 		/obj/structure/flora/ash/stem_shroom = 1,
-		/obj/structure/flora/ash/whitesands/puce = 1
+		/obj/structure/flora/ash/puce = 1
 	)
 	closed_turf_types = list(/turf/closed/mineral/random/snow = 1)
 	mob_spawn_chance = 2

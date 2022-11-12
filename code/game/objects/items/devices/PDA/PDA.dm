@@ -14,7 +14,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 /obj/item/pda
 	name = "\improper PDA"
 	desc = "A portable microcomputer by Thinktronic Systems, LTD. Functionality determined by a preprogrammed ROM cartridge."
-	icon = 'whitesands/icons/obj/pda.dmi' //WS Edit - Better PDAs from Eris(?)
+	icon = 'icons/obj/pda.dmi'
 	icon_state = "pda"
 	item_state = "electronic"
 	lefthand_file = 'icons/mob/inhands/misc/devices_lefthand.dmi'
@@ -590,8 +590,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 
 //EXTRA FUNCTIONS===================================
 
-	if(mode == 2 || mode == 21)//To clear message overlays.
-		update_icon()
+	cut_overlay(icon_alert) //To clear message overlays.
 
 	if((honkamt > 0) && (prob(60)))//For clown virus.
 		honkamt--

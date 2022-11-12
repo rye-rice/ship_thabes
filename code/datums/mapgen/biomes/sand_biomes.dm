@@ -27,22 +27,12 @@
 		/obj/effect/spawner/lootdrop/maintenance = 40,
 	)
 
-/datum/biome/sand/oasis
-	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/grass/lit = 1)
-	flora_spawn_list = list(
-		/obj/structure/flora/ash/cacti = 2,
-		/obj/structure/flora/ash/whitesands/fern = 4,
-		/obj/structure/sink/puddle = 2,
-		/obj/structure/flora/tree/palm = 4,
-	)
-	feature_spawn_list = list(/obj/structure/geyser/random = 1)
-
 /datum/biome/sand/grass
 	open_turf_types = list(/turf/open/floor/plating/asteroid/whitesands/grass/lit = 1)
 	flora_spawn_chance = 5
 	flora_spawn_list = list(
 		/obj/structure/flora/ash/cacti = 2,
-		/obj/structure/flora/ash/whitesands/fern = 4,
+		/obj/structure/flora/ash/fern = 4,
 		/obj/structure/flora/tree/tall/whitesands = 4,
 		/obj/structure/flora/rock = 3,
 		/obj/structure/flora/rock/pile = 3,
@@ -58,7 +48,7 @@
 		/obj/structure/flora/ash/leaf_shroom = 2,
 		/obj/structure/flora/ash/cap_shroom = 2,
 		/obj/structure/flora/ash/stem_shroom = 2,
-		/obj/structure/flora/ash/whitesands/fern = 4,
+		/obj/structure/flora/ash/fern = 4,
 		/obj/structure/flora/tree/dead/barren = 4,
 		/obj/structure/flora/rock = 3,
 		/obj/structure/flora/rock/pile = 3,
@@ -102,8 +92,8 @@
 	flora_spawn_list = list(
 		/obj/structure/flora/rock = 4,
 		/obj/structure/flora/rock/pile = 4,
-		/obj/structure/flora/ash/whitesands/fern = 2,
-		/obj/structure/flora/ash/whitesands/puce = 1,
+		/obj/structure/flora/ash/fern = 2,
+		/obj/structure/flora/ash/puce = 1,
 	)
 	feature_spawn_list = list(/obj/structure/geyser/random = 1, /obj/structure/elite_tumor = 2)
 	mob_spawn_chance = 4

@@ -55,11 +55,6 @@
 	description = "Some sort of house, baracaded in. It must be baracaded for a reason.."
 	suffix = "rockplanet_house.dmm"
 */
-/datum/map_template/ruin/rockplanet/daniel
-	name = "Oh Hi Daniel"
-	id = "daniel"
-	description = "Mistakes were made.."
-	suffix = "rockplanet_daniel.dmm"
 
 /datum/map_template/ruin/rockplanet/mining_expedition
 	name = "Mining Expedition"
@@ -73,14 +68,6 @@
 	id = "abandonedscience"
 	description = "A chunk of a station that broke off.."
 	suffix = "rockplanet_boxsci.dmm"
-
-/* greeble
-/datum/map_template/ruin/rockplanet/rd_god
-	id = "rd_god"
-	suffix = "rockplanet_rd_god.dmm"
-	name = "Science experiment"
-	description = "Research Director? The experiment to become god has fai-"
-*/
 
 /datum/map_template/ruin/rockplanet/crash_cult
 	name = "Crashed Cult Ship"
