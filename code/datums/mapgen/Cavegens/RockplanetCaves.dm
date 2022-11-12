@@ -1,5 +1,3 @@
-#define ROCKPLANET_DEFAULT_ATMOS "co2=95;n2=3;TEMP=210.15"
-
 /datum/map_generator/cave_generator/rockplanet
 	open_turf_types = list(/turf/open/floor/plating/asteroid/rockplanet = 5,
 						/turf/open/floor/plating/asteroid/rockplanet/cracked = 1)
