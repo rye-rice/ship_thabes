@@ -205,7 +205,6 @@
 	name = "comically large spoon"
 	desc = "Digs out only a spoonfull"
 	item_state = "spoon"
-	righthand_file = 'icons/mob/inhands/equipment/mining_righthand.dmi'
 	force = 6
 	throwforce = 2
 	toolspeed = 0.8
