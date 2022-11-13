@@ -264,12 +264,10 @@
 			planet_name = gen_planet_name()
 
 			ruin_list = null // minor planets have no ruins
-//			mapgen = /datum/map_generator/planet_generator/sand
-			mapgen = null
+			mapgen = /datum/map_generator/planet_generator/sand
 			target_area = /area/overmap_encounter/planetoid/shrouded
 			surface = /turf/open/floor/plating/asteroid/shrouded
-//			planet_template = /datum/planet/desert
-			planet_template = null
+			planet_template = /datum/planet/shrouded
 			weather_controller_type = /datum/weather_controller/shrouded
 
 		if(DYNAMIC_WORLD_REEBE)

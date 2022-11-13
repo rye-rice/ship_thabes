@@ -87,20 +87,3 @@
 		throw_alert("temp", /atom/movable/screen/alert/hot, 3)
 	else
 		clear_alert("temp")
-
-/mob/living/simple_animal/hostile/asteroid/royalcrab
-	name = "cragenoy"
-	desc = "It looks like a crustacean with an exceedingly hard carapace. Watch the pinchers!"
-	icon_state = "royalcrab"
-	icon_living = "royalcrab"
-	icon_dead = "royalcrab_dead"
-	maxHealth = 150
-	health = 150
-	speed = 1
-	speak_chance = 1
-	emote_see = list("skitters","oozes liquid from its mouth", "scratches at the ground", "clicks its claws")
-
-	melee_damage_lower = 5
-	melee_damage_upper = 5
-	attack_verb_continuous = "pinched"
-	attack_verb_simple = "pinch"
