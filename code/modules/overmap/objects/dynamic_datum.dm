@@ -255,6 +255,23 @@
 			surface = /turf/open/floor/plating/asteroid/desert/lit
 			planet_template = /datum/planet/desert
 			weather_controller_type = /datum/weather_controller/desert_yellow
+		if(DYNAMIC_WORLD_SHROUDED)
+			Rename("shrouded planet")
+			token.desc = "A very weak energy signal originating from a planet shrouded in a perpetual storm of bizzare, light absorbing particles."
+			planet = DYNAMIC_WORLD_SHROUDED
+			token.icon_state = "globe"
+			token.color = "#783ca4"
+			planet_name = gen_planet_name()
+
+			ruin_list = null // minor planets have no ruins
+//			mapgen = /datum/map_generator/planet_generator/sand
+			mapgen = null
+			target_area = /area/overmap_encounter/planetoid/shrouded
+			surface = /turf/open/floor/plating/asteroid/shrouded
+//			planet_template = /datum/planet/desert
+			planet_template = null
+			weather_controller_type = /datum/weather_controller/shrouded
+
 		if(DYNAMIC_WORLD_REEBE)
 			Rename("???")
 			token.desc = "Some sort of strange portal. Theres no identification of what this is."
@@ -408,6 +425,11 @@
 
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
+	ambientsounds = DESERT
+
+/area/overmap_encounter/planetoid/shrouded
+	name = "\improper Shrouded Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
 

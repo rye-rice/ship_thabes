@@ -1448,6 +1448,7 @@
 #include "code\game\turfs\open\floor\plating\misc_plating.dm"
 #include "code\game\turfs\open\floor\plating\planet.dm"
 #include "code\game\turfs\open\floor\plating\rockplanet.dm"
+#include "code\game\turfs\open\floor\plating\shrouded.dm"
 #include "code\game\turfs\open\floor\plating\wasteplanet.dm"
 #include "code\game\turfs\open\floor\plating\whitesands.dm"
 #include "code\game\turfs\open\space\space.dm"

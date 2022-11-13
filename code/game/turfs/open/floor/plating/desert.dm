@@ -8,7 +8,6 @@
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
-	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	planetary_atmos = TRUE
 	initial_gas_mix = DESERT_DEFAULT_ATMOS
 	slowdown = 1.5
@@ -89,7 +88,7 @@
 	icon_state = "drydesert"
 	base_icon_state = "drydesert"
 	footstep = FOOTSTEP_FLOOR
-	barefootstep = FOOTSTEP_SAND
+	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	floor_variance = 0

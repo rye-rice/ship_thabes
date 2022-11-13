@@ -31,6 +31,7 @@
 
 #define DYNAMIC_WORLD_WATERPLANET "waterplanet" //minor planets
 #define DYNAMIC_WORLD_DESERT "desertplanet"
+#define DYNAMIC_WORLD_SHROUDED "shroudedplanet"
 #define DYNAMIC_WORLD_BLOBPLANET "blobplanet"
 #define DYNAMIC_WORLD_PHORON_GIANT "phorongiant"
 #define DYNAMIC_WORLD_DUSTBALL "phorongiant"

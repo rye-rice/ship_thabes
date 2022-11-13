@@ -1,73 +1,73 @@
 /datum/planet/desert
 	biomes = list(
-		"coldest" = list(
-			"biome_lowest_humidity" = /datum/biome/desert,
-			"biome_low_humidity" = /datum/biome/desert,
-			"biome_medium_humidity" = /datum/biome/desert,
-			"biome_high_humidity" = /datum/biome/desert,
-			"biome_highest_humidity" = /datum/biome/desert
+		BIOME_COLDEST = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert
 		),
-		"cold" = list(
-			"biome_lowest_humidity" = /datum/biome/desert,
-			"biome_low_humidity" = /datum/biome/desert,
-			"biome_medium_humidity" = /datum/biome/desert,
-			"biome_high_humidity" = /datum/biome/desert,
-			"biome_highest_humidity" = /datum/biome/desert
+		BIOME_COLD = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert
 		),
-		"warm" = list(
-			"biome_lowest_humidity" = /datum/biome/desert,
-			"biome_low_humidity" = /datum/biome/desert,
-			"biome_medium_humidity" = /datum/biome/desert,
-			"biome_high_humidity" = /datum/biome/desert,
-			"biome_highest_humidity" = /datum/biome/desert
+		BIOME_WARM = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert
 		),
-		"perfect" = list(
-			"biome_lowest_humidity" = /datum/biome/desert,
-			"biome_low_humidity" = /datum/biome/desert,
-			"biome_medium_humidity" = /datum/biome/desert,
-			"biome_high_humidity" = /datum/biome/desert,
-			"biome_highest_humidity" = /datum/biome/desert
+		BIOME_TEMPERATE = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert
 		),
-		"hot" = list(
-			"biome_lowest_humidity" = /datum/biome/dry_seafloor,
-			"biome_low_humidity" = /datum/biome/dry_seafloor,
-			"biome_medium_humidity" = /datum/biome/desert,
-			"biome_high_humidity" = /datum/biome/desert,
-			"biome_highest_humidity" = /datum/biome/desert,
+		BIOME_HOT = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_LOW_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert,
 		),
-		"hottest" = list(
-			"biome_lowest_humidity" = /datum/biome/dry_seafloor,
-			"biome_low_humidity" = /datum/biome/dry_seafloor,
-			"biome_medium_humidity" = /datum/biome/dry_seafloor,
-			"biome_high_humidity" = /datum/biome/dry_seafloor,
-			"biome_highest_humidity" = /datum/biome/desert
+		BIOME_HOTTEST = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_LOW_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_HIGH_HUMIDITY = /datum/biome/dry_seafloor,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert
 		),
-		"coldest_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/desert,
-			"biome_low_humidity" = /datum/biome/cave/desert,
-			"biome_medium_humidity" = /datum/biome/cave/desert,
-			"biome_high_humidity" = /datum/biome/cave/desert,
-			"biome_highest_humidity" = /datum/biome/cave/desert
+		BIOME_COLDEST_CAVE = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/desert
 		),
-		"cold_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/desert,
-			"biome_low_humidity" = /datum/biome/cave/desert,
-			"biome_medium_humidity" = /datum/biome/cave/desert,
-			"biome_high_humidity" = /datum/biome/cave/desert,
-			"biome_highest_humidity" = /datum/biome/cave/desert
+		BIOME_COLD_CAVE = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/desert
 		),
-		"warm_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/desert,
-			"biome_low_humidity" = /datum/biome/cave/desert,
-			"biome_medium_humidity" = /datum/biome/cave/desert,
-			"biome_high_humidity" = /datum/biome/cave/desert,
-			"biome_highest_humidity" = /datum/biome/cave/desert
+		BIOME_WARM_CAVE = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/desert
 		),
-		"hot_cave" = list(
-			"biome_lowest_humidity" = /datum/biome/cave/desert,
-			"biome_low_humidity" = /datum/biome/cave/desert,
-			"biome_medium_humidity" = /datum/biome/cave/desert,
-			"biome_high_humidity" = /datum/biome/cave/desert,
-			"biome_highest_humidity" = /datum/biome/cave/desert
+		BIOME_HOT_CAVE = list(
+			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_LOW_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_MEDIUM_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGH_HUMIDITY = /datum/biome/cave/desert,
+			BIOME_HIGHEST_HUMIDITY = /datum/biome/cave/desert
 		)
 	)

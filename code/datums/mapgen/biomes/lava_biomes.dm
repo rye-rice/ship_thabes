@@ -18,7 +18,7 @@
 		/obj/structure/spawner/lavaland = 3,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/obj/structure/spawner/lavaland/legion = 3,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10
+		/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub = 10
 	)
 
 /datum/biome/lavaland/forest
@@ -119,7 +119,7 @@
 		/obj/structure/spawner/lavaland = 3,
 		/mob/living/simple_animal/hostile/asteroid/hivelord/legion/random = 30,
 		/obj/structure/spawner/lavaland/legion = 3,
-		/mob/living/simple_animal/hostile/asteroid/goldgrub = 10
+		/mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub = 10
 	)
 	flora_spawn_chance = 1
 	flora_spawn_list = list(

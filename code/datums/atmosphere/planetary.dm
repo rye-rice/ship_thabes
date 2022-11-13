@@ -66,3 +66,21 @@
 
 	minimum_temp = T20C + 20
 	maximum_temp = T20C + 80
+
+/datum/atmosphere/shrouded
+	id = SHROUDED_DEFAULT_ATMOS
+	base_gases = list(
+		GAS_N2=80,
+		GAS_O2=20,
+	)
+	normal_gases = list(
+		GAS_BZ=2,
+		GAS_CO2=2,
+	)
+	restricted_chance = 0
+
+	minimum_pressure = ONE_ATMOSPHERE - 10
+	maximum_pressure = ONE_ATMOSPHERE + 20
+
+	minimum_temp = T20C - 30
+	maximum_temp = T20C - 10
