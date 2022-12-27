@@ -228,6 +228,10 @@
 		M.name = replacetext(M.name,oldtitle,title)
 	for(var/obj/machinery/door/M in A)
 		M.name = replacetext(M.name,oldtitle,title)
+	for(var/obj/structure/transmitter/M in A)
+		if(!M.auto_name)
+			continue
+		M.phone_id = replacetext(M.phone_id,oldtitle,title)
 	//TODO: much much more. Unnamed airlocks, cameras, etc.
 
 /obj/item/areaeditor/shuttle

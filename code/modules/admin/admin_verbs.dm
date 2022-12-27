@@ -42,7 +42,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/toggleooc,		/*toggles ooc on/off for everyone*/
 	/datum/admins/proc/toggleooclocal,	/*toggles looc on/off for everyone*/
 	/datum/admins/proc/toggleoocdead,	/*toggles ooc on/off for everyone who is dead*/
-	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/
+	/datum/admins/proc/toggleretro,		/*changes all available things to be retro themed, for events*/
 	/datum/admins/proc/announce,		/*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
@@ -77,6 +77,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/toggleadminhelpsound,
 	/datum/admins/proc/open_borgopanel,
 	/client/proc/investigate_show,		/*various admintools for investigation. Such as a singulo grief-log*/
+
+	/datum/admins/proc/toggleenter,		/*toggles whether people can join the current game*/ //RYLIE EVENT EDIT
+
 	)
 
 GLOBAL_LIST_INIT(admin_verbs_ban, list(
