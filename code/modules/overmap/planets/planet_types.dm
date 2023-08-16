@@ -160,3 +160,41 @@
 	icon_state = "globe"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/datum/planet_type/water
+	name = "aqua planet"
+	desc = "A very weak energy signal originating from a planet entirely covered in water with caves with oxygen pockets."
+	planet = DYNAMIC_WORLD_WATERPLANET
+	icon_state = "globe"
+	color = LIGHT_COLOR_DARK_BLUE
+
+	ruin_list = null // minor planets have no ruins
+	mapgen = /datum/map_generator/planet_generator/snow
+	default_baseturf = /turf/open/water/beach/deep
+	weather_controller_type = /datum/weather_controller/waterplanet
+
+/datum/planet_type/desert
+	name = "desert planet"
+	desc = "A very weak energy signal originating from a very hot and harsh planet."
+	planet = DYNAMIC_WORLD_DESERT
+	icon_state = "globe"
+	color = "#f3c282"
+
+	ruin_list = null // minor planets have no ruins
+	mapgen = /datum/map_generator/planet_generator/sand
+	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
+	weather_controller_type = /datum/weather_controller/desert_yellow
+
+/datum/planet_type/shrouded
+	name = "shrouded planet"
+	desc = "A very weak energy signal originating from a planet shrouded in a perpetual storm of bizzare, light absorbing particles."
+	planet = DYNAMIC_WORLD_SHROUDED
+	icon_state = "globe"
+	color = "#783ca4"
+	planet_name = gen_planet_name()
+
+	ruin_list = null // minor planets have no ruins
+	mapgen = /datum/map_generator/planet_generator/sand
+	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
+	weather_controller_type = /datum/weather_controller/shrouded
+
