@@ -144,26 +144,6 @@
 	. = ..()
 	name_source = GLOB.clown_names
 
-/datum/antagonist/ert/janitor/party
-	role = "Party Cleaning Service"
-	outfit = /datum/outfit/centcom/ert/janitor/party
-
-/datum/antagonist/ert/security/party
-	role = "Party Bouncer"
-	outfit = /datum/outfit/centcom/ert/security/party
-
-/datum/antagonist/ert/engineer/party
-	role = "Party Constructor"
-	outfit = /datum/outfit/centcom/ert/engineer/party
-
-/datum/antagonist/ert/clown/party
-	role = "Party Comedian"
-	outfit = /datum/outfit/centcom/ert/clown/party
-
-/datum/antagonist/ert/commander/party
-	role = "Party Coordinator"
-	outfit = /datum/outfit/centcom/ert/commander/party
-
 /datum/antagonist/ert/create_team(datum/team/ert/new_team)
 	if(istype(new_team))
 		ert_team = new_team
@@ -329,12 +309,7 @@
 	role = "Medical Officer"
 
 /datum/antagonist/ert/solgov
-	name = "SolGov Officer"
-	outfit = /datum/outfit/solgov
+	name = "SolGov Sonnensoldner"
+	outfit = /datum/outfit/solgov/sonnensoldner
 	random_names = FALSE
-	role = "SolGov Officer"
-
-/datum/antagonist/ert/solgov/leader
-	name = "SolGov Commander"
-	outfit = /datum/outfit/solgov/commander
-	role = "SolGov Commander"
+	role = "SolGov Sonnensoldner"

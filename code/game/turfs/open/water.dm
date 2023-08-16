@@ -18,11 +18,12 @@
 	var/datum/reagent/reagent_to_extract = /datum/reagent/water
 	var/extracted_reagent_visible_name = "water"
 
+/*
 /turf/open/water/attackby(obj/item/tool, mob/user, params)
 	if(!reagent_to_extract)
 		return ..()
 	var/obj/item/reagent_containers/glass/container = tool
-	if(!container)
+	if(!istype(tool, /obj/item/reagent_containers))
 		return ..()
 	if(container.reagents.total_volume >= container.volume)
 		to_chat(user, "<span class='danger'>[container] is full.</span>")
@@ -30,6 +31,14 @@
 	container.reagents.add_reagent(reagent_to_extract, rand(5, 10))
 	user.visible_message("<span class='notice'>[user] scoops [extracted_reagent_visible_name] from the [src] with \the [container].</span>", "<span class='notice'>You scoop out [extracted_reagent_visible_name] from the [src] using \the [container].</span>")
 	return TRUE
+*/
+
+/turf/open/water/attackby(obj/item/fish, mob/user, params)
+	. = ..()
+	if(istype(fish, /obj/item/fish))
+		to_chat(user, "<span class='notice'>You toss the [fish.name] into the water.</span>")
+		playsound(fish, "sound/effects/bigsplash.ogg", 90)
+		qdel(fish)
 
 /turf/open/water/can_have_cabling()
 	return FALSE
@@ -48,10 +57,17 @@
 			return TRUE
 	return FALSE
 
+/turf/open/water/MakeSlippery(wet_setting, min_wet_time, wet_time_to_add, max_wet_time, permanent) //water? wet? not in this economy.
+	return
+
 /turf/open/water/jungle
 	light_range = 2
 	light_power = 0.6
 	light_color = COLOR_VERY_LIGHT_GRAY
+
+/turf/open/water/jungle/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_JUNGLE)
 
 /turf/open/water/beach
 	color = COLOR_CYAN
@@ -62,6 +78,10 @@
 /turf/open/water/beach/underground
 	light_range = 0
 
+/turf/open/water/beach/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/lazy_fishing_spot, FISHING_SPOT_PRESET_BEACH)
+
 /turf/open/water/beach/deep
 	color = "#0099ff"
 	light_color = LIGHT_COLOR_DARK_BLUE
@@ -69,7 +89,7 @@
 /turf/open/water/tar
 	name = "tar pit"
 	desc = "Shallow tar. Will slow you down significantly. You could use a beaker to scoop some out..."
-	color = "#222424"
+	color = "#473a3a"
 	light_range = 0
 	slowdown = 2
 	reagent_to_extract = /datum/reagent/asphalt

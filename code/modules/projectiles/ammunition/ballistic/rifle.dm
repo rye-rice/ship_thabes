@@ -11,6 +11,15 @@
 	bullet_skin = "rubber"
 	projectile_type = /obj/projectile/bullet/a762_enchanted
 
+// 8x58mm Caseless (SSG-669C)
+
+/obj/item/ammo_casing/caseless/a858
+	name = "8x58mm caseless round"
+	desc = "a 8x58mm caseless round."
+	icon_state = "caseless"
+	caliber = "a858"
+	projectile_type = /obj/projectile/bullet/a858
+
 // .300 Magnum (Smile Rifle)
 
 /obj/item/ammo_casing/a300
@@ -68,12 +77,12 @@
 	caliber = ".300BLK"
 	projectile_type = /obj/projectile/bullet/aac_300blk
 
-/obj/item/ammo_casing/win308
-	name = ".308 Winchester FMJ bullet casing"
-	desc = "A .308 Winchester FMJ bullet casing."
+/obj/item/ammo_casing/a308
+	name = ".308 bullet casing"
+	desc = "A .308 bullet casing."
 	icon_state = "rifle-steel"
-	caliber = ".308 Winchester FMJ"
-	projectile_type = /obj/projectile/bullet/win308
+	caliber = ".308"
+	projectile_type = /obj/projectile/bullet/a308
 
 // 40mm (Grenade Launcher)
 

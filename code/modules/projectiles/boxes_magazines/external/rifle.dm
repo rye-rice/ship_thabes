@@ -2,16 +2,14 @@
 	name = "rifle magazine (10mm)"
 	desc = "A well-worn magazine fitted for the surplus rifle."
 	icon_state = "75-8"
+	base_icon_state = "75"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
 	max_ammo = 10
 
-/obj/item/ammo_box/magazine/m10mm/rifle/update_icon()
-	..()
-	if(ammo_count())
-		icon_state = "75-8"
-	else
-		icon_state = "75-0"
+/obj/item/ammo_box/magazine/m10mm/rifle/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[ammo_count() ? "8" : "0"]"
 
 /obj/item/ammo_box/magazine/m556
 	name = "toploader magazine (5.56mm)"
@@ -24,13 +22,14 @@
 /obj/item/ammo_box/magazine/rifle47x33mm
 	name = "\improper SolGov AR magazine (4.73x33mm caseless)"
 	icon_state = "47x33mm-50"
+	base_icon_state = "47x33mm"
 	ammo_type = /obj/item/ammo_casing/caseless/c47x33mm
 	caliber = "4.73x33mm caseless"
 	max_ammo = 50 //brrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr
 
-/obj/item/ammo_box/magazine/rifle47x33mm/update_icon()
-	..()
-	icon_state = "47x33mm-[round(ammo_count(),5)]"
+/obj/item/ammo_box/magazine/rifle47x33mm/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[round(ammo_count(),5)]"
 
 /obj/item/ammo_box/magazine/aks74u
 	name = "\improper AKS-74U Magazine (5.45x39mm cartridge)"
@@ -39,14 +38,9 @@
 	caliber = "5.45x39mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/aks74u/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+/obj/item/ammo_box/magazine/aks74u/update_icon_state()
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/aknt
 	name = "\improper NT AK Magazine (4.6x30mm))"
@@ -55,14 +49,9 @@
 	caliber = "4.6x30mm"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/aknt/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+/obj/item/ammo_box/magazine/aknt/update_icon_state()
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ak47
 	name = "\improper AKM Magazine (7.62x39mm)"
@@ -71,21 +60,31 @@
 	caliber = "7.62x39mm FMJ"
 	max_ammo = 20
 
-/obj/item/ammo_box/magazine/ak47/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "ak47_mag-[hasammo]"
+/obj/item/ammo_box/magazine/ak47/update_icon_state()
+	. = ..()
+	icon_state = "ak47_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/ebr
-	name = "\improper M514 EBR Magazine (.308 Winchester FMJ)"
+	name = "\improper M514 EBR Magazine (.308)"
 	icon_state = "ebr_mag"
-	ammo_type = /obj/item/ammo_casing/win308
-	caliber = ".308 Winchester FMJ"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
 	max_ammo = 10
+
+/obj/item/ammo_box/magazine/ebr/update_icon_state()
+	. = ..()
+	icon_state = "ebr_mag-[!!ammo_count()]"
+
+/obj/item/ammo_box/magazine/gal
+	name = "\improper CM-GAL Magazine (.308)"
+	icon_state = "ebr_mag"
+	ammo_type = /obj/item/ammo_casing/a308
+	caliber = ".308"
+	max_ammo = 10
+
+/obj/item/ammo_box/magazine/gal/update_icon_state()
+	. = ..()
+	icon_state = "galmag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/p16
 	name = "\improper P-16 Magazine (5.56mm)"
@@ -94,14 +93,9 @@
 	caliber = "a556"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/p16/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "p16_mag-[hasammo]"
+/obj/item/ammo_box/magazine/p16/update_icon_state()
+	. = ..()
+	icon_state = "p16_mag-[!!ammo_count()]"
 
 /obj/item/ammo_box/magazine/swiss
 	name = "\improper Swiss Cheese Magazine (5.56mm)"
@@ -110,14 +104,9 @@
 	caliber = "a556"
 	max_ammo = 30
 
-/obj/item/ammo_box/magazine/swiss/update_icon()
-	..()
-	var/hasammo
-	if(ammo_count())
-		hasammo = 1
-	else
-		hasammo = 0
-	icon_state = "swissmag-[hasammo]"
+/obj/item/ammo_box/magazine/swiss/update_icon_state()
+	. = ..()
+	icon_state = "swissmag-[!!ammo_count()]"
 
 /obj/item/ammo_box/aac_300blk_stripper
 	name = "stripper clip (.300BLK)"

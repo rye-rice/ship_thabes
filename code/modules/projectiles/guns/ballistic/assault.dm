@@ -61,7 +61,7 @@
 
 	folded = !folded
 	playsound(src.loc, 'sound/weapons/empty.ogg', 100, 1)
-	update_icon()
+	update_appearance()
 
 /obj/item/gun/ballistic/automatic/assualt/ak47/nt/update_overlays()
 	. = ..()
@@ -103,7 +103,7 @@
 
 /obj/item/gun/ballistic/automatic/assualt/p16/minutemen
 	name = "\improper CM-16"
-	desc = "A heavily modified version of the P-16. Standard rifle of the Colonial Minutemen."
+	desc = "Standard issue rifle of the Colonial Minutemen. A heavily modified version of the P-16 designed to fit the standards of operative warfare."
 	icon_state = "cm16"
 	item_state = "cm16"
 
@@ -165,6 +165,6 @@
 			to_chat(user, "<span class='notice'>You switch to [burst_size]-rnd Matter.</span>")
 
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
-	update_icon()
+	update_appearance()
 	for(var/datum/action/action as anything in actions)
 		action.UpdateButtonIcon()

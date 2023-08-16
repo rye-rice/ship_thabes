@@ -77,16 +77,6 @@
 	name = "construction site"
 	icon_state = "green"
 
-/area/ruin/jungle/paradise/mine
-	name = "Mineshaft"
-	icon_state = "yellow"
-
-/area/ruin/jungle/paradise/shuttle
-	name = "crashed escape shuttle"
-	icon_state = "dk_yellow"
-	always_unpowered = TRUE
-	ambientsounds = MAINTENANCE
-
 /area/ruin/jungle/paradise/med
 	name = "surgical medical pod"
 	icon_state = "blue"
@@ -95,15 +85,13 @@
 	name = "Paradise"
 	icon_state = "green"
 
-/area/ruin/jungle/paradise/darkmisc
-	name = "paradisedark"
-	icon_state = "garden"
-	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
-
 /area/ruin/jungle/paradise/cargo
 	name = "cargo dump"
 	icon_state = "dk_yellow"
 
+/area/ruin/jungle/roommates/shack
+	name = "clown and mime hideout"
+	icon_state = "crew_quarters"
 
 // Bombed Syndicate Starport
 /area/ruin/jungle/starport

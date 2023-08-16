@@ -120,7 +120,7 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog
 	name = "\improper Bulldog Shotgun"
-	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed 'Bulldog' by boarding parties. Compatible only with specialized 8-round drum magazines."
+	desc = "A semi-auto, mag-fed shotgun for combat in narrow corridors, nicknamed the 'Bulldog' by boarding parties. Only compatible with specialized 8-round drum magazines."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	icon_state = "bulldog"
 	item_state = "bulldog"
@@ -152,10 +152,23 @@
 
 /obj/item/gun/ballistic/shotgun/bulldog/inteq
 	name = "\improper Mastiff Shotgun"
-	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Compatible only with specialized 8-round drum magazines."
+	desc = "A semi-auto, mag-fed shotgun, seized from Syndicate armories by deserting troopers and modified to IRMG's standards. Only compatible with specialized 8-round drum magazines."
 	icon_state = "bulldog-inteq"
 	item_state = "bulldog-inteq"
+	mag_type = /obj/item/ammo_box/magazine/m12g
 	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/shotgun/bulldog/minutemen
+	name = "\improper CM-15"
+	desc = "Standard issue shotgun of the Colonial Minutemen. Most often used by boarding crews. Only compatible with specialized 8-round magazines."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	mag_type = /obj/item/ammo_box/magazine/cm15_mag
+	icon_state = "cm15"
+	item_state = "cm15"
+	pin = /obj/item/firing_pin
+	empty_alarm = FALSE
+	empty_indicator = FALSE
+	special_mags = FALSE
 
 /////////////////////////////
 // DOUBLE BARRELED SHOTGUN //
@@ -220,7 +233,7 @@
 			slot_flags = ITEM_SLOT_BACK
 			to_chat(user, "<span class='notice'>You tie the lengths of cable to the shotgun, making a sling.</span>")
 			slung = TRUE
-			update_icon()
+			update_appearance()
 		else
 			to_chat(user, "<span class='warning'>You need at least ten lengths of cable if you want to make a sling!</span>")
 
@@ -243,7 +256,7 @@
 	if(. && slung) //sawing off the gun removes the sling
 		new /obj/item/stack/cable_coil(get_turf(src), 10)
 		slung = 0
-		update_icon()
+		update_appearance()
 
 /obj/item/gun/ballistic/shotgun/doublebarrel/improvised/sawn
 	name = "sawn-off improvised shotgun"
