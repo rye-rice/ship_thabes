@@ -1,5 +1,15 @@
-/datum/planet/waterplanet
-	biomes = list(
+/datum/map_generator/planet_generator/waterplanet
+	mountain_height = 0.40
+	perlin_zoom = 55
+
+	initial_closed_chance = 45
+	smoothing_iterations = 20
+	birth_limit = 4
+	death_limit = 3
+
+	primary_area_type = /area/overmap_encounter/planetoid/waterplanet
+
+	biome_table = list(
 		BIOME_COLDEST = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/ocean/deep/waterplanet,
 			BIOME_LOW_HUMIDITY = /datum/biome/ocean/deep/waterplanet,
@@ -41,7 +51,10 @@
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/ocean/deep/waterplanet,
 			BIOME_HIGH_HUMIDITY = /datum/biome/ocean/deep/waterplanet,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/ocean/deep/waterplanet
-		),
+		)
+	)
+
+	cave_biome_table = list(
 		BIOME_COLDEST_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/waterplanet/fault,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/waterplanet/fault,

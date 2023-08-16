@@ -292,6 +292,7 @@
 /area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
 	area_flags = UNIQUE_AREA
 	area_flags = VALID_TERRITORY | UNIQUE_AREA
+
 /area/overmap_encounter/planetoid/beachplanet/explored
 	area_flags = VALID_TERRITORY
 

@@ -1,5 +1,10 @@
-/datum/planet/shrouded
-	biomes = list(
+/datum/map_generator/planet_generator/shrouded
+	mountain_height = 0.8
+	perlin_zoom = 65
+
+	primary_area_type = /area/overmap_encounter/planetoid/shrouded
+
+	biome_table = list(
 		BIOME_COLDEST = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/desert/shrouded,
 			BIOME_LOW_HUMIDITY = /datum/biome/desert/shrouded,
@@ -41,7 +46,10 @@
 			BIOME_MEDIUM_HUMIDITY = /datum/biome/desert/shrouded,
 			BIOME_HIGH_HUMIDITY = /datum/biome/desert/shrouded,
 			BIOME_HIGHEST_HUMIDITY = /datum/biome/desert/shrouded
-		),
+		)
+	)
+
+	cave_biome_table = list(
 		BIOME_COLDEST_CAVE = list(
 			BIOME_LOWEST_HUMIDITY = /datum/biome/cave/desert/shrouded,
 			BIOME_LOW_HUMIDITY = /datum/biome/cave/desert/shrouded,

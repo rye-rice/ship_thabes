@@ -63,7 +63,9 @@
 		GAS_O2=5,
 		GAS_N2=5,
 	)
-
+	restricted_gases = list(
+		GAS_H2O=1,
+	)
 	restricted_chance = 0
 
 	minimum_pressure = ONE_ATMOSPHERE
@@ -81,6 +83,9 @@
 	normal_gases = list(
 		GAS_BZ=2,
 		GAS_CO2=2,
+	)
+	restricted_gases = list(
+		GAS_H2O=1,
 	)
 	restricted_chance = 0
 
