@@ -13,6 +13,11 @@
 /obj/item/restraints/legcuffs/bola/cult,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"d" = (
+/obj/structure/window/reinforced/tinted/fulltile,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "e" = (
 /obj/item/bedsheet/cult,
 /obj/structure/bed,
@@ -64,6 +69,9 @@
 /obj/effect/decal/cleanable/ash,
 /turf/open/floor/plasteel/dark,
 /area/overmap_encounter/planetoid/rockplanet/explored)
+"u" = (
+/turf/closed/mineral/random/rockplanet,
+/area/overmap_encounter/planetoid/rockplanet/explored)
 "v" = (
 /obj/structure/trap/cult,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -86,9 +94,6 @@
 /obj/structure/bookcase/random/religion,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/dark,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"B" = (
-/turf/closed/mineral/gibtonite/rockplanet,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "C" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -127,11 +132,6 @@
 "K" = (
 /obj/effect/mob_spawn/human/corpse/charredskeleton,
 /turf/open/floor/plating/asteroid/rockplanet/lit,
-/area/overmap_encounter/planetoid/rockplanet/explored)
-"M" = (
-/obj/structure/window/reinforced/tinted/fulltile,
-/obj/structure/grille,
-/turf/open/floor/plating,
 /area/overmap_encounter/planetoid/rockplanet/explored)
 "N" = (
 /obj/structure/bookcase/random/religion,
@@ -188,9 +188,9 @@
 
 (1,1,1) = {"
 a
-B
-B
-B
+u
+u
+u
 K
 w
 Y
@@ -199,8 +199,8 @@ a
 a
 "}
 (2,1,1) = {"
-B
-B
+u
+u
 l
 l
 l
@@ -211,7 +211,7 @@ l
 a
 "}
 (3,1,1) = {"
-B
+u
 l
 l
 F
@@ -247,7 +247,7 @@ O
 l
 "}
 (6,1,1) = {"
-M
+d
 D
 v
 t
@@ -256,7 +256,7 @@ P
 T
 o
 n
-M
+d
 "}
 (7,1,1) = {"
 l
@@ -283,8 +283,8 @@ v
 l
 "}
 (9,1,1) = {"
-B
-B
+u
+u
 l
 l
 l
@@ -296,11 +296,11 @@ l
 "}
 (10,1,1) = {"
 a
-B
-B
-B
-B
-B
+u
+u
+u
+u
+u
 l
 l
 l
