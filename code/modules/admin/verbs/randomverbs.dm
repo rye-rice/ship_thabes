@@ -65,10 +65,18 @@
 		return
 
 	if (!sender)
-		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM,RADIO_CHANNEL_SYNDICATE,RADIO_CHANNEL_SOLGOV)		//WS Edit - SolGov Rep
+		sender = input("Who is the message from?", "Sender") as null|anything in list(RADIO_CHANNEL_CENTCOM, RADIO_CHANNEL_SYNDICATE, RADIO_CHANNEL_SOLGOV, RADIO_CHANNEL_INTEQ, RADIO_CHANNEL_MINUTEMEN)		//WS Edit - SolGov Rep
 		if(!sender)
 			return
-
+		switch(sender)
+			if (RADIO_CHANNEL_SYNDICATE)
+				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+			if (RADIO_CHANNEL_MINUTEMEN)
+				sender = input("From what division?", "Minutemen") as null|anything in list("Colonial Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+			if (RADIO_CHANNEL_INTEQ)
+				sender = "Inteq Risk Management"
+		if(!sender)
+			return
 	message_admins("[key_name_admin(src)] has started answering [key_name_admin(H)]'s [sender] request.")
 	var/input = input("Please enter a message to reply to [key_name(H)] via their headset.","Outgoing message from [sender]", "") as text|null
 	if(!input)
@@ -77,7 +85,7 @@
 
 	log_directed_talk(mob, H, input, LOG_ADMIN, "reply")
 	message_admins("[key_name_admin(src)] replied to [key_name_admin(H)]'s [sender] message with: \"[input]\"")
-	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender == RADIO_CHANNEL_SYNDICATE ? "your benefactor" : sender]. Message as follows[sender == "Syndicate" ? ", agent." : ":"] <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
+	to_chat(H, "<span class='hear'>You hear something crackle in your ears for a moment before a voice speaks. \"Please stand by for a message from [sender]. Message as follows: <b>[input].</b> Message ends.\"</span>", confidential = TRUE)		//WS Edit - SolGov Rep
 
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Headset Message") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -833,22 +841,34 @@
 
 		switch(ruin_force)
 			if("Random")
+				//Can't use pickweight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
 				if(!selected_ruin)
-					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10) != "Yes")
+					if(tgui_alert(usr, "Did you mean to not have a ruin?", "Spawn Planet/Ruin", list("Yes", "No"), 10 SECONDS) != "Yes")
 						return
 				else
 					ruin_target = select_from[selected_ruin]
 
-	message_admins("Generating a new Planet, this may take some time!")
-	var/datum/overmap/dynamic/encounter = new(null, FALSE)
+	var/list/position = list()
+	if(tgui_alert(usr, "Where do you want to spawn your Planet/Ruin?", "Spawn Planet/Ruin", list("Pick a location", "Random")) == "Pick a location")
+		position["x"] = input(usr, "Choose your X coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		position["y"] = input(usr, "Choose your Y coordinate", "Pick a location", rand(1,SSovermap.size)) as num
+		if(locate(/datum/overmap) in SSovermap.overmap_container[position["x"]][position["y"]] && tgui_alert(usr, "There is already an overmap object in that location! Continue anyway?","Pick a location", list("Yes","No"), 10 SECONDS) != "Yes")
+			return
+	else
+		position = SSovermap.get_unused_overmap_square()
+
+	message_admins("Generating a new Planet with ruin: [ruin_target], this may take some time!")
+	if(!position && tgui_alert(usr, "Failed to spawn in an empty overmap space! Continue?", "Spawn Planet/Ruin", list("Yes","No"), 10 SECONDS) != "Yes")
+		return
+	var/datum/overmap/dynamic/encounter = new(position, FALSE)
 	encounter.force_encounter = planet_type
 	encounter.template = ruin_target
 	encounter.choose_level_type(FALSE)
 	if(!ruin_target)
-		encounter.ruin_list = null
+		encounter.ruin_type = null
 	encounter.preserve_level = TRUE
 	encounter.load_level()
 

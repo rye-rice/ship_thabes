@@ -465,6 +465,7 @@
 		return
 
 	face_atom(A)
+
 	var/list/result
 	if(client)
 		LAZYINITLIST(client.recent_examines)
@@ -479,8 +480,12 @@
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
+	if(result.len)
+		for(var/i in 1 to (length(result) - 1))
+			result[i] += "\n"
 
-	to_chat(src, result.Join("\n"))
+	to_chat(src, examine_block("<span class='infoplain'>[result.Join()]</span>"))
+
 	SEND_SIGNAL(src, COMSIG_MOB_EXAMINATE, A)
 
 
@@ -620,11 +625,11 @@
 
 ///Update the pulling hud icon
 /mob/proc/update_pull_hud_icon()
-	hud_used?.pull_icon?.update_icon()
+	hud_used?.pull_icon?.update_appearance()
 
 ///Update the resting hud icon
 /mob/proc/update_rest_hud_icon()
-	hud_used?.rest_icon?.update_icon()
+	hud_used?.rest_icon?.update_appearance()
 
 /**
  * Verb to activate the object in your held hand
@@ -1214,6 +1219,25 @@
 	if(!is_literate())
 		to_chat(src, "<span class='notice'>You try to read [O], but can't comprehend any of it.</span>")
 		return
+	return TRUE
+
+/mob/proc/can_write(obj/item/writing_instrument)
+	if(!istype(writing_instrument))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(!is_literate())
+		to_chat(src, span_warning("You try to write, but don't know how to spell anything!"))
+		return FALSE
+
+	var/pen_info = writing_instrument.get_writing_implement_details()
+	if(!pen_info || (pen_info["interaction_mode"] != MODE_WRITING))
+		to_chat(src, span_warning("You can't write with the [writing_instrument]!"))
+		return FALSE
+
+	if(has_gravity())
+		return TRUE
+
 	return TRUE
 
 ///Can this mob hold items

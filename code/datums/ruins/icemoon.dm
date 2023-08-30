@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/IceRuins/"
 	allow_duplicates = FALSE
 	cost = 5
+	ruin_type = RUINTYPE_ICE
 
 // above ground only
 
@@ -45,12 +46,6 @@
 	id = "corpreject"
 	description = "Nanotrasen Corporate Security Solutions vault site Gamma."
 	suffix = "icemoon_surface_corporate_rejects.dmm"
-
-/datum/map_template/ruin/icemoon/icecropolis
-	name = "The Bloody Hallow"
-	id = "icecropolis"
-	description = "Blood and writhing flesh make up this citadel of horrors."
-	suffix = "icemoon_underground_icecropolis.dmm"
 
 /datum/map_template/ruin/icemoon/syndicate_outpost
 	name = "Abandoned Syndicate Outpost"
