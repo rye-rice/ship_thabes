@@ -320,6 +320,11 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
 
+/area/overmap_encounter/planetoid/moon
+	name = "\improper Planetoid Moon"
+	ambientsounds = SPACE
+	sound_environment = SOUND_AREA_SPACE
+
 /datum/overmap/dynamic/empty
 	name = "Empty Space"
 

@@ -662,6 +662,7 @@
 #include "code\datums\mapgen\planetary\desertGenerator.dm"
 #include "code\datums\mapgen\planetary\JungleGenerator.dm"
 #include "code\datums\mapgen\planetary\LavaGenerator.dm"
+#include "code\datums\mapgen\planetary\moon_generator.dm"
 #include "code\datums\mapgen\planetary\RockGenerator.dm"
 #include "code\datums\mapgen\planetary\SandGenerator.dm"
 #include "code\datums\mapgen\planetary\shroudedGenerator.dm"

@@ -197,3 +197,14 @@
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
 
+/datum/planet_type/moon
+	name = "planetoid moon"
+	desc = "A terrestrial satellite orbiting a nearby planet."
+	planet = DYNAMIC_WORLD_MOON
+	icon_state = "moon"
+	color = "#d1c3c3"
+
+	ruin_type = null // minor 'planets' have no ruins
+	mapgen = /datum/map_generator/planet_generator/moon
+	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
+	weather_controller_type = null

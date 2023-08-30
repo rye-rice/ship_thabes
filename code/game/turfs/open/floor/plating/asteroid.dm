@@ -36,7 +36,14 @@
 		icon_state = "[base_icon_state][rand(0,max_icon_states)]"
 
 /// Drops itemstack when dug and changes icon
-/turf/open/floor/plating/asteroid/proc/getDug()
+/turf/open/floor/plating/asteroid/proc/getDug(no_dirt)
+	if(no_dirt)
+		if(!postdig_icon)
+			icon_plating = "[base_icon_state]_dug"
+			icon_state = "[base_icon_state]_dug"
+		dug = TRUE
+		return
+
 	new digResult(src, 5)
 	if(postdig_icon_change)
 		if(!postdig_icon)
