@@ -79,13 +79,25 @@
 		)
 	)
 
+//biomes
+
 /datum/biome/lunar_surface
-	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/lit)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/lit/surface_craters)
 	flora_spawn_chance = 3
 	mob_spawn_chance = 0
 
+	feature_spawn_chance = 1
+	feature_spawn_list = list(
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble,
+	)
+
 /datum/biome/rocky
-	open_turf_types = list(/turf/open/floor/plating/asteroid/moon_coarse/lit = 1)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters = 1)
+
+	feature_spawn_chance = 0.5
+	feature_spawn_list = list(
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble,
+	)
 
 /datum/biome/cave/moon
 	open_turf_types = list(/turf/open/floor/plating/asteroid/moon = 1)
@@ -93,31 +105,86 @@
 //	flora_spawn_chance = 4
 //	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
 
-/*
+
+//GREEBLES
+
+/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble
+	name = "random planet greeble chance"
+	loot = list(
+			/obj/effect/greeble_spawner/moon/crater1 = 5,
+			/obj/effect/greeble_spawner/moon/crater2 = 5,
+			/obj/effect/greeble_spawner/moon/crater3 = 5,
+			/obj/effect/greeble_spawner/moon/crater4 = 5,
+			/obj/effect/greeble_spawner/moon/crater5 = 5,
+			/obj/effect/greeble_spawner/moon/crater6 = 5,
+		)
+
 /obj/effect/greeble_spawner
 	name = "planet greeble spawner"
-	var/template_id = "shelter_alpha"
-	var/datum/map_template/shelter/template
+	icon = 'icons/effects/landmarks_static.dmi'
+	icon_state = "x"
+	var/datum/map_template/greeble/template
+
+/obj/effect/greeble_spawner/Destroy()
+	template = null // without this, capsules would be one use. per round.
+	. = ..()
+
+/obj/effect/greeble_spawner/Initialize()
+	. = ..()
+	template = new template()
+	if(!template)
+		WARNING("Greeble template not found!")
+		return INITIALIZE_HINT_QDEL
+
+	var/turf/deploy_location = get_turf(src)
+	var/status = template.check_deploy(deploy_location)
+
+	if(status != SHELTER_DEPLOY_ALLOWED)
+		return INITIALIZE_HINT_QDEL
+
+	INVOKE_ASYNC(src, /obj/effect/greeble_spawner/.proc/load_template)
+
+/obj/effect/greeble_spawner/proc/load_template()
+	var/turf/deploy_location = get_turf(src)
+	template.load(deploy_location, centered = TRUE)
+	qdel(src)
 
 /obj/effect/greeble_spawner/moon
 	name = "moon greeble spawner"
 
+/obj/effect/greeble_spawner/moon/crater1
+	template = /datum/map_template/greeble/moon/crater1
+
+/obj/effect/greeble_spawner/moon/crater2
+	template = /datum/map_template/greeble/moon/crater2
+
+/obj/effect/greeble_spawner/moon/crater3
+	template = /datum/map_template/greeble/moon/crater3
+
+/obj/effect/greeble_spawner/moon/crater4
+	template = /datum/map_template/greeble/moon/crater4
+
+/obj/effect/greeble_spawner/moon/crater5
+	template = /datum/map_template/greeble/moon/crater5
+
+/obj/effect/greeble_spawner/moon/crater6
+	template = /datum/map_template/greeble/moon/crater6
+
 /datum/map_template/greeble
-	var/greeble_id
 	var/description
 	var/blacklisted_turfs
 	var/whitelisted_turfs
 	var/banned_areas
 	var/banned_objects
 
-/datum/map_template/shelter/New()
+/datum/map_template/greeble/New()
 	. = ..()
-	banned_areas = typecacheof(/area/shuttle)
+	banned_areas = typecacheof(/area/shuttle, /area/ship, /area/overmap_encounter/planetoid/cave)
 	blacklisted_turfs = typecacheof(list(/turf/closed, /turf/open/indestructible))
 	whitelisted_turfs = typecacheof(/turf/closed/mineral)
 	banned_objects = typecacheof(/obj/structure/stone_tile)
 
-/datum/map_template/shelter/proc/check_deploy(turf/deploy_location)
+/datum/map_template/greeble/proc/check_deploy(turf/deploy_location)
 	var/affected = get_affected_turfs(deploy_location, centered=TRUE)
 	for(var/turf/T in affected)
 		var/area/A = get_area(T)
@@ -136,9 +203,27 @@
 
 /datum/map_template/greeble/moon/crater1
 	name = "Crater 1"
-	greeble_id = "crater1"
-	mappath = "_maps/templates/greebles/crater1.dmm"
-*/
+	mappath = "_maps/templates/greebles/moon_crater1.dmm"
+
+/datum/map_template/greeble/moon/crater2
+	name = "Crater 2"
+	mappath = "_maps/templates/greebles/moon_crater2.dmm"
+
+/datum/map_template/greeble/moon/crater3
+	name = "Crater 3"
+	mappath = "_maps/templates/greebles/moon_crater3.dmm"
+
+/datum/map_template/greeble/moon/crater4
+	name = "Crater 4"
+	mappath = "_maps/templates/greebles/moon_crater4.dmm"
+
+/datum/map_template/greeble/moon/crater5
+	name = "Crater 5"
+	mappath = "_maps/templates/greebles/moon_crater5.dmm"
+
+/datum/map_template/greeble/moon/crater6
+	name = "Crater 6"
+	mappath = "_maps/templates/greebles/moon_crater6.dmm"
 
 //TURFS
 
@@ -146,7 +231,7 @@
 	gender = PLURAL
 	name = "regolith"
 	desc = "Supposedly poisonous to humanoids."
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	icon = 'icons/turf/planetary/moon.dmi'
 	icon_state = "moonsand"
 	base_icon_state = "moonsand"
@@ -223,20 +308,21 @@
 	light_range = 2
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/lit
-	floor_variance = 15
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+
+/turf/open/floor/plating/asteroid/moon/lit/surface_craters
+	floor_variance = 10
 	max_icon_states = 0
 
-/turf/open/floor/plating/asteroid/moon/lit/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/moon/lit/surface_craters/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(icon_state == "[base_icon_state]0")
 		getDug(TRUE)
 
-
 /turf/open/floor/plating/asteroid/moon_coarse
 	name = "coarse regolith"
 	desc = "Harder moonrock, less dusty."
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	icon = 'icons/turf/planetary/moon.dmi'
 	icon_state = "moonsand_coarse"
 	base_icon_state = "moonsand_coarse"
@@ -251,17 +337,31 @@
 	initial_gas_mix = AIRLESS_ATMOS
 
 /turf/open/floor/plating/asteroid/moon_coarse/lit
-	light_range = 1
+	light_range = 2
 	light_power = 1
 	light_color = "#FFFFFF" // should look liminal, due to moons lighting
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/lit
-	floor_variance = 15
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+
+/turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters
+	floor_variance = 10
 	max_icon_states = 0
 
-/turf/open/floor/plating/asteroid/moon_coarse/lit/Initialize(mapload, inherited_virtual_z)
+/turf/open/floor/plating/asteroid/moon_coarse/lit/surface_craters/Initialize(mapload, inherited_virtual_z)
 	. = ..()
 	if(icon_state == "[base_icon_state]0")
 		getDug(TRUE)
+
+/turf/open/floor/plating/asteroid/moon_coarse/dark
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
+	icon_state = "moonsand_coarse_dark"
+	base_icon_state = "moonsand_coarse_dark"
+
+/turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+	light_range = 2
+	light_power = 1
+	light_color = "#FFFFFF" // should look liminal, due to moons lighting
+
 
 /turf/closed/mineral/random/moon
 	name = "moonrock"
@@ -273,8 +373,12 @@
 	initial_gas_mix = AIRLESS_ATMOS
 	smoothing_flags = SMOOTH_BITMASK | SMOOTH_BORDER
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS)
-	turf_type = /turf/open/floor/plating/asteroid/moon_coarse
-	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse
+	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark
 	mineralSpawnChanceList = list(/obj/item/stack/ore/uranium = 6, /obj/item/stack/ore/diamond = 1, /obj/item/stack/ore/gold = 20,
 		/obj/item/stack/ore/silver = 12, /obj/item/stack/ore/plasma = 5, /obj/item/stack/ore/iron = 40, /obj/item/stack/ore/titanium = 6,
 		/obj/item/stack/ore/bluespace_crystal = 1)
+
+/turf/closed/mineral/random/moon/lit
+	turf_type = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
+	baseturfs = /turf/open/floor/plating/asteroid/moon_coarse/dark/lit
