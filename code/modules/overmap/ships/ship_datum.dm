@@ -1,7 +1,7 @@
 /**
  * # Overmap ships
  *
- * Basically, any overmap object that is capable of moving by itself.
+ * Basically, any overmap object that is capable of moving by itself. //wouldnt it make more sense for this to be named /datum/overmap/movable
  *
  */
 /datum/overmap/ship
@@ -27,7 +27,7 @@
 	///ONLY USED FOR NON-SIMULATED SHIPS. The amount per burn that this ship accelerates
 	var/acceleration_speed = 0.02
 
-/datum/overmap/ship/Initialize(position, ...)
+/datum/overmap/ship/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	if(docked_to)
 		RegisterSignal(docked_to, COMSIG_OVERMAP_MOVED, .proc/on_docked_to_moved)
@@ -234,3 +234,6 @@
 		token.dir = direction
 	else
 		token.icon_state = "ship"
+
+/datum/overmap/ship/alter_token_appearance()
+	token.color = current_overmap.primary_structure_color

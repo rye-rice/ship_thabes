@@ -121,6 +121,7 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/smite,
 	/client/proc/fax_manager,
 	/client/proc/spawn_ruin,
+	/client/proc/spawn_overmap,
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
 GLOBAL_LIST_INIT(admin_verbs_spawn, list(

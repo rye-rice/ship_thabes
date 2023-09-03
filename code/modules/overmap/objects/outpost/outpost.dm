@@ -43,7 +43,7 @@
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 
-/datum/overmap/outpost/Initialize(position, ...)
+/datum/overmap/outpost/Initialize(position, system_spawned_in, ...)
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
@@ -54,6 +54,7 @@
 	sortTim(hangar_templates, /proc/cmp_hangarsize_asc)
 
 	SSovermap.outposts += src
+	current_overmap.outposts += src
 	mapzone = SSmapping.create_map_zone("[name]")
 
 	if(main_template)
@@ -74,6 +75,7 @@
 		shaft_datums -= h_shaft
 
 	SSovermap.outposts -= src
+	current_overmap.outposts -= src
 	. = ..()
 
 /datum/overmap/outpost/get_jump_to_turf()
@@ -369,6 +371,9 @@
 
 		shaft.shaft_elevator.add_floor_landmarks(anchor_mark, mach_marks)
 	return h_dock
+
+/datum/overmap/outpost/alter_token_appearance()
+	token.color = current_overmap.secondary_structure_color
 
 /*
 	Hangar shafts

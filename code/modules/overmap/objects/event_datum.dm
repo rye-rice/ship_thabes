@@ -16,11 +16,13 @@
 /datum/overmap/event/Initialize(position, ...)
 	. = ..()
 	SSovermap.events += src
+	current_overmap.events += src
 	token.desc = desc
 
 /datum/overmap/event/Destroy()
 	. = ..()
 	SSovermap.events -= src
+	current_overmap.events -= src
 
 /**
  * The main proc for calling other procs. Called by SSovermap.
@@ -56,7 +58,7 @@
 /datum/overmap/event/meteor/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "meteor[rand(1, 4)]"
-	token.color = "#a08444"
+	token.color = current_overmap.hazard_primary_color
 	token.light_color = "#a08444"
 	token.update_appearance()
 
@@ -104,8 +106,8 @@
 /datum/overmap/event/emp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "ion[rand(1, 4)]"
-	token.color = "#7cb4d4"
-	token.light_color = "#7cb4d4"
+	token.color = current_overmap.hazard_primary_color
+
 	token.update_appearance()
 
 /datum/overmap/event/emp/affect_ship(datum/overmap/ship/controlled/S)
@@ -144,8 +146,7 @@
 /datum/overmap/event/electric/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "electrical[rand(1, 4)]"
-	token.color = "#e8e85c"
-	token.light_color = "#e8e85c"
+	token.color = current_overmap.hazard_primary_color
 	token.update_appearance()
 
 /datum/overmap/event/electric/affect_ship(datum/overmap/ship/controlled/S)
@@ -181,8 +182,7 @@
 /datum/overmap/event/nebula/Initialize(position, ...)
 	. = ..()
 	token.opacity = TRUE
-	token.color = "#c053f3"
-	token.light_color = "#c053f3"
+	token.color = current_overmap.hazard_secondary_color
 	token.update_appearance()
 
 /datum/overmap/event/wormhole
@@ -204,15 +204,14 @@
 		other_wormhole = _other_wormhole
 	if(!other_wormhole)
 		other_wormhole = new(null, src) //Create a new wormhole at a random location
-	token.color = adjust_colors()
-	token.light_color = adjust_colors()
+//	token.color = adjust_colors()
 	token.update_appearance()
 
-/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S)
+/datum/overmap/event/wormhole/affect_ship(datum/overmap/ship/controlled/S) //could make this lead to other overmaps?
 	if(!other_wormhole)
 		qdel(src)
 	if(--stability <= 0)
-		var/list/results = SSovermap.get_unused_overmap_square()
+		var/list/results = current_overmap.get_unused_overmap_square()
 		S.overmap_move(results["x"], results["y"])
 		QDEL_NULL(other_wormhole)
 		for(var/MN in GLOB.player_list)
@@ -227,8 +226,7 @@
 	S.overmap_move(other_wormhole.x, other_wormhole.y)
 	S.overmap_step(S.get_heading())
 
-	token.color = adjust_colors()
-	token.light_color = adjust_colors()
+//	token.color = adjust_colors()
 
 /datum/overmap/event/wormhole/proc/adjust_colors()
 	switch(stability)
@@ -261,8 +259,7 @@
 /datum/overmap/event/meteor/carp/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "carp[rand(1, 4)]"
-	token.color = "#7b1ca8"
-	token.light_color = "#7b1ca8"
+	token.color = current_overmap.hazard_primary_color
 	token.update_icon()
 
 
@@ -305,8 +302,7 @@
 /datum/overmap/event/meteor/dust/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "dust[rand(1, 4)]"
-	token.color = "#506469" //we should make these defines
-	token.light_color = "#506469"
+	token.color = current_overmap.hazard_secondary_color
 	token.update_icon()
 
 /datum/overmap/event/anomaly
@@ -320,8 +316,7 @@
 /datum/overmap/event/anomaly/Initialize(position, ...)
 	. = ..()
 	token.icon_state = "anomaly[rand(1, 4)]"
-	token.color = "#c46a24"
-	token.light_color = "#c46a24"
+	token.color = current_overmap.hazard_secondary_color
 	token.update_icon()
 
 /datum/overmap/event/anomaly/affect_ship(datum/overmap/ship/controlled/S)

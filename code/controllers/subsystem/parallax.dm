@@ -27,22 +27,22 @@ SUBSYSTEM_DEF(parallax)
 	var/list/currentrun = src.currentrun
 
 	while(length(currentrun))
-		var/client/C = currentrun[currentrun.len]
+		var/client/current_client = currentrun[currentrun.len]
 		currentrun.len--
-		if (!C || !C.eye)
+		if (!current_client || !current_client.eye)
 			if (MC_TICK_CHECK)
 				return
 			continue
-		var/atom/movable/A = C.eye
-		if(!istype(A))
+		var/atom/movable/clients_camera = current_client.eye
+		if(!istype(clients_camera))
 			continue
-		for (A; isloc(A.loc) && !isturf(A.loc); A = A.loc);
+		for (clients_camera; isloc(clients_camera.loc) && !isturf(clients_camera.loc); clients_camera = clients_camera.loc);
 
-		if(A != C.movingmob)
-			if(C.movingmob)
-				LAZYREMOVE(C.movingmob.client_mobs_in_contents, C.mob)
-			LAZYADD(A.client_mobs_in_contents, C.mob)
-			C.movingmob = A
+		if(clients_camera != current_client.movingmob)
+			if(current_client.movingmob)
+				LAZYREMOVE(current_client.movingmob.client_mobs_in_contents, current_client.mob)
+			LAZYADD(clients_camera.client_mobs_in_contents, current_client.mob)
+			current_client.movingmob = clients_camera
 		if (MC_TICK_CHECK)
 			return
 	currentrun = null
