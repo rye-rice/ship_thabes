@@ -46,6 +46,10 @@
 
 /datum/hud/proc/apply_parallax_pref(mob/viewmob)
 	var/mob/screenmob = viewmob || mymob
+
+	if (SSlag_switch.measures[DISABLE_PARALLAX] && !HAS_TRAIT(viewmob, TRAIT_BYPASS_MEASURES))
+		return FALSE
+
 	var/client/current_client = screenmob.client
 	if(current_client.prefs)
 		var/pref = current_client.prefs.parallax
