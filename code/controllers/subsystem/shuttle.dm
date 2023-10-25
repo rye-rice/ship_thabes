@@ -465,7 +465,6 @@ SUBSYSTEM_DEF(shuttle)
 				)
 				var/ship_loc
 				var/datum/overmap/ship/controlled/new_ship
-				var/datum/overmap_star_system/selected_system //the star system we want to spawn in
 
 				switch(choice)
 					if(null)
@@ -474,11 +473,10 @@ SUBSYSTEM_DEF(shuttle)
 						ship_loc = null // null location causes overmap to just get a random square
 					if("Outpost")
 						if(length(SSovermap.outposts) > 1)
-							var/datum/overmap/outpost/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
+							var/temp_loc = input(user, "Select outpost to spawn at") as null|anything in SSovermap.outposts
 							if(!temp_loc)
 								message_admins("Invalid spawn location.")
 								return
-							selected_system = temp_loc.current_overmap
 							ship_loc = temp_loc
 						else
 							ship_loc = SSovermap.outposts[1]
@@ -486,16 +484,9 @@ SUBSYSTEM_DEF(shuttle)
 						var/loc_x = input(user, "X overmap coordinate:") as num
 						var/loc_y = input(user, "Y overmap coordinate:") as num
 						ship_loc = list("x" = loc_x, "y" = loc_y)
-				if(!selected_system)
-					if(length(SSovermap.tracked_star_systems) > 1)
-						selected_system = tgui_input_list(user, "Which star system do you want to spawn it in?", "Ship Location", SSovermap.tracked_star_systems)
-					else
-						selected_system = SSovermap.tracked_star_systems[1]
-					if(!selected_system)
-						return //if selected_system didnt get selected, we nope out, this is very bad
 
 				if(!new_ship)
-					new_ship = new(ship_loc, selected_system, S)
+					new_ship = new(ship_loc, S)
 				if(new_ship?.shuttle_port)
 					user.forceMove(new_ship.get_jump_to_turf())
 					message_admins("[key_name_admin(user)] loaded [new_ship] ([S]) with the shuttle manipulator.")

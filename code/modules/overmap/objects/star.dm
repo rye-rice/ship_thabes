@@ -3,7 +3,6 @@
 	var/token_desc = "A star."
 	var/spectral_type = STAR_G
 	var/color_vary = 0
-	var/custom_color = TRUE // do we randomly have a color?
 
 /datum/overmap/star/Initialize(position, ...)
 	var/name = gen_star_name()
@@ -16,10 +15,7 @@
 /datum/overmap/star/proc/gen_star_name()
 	return "[pick(GLOB.star_names)] [pick(GLOB.greek_letters)]"
 
-/datum/overmap/star/alter_token_appearance()
-	if(!custom_color)
-		token.add_atom_colour(current_overmap.hazard_primary_color, FIXED_COLOUR_PRIORITY)
-		return
+/datum/overmap/star/proc/alter_token_appearance()
 	token.add_atom_colour(get_rand_spectral_color(spectral_type, color_vary), FIXED_COLOUR_PRIORITY)
 
 /datum/overmap/star/proc/get_rand_spectral_color(base_spec, vary_amt = 0)
@@ -167,17 +163,11 @@
 	token.pixel_y = -32
 
 	star_1 = mutable_appearance(icon_state = "binary1")
-	if(custom_color)
-		star_1.color = get_rand_spectral_color(pick(spectral_types), color_vary)
-	else
-		star_1.color = current_overmap.hazard_primary_color
+	star_1.color = get_rand_spectral_color(pick(spectral_types), color_vary)
 	token.add_overlay(star_1)
 
 	star_2 = mutable_appearance(icon_state = "binary2")
-	if(custom_color)
-		star_2.color = get_rand_spectral_color(pick(spectral_types), color_vary)
-	else
-		star_2.color = current_overmap.hazard_secondary_color
+	star_2.color = get_rand_spectral_color(pick(spectral_types), color_vary)
 	token.add_overlay(star_2)
 
 /*
@@ -190,10 +180,7 @@
 
 /datum/overmap/star/singularity/alter_token_appearance()
 	var/mutable_appearance/AD = mutable_appearance(icon_state = "accretiondisk")
-	if(!custom_color)
-		AD.color = current_overmap.hazard_secondary_color
-	else
-		AD.color = "#f9c429"
+	AD.color = "#f9c429"
 	token.add_overlay(AD)
 	token.icon = 'icons/misc/overmap_larger.dmi'
 	token.bound_height = 96

@@ -29,7 +29,6 @@
 #endif
 
 /proc/auxtools_stack_trace(msg)
-	message_admins("[msg]. If you see this message spammed restart the server.")
 	CRASH(msg)
 
 /proc/enable_debugging(mode, port)

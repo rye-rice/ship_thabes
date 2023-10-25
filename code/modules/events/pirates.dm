@@ -61,9 +61,8 @@
 	var/list/candidates = pollGhostCandidates("Do you wish to be considered for pirate crew?", ROLE_TRAITOR)
 	shuffle_inplace(candidates)
 
-	var/datum/overmap_star_system/selected_system = SSovermap.get_random_star_system()
 	var/datum/map_template/shuttle/pirate/default/template = new
-	var/datum/overmap/ship/controlled/ship = new(selected_system.get_unused_overmap_square(), template) // same here, why the hell should i care
+	var/datum/overmap/ship/controlled/ship = new(SSovermap.get_unused_overmap_square(), template)
 
 	if(!ship)
 		CRASH("Loading pirate ship failed!")

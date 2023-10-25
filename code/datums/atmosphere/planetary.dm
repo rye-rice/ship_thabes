@@ -64,9 +64,10 @@
 		GAS_N2=5,
 	)
 	restricted_gases = list(
-		GAS_CO2=1,
+		GAS_H2O=1,
 	)
-	restricted_chance = 1 // i could not be assed to deal with this shit
+	restricted_chance = 0
+
 	minimum_pressure = ONE_ATMOSPHERE
 	maximum_pressure = ONE_ATMOSPHERE + 50
 
@@ -84,9 +85,9 @@
 		GAS_CO2=2,
 	)
 	restricted_gases = list(
-		GAS_CO2=1,
+		GAS_H2O=1,
 	)
-	restricted_chance = 1
+	restricted_chance = 0
 
 	minimum_pressure = ONE_ATMOSPHERE - 10
 	maximum_pressure = ONE_ATMOSPHERE + 20

@@ -105,8 +105,7 @@
 	else
 		template = new /datum/map_template/shuttle/hunter/bounty
 
-	var/datum/overmap_star_system/selected_system = SSovermap.get_random_star_system()
-	var/datum/overmap/ship/controlled/ship = new(selected_system.get_unused_overmap_square(), template) //this is fucking unused, why should i care
+	var/datum/overmap/ship/controlled/ship = new(SSovermap.get_unused_overmap_square(), template)
 
 	if(!ship)
 		CRASH("Loading [backstory] ship failed!")

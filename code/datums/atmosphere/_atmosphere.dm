@@ -40,15 +40,13 @@
 			amount = restricted_gases[gastype]
 			if(gasmix.get_moles(gastype))
 				continue
-		if(!gasmix)
-			return
+
 		amount *= rand(50, 200) / 100	// Randomly modifes the amount from half to double the base for some variety
 		amount *= pressure_scalar		// If we pick a really small target pressure we want roughly the same mix but less of it all
 		amount = CEILING(amount, 0.1)
 
 		gasmix.set_moles(gastype, gasmix.get_moles(gastype) + amount)
-	if(!gasmix)
-		return
+
 	// That last one put us over the limit, remove some of it
 	while(gasmix.return_pressure() > target_pressure)
 		gasmix.set_moles(gastype, gasmix.get_moles(gastype) - (gasmix.get_moles(gastype) * 0.1))

@@ -97,7 +97,7 @@
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = current_overmap.get_unused_overmap_square()
+	var/list/results = SSovermap.get_unused_overmap_square()
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -131,7 +131,7 @@
 
 	token.icon_state = planet.icon_state
 	token.desc = planet.desc
-//	token.color = planet.color
+	token.color = planet.color
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	mapgen = planet.mapgen
@@ -179,7 +179,7 @@
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
 	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
-	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
+	var/list/dynamic_encounter_values = SSovermap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
 	mapzone = dynamic_encounter_values[1]
