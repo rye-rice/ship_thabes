@@ -3,6 +3,7 @@
 	name = "desert sand"
 	desc = "It's coarse and gets everywhere."
 	baseturfs = /turf/open/floor/plating/asteroid/desert
+	icon = 'icons/turf/planetary/desert.dmi'
 	icon_state = "desert"
 	base_icon_state = "desert"
 	footstep = FOOTSTEP_SAND
