@@ -101,7 +101,7 @@
 
 /datum/biome/jungle/battlefield/dense
 	flora_spawn_chance = 80
-	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield = 1, /turf/open/floor/plating/dirt/jungle/dark/lit = 9)
+	open_turf_types = list(/turf/open/floor/plating/dirt/jungle/dark/lit/battlefield = 1)
 	flora_spawn_list = list(
 		/obj/structure/flora/tree/dead/tall = 10,
 		/obj/structure/flora/rock = 1,
