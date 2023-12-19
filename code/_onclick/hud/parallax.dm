@@ -57,7 +57,7 @@
 			pref = PARALLAX_HIGH
 		switch(current_client.prefs.parallax)
 			if (PARALLAX_INSANE)
-				current_client.parallax_throttle = FALSE
+				current_client.parallax_throttle = PARALLAX_DELAY_DEFAULT
 				current_client.parallax_layers_max = 5
 				return TRUE
 
@@ -133,7 +133,7 @@
 	current_client.parallax_movedir = new_parallax_movedir
 	if (current_client.parallax_animate_timer)
 		deltimer(current_client.parallax_animate_timer)
-	var/datum/callback/CB = CALLBACK(src, .proc/update_parallax_motionblur, current_client, animatedir, new_parallax_movedir, newtransform)
+	var/datum/callback/CB = CALLBACK(src, PROC_REF(update_parallax_motionblur), current_client, animatedir, new_parallax_movedir, newtransform)
 	if(skip_windups)
 		CB.Invoke()
 	else
@@ -297,13 +297,6 @@
 	blend_mode = BLEND_OVERLAY
 	speed = 3
 	layer = 3
-
-/atom/movable/screen/parallax_layer/random/space_gas
-	icon_state = "space_gas"
-
-/atom/movable/screen/parallax_layer/random/space_gas/Initialize(mapload, view)
-	. = ..()
-	src.add_atom_colour(SSparallax.random_parallax_color, ADMIN_COLOUR_PRIORITY)
 
 /atom/movable/screen/parallax_layer/random/asteroids
 	icon_state = "asteroids"
