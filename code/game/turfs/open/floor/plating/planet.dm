@@ -2,7 +2,7 @@
 	gender = PLURAL
 	name = "dirt"
 	desc = "Upon closer examination, it's still dirt."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "dirt"
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
@@ -47,7 +47,7 @@
 /turf/open/floor/plating/dirt/jungle/wasteland //Like a more fun version of living in Arizona.
 	name = "cracked earth"
 	desc = "Looks a bit dry."
-	icon = 'icons/turf/floors.dmi'
+	icon = 'icons/turf/planetary/jungle.dmi'
 	icon_state = "wasteland"
 	slowdown = 1
 	baseturfs = /turf/open/floor/plating/dirt/jungle/wasteland

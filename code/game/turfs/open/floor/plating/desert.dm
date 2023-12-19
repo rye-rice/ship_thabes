@@ -85,6 +85,7 @@
 	gender = PLURAL
 	name = "dry seafloor"
 	desc = "Should have stayed hydrated."
+	icon = 'icons/turf/planetary/desert.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/dry_seafloor
 	icon_state = "drydesert"
 	base_icon_state = "drydesert"

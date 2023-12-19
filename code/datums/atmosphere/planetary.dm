@@ -66,7 +66,7 @@
 	restricted_gases = list(
 		GAS_H2O=1,
 	)
-	restricted_chance = 0
+	restricted_chance = 1
 
 	minimum_pressure = ONE_ATMOSPHERE
 	maximum_pressure = ONE_ATMOSPHERE + 50

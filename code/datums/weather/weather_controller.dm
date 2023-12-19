@@ -107,6 +107,13 @@
 		/datum/weather/nuclear_fallout/normal = 10,
 	)
 
+/datum/weather_controller/toxic
+	possible_weathers = list(
+		/datum/weather/rain/toxic = 60,
+		/datum/weather/rain/toxic/heavy = 40,
+		/datum/weather/rain/toxic/heavy/blocking = 20,
+	)
+
 /datum/weather_controller/shrouded
 	possible_weathers = list(/datum/weather/shroud_storm = 100)
 

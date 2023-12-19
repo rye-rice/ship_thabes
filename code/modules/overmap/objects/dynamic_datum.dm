@@ -274,6 +274,15 @@
 /area/overmap_encounter/planetoid/jungle/explored
 	area_flags = VALID_TERRITORY
 
+/area/overmap_encounter/planetoid/battlefield
+	name = "\improper Battlefield Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_CITY
+	ambientsounds = SPOOKY
+
+/area/overmap_encounter/planetoid/battlefield/explored
+	area_flags = VALID_TERRITORY
+
+
 /area/overmap_encounter/planetoid/rockplanet
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY

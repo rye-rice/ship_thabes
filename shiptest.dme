@@ -665,6 +665,7 @@
 #include "code\datums\mapgen\Whitesandsatmos.dm"
 #include "code\datums\mapgen\planetary\_PlanetGenerator.dm"
 #include "code\datums\mapgen\planetary\AsteroidGenerator.dm"
+#include "code\datums\mapgen\planetary\battlefield_generator.dm"
 #include "code\datums\mapgen\planetary\BeachGenerator.dm"
 #include "code\datums\mapgen\planetary\desertGenerator.dm"
 #include "code\datums\mapgen\planetary\JungleGenerator.dm"
@@ -1455,6 +1456,7 @@
 #include "code\game\turfs\open\floor\plating.dm"
 #include "code\game\turfs\open\floor\reinf_floor.dm"
 #include "code\game\turfs\open\floor\plating\asteroid.dm"
+#include "code\game\turfs\open\floor\plating\battlefield.dm"
 #include "code\game\turfs\open\floor\plating\beach.dm"
 #include "code\game\turfs\open\floor\plating\desert.dm"
 #include "code\game\turfs\open\floor\plating\icemoon.dm"
@@ -3464,4 +3466,5 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular_thabes\podpeopleshit\podpersoon_hair_SA.dm"
 // END_INCLUDE
