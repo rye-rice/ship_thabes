@@ -8,6 +8,8 @@
 #define RUINTYPE_WASTE "Waste"
 #define RUINTYPE_YELLOW "Yellow"
 
+#define RUINTYPE_NA "Nothing" //to get around an issue where ruinless planets weather break
+
 /// do not actually use this for your ruin type, this is for the ruintype_to_list proc
 #define RUINTYPE_EVERYTHING "Everything"
 

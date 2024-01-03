@@ -88,7 +88,7 @@
 
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble,
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble
 	)
 
 /datum/biome/rocky
@@ -96,7 +96,7 @@
 
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble,
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble
 	)
 
 /datum/biome/cave/moon

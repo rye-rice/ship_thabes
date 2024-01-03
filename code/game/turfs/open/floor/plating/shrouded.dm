@@ -1,6 +1,7 @@
 /turf/open/floor/plating/asteroid/shrouded
 	name = "packed sand"
 	desc = "Sand that has been packed into solid earth."
+	icon = 'icons/turf/planetary/shrouded.dmi'
 	icon_state = "shrouded0"
 	base_icon_state = "shrouded"
 	floor_variance = 20
