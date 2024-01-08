@@ -1,0 +1,23 @@
+{
+	"$schema": "https://raw.githubusercontent.com/shiptest-ss13/Shiptest/master/_maps/ship_config_schema.json",
+	"map_name": "Seed Vault",
+	"prefix": "ISV",
+	"namelists": ["CRUISE", "NATURAL"],
+	"map_short_name": "Seed Vault",
+	"map_path": "_maps/shuttles/shiptest/seed_vault.dmm",
+	"description": "Should not be seen.",
+	"tags": [
+		"RP Focus",
+		"Riot",
+		"Service"
+	],
+	"starting_funds": 4000,
+	"limit": 2,
+	"roundstart": true,
+	"job_slots": {
+		"Lifebringer": {
+			"outfit": "/datum/outfit/naked",
+			"slots": 4
+		}
+	}
+}

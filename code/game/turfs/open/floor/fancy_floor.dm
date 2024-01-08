@@ -154,9 +154,9 @@
 	initial_gas_mix = FROZEN_ATMOS
 	slowdown = 2
 	bullet_sizzle = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/grass/snow/spawniconchange()
@@ -196,9 +196,9 @@
 	ore_type = /obj/item/stack/ore/glass/basalt
 	turfverb = "dig up"
 	slowdown = 0
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/grass/fakebasalt/spawniconchange()

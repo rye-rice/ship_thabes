@@ -22,6 +22,9 @@ SUBSYSTEM_DEF(mapping)
 
 	var/list/shuttle_templates = list()
 	var/list/shelter_templates = list()
+
+	var/list/greeble_templates = list() //TB EDIT MARKER
+
 	var/list/holodeck_templates = list()
 	// List mapping TYPES of outpost map templates to instances of their singletons.
 	var/list/outpost_templates = list()
@@ -91,12 +94,18 @@ SUBSYSTEM_DEF(mapping)
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+
+	greeble_templates = SSmapping.greeble_templates
+
 	holodeck_templates = SSmapping.holodeck_templates
 
 	outpost_templates = SSmapping.outpost_templates
 
 	shuttle_templates = SSmapping.shuttle_templates
 	shelter_templates = SSmapping.shelter_templates
+
+	greeble_templates = SSmapping.greeble_templates
+
 	holodeck_templates = SSmapping.holodeck_templates
 
 	areas_in_z = SSmapping.areas_in_z
