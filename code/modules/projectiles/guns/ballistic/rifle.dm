@@ -58,15 +58,15 @@
 ///////////////////////
 
 /obj/item/gun/ballistic/rifle/boltaction
-	name = "\improper Illestren Hunting Rifle"
-	desc = "One of Hunter's Pride most successful firearms. The bolt-action is popular among colonists, pirates, snipers, and countless more. Chambered in 7.62x54."
-	sawn_desc = "An extremely sawn-off Illestren, generally known as an \"obrez\". There was probably a reason it wasn't made this short to begin with."
+	name = "\improper HP Illestren"
+	desc = "A sturdy and conventional bolt-action rifle. One of Hunter's Pride's most successful firearms, the Illestren is popular among colonists, pirates, snipers, and countless others. Chambered in 8x50mmR."
+	sawn_desc = "An Illestren rifle sawn down to a ridiculously small size. There was probably a reason it wasn't made this short to begin with, but it still packs a punch."
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/back.dmi'
-	icon_state = "hunting"
-	item_state = "hunting"
+	icon_state = "illestren"
+	item_state = "illestren"
 	slot_flags = ITEM_SLOT_BACK
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction
 	can_bayonet = TRUE
@@ -79,6 +79,7 @@
 	. = ..()
 	if(.)
 		spread = 36
+		spread_unwielded = 108
 		can_bayonet = FALSE
 		item_state = "hunting_sawn"
 
@@ -109,13 +110,21 @@
 	wield_slowdown = 1
 	wield_delay = 1.3 SECONDS
 
-/obj/item/gun/ballistic/rifle/boltaction/roumain
-	name = "standard-issue 'Smile' rifle"
-	desc = "A bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia. Chambered in .300 Magnum."
+/obj/item/gun/ballistic/rifle/boltaction/scout
+	name = "HP Scout"
+	desc = "A powerful bolt-action rifle usually given to mercenary hunters of the Saint-Roumain Militia, equally suited for taking down big game or two-legged game. Chambered in .300 Magnum."
 	mag_type = /obj/item/ammo_box/magazine/internal/boltaction/smile
-	icon_state = "roma"
-	item_state = "roma"
+	fire_sound = 'sound/weapons/gun/rifle/scout.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/scout_bolt_out.ogg'
+	bolt_drop_sound = 'sound/weapons/gun/rifle/scout_bolt_in.ogg'
+	icon_state = "scout"
+	item_state = "scout"
 	can_be_sawn_off = FALSE
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5
 
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
