@@ -317,8 +317,7 @@
 	callTime = 250;
 	name = "Glaive-class";
 	port_direction = 4;
-	dir = 8;
-	dheight = 4
+	dir = 8
 	},
 /turf/closed/wall/r_wall,
 /area/ship/engineering)
@@ -361,7 +360,7 @@
 	},
 /obj/item/kitchen/knife/combat,
 /obj/item/gun/ballistic/revolver/montagne,
-/obj/item/ammo_box/n762,
+/obj/item/ammo_box/c38,
 /obj/structure/closet/secure_closet/montagnes,
 /obj/item/disk/holodisk/roumain,
 /obj/item/clothing/shoes/cowboy/black,

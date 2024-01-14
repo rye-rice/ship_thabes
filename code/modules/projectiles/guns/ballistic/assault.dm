@@ -239,9 +239,10 @@
 		return ..()
 
 /obj/item/gun/ballistic/automatic/assault/e40/attackby(obj/item/attack_obj, mob/user, params)
-	if(istype(attack_obj, /obj/item/stock_parts/cell/gun) || istype(attack_obj, /obj/item/screwdriver))
-		secondary.attack_self()
+	if(istype(attack_obj, /obj/item/stock_parts/cell/gun))
 		secondary.attackby(attack_obj, user, params)
+	if(istype(attack_obj, /obj/item/screwdriver))
+		secondary.screwdriver_act(user, attack_obj,)
 	else
 		..()
 
@@ -287,6 +288,12 @@
 	update_icon()
 	return
 
+
+
+/obj/item/gun/ballistic/automatic/assault/e40/toggle_safety(mob/user, silent=FALSE)
+	. = ..()
+	secondary.toggle_safety(user, silent=TRUE)
+
 //laser
 
 /obj/item/gun/energy/laser/e40_laser_secondary
@@ -299,26 +306,23 @@
 
 //techinically a battle rifle, i'm putting it here for organisation sake
 
-/obj/item/gun/ballistic/automatic/vickland
+/obj/item/gun/ballistic/automatic/vickland //weapon designed by Apogee-dev
 	name = "\improper Vickland"
-	desc = "The pride of the Saint-Roumain Militia, the Vickland is a semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. Its higher cost makes it uncommon even in SRM service. Chambered in .308."
+	desc = "The pride of the Saint-Roumain Militia, the Vickland is a rare semi-automatic battle rifle produced by Hunter's Pride exclusively for SRM use. It is unusual in its class for its internal rotary magazine, which must be reloaded using stripper clips. Chambered in .308."
 	icon = 'icons/obj/guns/48x32guns.dmi'
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
-	icon_state = "vickland" //weapon designer: @Apogee-dev
+	icon_state = "vickland"
 	item_state = "vickland"
-	empty_autoeject = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
-	mag_type = /obj/item/ammo_box/magazine/vickland_a308
+	internal_magazine = TRUE
+	mag_type = /obj/item/ammo_box/magazine/internal/vickland
 	fire_sound = 'sound/weapons/gun/rifle/vickland.ogg'
 	burst_size = 0
 	actions_types = list()
 	manufacturer = MANUFACTURER_HUNTERSPRIDE
 
 	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
-	eject_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
-	eject_empty_sound = 'sound/weapons/gun/rifle/vickland_unload.ogg'
-	eject_sound_vary = FALSE
 
 	spread_unwielded = 25
 	recoil = 0
