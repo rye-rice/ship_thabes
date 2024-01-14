@@ -381,6 +381,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/zlevel_transfer_timer = TIMER_ID_NULL
 	var/zlevel_transfer_timeout = 5 SECONDS
 
+	force = 0
+	throwforce = 0
+
 /obj/item/phone/Initialize(mapload)
 	. = ..()
 	if(istype(loc, /obj/structure/transmitter))
