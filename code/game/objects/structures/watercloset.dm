@@ -509,7 +509,7 @@
 	alpha = 255
 	opaque_closed = TRUE
 
-/obj/structure/curtain/cloth/
+/obj/structure/curtain/cloth
 	color = null
 	alpha = 255
 	opaque_closed = TRUE
@@ -522,3 +522,7 @@
 /obj/structure/curtain/cloth/fancy
 	icon_type = "cur_fancy"
 	icon_state = "cur_fancy-open"
+
+/obj/structure/curtain/patient
+	icon_type = "patient"
+	icon_state = "patient-open"
