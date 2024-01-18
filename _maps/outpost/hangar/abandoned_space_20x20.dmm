@@ -1,35 +1,21 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ac" = (
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
-"ad" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "al" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+/obj/effect/turf_decal/techfloor/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "am" = (
 /turf/closed/indestructible/reinforced,
 /area/hangar)
 "ao" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "ap" = (
 /obj/structure/marker_beacon{
@@ -40,20 +26,16 @@
 	},
 /area/hangar)
 "aq" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+/obj/machinery/light/floor/hangar,
+/obj/effect/turf_decal/techfloor{
 	dir = 1
 	},
-/obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "av" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "ax" = (
 /obj/machinery/door/airlock,
@@ -69,18 +51,14 @@
 /obj/effect/turf_decal/arrows{
 	dir = 4
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aA" = (
 /obj/machinery/elevator_call_button{
 	pixel_y = 25
 	},
 /obj/effect/landmark/outpost/elevator_machine,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aB" = (
 /obj/effect/landmark/outpost/hangar_dock,
@@ -88,19 +66,9 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
-"aC" = (
-/obj/effect/turf_decal/arrows{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
-/area/hangar)
 "aE" = (
 /obj/machinery/light/floor/hangar,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aH" = (
 /turf/template_noop,
@@ -111,67 +79,53 @@
 	},
 /area/hangar)
 "aL" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/warning{
-	dir = 8
-	},
-/turf/open/floor/plasteel/tech{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/industrial/warning/fulltile,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "aM" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/obj/effect/turf_decal/techfloor,
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aN" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/warning{
+/obj/effect/turf_decal/techfloor{
 	dir = 8
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aO" = (
 /obj/machinery/atmospherics/components/unary/passive_vent{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aP" = (
-/obj/effect/turf_decal/trimline/opaque/yellow/filled/corner{
+/obj/effect/turf_decal/techfloor/corner{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aT" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1
 	},
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aY" = (
 /obj/effect/landmark/outpost/hangar_numbers,
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "aZ" = (
-/turf/open/floor/plasteel{
-	planetary_atmos = 1
-	},
+/turf/open/floor/plasteel/dark,
 /area/hangar)
 "jk" = (
 /obj/effect/landmark/outpost/elevator,
 /turf/open/floor/plasteel/elevatorshaft{
 	planetary_atmos = 1
 	},
+/area/hangar)
+"qg" = (
+/obj/effect/landmark/outpost/hangar_numbers,
+/turf/open/floor/plasteel/tech,
 /area/hangar)
 "qz" = (
 /turf/open/floor/plasteel/elevatorshaft{
@@ -225,24 +179,24 @@ aZ
 aZ
 aM
 aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
-aL
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
+ac
+qg
 aL
 ao
 aZ
@@ -257,26 +211,26 @@ am
 aZ
 aZ
 aM
-ac
-ac
-aC
-ac
-ac
-ac
-ac
-aC
+aL
 ac
 ac
 ac
 ac
-aC
 ac
 ac
 ac
 ac
-aC
 ac
 ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+ac
+aL
 ao
 aZ
 aZ
@@ -290,26 +244,26 @@ am
 aZ
 aZ
 aM
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
-ad
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
+aL
 ao
 aZ
 aZ

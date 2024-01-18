@@ -163,6 +163,38 @@
 	token_icon_state = "event"
 	main_template = /datum/map_template/outpost/indie_abandoned
 	elevator_template = /datum/map_template/outpost/elevator_indie
+	hangar_templates = list(
+		/datum/map_template/outpost/hangar/abandoned_space_20x20,
+		/datum/map_template/outpost/hangar/abandoned_space_40x20,
+		/datum/map_template/outpost/hangar/abandoned_space_40x40,
+		/datum/map_template/outpost/hangar/abandoned_space_56x20,
+		/datum/map_template/outpost/hangar/abandoned_space_56x40
+	)
 
 /datum/map_template/outpost/indie_abandoned
 	name = "indie_abandoned"
+
+/datum/map_template/outpost/hangar/abandoned_space_20x20
+	name = "hangar/abandoned_space_20x20"
+	dock_width = 20
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/abandoned_space_40x20
+	name = "hangar/abandoned_space_40x20"
+	dock_width = 40
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/abandoned_space_40x40
+	name = "hangar/abandoned_space_40x40"
+	dock_width = 40
+	dock_height = 40
+
+/datum/map_template/outpost/hangar/abandoned_space_56x20
+	name = "hangar/abandoned_space_56x20"
+	dock_width = 56
+	dock_height = 20
+
+/datum/map_template/outpost/hangar/abandoned_space_56x40
+	name = "hangar/abandoned_space_56x40"
+	dock_width = 56
+	dock_height = 40
