@@ -82,13 +82,13 @@
 //biomes
 
 /datum/biome/lunar_surface
-	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/lit/surface_craters)
+	open_turf_types = list(/turf/open/floor/plating/asteroid/moon/lit/surface_craters = 1)
 	flora_spawn_chance = 3
 	mob_spawn_chance = 0
 
 	feature_spawn_chance = 1
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble = 1
 	)
 
 /datum/biome/rocky
@@ -96,7 +96,7 @@
 
 	feature_spawn_chance = 0.5
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble
+		/obj/effect/spawner/lootdrop/greeble/random_ruin_greeble = 1
 	)
 
 /datum/biome/cave/moon
