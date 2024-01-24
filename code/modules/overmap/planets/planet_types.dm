@@ -172,6 +172,7 @@
 	mapgen = /datum/map_generator/planet_generator/waterplanet
 	default_baseturf = /turf/open/water/beach/deep
 	weather_controller_type = /datum/weather_controller/waterplanet
+	weight = 5
 
 /datum/planet_type/desert
 	name = "desert planet"
@@ -184,6 +185,7 @@
 	mapgen = /datum/map_generator/planet_generator/desert
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
+	weight = 5
 
 /datum/planet_type/shrouded
 	name = "shrouded planet"
@@ -196,6 +198,7 @@
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
+	weight = 5
 
 /datum/planet_type/moon
 	name = "planetoid moon"
@@ -208,6 +211,7 @@
 	mapgen = /datum/map_generator/planet_generator/moon
 	default_baseturf = /turf/open/floor/plating/asteroid/moon/lit
 	weather_controller_type = null
+	weight = 5
 
 /datum/planet_type/battlefield
 	name = "battlefield planet"
@@ -220,4 +224,5 @@
 	mapgen = /datum/map_generator/planet_generator/battlefield
 	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
 	weather_controller_type = /datum/weather_controller/toxic
+	weight = 1
 
