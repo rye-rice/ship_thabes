@@ -729,6 +729,7 @@
 #include "code\datums\ruins\lavaland.dm"
 #include "code\datums\ruins\reebe.dm"
 #include "code\datums\ruins\rockplanet.dm"
+#include "code\datums\ruins\shrouded.dm"
 #include "code\datums\ruins\space.dm"
 #include "code\datums\ruins\wasteplanet.dm"
 #include "code\datums\ruins\whitesands.dm"

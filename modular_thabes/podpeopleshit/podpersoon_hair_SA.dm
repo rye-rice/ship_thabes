@@ -273,7 +273,7 @@
 	default_raw_text = "<b>*Using the holopad is quite easy!*</b><br><br>Simply pick up the disk and insert it into the device, and hit 'PLAY', easy!"
 
 /datum/preset_holoimage/lifebringer
-	outfit_type = /datum/outfit/job/rd/rig
+	outfit_type = /datum/outfit/job/rd
 
 /obj/item/disk/holodisk/podperson
 	name = "Introduction to your vault"

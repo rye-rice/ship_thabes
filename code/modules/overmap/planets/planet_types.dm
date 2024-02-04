@@ -192,7 +192,7 @@
 	icon_state = "shrouded"
 	color = "#783ca4"
 
-	ruin_type = null // minor planets have no ruins
+	ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
 	default_baseturf = /turf/open/floor/plating/asteroid/shrouded
 	weather_controller_type = /datum/weather_controller/shrouded
