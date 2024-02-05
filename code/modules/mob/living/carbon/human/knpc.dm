@@ -829,7 +829,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	var/spare_ammo_count = rand(1,4)
 
 	if (survivor_type == "hunter")
-		INVOKE_ASYNC(src, PROC_REF(put_in_hands), new /obj/item/gun/ballistic/rifle/boltaction/polymer(src))
+		INVOKE_ASYNC(src, PROC_REF(put_in_hands), new /obj/item/gun/ballistic/rifle/polymer(src))
 		spare_ammo_count = rand(2,7)
 		for(var/i in 1 to spare_ammo_count)
 			new /obj/item/ammo_box/magazine/internal/boltaction/polymer(back)
@@ -838,6 +838,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 		INVOKE_ASYNC(src, PROC_REF(put_in_hands), new /obj/item/gun/ballistic/automatic/smg/aks74u(src))
 		for(var/i in 1 to spare_ammo_count)
 			new /obj/item/ammo_box/magazine/aks74u(back)
+
+	for(var/obj/item/gun/searching as anything in contents)
+		searching.safety = FALSE
 
 /datum/component/knpc/Initialize()
 	if(!iscarbon(parent))
@@ -1151,6 +1154,7 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 		return 0
 	var/obj/item/gun/G_New = locate(/obj/item/gun) in oview(HA.view_range, H)
 	if(G_New && gun_suitable(H, G_New))
+		G_New.safety = FALSE
 		return AI_SCORE_CRITICAL //There is a gun really obviously in the open....
 	return score
 
