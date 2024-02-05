@@ -167,8 +167,9 @@
 	planet = DYNAMIC_WORLD_WATERPLANET
 	icon_state = "water"
 	color = LIGHT_COLOR_DARK_BLUE
+	weight = 5
 
-	ruin_type = null // minor planets have no ruins
+	ruin_type = RUINTYPE_WATER // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/waterplanet
 	default_baseturf = /turf/open/water/beach/deep
 	weather_controller_type = /datum/weather_controller/waterplanet
@@ -191,6 +192,7 @@
 	planet = DYNAMIC_WORLD_SHROUDED
 	icon_state = "shrouded"
 	color = "#783ca4"
+	weight = 5
 
 	ruin_type = RUINTYPE_SHROUDED
 	mapgen = /datum/map_generator/planet_generator/shrouded
@@ -215,8 +217,9 @@
 	planet = DYNAMIC_WORLD_BATTLEFIELD
 	icon_state = "battlefield"
 	color = "#b32048"
+	weight = 5
 
-	ruin_type = null // minor 'planets' have no ruins
+	ruin_type = RUINTYPE_BATTLEFIELD // minor 'planets' have no ruins
 	mapgen = /datum/map_generator/planet_generator/battlefield
 	default_baseturf = /turf/open/floor/plating/dirt/jungle/dark/lit/battlefield
 	weather_controller_type = /datum/weather_controller/toxic

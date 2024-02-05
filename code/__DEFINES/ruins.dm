@@ -8,6 +8,8 @@
 #define RUINTYPE_WASTE "Waste"
 #define RUINTYPE_YELLOW "Yellow"
 #define RUINTYPE_SHROUDED "Shrouded"
+#define RUINTYPE_WATER "Water"
+#define RUINTYPE_BATTLEFIELD "Battlefield"
 
 #define RUINTYPE_NA "Nothing" //to get around an issue where ruinless planets weather break
 
