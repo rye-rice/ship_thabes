@@ -196,23 +196,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"fn" = (
-/obj/machinery/airalarm/directional/south,
-/obj/machinery/firealarm/directional/west,
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/lethalshot,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/item/storage/box/beanbag,
-/obj/effect/turf_decal/box/red,
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "fp" = (
 /turf/closed/wall/r_wall,
 /area/ship/maintenance/port)
@@ -940,21 +923,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"vG" = (
-/obj/machinery/light/directional/north,
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/item/gun/ballistic/shotgun/hellfire,
-/obj/item/gun/ballistic/shotgun/hellfire,
-/obj/item/gun/ballistic/shotgun/hellfire,
-/obj/item/gun/ballistic/shotgun/hellfire,
-/turf/open/floor/plasteel/dark,
-/area/ship/security/armory)
 "vT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/east,
@@ -992,6 +960,23 @@
 	},
 /turf/open/floor/carpet/nanoweave/beige,
 /area/ship/hallway/aft)
+"xW" = (
+/obj/machinery/airalarm/directional/south,
+/obj/machinery/firealarm/directional/west,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/ammo_box/a12g,
+/obj/item/ammo_box/a12g,
+/obj/item/ammo_box/a12g,
+/obj/item/ammo_box/a12g,
+/obj/item/ammo_box/a12g,
+/obj/item/ammo_box/a12g/beanbag,
+/obj/item/ammo_box/a12g/beanbag,
+/obj/item/ammo_box/a12g/beanbag,
+/obj/item/ammo_box/a12g/beanbag,
+/obj/item/ammo_box/a12g/beanbag,
+/obj/effect/turf_decal/box/red,
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "yi" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
 /obj/machinery/power/apc/auto_name/directional/west,
@@ -1018,6 +1003,21 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"zM" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/shotgun/hellfire,
+/obj/item/gun/ballistic/shotgun/hellfire,
+/obj/item/gun/ballistic/shotgun/hellfire,
+/obj/item/gun/ballistic/shotgun/hellfire,
+/turf/open/floor/plasteel/dark,
+/area/ship/security/armory)
 "zR" = (
 /obj/item/gun/ballistic/automatic/smg/vector{
 	spawnwithmagazine = 0
@@ -2399,7 +2399,7 @@ Vu
 Sa
 DU
 lj
-fn
+xW
 YM
 gL
 JA
@@ -2545,7 +2545,7 @@ Ev
 lY
 Ev
 Ev
-vG
+zM
 jx
 mQ
 lF

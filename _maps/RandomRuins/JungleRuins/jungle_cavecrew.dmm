@@ -1370,20 +1370,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
-"qz" = (
-/obj/structure/guncase,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/obj/item/gun/ballistic/shotgun/automatic/combat{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/revolver/ashhand{
-	pixel_y = -1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/security)
 "qO" = (
 /turf/closed/wall/rust,
 /area/ruin/jungle/cavecrew/cargo)
@@ -1745,29 +1731,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"vo" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "Ammo Locker";
-	req_access_txt = "1"
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/ammo_casing/a4570,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/security)
 "vr" = (
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/patterned,
@@ -2069,6 +2032,29 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew/cargo)
+"yR" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "Ammo Locker";
+	req_access_txt = "1"
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/a4570,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/security)
 "yV" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/cavecrew/cargo)
@@ -3114,13 +3100,6 @@
 "Ln" = (
 /turf/open/floor/plating/dirt/old/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
-"Lo" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/machinery/fax/frontiersmen,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/bridge)
 "Ls" = (
 /obj/structure/railing{
 	dir = 8;
@@ -3247,6 +3226,20 @@
 /obj/structure/spacevine,
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"Nh" = (
+/obj/structure/guncase,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/item/gun/ballistic/shotgun/automatic/combat{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/revolver/ashhand{
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/security)
 "Nj" = (
 /obj/structure/flora/ausbushes/sunnybush{
 	pixel_x = 12;
@@ -4104,6 +4097,13 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
+"WZ" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/machinery/fax/ruin,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/bridge)
 "Xb" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
@@ -4958,10 +4958,10 @@ Pz
 lu
 jm
 wN
-qz
+Nh
 LD
 DP
-vo
+yR
 wN
 Ri
 Ri
@@ -5398,7 +5398,7 @@ Tt
 wt
 lm
 Sj
-Lo
+WZ
 iq
 gd
 lm

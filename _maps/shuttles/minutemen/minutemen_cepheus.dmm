@@ -411,31 +411,6 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
-"eW" = (
-/obj/item/clothing/under/rank/command/minutemen,
-/obj/item/clothing/suit/toggle/lawyer/minutemen,
-/obj/item/clothing/head/caphat/minutemen,
-/obj/item/clothing/head/cowboy/sec/minutemen,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/radio/headset/minutemen/alt/captain,
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "captain's locker";
-	pixel_y = -28;
-	req_access_txt = "20"
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/shoes/cowboy/white,
-/obj/item/storage/belt/sabre,
-/obj/item/gun/ballistic/revolver/shadow,
-/obj/item/ammo_box/c45_speedloader,
-/obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
 "ff" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/science/robotics)
@@ -546,6 +521,29 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
+"fT" = (
+/obj/structure/guncase,
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = 32
+	},
+/obj/item/gun/ballistic/shotgun/hellfire,
+/turf/open/floor/plasteel/tech,
+/area/ship/security)
 "fX" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -950,6 +948,31 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
+"lq" = (
+/obj/item/clothing/under/rank/command/minutemen,
+/obj/item/clothing/suit/toggle/lawyer/minutemen,
+/obj/item/clothing/head/caphat/minutemen,
+/obj/item/clothing/head/cowboy/sec/minutemen,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/radio/headset/minutemen/alt/captain,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "captain's locker";
+	pixel_y = -28;
+	req_access_txt = "20"
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/clothing/shoes/cowboy/white,
+/obj/item/storage/belt/sabre,
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
 "lu" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -1905,29 +1928,6 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
-"tV" = (
-/obj/structure/guncase,
-/obj/structure/railing{
-	dir = 4;
-	layer = 4.1
-	},
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/structure/sign/poster/contraband/twelve_gauge{
-	pixel_y = 32
-	},
-/obj/item/gun/ballistic/shotgun/hellfire,
-/turf/open/floor/plasteel/tech,
-/area/ship/security)
 "tX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2227,6 +2227,33 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
+"wY" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "Ammo locker";
+	pixel_x = 28
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/a12g/rubbershot,
+/obj/item/ammo_box/magazine/cm15_mag,
+/obj/item/ammo_box/a12g/rubbershot,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "xd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals4,
@@ -4086,39 +4113,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
-"RM" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "Ammo locker";
-	pixel_x = 28
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/storage/box/rubbershot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/obj/item/ammo_box/magazine/cm15_mag,
-/obj/item/storage/box/rubbershot{
-	pixel_x = 3;
-	pixel_y = -3
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security)
 "RN" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -5363,7 +5357,7 @@ Iq
 By
 IK
 TJ
-eW
+lq
 By
 Mj
 Vl
@@ -5466,7 +5460,7 @@ zQ
 zQ
 zQ
 TU
-tV
+fT
 eu
 mn
 Um
@@ -5542,7 +5536,7 @@ zQ
 zQ
 TU
 OG
-RM
+wY
 Uj
 TU
 XA
