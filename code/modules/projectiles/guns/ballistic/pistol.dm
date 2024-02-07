@@ -349,7 +349,8 @@
 	load_empty_sound = 'sound/weapons/gun/general/magazine_insert_full.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
-	recoil = 2
+	spread = 6
+	spread_unwielded = 9
 
 /obj/item/ammo_box/magazine/internal/ashfire
 	name = "ashfire internal magazine"
