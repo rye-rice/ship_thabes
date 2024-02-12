@@ -724,6 +724,7 @@
 #include "code\datums\proximity_monitor\fields\timestop.dm"
 #include "code\datums\ruins\battlefield.dm"
 #include "code\datums\ruins\beachplanet.dm"
+#include "code\datums\ruins\desert.dm"
 #include "code\datums\ruins\icemoon.dm"
 #include "code\datums\ruins\jungle.dm"
 #include "code\datums\ruins\lavaland.dm"
