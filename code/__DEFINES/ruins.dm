@@ -8,6 +8,7 @@
 #define RUINTYPE_WASTE "Waste"
 #define RUINTYPE_YELLOW "Yellow"
 #define RUINTYPE_SHROUDED "Shrouded"
+#define RUINTYPE_DESERT "Desert"
 #define RUINTYPE_WATER "Water"
 #define RUINTYPE_BATTLEFIELD "Battlefield"
 

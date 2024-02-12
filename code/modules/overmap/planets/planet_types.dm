@@ -181,7 +181,7 @@
 	icon_state = "desert"
 	color = "#f3c282"
 
-	ruin_type = null // minor planets have no ruins
+	ruin_type = RUINTYPE_DESERT // minor planets have no ruins
 	mapgen = /datum/map_generator/planet_generator/desert
 	default_baseturf = /turf/open/floor/plating/asteroid/desert/lit
 	weather_controller_type = /datum/weather_controller/desert_yellow
