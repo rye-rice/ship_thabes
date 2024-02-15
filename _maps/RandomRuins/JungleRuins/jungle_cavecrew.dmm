@@ -565,6 +565,26 @@
 /obj/item/clothing/head/beret/sec/frontier/officer,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/jungle/cavecrew/dormitories)
+"gK" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood,
+/obj/item/book/manual/wiki/hacking{
+	pixel_x = -8;
+	pixel_y = 6
+	},
+/obj/item/book/manual/wiki/cooking{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/garbage{
+	pixel_x = 10;
+	pixel_y = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/cavecrew/dormitories)
 "gM" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1370,6 +1390,20 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
+"qz" = (
+/obj/structure/guncase,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/effect/turf_decal/industrial/warning{
+	dir = 10
+	},
+/obj/item/gun/ballistic/shotgun/automatic/combat{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/revolver/ashhand{
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/security)
 "qO" = (
 /turf/closed/wall/rust,
 /area/ruin/jungle/cavecrew/cargo)
@@ -1731,6 +1765,29 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"vo" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "Ammo Locker";
+	req_access_txt = "1"
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/a4570,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/aks74u,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/security)
 "vr" = (
 /obj/machinery/computer/cargo/express,
 /turf/open/floor/plasteel/patterned,
@@ -2032,29 +2089,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/jungle/cavecrew/cargo)
-"yR" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "Ammo Locker";
-	req_access_txt = "1"
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/ammo_casing/a4570,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/aks74u,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/security)
 "yV" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/jungle/cavecrew/cargo)
@@ -2312,23 +2346,6 @@
 "Cq" = (
 /turf/open/floor/plating/dirt/jungle/dark,
 /area/ruin/powered)
-"Cr" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood/corner,
-/obj/item/book/manual/wiki/engineering_guide{
-	pixel_x = 5;
-	pixel_y = -7
-	},
-/obj/item/book/manual/wiki/grenades{
-	pixel_x = -3;
-	pixel_y = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/wrapping,
-/turf/open/floor/wood,
-/area/ruin/jungle/cavecrew/dormitories)
 "CC" = (
 /obj/effect/turf_decal/industrial/warning/dust/corner{
 	dir = 4
@@ -2798,26 +2815,6 @@
 /mob/living/simple_animal/hostile/frontier/ranged/neutered,
 /turf/open/water/jungle,
 /area/ruin/jungle/cavecrew/cargo)
-"II" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood,
-/obj/item/book/manual/wiki/engineering_hacking{
-	pixel_x = -8;
-	pixel_y = 6
-	},
-/obj/item/book/manual/wiki/cooking_to_serve_man{
-	pixel_x = 5;
-	pixel_y = -6
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/garbage{
-	pixel_x = 10;
-	pixel_y = 4
-	},
-/turf/open/floor/wood,
-/area/ruin/jungle/cavecrew/dormitories)
 "IJ" = (
 /obj/structure/barricade/wooden,
 /turf/open/floor/plating,
@@ -3086,6 +3083,26 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/carpet/red_gold,
 /area/ruin/jungle/cavecrew/dormitories)
+"Lg" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
+	},
+/obj/structure/chair/comfy/brown{
+	color = "#66b266";
+	dir = 4
+	},
+/obj/item/book/manual/wiki/surgery{
+	pixel_x = 10;
+	pixel_y = -5
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/glass,
+/obj/machinery/light_switch{
+	pixel_y = 21;
+	pixel_x = -10
+	},
+/turf/open/floor/wood,
+/area/ruin/jungle/cavecrew/dormitories)
 "Ll" = (
 /obj/structure/flora/ausbushes/stalkybush{
 	pixel_x = 14;
@@ -3100,6 +3117,13 @@
 "Ln" = (
 /turf/open/floor/plating/dirt/old/dark/lit,
 /area/overmap_encounter/planetoid/jungle/explored)
+"Lo" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/machinery/fax/ruin,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/bridge)
 "Ls" = (
 /obj/structure/railing{
 	dir = 8;
@@ -3226,20 +3250,6 @@
 /obj/structure/spacevine,
 /turf/closed/mineral/random/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
-"Nh" = (
-/obj/structure/guncase,
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/effect/turf_decal/industrial/warning{
-	dir = 10
-	},
-/obj/item/gun/ballistic/shotgun/automatic/combat{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/revolver/ashhand{
-	pixel_y = -1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/security)
 "Nj" = (
 /obj/structure/flora/ausbushes/sunnybush{
 	pixel_x = 12;
@@ -3655,6 +3665,19 @@
 	},
 /turf/open/water/jungle,
 /area/overmap_encounter/planetoid/cave/explored)
+"Su" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/item/book/manual/wiki/engineering{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/wrapping,
+/turf/open/floor/wood,
+/area/ruin/jungle/cavecrew/dormitories)
 "SH" = (
 /obj/machinery/porta_turret/syndicate/pod{
 	dir = 5;
@@ -3766,26 +3789,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/jungle/cavecrew/bridge)
-"Ua" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
-	},
-/obj/structure/chair/comfy/brown{
-	color = "#66b266";
-	dir = 4
-	},
-/obj/item/book/manual/wiki/experimentor{
-	pixel_x = 10;
-	pixel_y = -5
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/glass,
-/obj/machinery/light_switch{
-	pixel_y = 21;
-	pixel_x = -10
-	},
-/turf/open/floor/wood,
-/area/ruin/jungle/cavecrew/dormitories)
 "Ud" = (
 /obj/machinery/light/directional/west,
 /turf/open/water/jungle,
@@ -4097,13 +4100,6 @@
 	},
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ruin/jungle/cavecrew/cargo)
-"WZ" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/machinery/fax/ruin,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/bridge)
 "Xb" = (
 /turf/open/floor/plating/dirt/jungle,
 /area/ruin/powered)
@@ -4958,10 +4954,10 @@ Pz
 lu
 jm
 wN
-Nh
+qz
 LD
 DP
-yR
+vo
 wN
 Ri
 Ri
@@ -5398,7 +5394,7 @@ Tt
 wt
 lm
 Sj
-WZ
+Lo
 iq
 gd
 lm
@@ -5749,7 +5745,7 @@ lD
 Cq
 CF
 Ri
-Ua
+Lg
 Is
 Ri
 wt
@@ -5814,7 +5810,7 @@ lD
 Lw
 CF
 yk
-Cr
+Su
 ZT
 Ri
 wt
@@ -5879,7 +5875,7 @@ lD
 Lw
 UP
 Ri
-II
+gK
 bH
 Ri
 wt

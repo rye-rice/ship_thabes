@@ -143,6 +143,32 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ship/bridge)
+"bK" = (
+/obj/structure/table/reinforced,
+/obj/effect/turf_decal/steeldecal/steel_decals_central2{
+	pixel_y = 2
+	},
+/obj/item/book/manual/wiki/robotics{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/item/clothing/glasses/welding{
+	pixel_x = 6;
+	pixel_y = -1
+	},
+/obj/item/toy/figure/roboticist{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/item/disk/design_disk/cmm_mechs{
+	pixel_y = -12
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/science/robotics)
 "bX" = (
 /obj/effect/turf_decal/techfloor/orange,
 /obj/effect/turf_decal/techfloor/hole/right,
@@ -177,35 +203,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/science/robotics)
-"cF" = (
-/obj/structure/table/reinforced{
-	color = "#c1b6a5"
-	},
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 2
-	},
-/obj/item/pen{
-	pixel_x = -4;
-	pixel_y = 1
-	},
-/obj/item/book/manual/wiki/engineering_singulo_tesla{
-	pixel_x = 5;
-	pixel_y = 14
-	},
-/obj/machinery/light/small/directional/south,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "cepheus_engines";
-	name = "Engine Shutters";
-	pixel_x = 9;
-	pixel_y = -23
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering/electrical)
 "cH" = (
 /obj/effect/turf_decal/arrows{
 	dir = 1;
@@ -411,6 +408,31 @@
 	},
 /turf/open/floor/carpet/royalblue,
 /area/ship/crew/dorm)
+"eW" = (
+/obj/item/clothing/under/rank/command/minutemen,
+/obj/item/clothing/suit/toggle/lawyer/minutemen,
+/obj/item/clothing/head/caphat/minutemen,
+/obj/item/clothing/head/cowboy/sec/minutemen,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/radio/headset/minutemen/alt/captain,
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_door = "solgov_wall";
+	icon_state = "solgov_wall";
+	name = "captain's locker";
+	pixel_y = -28;
+	req_access_txt = "20"
+	},
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/clothing/shoes/cowboy/white,
+/obj/item/storage/belt/sabre,
+/obj/item/gun/ballistic/revolver/shadow,
+/obj/item/ammo_box/c45_speedloader,
+/obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/bridge)
 "ff" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/science/robotics)
@@ -521,29 +543,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/patterned,
 /area/ship/crew/dorm)
-"fT" = (
-/obj/structure/guncase,
-/obj/structure/railing{
-	dir = 4;
-	layer = 4.1
-	},
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
-/obj/item/gun/ballistic/automatic/pistol/candor{
-	pixel_y = 3
-	},
-/obj/structure/sign/poster/contraband/twelve_gauge{
-	pixel_y = 32
-	},
-/obj/item/gun/ballistic/shotgun/hellfire,
-/turf/open/floor/plasteel/tech,
-/area/ship/security)
 "fX" = (
 /obj/machinery/door/window/eastright{
 	dir = 1;
@@ -804,6 +803,14 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
+"iE" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp{
+	pixel_x = -7;
+	pixel_y = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/security)
 "iM" = (
 /obj/machinery/porta_turret/ship/ballistic{
 	dir = 9
@@ -948,31 +955,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
-"lq" = (
-/obj/item/clothing/under/rank/command/minutemen,
-/obj/item/clothing/suit/toggle/lawyer/minutemen,
-/obj/item/clothing/head/caphat/minutemen,
-/obj/item/clothing/head/cowboy/sec/minutemen,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/radio/headset/minutemen/alt/captain,
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_door = "solgov_wall";
-	icon_state = "solgov_wall";
-	name = "captain's locker";
-	pixel_y = -28;
-	req_access_txt = "20"
-	},
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/shoes/cowboy/white,
-/obj/item/storage/belt/sabre,
-/obj/item/gun/ballistic/revolver/shadow,
-/obj/item/ammo_box/c45_speedloader,
-/obj/item/clothing/suit/armor/vest/capcarapace/minutemen,
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/bridge)
 "lu" = (
 /obj/effect/turf_decal/siding/white{
 	dir = 1
@@ -1354,6 +1336,35 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
+"pJ" = (
+/obj/structure/table/reinforced{
+	color = "#c1b6a5"
+	},
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/pen{
+	pixel_x = -4;
+	pixel_y = 1
+	},
+/obj/item/book/manual/wiki/engineering{
+	pixel_x = 5;
+	pixel_y = 14
+	},
+/obj/machinery/light/small/directional/south,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "cepheus_engines";
+	name = "Engine Shutters";
+	pixel_x = 9;
+	pixel_y = -23
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering/electrical)
 "pQ" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 6
@@ -1928,6 +1939,29 @@
 /obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/science/robotics)
+"tV" = (
+/obj/structure/guncase,
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.1
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer2,
+/obj/item/gun/ballistic/automatic/pistol/candor{
+	pixel_y = 3
+	},
+/obj/structure/sign/poster/contraband/twelve_gauge{
+	pixel_y = 32
+	},
+/obj/item/gun/ballistic/shotgun/hellfire,
+/turf/open/floor/plasteel/tech,
+/area/ship/security)
 "tX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -2227,33 +2261,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ship/engineering/atmospherics)
-"wY" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/wall/red{
-	dir = 8;
-	name = "Ammo locker";
-	pixel_x = 28
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/magazine/m45{
-	pixel_x = 6
-	},
-/obj/item/ammo_box/a12g/rubbershot,
-/obj/item/ammo_box/magazine/cm15_mag,
-/obj/item/ammo_box/a12g/rubbershot,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security)
 "xd" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals4,
@@ -3061,18 +3068,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/engineering/atmospherics)
-"FC" = (
-/obj/structure/table,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = 9;
-	pixel_y = 4
-	},
-/obj/item/flashlight/lamp{
-	pixel_x = -7;
-	pixel_y = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/security)
 "FJ" = (
 /obj/machinery/atmospherics/components/unary/shuttle/heater{
 	dir = 4
@@ -4113,6 +4108,33 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"RM" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "Ammo locker";
+	pixel_x = 28
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/magazine/m45{
+	pixel_x = 6
+	},
+/obj/item/ammo_box/a12g/rubbershot,
+/obj/item/ammo_box/magazine/cm15_mag,
+/obj/item/ammo_box/a12g/rubbershot,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security)
 "RN" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 1
@@ -4327,32 +4349,6 @@
 "Up" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/engineering/electrical)
-"Ur" = (
-/obj/structure/table/reinforced,
-/obj/effect/turf_decal/steeldecal/steel_decals_central2{
-	pixel_y = 2
-	},
-/obj/item/book/manual/wiki/robotics_cyborgs{
-	pixel_x = -3;
-	pixel_y = 3
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = 6;
-	pixel_y = -5
-	},
-/obj/item/clothing/glasses/welding{
-	pixel_x = 6;
-	pixel_y = -1
-	},
-/obj/item/toy/figure/roboticist{
-	pixel_x = 7;
-	pixel_y = 11
-	},
-/obj/item/disk/design_disk/cmm_mechs{
-	pixel_y = -12
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/science/robotics)
 "Us" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor/shutters/preopen{
@@ -4939,7 +4935,7 @@ nG
 bX
 Lj
 Mi
-cF
+pJ
 Ob
 Cr
 UW
@@ -5352,12 +5348,12 @@ Gn
 sz
 IR
 dI
-Ur
+bK
 Iq
 By
 IK
 TJ
-lq
+eW
 By
 Mj
 Vl
@@ -5389,7 +5385,7 @@ oo
 WY
 im
 Gk
-FC
+iE
 BR
 zQ
 zQ
@@ -5460,7 +5456,7 @@ zQ
 zQ
 zQ
 TU
-fT
+tV
 eu
 mn
 Um
@@ -5536,7 +5532,7 @@ zQ
 zQ
 TU
 OG
-wY
+RM
 Uj
 TU
 XA
