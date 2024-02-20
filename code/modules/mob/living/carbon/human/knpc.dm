@@ -848,9 +848,6 @@ GLOBAL_LIST_EMPTY(knpcs)
 
 	internals_slot = ITEM_SLOT_RPOCKET
 
-	for(var/obj/item/gun/searching as anything in contents)
-		searching.safety = FALSE
-
 /datum/component/knpc/Initialize()
 	if(!iscarbon(parent))
 		return COMPONENT_INCOMPATIBLE
