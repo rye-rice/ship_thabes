@@ -9,3 +9,9 @@
 	id = "shrouded_research_outpost"
 	description = "TBD."
 	suffix = "shrouded_research_outpost.dmm"
+
+/datum/map_template/ruin/shrouded/shrouded_lostfaith
+	name = "shrouded_lostfaith"
+	id = "shrouded_lostfaith"
+	description = "TBD."
+	suffix = "shrouded_lostfaith.dmm"
