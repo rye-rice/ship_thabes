@@ -47,11 +47,11 @@
 
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random/Initialize()
 	. = ..()
-	if(prob(25))
+	if(prob(15))
 		new /mob/living/carbon/human/ai_boarder/hermit/hunter(loc)
-	else if(prob(10))
+	else if(prob(5))
 		new /mob/living/carbon/human/ai_boarder/hermit/gunslinger(loc)
-	else if(prob(40))
+	else if(prob(20))
 		new /mob/living/carbon/human/ai_boarder/hermit/survivor(loc)
 	return INITIALIZE_HINT_QDEL
 
