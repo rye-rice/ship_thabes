@@ -580,6 +580,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 /mob/living/carbon/human/ai_boarder/hermit/gunslinger
 	survivor_type = "gunslinger"
 
+/mob/living/carbon/human/ai_boarder/hermit/commando
+	survivor_type = "commando"
+
 /mob/living/carbon/human/ai_boarder/hermit/Initialize(mapload)
 	if(!survivor_type)
 		survivor_type = pick("survivor","hunter","gunslinger")
@@ -600,7 +603,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 	INVOKE_ASYNC(src, PROC_REF(set_species), mob_species)
 
 	var/obj/item/clothing/suit/hooded/survivor_hood = wear_suit
-	survivor_hood.ToggleHood()
+	if(survivor_hood)
+		survivor_hood.ToggleHood()
 
 /datum/outfit/whitesands/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	var/mob/living/carbon/human/ai_boarder/hermit/hermit = H
@@ -627,7 +631,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/clothing/under/utility = 5
 			)
 		)
-	else if (survivor_type == "gunslinger")
+	else if (survivor_type == "gunslinger" || survivor_type == "commando")
 		picked = pickweight(list(
 			/obj/item/clothing/under/rank/cargo/miner/lavaland = 35,
 			/obj/item/clothing/under/color/random = 25,
@@ -665,7 +669,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 			/obj/item/storage/belt/mining/vendor = 3,
 			)
 		)
-	else if(survivor_type == "gunslinger")
+	else if(survivor_type == "gunslinger" || survivor_type == "commando")
 		picked = pickweight(list(
 			/obj/item/storage/belt/mining = 30,
 			/obj/item/storage/belt/bandolier = 30,
@@ -683,7 +687,7 @@ GLOBAL_LIST_EMPTY(knpcs)
 	//everyone wears the same suit
 	suit = /obj/item/clothing/suit/hooded/survivor
 
-	if (survivor_type == "gunslinger")
+	if (survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(30))
 			picked = /obj/item/clothing/shoes/combat //but sometimes there are nicer shoes
 		else
@@ -787,9 +791,9 @@ GLOBAL_LIST_EMPTY(knpcs)
 		if (prob(20))
 			l_pocket = /obj/item/reagent_containers/food/snacks/meat/steak/goliath
 
-	if(survivor_type == "gunslinger")
+	if(survivor_type == "gunslinger" || survivor_type == "commando")
 		if(prob(50))
-			l_pocket = /obj/item/ammo_box/magazine/aks74u
+			l_pocket = /obj/item/ammo_box/magazine/skm_545_39
 		r_pocket = /obj/item/tank/internals/emergency_oxygen/engi
 
 	else
@@ -802,6 +806,14 @@ GLOBAL_LIST_EMPTY(knpcs)
 		/obj/item/clothing/mask/gas/explorer = 20,
 		/obj/item/clothing/mask/gas/explorer/old = 20,
 		/obj/item/clothing/mask/gas/syndicate = 20,
+		/obj/item/clothing/mask/breath = 5,
+		/obj/item/clothing/mask/breath/medical = 5,
+		/obj/item/clothing/mask/breath/suns = 5,
+		/obj/item/clothing/mask/gas/sechailer = 10,
+		/obj/item/clothing/mask/gas/sechailer/minutemen = 10,
+		/obj/item/clothing/mask/gas/sechailer/inteq = 10,
+		/obj/item/clothing/mask/gas/sechailer/swat = 1,
+		/obj/item/clothing/mask/gas/sechailer/swat/spacepol = 1,
 		)
 	)
 
@@ -841,10 +853,40 @@ GLOBAL_LIST_EMPTY(knpcs)
 		for(var/i in 1 to spare_ammo_count)
 			backpack_contents += /obj/item/ammo_box/aac_300blk_stripper
 
-	if(survivor_type == "gunslinger")
-		r_hand = /obj/item/gun/ballistic/automatic/smg/aks74u
-		for(var/i in 1 to spare_ammo_count)
-			backpack_contents += /obj/item/ammo_box/magazine/aks74u
+	if(survivor_type == "gunslinger" || survivor_type == "commando")
+		if(prob(7) || survivor_type == "commando") //cause fuck you, thats why
+			uniform = /obj/item/clothing/under/rank/security/officer/camo
+
+			suit =	pickweight(list(
+				/obj/item/clothing/suit/armor/vest/bulletproof = 35,
+				/obj/item/clothing/suit/armor/vest/syndie = 20,
+				/obj/item/clothing/suit/armor/vest/marine = 1,
+				/obj/item/clothing/suit/armor/vest/marine/heavy = 1,
+				/obj/item/clothing/suit/armor/vest/marine = 1,
+			))
+			head =	pickweight(list(
+				/obj/item/clothing/head/helmet/bulletproof/x11 = 40,
+				/obj/item/clothing/head/helmet/bulletproof/m10 = 40,
+
+				/obj/item/clothing/head/helmet/swat = 20,
+				/obj/item/clothing/head/helmet/swat/nanotrasen = 20,
+
+				/obj/item/clothing/head/helmet/marine = 1,
+				/obj/item/clothing/head/helmet/marine/security = 1,
+			))
+			spare_ammo_count = rand(0,2)
+			r_hand = /obj/item/gun/ballistic/automatic/assault/skm/pirate
+			for(var/i in 1 to spare_ammo_count)
+				if(prob(1))
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40/drum //die.
+				else if(prob(5))
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40/extended
+				else
+					backpack_contents += /obj/item/ammo_box/magazine/skm_762_40
+		else
+			r_hand = /obj/item/gun/ballistic/automatic/smg/skm_carbine
+			for(var/i in 1 to spare_ammo_count)
+				backpack_contents += /obj/item/ammo_box/magazine/skm_545_39
 
 	internals_slot = ITEM_SLOT_RPOCKET
 
@@ -1329,7 +1371,8 @@ This is to account for sec Ju-Jitsuing boarding commandos.
 	if(istype(A, /obj/item/gun/ballistic))
 		B = A
 	H.a_intent = (prob(65)) ? INTENT_HARM : INTENT_DISARM
-	G.safety = FALSE
+	if(G)
+		G.safety = FALSE
 	if(G && dist > 0)
 		if(!G.can_shoot() || !G?.chambered.BB)
 			if(istype(B, /obj/item/gun/ballistic/rifle) && check_ammo(B))

@@ -47,11 +47,13 @@
 
 /mob/living/simple_animal/hostile/asteroid/whitesands/survivor/random/Initialize()
 	. = ..()
-	if(prob(35))
-		new /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/hunter(loc)
-	if(prob(10))
-		new /mob/living/simple_animal/hostile/asteroid/whitesands/ranged/gunslinger(loc)
-		return INITIALIZE_HINT_QDEL
+	if(prob(25))
+		new /mob/living/carbon/human/ai_boarder/hermit/hunter(loc)
+	else if(prob(10))
+		new /mob/living/carbon/human/ai_boarder/hermit/gunslinger(loc)
+	else if(prob(40))
+		new /mob/living/carbon/human/ai_boarder/hermit/survivor(loc)
+	return INITIALIZE_HINT_QDEL
 
 /mob/living/simple_animal/hostile/asteroid/whitesands/ranged
 	icon_state = "survivor_hunter"
