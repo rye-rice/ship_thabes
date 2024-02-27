@@ -199,6 +199,15 @@
 	},
 /turf/open/floor/pod/light,
 /area/ruin/jungle/cavecrew/hallway)
+"bV" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm/neutured,
+/turf/open/floor/plasteel/stairs{
+	dir = 1
+	},
+/area/ship/storage)
 "ck" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/turf_decal/siding/thinplating/dark,
@@ -795,15 +804,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/rust,
 /area/ruin/jungle/cavecrew/security)
-"jN" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/frontier/ranged/trooper/skm/neutured,
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/ship/storage)
 "jO" = (
 /obj/structure/flora/junglebush/large{
 	pixel_y = -4
@@ -2001,6 +2001,29 @@
 /obj/machinery/door/airlock/hatch,
 /turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/dormitories)
+"yt" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "Ammo Locker";
+	req_access_txt = "1"
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/storage/box/lethalshot{
+	pixel_x = -3;
+	pixel_y = -5
+	},
+/obj/item/ammo_casing/a4570,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/skm_545_39,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/obj/item/ammo_box/magazine/illestren_a850r,
+/turf/open/floor/plasteel/tech,
+/area/ruin/jungle/cavecrew/security)
 "yv" = (
 /obj/effect/turf_decal/industrial/warning,
 /obj/effect/decal/cleanable/oil{
@@ -3092,6 +3115,18 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"Lt" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/secure/gear,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine{
+	pixel_y = -6
+	},
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/obj/item/gun/ballistic/automatic/zip_pistol,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
 "Lv" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/water/jungle,
@@ -3403,29 +3438,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/jungle/cavecrew/dormitories)
-"PE" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "Ammo Locker";
-	req_access_txt = "1"
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/storage/box/lethalshot{
-	pixel_x = -3;
-	pixel_y = -5
-	},
-/obj/item/ammo_casing/a4570,
-/obj/item/ammo_box/magazine/skm_545_39,
-/obj/item/ammo_box/magazine/skm_545_39,
-/obj/item/ammo_box/magazine/skm_545_39,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/obj/item/ammo_box/magazine/illestren_a850r,
-/turf/open/floor/plasteel/tech,
-/area/ruin/jungle/cavecrew/security)
 "PG" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
@@ -3747,18 +3759,6 @@
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/plating,
 /area/ruin/jungle/cavecrew/dormitories)
-"TQ" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/closet/crate/secure/gear,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine{
-	pixel_y = -6
-	},
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/obj/item/gun/ballistic/automatic/zip_pistol,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
 "TY" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/effect/turf_decal/steeldecal/steel_decals10{
@@ -4957,7 +4957,7 @@ wN
 qz
 LD
 DP
-PE
+yt
 wN
 Ri
 Ri
@@ -5914,7 +5914,7 @@ JY
 nR
 iZ
 Kx
-TQ
+Lt
 Ec
 fO
 jy
@@ -5981,7 +5981,7 @@ QI
 Ka
 fs
 PR
-jN
+bV
 Hx
 Ls
 vl

@@ -325,10 +325,10 @@
 /area/ship/crew)
 "hJ" = (
 /obj/docking_port/stationary{
-	width = 30;
-	height = 15;
+	dir = 8;
 	dwidth = 15;
-	dir = 8
+	height = 15;
+	width = 30
 	},
 /turf/template_noop,
 /area/template_noop)
@@ -558,49 +558,6 @@
 /obj/item/tank/jetpack/oxygen,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/storage/eva)
-"nD" = (
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = 5
-	},
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm{
-	pixel_x = -5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = 5
-	},
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
-	pixel_y = -5
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_x = -7
-	},
-/obj/item/ammo_box/magazine/skm_762_40{
-	pixel_x = 7
-	},
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_x = -5
-	},
-/obj/structure/closet/secure_closet/wall{
-	dir = 1;
-	icon_state = "sec_wall";
-	name = "weapons lockup";
-	pixel_y = -28;
-	req_one_access_txt = "58"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 9
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "nL" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/borderfloorblack{
@@ -870,8 +827,8 @@
 "tg" = (
 /obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
@@ -1545,8 +1502,8 @@
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
 /obj/machinery/computer/cargo/express,
 /obj/item/radio/intercom/wideband/directional/north{
-	pixel_y = 25;
-	pixel_x = 6
+	pixel_x = 6;
+	pixel_y = 25
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/bridge)
@@ -1584,8 +1541,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1683,8 +1640,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1715,8 +1672,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -1840,8 +1797,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
@@ -1949,8 +1906,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /turf/open/floor/plating,
 /area/ship/storage/eva)
@@ -2013,6 +1970,49 @@
 /obj/item/trash/sosjerky,
 /turf/open/floor/plasteel/dark,
 /area/ship/crew)
+"PV" = (
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = 5
+	},
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm{
+	pixel_x = -5
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
+	pixel_y = 5
+	},
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq{
+	pixel_y = -5
+	},
+/obj/item/ammo_box/magazine/skm_762_40{
+	pixel_x = -7
+	},
+/obj/item/ammo_box/magazine/skm_762_40{
+	pixel_x = 7
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_x = -5
+	},
+/obj/structure/closet/secure_closet/wall{
+	dir = 1;
+	icon_state = "sec_wall";
+	name = "weapons lockup";
+	pixel_y = -28;
+	req_one_access_txt = "58"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 9
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "Qn" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 4
@@ -2058,8 +2058,8 @@
 	dir = 4
 	},
 /obj/machinery/door/poddoor{
-	id = "hound_windows";
-	dir = 4
+	dir = 4;
+	id = "hound_windows"
 	},
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2149,6 +2149,25 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/patterned/cargo_one,
 /area/ship/cargo)
+"UH" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/fancy/cigarettes/cigars{
+	pixel_x = 8
+	},
+/obj/item/lighter{
+	pixel_x = -11;
+	pixel_y = 5
+	},
+/obj/item/ammo_box/a762_40/inteq{
+	pixel_x = 5;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/food/drinks/bottle/whiskey{
+	pixel_x = -7;
+	pixel_y = 6
+	},
+/turf/open/floor/carpet/orange,
+/area/ship/bridge)
 "UJ" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -2375,25 +2394,6 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/crew/dorm)
-"Zy" = (
-/obj/structure/table/reinforced,
-/obj/item/storage/fancy/cigarettes/cigars{
-	pixel_x = 8
-	},
-/obj/item/lighter{
-	pixel_x = -11;
-	pixel_y = 5
-	},
-/obj/item/storage/toolbox/ammo/a762_40{
-	pixel_x = 5;
-	pixel_y = 12
-	},
-/obj/item/reagent_containers/food/drinks/bottle/whiskey{
-	pixel_x = -7;
-	pixel_y = 6
-	},
-/turf/open/floor/carpet/orange,
-/area/ship/bridge)
 "ZR" = (
 /obj/machinery/power/smes/engineering{
 	charge = 1e+006
@@ -2816,9 +2816,9 @@ ib
 ib
 ib
 Yj
-Zy
+UH
 DB
-nD
+PV
 pe
 ne
 Pk

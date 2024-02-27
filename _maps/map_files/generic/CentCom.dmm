@@ -316,24 +316,6 @@
 /obj/machinery/status_display/evac,
 /turf/closed/indestructible/riveted,
 /area/centcom/supply)
-"ajJ" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_y = -1;
-	pixel_x = -5
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "ajO" = (
 /obj/machinery/vending/cola,
 /turf/open/floor/plasteel,
@@ -8587,6 +8569,24 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"fQu" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = -1;
+	pixel_x = -5
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel,
+/area/centcom)
 "fQR" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_x = -32
@@ -13587,22 +13587,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"pTG" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
-	pixel_x = 2
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
-	pixel_x = -1;
-	pixel_y = -6
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "pTM" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -13810,6 +13794,22 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/tdome/tdomeobserve)
+"qDy" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = 2
+	},
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel,
+/area/centcom)
 "qFm" = (
 /obj/machinery/computer/crew{
 	dir = 1
@@ -30781,7 +30781,7 @@ nYZ
 mGE
 rUa
 mGE
-ajJ
+fQu
 aPu
 aaa
 eAJ
@@ -31809,7 +31809,7 @@ lKP
 sQw
 rjV
 sQw
-pTG
+qDy
 aPu
 aaa
 eAJ
