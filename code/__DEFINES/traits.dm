@@ -440,3 +440,6 @@ Remember to update _globalvars/traits.dm if you're adding/removing/renaming trai
 /// Trait granted by [mob/living/silicon/ai]
 /// Applied when the ai anchors itself
 #define AI_ANCHOR_TRAIT "ai_anchor"
+
+///Trait given by /datum/component/shiny
+#define TRAIT_SHINY "shiny"

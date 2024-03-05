@@ -35,9 +35,12 @@
 /datum/component/wet_floor/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_TURF_IS_WET, PROC_REF(is_wet))
 	RegisterSignal(parent, COMSIG_TURF_MAKE_DRY, PROC_REF(dry))
+	if(!HAS_TRAIT(parent, TRAIT_SHINY))
+		parent.AddComponent(/datum/component/shiny)
 
 /datum/component/wet_floor/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_TURF_IS_WET, COMSIG_TURF_MAKE_DRY))
+	SEND_SIGNAL(parent, COMSIG_ATOM_DESTROY_SHINY)
 
 /datum/component/wet_floor/Destroy()
 	STOP_PROCESSING(SSwet_floors, src)

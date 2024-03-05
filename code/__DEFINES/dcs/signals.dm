@@ -100,6 +100,8 @@
 #define COMSIG_ATOM_UPDATE_OVERLAYS "atom_update_overlays"
 ///from base of [/atom/update_icon]: (signalOut, did_anything)
 #define COMSIG_ATOM_UPDATED_ICON "atom_updated_icon"
+///from base of [/atom/proc/smooth_icon]: ()
+#define COMSIG_ATOM_SMOOTHED_ICON "atom_smoothed_icon"
 ///from base of atom/Entered(): (atom/movable/entering, /atom)
 #define COMSIG_ATOM_ENTERED "atom_entered"
 ///from base of atom/Exit(): (/atom/movable/exiting, /atom/newloc)
@@ -762,3 +764,6 @@
 /// send when enabling/diabling an autofire component
 #define COMSIG_GUN_DISABLE_AUTOFIRE "disable_autofire"
 #define COMSIG_GUN_ENABLE_AUTOFIRE "enable_autofire"
+
+//send when needing to destroy shinyness
+#define COMSIG_ATOM_DESTROY_SHINY "atom_destroy_shiny"

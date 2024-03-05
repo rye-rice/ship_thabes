@@ -96,6 +96,18 @@
 	icon_state = "showroomfloor"
 	base_icon_state = "showroomfloor"
 
+/turf/open/floor/plasteel/showroomfloor/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/shiny, SHINE_REFLECTIVE)
+
+/turf/open/floor/plasteel/showroomfloor/matte/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/shiny, SHINE_MATTE)
+
+/turf/open/floor/plasteel/showroomfloor/shiny/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/shiny, SHINE_SHINY)
+
 /turf/open/floor/plasteel/showroomfloor/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
