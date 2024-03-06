@@ -16,8 +16,6 @@
 /datum/component/shiny
 	///Reflective overlay
 	var/mutable_appearance/reflection
-	var/mutable_appearance/reflection_displacement
-	var/mutable_appearance/total_reflection_mask
 	var/shine = SHINE_MATTE
 
 /datum/component/shiny/Initialize(_shine = SHINE_REFLECTIVE, _relfection_plane = REFLECTIVE_PLANE)
@@ -44,8 +42,6 @@
 	UnregisterSignal(parent, COMSIG_ATOM_DESTROY_SHINY)
 
 	current_thing.cut_overlay(reflection)
-	current_thing.cut_overlay(reflection_displacement)
-	current_thing.cut_overlay(total_reflection_mask)
 	shine = SHINE_MATTE
 
 	if(!QDELETED(current_thing))
@@ -66,17 +62,8 @@
 		if(SHINE_SHINY)
 			r_overlay = "whiteOverlay"
 	reflection = mutable_appearance('icons/effects/shine.dmi', r_overlay, plane = _relfection_plane)
-	reflection.Flip(NORTH)
-//	reflection.pixel_z = -32
-//	reflection_displacement = mutable_appearance('icons/effects/shine.dmi', "flip", plane = REFLECTIVE_DISPLACEMENT_PLANE)
-//	reflection_displacement.pixel_z = -32
-//	reflection_displacement.appearance_flags = 0 //Have to do this to make map work. Why? IDK, displacements are special like that
-//	var/masking_plane = _relfection_plane == REFLECTIVE_PLANE ? REFLECTIVE_ALL_PLANE : REFLECTIVE_ALL_ABOVE_PLANE
-//	total_reflection_mask = mutable_appearance('icons/effects/shine.dmi', "whiteFull", plane = masking_plane)
 
 	current_thing.add_overlay(reflection)
-	current_thing.add_overlay(reflection_displacement)
-//	current_thing.add_overlay(total_reflection_mask)
 
 
 /datum/component/shiny/proc/on_smoothed_icon(atom/source)
