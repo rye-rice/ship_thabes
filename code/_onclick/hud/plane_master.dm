@@ -171,7 +171,7 @@
 /atom/movable/screen/plane_master/reflection/Initialize(mapload)
 	. = ..()
 	var/matrix/n_transform = transform
-	n_transform.Translate(0, -32)
+	n_transform.Translate(-16, 0)
 	transform = n_transform
 	add_filter("reflections", 1.1, alpha_mask_filter(render_source = masking_plane))
 	//add_filter("displacement", 1.2, displacement_map_filter(render_source = REFLECTIVE_DISPLACEMENT_PLANE_RENDER_TARGET, size = 42, y = -16))
@@ -188,7 +188,7 @@
 /atom/movable/screen/plane_master/reflective/Initialize(mapload)
 	. = ..()
 	var/matrix/n_transform = transform
-	n_transform.Translate(0, 32)
+	n_transform.Translate(16, 0)
 	//n_transform.Scale(1,1)
 	transform = n_transform
 
