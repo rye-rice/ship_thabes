@@ -160,3 +160,12 @@
 	icon_state = "globe"
 	preserve_level = TRUE
 	landing_sound = 'sound/effects/planet_landing_1.ogg'
+
+/datum/planet_type/ocean
+	name = "frozen planet"
+	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
+	planet = DYNAMIC_WORLD_OCEAN
+	icon_state = "globe_2"
+	color = COLOR_NAVY
+	mapgen = /datum/map_generator/single_turf/ocean
+	default_baseturf = /turf/open/water/stormy_planet_lit

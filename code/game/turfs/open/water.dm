@@ -94,7 +94,7 @@
 
 /turf/open/water/stormy_planet_lit
 	color = "#466382"
-	light_color = "#466382"
+	light_color = "#1b364d"
 	light_range = 2
 	light_power = 1
 	baseturfs = /turf/open/water/stormy_planet_lit
@@ -104,7 +104,7 @@
 	AddComponent(/datum/component/shiny, SHINE_SHINY)
 
 /turf/open/floor/concrete/stormy_planet_lit
-	light_color = "#466382"
+	light_color = "#1b364d"
 	light_range = 2
 	light_power = 1
 	baseturfs = /turf/open/floor/concrete/stormy_planet_lit

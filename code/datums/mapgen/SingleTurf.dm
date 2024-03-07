@@ -26,3 +26,7 @@
 /datum/map_generator/single_turf/space
 	turf_type = /turf/open/space
 	area_type = /area/space
+
+/datum/map_generator/single_turf/ocean
+	turf_type = /turf/open/water/stormy_planet_lit
+	area_type = /area/overmap_encounter/planetoid/sand
