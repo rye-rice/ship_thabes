@@ -767,3 +767,5 @@
 
 //send when needing to destroy shinyness
 #define COMSIG_ATOM_DESTROY_SHINY "atom_destroy_shiny"
+///called in /obj/item/gun/process_chamber (src)
+#define COMSIG_GUN_CHAMBER_PROCESSED "gun_chamber_processed"
