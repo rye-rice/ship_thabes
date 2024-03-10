@@ -810,8 +810,8 @@ GLOBAL_LIST_EMPTY(knpcs)
 		/obj/item/clothing/mask/breath/medical = 5,
 		/obj/item/clothing/mask/breath/suns = 5,
 		/obj/item/clothing/mask/gas/sechailer = 10,
-		/obj/item/clothing/mask/gas/sechailer/minutemen = 10,
-		/obj/item/clothing/mask/gas/sechailer/inteq = 10,
+		/obj/item/clothing/mask/gas/sechailer/balaclava = 10,
+		/obj/item/clothing/mask/gas/sechailer/balaclava/inteq = 10,
 		/obj/item/clothing/mask/gas/sechailer/swat = 1,
 		/obj/item/clothing/mask/gas/sechailer/swat/spacepol = 1,
 		)
