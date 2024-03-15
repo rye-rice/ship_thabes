@@ -6366,6 +6366,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"bpl" = (
+/obj/structure/closet/crate/bin,
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/snacks/pancakes/blueberry,
+/turf/open/floor/plasteel,
+/area/centcom)
 "bsD" = (
 /obj/structure/table/reinforced,
 /obj/item/folder,
@@ -7062,14 +7071,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
-"cTJ" = (
-/obj/structure/table/reinforced,
-/obj/item/radio/headset/clip/alt/captain{
-	pixel_y = 2;
-	pixel_x = 1
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "cUm" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Restroom";
@@ -7371,6 +7372,20 @@
 /obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"dGh" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 5
+	},
+/obj/item/clothing/head/clip/slouch{
+	pixel_y = 8;
+	pixel_x = -4
+	},
+/obj/item/pen/fourcolor{
+	pixel_x = 5
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "dGq" = (
 /obj/machinery/computer/med_data{
 	dir = 8
@@ -9401,28 +9416,6 @@
 	},
 /turf/open/floor/circuit/red,
 /area/ctf)
-"hUs" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/poster/clip/bard{
-	pixel_y = -32
-	},
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = -5;
-	pixel_y = 6
-	},
-/obj/item/ammo_box/magazine/p16{
-	pixel_x = 1;
-	pixel_y = 2
-	},
-/obj/item/ammo_casing{
-	pixel_x = 7;
-	pixel_y = 7
-	},
-/obj/item/ammo_casing{
-	pixel_x = 11
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "hVO" = (
 /obj/machinery/computer/security/telescreen,
 /obj/structure/table/reinforced,
@@ -9460,26 +9453,6 @@
 /obj/machinery/vending/wardrobe/cent_wardrobe,
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"hYN" = (
-/obj/structure/sign/clip{
-	pixel_y = -28
-	},
-/obj/structure/table/reinforced,
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_x = -1;
-	pixel_y = 8
-	},
-/obj/item/clothing/head/helmet/bulletproof/x11/clip{
-	pixel_x = 3;
-	pixel_y = 11
-	},
-/obj/machinery/light/directional/east,
-/obj/item/reagent_containers/food/drinks/bottle/rum{
-	pixel_x = -9;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "hYV" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/ship/dirt,
@@ -9940,6 +9913,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/control)
+"iMC" = (
+/obj/structure/table/reinforced,
+/obj/item/flashlight/lamp{
+	pixel_x = 8;
+	pixel_y = 3
+	},
+/obj/structure/sign/clip{
+	pixel_y = 28
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel,
+/area/centcom)
 "iNA" = (
 /obj/machinery/light/directional/west,
 /obj/effect/turf_decal/corner/opaque/red,
@@ -10399,6 +10384,22 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"jRf" = (
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 4
+	},
+/obj/effect/turf_decal/corner/opaque/yellow,
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = 2
+	},
+/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
+	pixel_x = -1;
+	pixel_y = -6
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel,
+/area/centcom)
 "jTw" = (
 /obj/machinery/vending/hydroseeds,
 /obj/effect/turf_decal/corner/opaque/green{
@@ -11171,18 +11172,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/syndicate_mothership/control)
-"luF" = (
-/obj/structure/table/reinforced,
-/obj/item/flashlight/lamp{
-	pixel_x = 8;
-	pixel_y = 3
-	},
-/obj/structure/sign/clip{
-	pixel_y = 28
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel,
-/area/centcom)
 "luM" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
@@ -11304,14 +11293,6 @@
 /obj/effect/turf_decal/corner/transparent/neutral,
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
-"lHh" = (
-/obj/structure/table/reinforced,
-/obj/structure/sign/poster/clip/gold{
-	pixel_y = 32
-	},
-/obj/machinery/fax/admin/minutemen,
-/turf/open/floor/plasteel,
-/area/centcom)
 "lHy" = (
 /obj/structure/closet/secure_closet/freezer/meat/open,
 /obj/item/reagent_containers/food/snacks/meat/rawbacon,
@@ -11418,15 +11399,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"lNO" = (
-/obj/structure/closet/crate/bin,
-/obj/structure/sign/clip{
-	pixel_y = 28
-	},
-/obj/machinery/light/directional/east,
-/obj/item/reagent_containers/food/snacks/pancakes/blueberry,
-/turf/open/floor/plasteel,
-/area/centcom)
 "lOt" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Equipment Room";
@@ -11541,6 +11513,24 @@
 /obj/effect/turf_decal/corner/opaque/yellow{
 	dir = 9
 	},
+/turf/open/floor/plasteel,
+/area/centcom)
+"man" = (
+/obj/effect/turf_decal/corner/opaque/yellow{
+	dir = 1
+	},
+/obj/effect/turf_decal/corner/opaque/brown{
+	dir = 8
+	},
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = 3
+	},
+/obj/item/gun/ballistic/automatic/assault/skm/inteq{
+	pixel_y = -1;
+	pixel_x = -5
+	},
+/obj/machinery/light/directional/south,
 /turf/open/floor/plasteel,
 /area/centcom)
 "mbm" = (
@@ -12565,24 +12555,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
-"odH" = (
-/obj/effect/turf_decal/corner/opaque/yellow{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 8
-	},
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_y = 3
-	},
-/obj/item/gun/ballistic/automatic/assault/skm/inteq{
-	pixel_y = -1;
-	pixel_x = -5
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "odV" = (
 /obj/structure/chair/office{
 	dir = 8
@@ -13151,20 +13123,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
-"plL" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin{
-	pixel_x = 5
-	},
-/obj/item/clothing/head/clip/slouch{
-	pixel_y = 8;
-	pixel_x = -4
-	},
-/obj/item/pen/fourcolor{
-	pixel_x = 5
-	},
-/turf/open/floor/plasteel,
-/area/centcom)
 "plP" = (
 /obj/effect/turf_decal/corner/opaque/yellow/three_quarters,
 /turf/open/floor/plasteel,
@@ -13650,6 +13608,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/tdome/tdomeobserve)
+"qap" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/poster/clip/gold{
+	pixel_y = 32
+	},
+/obj/machinery/fax/admin/minutemen,
+/turf/open/floor/plasteel,
+/area/centcom)
 "qdG" = (
 /obj/effect/turf_decal/corner/transparent/neutral,
 /obj/effect/turf_decal/corner/transparent/neutral{
@@ -13931,16 +13897,6 @@
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
 "qVq" = (
-/turf/open/floor/plasteel,
-/area/centcom)
-"qXb" = (
-/obj/structure/sign/clip{
-	pixel_y = -28
-	},
-/obj/machinery/light/directional/west,
-/obj/machinery/telecomms/relay/preset/minutemen{
-	autolinkers = list("relay")
-	},
 /turf/open/floor/plasteel,
 /area/centcom)
 "qXd" = (
@@ -14318,6 +14274,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"rvC" = (
+/obj/structure/table/reinforced,
+/obj/item/radio/headset/clip/alt/captain{
+	pixel_y = 2;
+	pixel_x = 1
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "rvW" = (
 /obj/structure/sink{
 	dir = 4;
@@ -14393,6 +14357,39 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"rGo" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/item/folder/documents/solgov{
+	pixel_x = -3
+	},
+/obj/item/folder/solgov{
+	pixel_y = 5;
+	pixel_x = 2
+	},
+/turf/open/floor/carpet/royalblue,
+/area/centcom)
+"rIP" = (
+/obj/structure/table/reinforced,
+/obj/structure/sign/poster/clip/bard{
+	pixel_y = -32
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/ammo_box/magazine/p16{
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/ammo_casing{
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/obj/item/ammo_casing{
+	pixel_x = 11
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "rJp" = (
 /obj/item/storage/firstaid/regular,
 /obj/structure/table,
@@ -14650,6 +14647,26 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"slo" = (
+/obj/structure/sign/clip{
+	pixel_y = -28
+	},
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
+	pixel_x = -1;
+	pixel_y = 8
+	},
+/obj/item/clothing/head/helmet/bulletproof/x11/clip{
+	pixel_x = 3;
+	pixel_y = 11
+	},
+/obj/machinery/light/directional/east,
+/obj/item/reagent_containers/food/drinks/bottle/rum{
+	pixel_x = -9;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "slp" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
@@ -15189,22 +15206,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/centcom/supply)
-"tvO" = (
-/obj/effect/turf_decal/corner/opaque/brown{
-	dir = 4
-	},
-/obj/effect/turf_decal/corner/opaque/yellow,
-/obj/structure/rack,
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
-	pixel_x = 2
-	},
-/obj/item/gun/ballistic/automatic/smg/skm_carbine/inteq{
-	pixel_x = -1;
-	pixel_y = -6
-	},
-/obj/machinery/light/directional/south,
-/turf/open/floor/plasteel,
-/area/centcom)
 "tyg" = (
 /obj/effect/turf_decal/corner/opaque/blue{
 	dir = 1
@@ -16252,6 +16253,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/tdome/tdomeobserve)
+"wbr" = (
+/obj/structure/sign/clip{
+	pixel_y = -28
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/telecomms/relay/preset/minutemen{
+	autolinkers = list("relay")
+	},
+/turf/open/floor/plasteel,
+/area/centcom)
 "wbx" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/weldingtool/experimental,
@@ -16467,17 +16478,6 @@
 	},
 /obj/structure/table,
 /turf/open/floor/plasteel,
-/area/centcom)
-"wCp" = (
-/obj/structure/table/wood/fancy/blue,
-/obj/item/folder/solgov/red{
-	pixel_x = -3
-	},
-/obj/item/folder/solgov{
-	pixel_y = 5;
-	pixel_x = 2
-	},
-/turf/open/floor/carpet/royalblue,
 /area/centcom)
 "wEF" = (
 /obj/effect/turf_decal/corner/opaque/red,
@@ -26666,18 +26666,18 @@ aaa
 aaa
 aPu
 bSy
-wCp
+rGo
 iwJ
 njp
 psm
 aPu
 aaa
 hzJ
-luF
+iMC
 moE
 qVq
 qVq
-qXb
+wbr
 hzJ
 aaa
 aaa
@@ -26930,7 +26930,7 @@ eqM
 aPu
 aaa
 hzJ
-plL
+dGh
 wad
 pTR
 gaU
@@ -27187,11 +27187,11 @@ unc
 iSo
 aaa
 hzJ
-lHh
+qap
 pvW
 iWI
 hBf
-cTJ
+rvC
 hzJ
 aaa
 aaa
@@ -27448,7 +27448,7 @@ qVq
 tGR
 kiC
 bUH
-hUs
+rIP
 hzJ
 aaa
 aaa
@@ -27701,11 +27701,11 @@ gsx
 aPu
 aaa
 hzJ
-lNO
+bpl
 qVq
 qVq
 aIF
-hYN
+slo
 hzJ
 aaa
 aaa
@@ -30781,7 +30781,7 @@ nYZ
 mGE
 rUa
 mGE
-odH
+man
 aPu
 aaa
 eAJ
@@ -31809,7 +31809,7 @@ lKP
 sQw
 rjV
 sQw
-tvO
+jRf
 aPu
 aaa
 eAJ

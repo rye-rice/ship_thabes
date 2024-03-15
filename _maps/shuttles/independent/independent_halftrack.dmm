@@ -269,11 +269,6 @@
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/range)
-"hF" = (
-/obj/structure/table/reinforced,
-/obj/machinery/fax,
-/turf/open/floor/plasteel/dark,
-/area/ship/bridge)
 "hH" = (
 /obj/machinery/computer/helm,
 /turf/open/floor/plasteel/dark,
@@ -1123,32 +1118,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/maintenance/port)
-"Dc" = (
-/obj/structure/closet/secure_closet/security,
-/obj/item/gun/ballistic/automatic/pistol/deagle,
-/obj/item/gun/ballistic/automatic/pistol/deagle,
-/obj/item/gun/ballistic/automatic/assault/skm,
-/obj/item/gun/ballistic/automatic/assault/skm,
-/obj/item/ammo_box/magazine/skm_762_40,
-/obj/item/ammo_box/magazine/skm_762_40,
-/obj/item/ammo_box/magazine/skm_762_40,
-/obj/item/ammo_box/magazine/skm_762_40,
-/obj/item/ammo_box/magazine/m50,
-/obj/item/ammo_box/magazine/m50,
-/obj/item/ammo_box/magazine/m50,
-/obj/item/ammo_box/magazine/m50,
-/obj/effect/turf_decal/box/red,
-/obj/machinery/power/apc/auto_name/directional/west,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/light_switch{
-	dir = 4;
-	pixel_x = -20;
-	pixel_y = 12
-	},
-/turf/open/floor/plasteel/dark,
-/area/ship/security)
 "Dj" = (
 /obj/machinery/power/shuttle/engine/electric{
 	dir = 1
@@ -1316,6 +1285,11 @@
 /obj/effect/turf_decal/box/red,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/security/range)
+"Ho" = (
+/obj/structure/table/reinforced,
+/obj/machinery/fax/indie,
+/turf/open/floor/plasteel/dark,
+/area/ship/bridge)
 "Hq" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -1524,6 +1498,32 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security/range)
+"LM" = (
+/obj/structure/closet/secure_closet/security,
+/obj/item/gun/ballistic/automatic/pistol/deagle,
+/obj/item/gun/ballistic/automatic/pistol/deagle,
+/obj/item/gun/ballistic/automatic/assault/skm,
+/obj/item/gun/ballistic/automatic/assault/skm,
+/obj/item/ammo_box/magazine/skm_762_40,
+/obj/item/ammo_box/magazine/skm_762_40,
+/obj/item/ammo_box/magazine/skm_762_40,
+/obj/item/ammo_box/magazine/skm_762_40,
+/obj/item/ammo_box/magazine/m50,
+/obj/item/ammo_box/magazine/m50,
+/obj/item/ammo_box/magazine/m50,
+/obj/item/ammo_box/magazine/m50,
+/obj/effect/turf_decal/box/red,
+/obj/machinery/power/apc/auto_name/directional/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -20;
+	pixel_y = 12
+	},
+/turf/open/floor/plasteel/dark,
+/area/ship/security)
 "Mm" = (
 /obj/structure/sign/poster/contraband/stechkin,
 /turf/closed/wall/r_wall,
@@ -2366,7 +2366,7 @@ Lu
 eG
 Uc
 fT
-Dc
+LM
 YM
 mP
 YM
@@ -2474,7 +2474,7 @@ UG
 "}
 (10,1,1) = {"
 UX
-hF
+Ho
 pK
 eJ
 Wc
