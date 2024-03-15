@@ -26,3 +26,8 @@
 /datum/map_generator/single_turf/space
 	turf_type = /turf/open/space
 	area_type = /area/space
+
+
+/datum/map_generator/single_turf/snowball
+	turf_type = /turf/open/floor/plating/asteroid/snow/temperatre/lit
+	area_type = /area/overmap_encounter/planetoid/ice

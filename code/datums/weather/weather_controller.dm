@@ -129,3 +129,9 @@
 		/datum/weather/rain/heavy/storm = 50,
 		/datum/weather/rain/heavy/storm/blocking = 30,
 	)
+
+/datum/weather_controller/snow_planet_peaceful
+		possible_weathers = list(
+			/datum/weather/snowfall = 40,
+			/datum/weather/snowfall/heavy = 20
+			)

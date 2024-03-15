@@ -680,6 +680,7 @@
 #include "code\datums\mapgen\planetary\SandGenerator.dm"
 #include "code\datums\mapgen\planetary\shroudedGenerator.dm"
 #include "code\datums\mapgen\planetary\SnowGenerator.dm"
+#include "code\datums\mapgen\planetary\temperate_snow_generator.dm"
 #include "code\datums\mapgen\planetary\WasteGenerator.dm"
 #include "code\datums\mapgen\planetary\waterGenerator.dm"
 #include "code\datums\mapgen\single_biome\_SingleBiome.dm"

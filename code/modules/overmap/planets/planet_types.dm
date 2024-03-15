@@ -229,3 +229,25 @@
 	weather_controller_type = /datum/weather_controller/toxic
 	weight = 1
 
+
+/datum/planet_type/ice
+	name = "frozen planet"
+	desc = "A frozen planet covered in thick snow, thicker ice, and dangerous predators."
+	planet = DYNAMIC_WORLD_ICE
+	icon_state = "ice"
+	color = COLOR_BLUE_LIGHT
+	mapgen = /datum/map_generator/planet_generator/snow
+	default_baseturf = /turf/open/floor/plating/asteroid/snow/icemoon
+	weather_controller_type = /datum/weather_controller/snow_planet
+	ruin_type = RUINTYPE_ICE
+	landing_sound = 'sound/effects/planet_landing_2.ogg'
+
+/datum/planet_type/snowball
+	name = "snowball planet"
+	desc = "A sparely populated planet covered with snow."
+	planet = DYNAMIC_WORLD_SNOWBALL
+	icon_state = "ice"
+	color = "#FFF5ED"
+	mapgen = /datum/map_generator/single_turf/snowball
+	default_baseturf = /turf/open/floor/plating/asteroid/snow/temperatre/lit
+	weather_controller_type = /datum/weather_controller/snow_planet_peaceful

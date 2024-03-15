@@ -44,6 +44,7 @@
 #define DYNAMIC_WORLD_GAS_GIANT "gas giant"
 #define DYNAMIC_WORLD_PLASMA_GIANT "plasma giant"
 
+#define DYNAMIC_WORLD_SNOWBALL "snowball"
 
 //Possible ship states
 #define OVERMAP_SHIP_IDLE "idle"
