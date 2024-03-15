@@ -251,3 +251,4 @@
 	mapgen = /datum/map_generator/single_turf/snowball
 	default_baseturf = /turf/open/floor/plating/asteroid/snow/temperatre/lit
 	weather_controller_type = /datum/weather_controller/snow_planet_peaceful
+	weight = 0
