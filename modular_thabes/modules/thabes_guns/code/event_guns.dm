@@ -73,7 +73,7 @@
 /obj/item/gun/ballistic/automatic/pistol/cm70
 	name = "CM-70 machine pistol"
 	desc = "A burst-fire machine pistol. Chambered in 9mm."
-	icon_state = "aps"
+	icon_state = "cm70"
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
 	can_suppress = FALSE
 	burst_size = 3
@@ -82,6 +82,15 @@
 
 	spread = 6
 	spread_unwielded = 12
+
+/obj/item/ammo_box/magazine/m9mm_cm70
+	name = "CM-70 machine pistol magazine (9mm)"
+	desc = "A long, 18-round double-stack magazine designed for the CM-70 pistol. These rounds do okay damage, but struggle against armor."
+	icon_state = "9x19p-8"
+	base_icon_state = "9x19p"	
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 18
 
 //FFV
 
