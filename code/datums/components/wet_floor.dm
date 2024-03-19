@@ -35,8 +35,6 @@
 /datum/component/wet_floor/RegisterWithParent()
 	RegisterSignal(parent, COMSIG_TURF_IS_WET, PROC_REF(is_wet))
 	RegisterSignal(parent, COMSIG_TURF_MAKE_DRY, PROC_REF(dry))
-	if(!HAS_TRAIT(parent, TRAIT_SHINY))
-		parent.AddComponent(/datum/component/shiny)
 
 /datum/component/wet_floor/UnregisterFromParent()
 	UnregisterSignal(parent, list(COMSIG_TURF_IS_WET, COMSIG_TURF_MAKE_DRY))
@@ -45,7 +43,6 @@
 /datum/component/wet_floor/Destroy()
 	STOP_PROCESSING(SSwet_floors, src)
 	var/turf/T = parent
-	qdel(T.GetComponent(/datum/component/slippery))
 	if(istype(T))		//If this is false there is so many things wrong with it.
 		T.cut_overlay(current_overlay)
 	else
