@@ -374,3 +374,53 @@
 	max_ammo = 10
 	multiple_sprites = AMMO_BOX_PER_BULLET
 	instant_load = TRUE
+
+/obj/item/gun/ballistic/automatic/pistol/mauler
+	name = "Mauler machine pistol"
+	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "mauler"
+	item_state = "hp_generic"
+	w_class = WEIGHT_CLASS_NORMAL
+	mag_type = /obj/item/ammo_box/magazine/m9mm_mauler
+	can_suppress = FALSE
+	fire_delay = 0
+
+	spread = 30
+	spread_unwielded = 50
+	recoil = 1
+	recoil_unwielded = 4
+
+//	lefthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/lefthand_guns.dmi'
+//	righthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/righthand_guns.dmi'
+	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
+
+	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
+	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/factory
+	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in 9mm."
+	item_state = "hp_generic_fresh"
+
+/obj/item/gun/ballistic/automatic/pistol/mauler/factory/update_overlays()
+	. = ..()
+	. += "[initial(icon_state)]_factory"
+
+/obj/item/ammo_box/magazine/m9mm_mauler
+	name = "mauler machine pistol magazine (9mm)"
+	desc = "A long, 12-round magazine designed for the Mauler 'Stop' pistol. These rounds do okay damage, but struggle against armor."
+	icon_state = "mauler_mag-1"
+	base_icon_state = "mauler_mag"
+	ammo_type = /obj/item/ammo_casing/c9mm
+	caliber = "9mm"
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/m9mm_mauler/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
