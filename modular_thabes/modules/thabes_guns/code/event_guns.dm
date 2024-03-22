@@ -21,21 +21,62 @@
 	righthand_file  = 'modular_thabes/modules/thabes_guns/icons/inhands/righthand_guns.dmi'
 
 /obj/item/gun/ballistic/automatic/gal/sniper
-	name = "CM-F40"
-	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War for long range support against xenofauna. Chambered in .308."
-	icon_state = "cmf40"
+	name = "CM-F90"
+	desc = "CLIP's standard issue sniper rifle. It is semi auto and uses a very high caliber bullet which generates enough force to pierce a lot of armor, but the force is an issue when firing rapidly semi auto. The magzine is only 5 rounds as well, so don't use all of them too eagerly. Chambered in 6.5 CLIP."
+	icon_state = "f90"
+	item_state = "f90"
+
+	fire_sound = 'modular_thabes/modules/thabes_guns/sound/cmf90.ogg'
 
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
 
-	manufacturer = MANUFACTURER_SOLARARMORIES
+	mag_type = /obj/item/ammo_box/magazine/f90
+
+	fire_delay = 1 SECONDS
+
+	manufacturer = MANUFACTURER_MINUTEMAN
 	spread = -5
-	spread_unwielded = 20
-	recoil = 0
-	recoil_unwielded = 4
+	spread_unwielded = 35
+	recoil = 4
+	recoil_unwielded = 10
 	wield_slowdown = 1
 	wield_delay = 1.3 SECONDS
+
+/obj/item/ammo_box/magazine/f90
+	name = "\improper CM-F90 Magazine (6.5 CLIP)"
+	desc = "A large 5-round box magazine for the CM-F90 sniper rifles. These rounds deal amazing damage, knocking targets on their feet, very rarely delimbing them, and bypass half protective equipment, though it isn't a high enough caliber to pierce armored vehicles."
+	base_icon_state = "f90_mag"
+	icon_state = "f90_mag-1"
+	ammo_type = /obj/item/ammo_casing/a65clip
+	caliber = "6.5CLIP"
+	max_ammo = 5
+
+	icon = 'modular_thabes/modules/thabes_guns/icons/ammo.dmi'
+
+/obj/item/ammo_box/magazine/f90/update_icon_state()
+	. = ..()
+	icon_state = "[base_icon_state]-[!!ammo_count()]"
+
+/obj/item/ammo_casing/a65clip
+	name = "6.5 CLIP bullet casing"
+	desc = "A 6.5 CLIP bullet casing."
+	icon_state = "big-brass"
+	caliber = "6.5CLIP"
+	projectile_type = /obj/projectile/bullet/a65clip
+
+/obj/projectile/bullet/a65clip
+	name = "6.5 CLIP bullet"
+	speed = 0.3
+	stamina = 10
+	damage = 40
+	armour_penetration = 50
+
+	icon_state = "redtrac"
+	light_system = MOVABLE_LIGHT
+	light_color = COLOR_SOFT_RED
+	light_range = 2
 
 /obj/item/gun/ballistic/automatic/smg/cm5
 	icon = 'modular_thabes/modules/thabes_guns/icons/48x32.dmi'
@@ -73,7 +114,7 @@
 	rack_sound = 'sound/weapons/gun/pistol/candor_cocked.ogg'
 	lock_back_sound = 'sound/weapons/gun/pistol/slide_lock.ogg'
 	bolt_drop_sound = 'sound/weapons/gun/pistol/slide_drop.ogg'
-	manufacturer = MANUFACTURER_HUNTERSPRIDE
+	manufacturer = MANUFACTURER_MINUTEMAN
 	load_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/candor_reload.ogg'
 	eject_sound = 'sound/weapons/gun/pistol/candor_unload.ogg'
@@ -105,6 +146,7 @@
 	burst_size = 3
 	fire_delay = 1.2
 	actions_types = list(/datum/action/item_action/toggle_firemode)
+	manufacturer = MANUFACTURER_MINUTEMAN
 
 	fire_sound = 'modular_thabes/modules/thabes_guns/sound/cm70.ogg'
 	icon = 'modular_thabes/modules/thabes_guns/icons/guns.dmi'
@@ -496,3 +538,48 @@
 	zoomable = TRUE
 	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
 	zoom_out_amt = 5
+
+/obj/item/gun/ballistic/rifle/illestren/scoped/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.light_color = COLOR_SOFT_RED
+		chambered.BB.light_range = 2
+		chambered.BB.update_light()
+
+/obj/item/gun/ballistic/automatic/hmg/skm_lmg/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.light_color = COLOR_SOFT_RED
+		chambered.BB.light_range = 2
+		chambered.BB.update_light()
+
+/obj/item/gun/ballistic/rifle/scout/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.light_color = COLOR_SOFT_RED
+		chambered.BB.light_range = 2
+		chambered.BB.update_light()
+
+/obj/item/gun/ballistic/rifle/solgov/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.light_color = COLOR_SOFT_RED
+		chambered.BB.light_range = 2
+		chambered.BB.update_light()
+
+/obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user)
+	. = ..()
+	if(chambered.BB)
+		chambered.BB.icon_state = "redtrac"
+		chambered.BB.light_system = MOVABLE_LIGHT
+		chambered.BB.light_color = COLOR_SOFT_RED
+		chambered.BB.light_range = 2
+		chambered.BB.update_light()

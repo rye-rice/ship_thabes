@@ -29,4 +29,4 @@
 
 /datum/map_generator/single_turf/ocean
 	turf_type = /turf/open/water/stormy_planet_lit
-	area_type = /area/overmap_encounter/planetoid/sand
+	area_type = /area/overmap_encounter/planetoid/ocean
