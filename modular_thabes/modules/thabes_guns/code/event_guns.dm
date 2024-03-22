@@ -258,10 +258,11 @@
 	can_suppress = FALSE
 	fire_delay = 0
 
-	spread = 20
-	spread_unwielded = 35
+	spread = 25
+	spread_unwielded = 50
 	recoil = 1
 	recoil_unwielded = 4
+	fire_sound = 'modular_thabes/modules/thabes_guns/sound/mauler.ogg'
 
 	icon = 'modular_thabes/modules/thabes_guns/icons/48x32.dmi'
 //	lefthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/lefthand_guns.dmi'
@@ -476,3 +477,22 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gun/ballistic/rifle/illestren/scoped
+	name = "\improper HP Scoped Illestren "
+	desc = "A sturdy and conventional bolt-action rifle. This one appers to have a scope attached, likely not for hunting. Chambered in 8x50mmR."
+	icon_state = "illestren_scoped"
+	item_state = "illestren_scoped"
+	can_be_sawn_off = FALSE
+	manufacturer = MANUFACTURER_HUNTERSPRIDE
+
+	icon = 'modular_thabes/modules/thabes_guns/icons/48x32.dmi'
+
+	mob_overlay_icon = 'modular_thabes/modules/thabes_guns/icons/inhands/onmob_guns.dmi'
+
+	lefthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/lefthand_guns.dmi'
+	righthand_file = 'modular_thabes/modules/thabes_guns/icons/inhands/righthand_guns.dmi'
+
+	zoomable = TRUE
+	zoom_amt = 10 //Long range, enough to see in front of you, but no tiles behind you.
+	zoom_out_amt = 5

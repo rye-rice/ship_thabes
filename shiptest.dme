@@ -3495,5 +3495,6 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "modular_thabes\modules\shit_for_event\code\event_clothing.dm"
 #include "modular_thabes\modules\thabes_guns\code\event_guns.dm"
 // END_INCLUDE
