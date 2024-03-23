@@ -112,3 +112,6 @@
 /turf/open/floor/concrete/stormy_planet_lit/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/shiny, SHINE_REFLECTIVE)
+
+/obj/effect/turf_decal/seasidedecal
+	icon_state = "seasideanim"
