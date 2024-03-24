@@ -3,7 +3,7 @@
 	icon = 'icons/effects/particles/smoke.dmi'
 	icon_state = list("smoke_1" = 1, "smoke_2" = 1, "smoke_3" = 2)
 	width = 100
-	height = 100
+	height = 150
 	count = 1000
 	spawning = 4
 	lifespan = 1.5 SECONDS
