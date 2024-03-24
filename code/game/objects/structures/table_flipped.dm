@@ -31,6 +31,12 @@
 		return FALSE
 	return attempted_dir != dir
 
+/obj/structure/flippedtable/CanPass(atom/movable/mover, border_dir)
+	. = ..()
+	if(border_dir & dir)
+		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
+	return TRUE
+
 /obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
 
@@ -42,14 +48,31 @@
 			return
 	if(istype(exiter, /obj/projectile))
 		return
-	if(direction == dir)
+
+	if(direction == dir && density)
 		exiter.Bump(src)
 		return COMPONENT_ATOM_BLOCK_EXIT
+
+	if(!(direction & dir))
+		return
+
+	if (exiter.movement_type & (PHASING | FLYING | FLOATING))
+		return
+
+	if (exiter.move_force >= MOVE_FORCE_EXTREMELY_STRONG)
+		return
+
+	if (!density)
+		return
+
+	if (exiter.throwing)
+		return
+
 	return
 
 /obj/structure/flippedtable/CtrlShiftClick(mob/user)
 	. = ..()
-	if(!istype(user) || !user.can_interact_with(src))
+	if(!istype(user) || !user.can_interact_with(src) || !table_type)
 		return FALSE
 	user.visible_message("<span class='danger'>[user] starts flipping [src]!</span>", "<span class='notice'>You start flipping over the [src]!</span>")
 	if(do_after(user, max_integrity/4))

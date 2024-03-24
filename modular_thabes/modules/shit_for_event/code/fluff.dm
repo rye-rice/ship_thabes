@@ -329,3 +329,12 @@
 	else if(dazzler)
 		visible_message("<span class='warning'>The bright searchlight attempts to dazzle [dazzler], but [dazzler.p_they()] seems unaffected!</span>")
 		to_chat(dazzler, "<span class='userdanger'>The bright searchlight attempts to dazzle you, but your protection prevents it!</span>")
+
+/obj/structure/fluff/sealadder
+	name = "ladder"
+	desc = "A ladder for climbing out the water."
+	icon = 'modular_thabes/modules/shit_for_event/icons/event_structs.dmi'
+	icon_state = "ladder2"
+	deconstructible = FALSE
+	layer = BELOW_MOB_LAYER
+	pixel_y = -8

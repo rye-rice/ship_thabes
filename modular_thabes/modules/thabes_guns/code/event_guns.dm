@@ -546,7 +546,6 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
-		chambered.BB.update_light()
 
 /obj/item/gun/ballistic/automatic/hmg/skm_lmg/before_firing(atom/target, mob/user)
 	. = ..()
@@ -555,7 +554,6 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
-		chambered.BB.update_light()
 
 /obj/item/gun/ballistic/rifle/scout/before_firing(atom/target, mob/user)
 	. = ..()
@@ -564,7 +562,6 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
-		chambered.BB.update_light()
 
 /obj/item/gun/ballistic/rifle/solgov/before_firing(atom/target, mob/user)
 	. = ..()
@@ -573,7 +570,6 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
-		chambered.BB.update_light()
 
 /obj/item/gun/ballistic/automatic/hmg/cm40/before_firing(atom/target, mob/user)
 	. = ..()
@@ -582,4 +578,3 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
-		chambered.BB.update_light()
