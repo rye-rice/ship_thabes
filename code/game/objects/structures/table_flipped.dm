@@ -31,12 +31,6 @@
 		return FALSE
 	return attempted_dir != dir
 
-/obj/structure/flippedtable/CanPass(atom/movable/mover, border_dir)
-	. = ..()
-	if(border_dir & dir)
-		return . || mover.throwing || mover.movement_type & (FLYING | FLOATING)
-	return TRUE
-
 /obj/structure/flippedtable/proc/on_exit(datum/source, atom/movable/exiter, direction)
 	SIGNAL_HANDLER
 
