@@ -267,6 +267,7 @@
 	light_power = 0
 	light_range = 5
 	pass_flags = PASSTABLE | PASSMOB | PASSGLASS | PASSGRILLE | PASSBLOB | PASSMOB | PASSCLOSEDTURF
+	generic_canpass = TRUE
 
 	var/obj/machinery/deployable_turret/spotlight/linked_spotlighter
 
@@ -338,3 +339,125 @@
 	deconstructible = FALSE
 	layer = BELOW_MOB_LAYER
 	pixel_y = -8
+
+///BROKEN VEHICLE PROPS
+/obj/structure/fluff/vehicle
+	icon = 'modular_thabes/modules/shit_for_event/icons/vehicles.dmi'
+	layer = WALL_OBJ_LAYER
+	light_system = MOVABLE_LIGHT_DIRECTIONAL
+	light_color = "#e7f8ff" //Cit lighting
+	light_range = 10 // A little better than the standard flashlight.
+	light_power = 2 //Cit lighting
+	resistance_flags = FIRE_PROOF
+	max_integrity = 500
+	armor = list("melee" = 80, "bullet" = 60, "laser" = 60, "energy" = 30, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 10)
+
+	var/on = TRUE
+	var/datum/looping_sound/vehicle/soundloop
+	var/last_damaged
+
+/obj/structure/fluff/vehicle/Initialize()
+	. = ..()
+	soundloop = new(list(src), FALSE)
+	update_appearance()
+
+
+/obj/structure/fluff/vehicle/update_icon(updates)
+	. = ..()
+	var/percentage = (obj_integrity / max_integrity) * 100
+	update_brightness()
+	if(last_damaged == percentage)
+		last_damaged = percentage
+		return
+	last_damaged = percentage
+	QDEL_NULL(particles)
+
+	switch(percentage)
+		if(-INFINITY to 10)
+			particles = new /particles/smoke/turf_fire()
+		if(10 to 30)
+			particles = new /particles/smoke/steam/vent/high()
+		if(30 to 40)
+			particles = new /particles/smoke/steam/vent/low()
+
+/obj/structure/fluff/vehicle/proc/update_brightness()
+	set_light_on(on)
+	if(on)
+		soundloop.start()
+		return
+	soundloop.stop()
+
+/obj/structure/fluff/vehicle/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
+	. = ..()
+	if(.) //received damage
+		update_appearance()
+
+
+/datum/looping_sound/vehicle
+	mid_sounds = list('modular_thabes/modules/shit_for_event/sound/truck_idling.ogg'=1)
+	mid_length = 2.2 SECONDS
+	volume = 80
+
+/obj/structure/fluff/vehicle/van
+	name = "van"
+	desc = "An old van, seems to be broken down."
+	icon_state = "van"
+	density = TRUE
+
+	bound_height = 32
+	bound_width = 64
+
+/obj/structure/fluff/vehicle/van/Initialize(mapload)
+	. = ..()
+	if(dir & (NORTH|SOUTH))
+		bound_height = 64
+		bound_width = 32
+
+
+/obj/structure/fluff/vehicle/truck
+	name = "truck"
+	desc = "An old truck, seems to be broken down."
+	icon_state = "truck"
+	density = TRUE
+
+	bound_height = 32
+	bound_width = 64
+
+
+/obj/structure/fluff/vehicle/truck/truckcargo
+	icon_state = "truck_cargo"
+
+
+
+/obj/structure/fluff/vehicle/crane
+	name = "crane"
+	desc = "An old crane, seems to be broken down."
+	icon_state = "crane"
+	density = TRUE
+	bound_height = 64
+	bound_width = 64
+/obj/structure/fluff/vehicle/crane/cranecargo
+	icon_state = "crane_cargo"
+
+/obj/structure/fluff/vehicle/crawler
+	name = "crawler"
+	desc = "An old crawler, seems to be broken down."
+	icon_state = "crawler"
+	density = TRUE
+	bound_height = 32
+	bound_width = 64
+
+/obj/structure/fluff/vehicle/crawler/crawler_blue
+	icon_state = "crawler_crate_b"
+
+/obj/structure/fluff/vehicle/crawler/crawler_red
+	icon_state = "crawler_crate_r"
+
+/obj/structure/fluff/vehicle/crawler/crawler_green
+	icon_state = "crawler_crate_g"
+
+/obj/structure/fluff/vehicle/crawler/crawler_fuel
+	icon_state = "crawler_fuel"
+
+/obj/structure/fluff/vehicle/crawler/crawler_cargo
+	icon_state = "crawler_cargo"

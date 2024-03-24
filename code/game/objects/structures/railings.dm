@@ -13,6 +13,9 @@
 	var/buildstack = /obj/item/stack/rods
 	var/buildstackamount = 3
 
+/obj/structure/railing/thick
+	name = "thick railing"
+	icon_state = "railing_thick"
 
 /obj/structure/railing/Initialize()
 	. = ..()
@@ -27,6 +30,11 @@
 	density = FALSE
 	climbable = FALSE
 	buildstackamount = 1
+
+/obj/structure/railing/thick
+	name = "thick railing"
+	icon_state = "railing_thick"
+
 /obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
 		return ..()
