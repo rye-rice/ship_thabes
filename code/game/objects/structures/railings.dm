@@ -31,9 +31,8 @@
 	climbable = FALSE
 	buildstackamount = 1
 
-/obj/structure/railing/thick
-	name = "thick railing"
-	icon_state = "railing_thick"
+/obj/structure/railing/corner/thick
+	icon_state = "railing_thick_corner"
 
 /obj/structure/railing/ComponentInitialize(skip)
 	if(skip)
