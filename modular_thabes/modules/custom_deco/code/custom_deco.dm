@@ -1,4 +1,4 @@
 /obj/structure/curtain/patient
 	icon_type = "patient"
-	icon = 'modular_thabes/modules/icons/custom_deco/curtains.dmi'
+	icon = 'modular_thabes/modules/custom_deco/icons/curtains.dmi'
 	icon_state = "patient-open"

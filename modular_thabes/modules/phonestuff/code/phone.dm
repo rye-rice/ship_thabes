@@ -2,7 +2,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/structure/transmitter
 	name = "telephone receiver"
-	icon = 'modular_thabes/modules/icons/phonestuff/obj.dmi'
+	icon = 'modular_thabes/modules/phonestuff/icons/obj.dmi'
 	icon_state = "wall_phone"
 	desc = "It is a wall mounted telephone. Uses 8G to communicate across local space, although it cant reach any further than the sector."
 	force = 0
@@ -369,7 +369,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 /obj/item/phone
 	name = "telephone"
-	icon = 'modular_thabes/modules/icons/phonestuff/obj.dmi'
+	icon = 'modular_thabes/modules/phonestuff/icons/obj.dmi'
 	icon_state = "rpb_phone"
 
 	w_class = WEIGHT_CLASS_BULKY

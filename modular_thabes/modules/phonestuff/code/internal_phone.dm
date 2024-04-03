@@ -26,8 +26,8 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/radio)
 /obj/item/storage/backpack/radio
 	name = "Telephone Pack"
 	desc = "A heavy-duty pack, used for telecommunications between crew in orbit and crew on ground. The radio components and industrial battery leave less space for storage. Control click to toggle auto-tagging when equpping it."
-	icon = 'modular_thabes/modules/icons/phonestuff/obj.dmi'
-	mob_overlay_icon = 'modular_thabes/modules/icons/phonestuff/mob.dmi'
+	icon = 'modular_thabes/modules/phonestuff/icons/obj.dmi'
+	mob_overlay_icon = 'modular_thabes/modules/phonestuff/icons/mob.dmi'
 	icon_state = "radiopack"
 	base_icon_state = "radiopack"
 	item_state = "radiopack"
