@@ -1,8 +1,9 @@
-GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
+GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 
-/obj/structure/transmitter
+/obj/structure/telephone_transmitter
 	name = "telephone receiver"
 	icon = 'modular_thabes/modules/phonestuff/icons/obj.dmi'
+	base_icon_state = "wall_phone"
 	icon_state = "wall_phone"
 	desc = "It is a wall mounted telephone. Uses 8G to communicate across local space, although it cant reach any further than the sector."
 	force = 0
@@ -14,14 +15,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	var/auto_name = TRUE
 
-	var/obj/item/phone/attached_to
+	var/obj/item/telephone_receiver/attached_to
 
-	var/obj/structure/transmitter/calling
-	var/obj/structure/transmitter/caller
+	var/obj/structure/telephone_transmitter/calling
+	var/obj/structure/telephone_transmitter/caller
 
 	var/next_ring = 0
 
-	var/phone_type = /obj/item/phone
+	var/phone_type = /obj/item/telephone_receiver
 
 	var/range = 7
 
@@ -31,12 +32,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/timeout_timer_id
 	var/timeout_duration = 30 SECONDS
 
-/obj/structure/transmitter/hidden
+/obj/structure/telephone_transmitter/hidden
 	callable = FALSE
 
-/obj/structure/transmitter/Initialize(mapload, ...)
+/obj/structure/telephone_transmitter/Initialize(mapload, ...)
 	. = ..()
-	base_icon_state = icon_state
+	if(!base_icon_state)
+		base_icon_state = icon_state
 
 	attached_to = new phone_type(src)
 	RegisterSignal(attached_to, COMSIG_PARENT_PREQDELETED, .proc/override_delete)
@@ -54,11 +56,11 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			if(istype(area, /area/ship))
 				phone_category = "Vessels"
 
-/obj/structure/transmitter/examine(mob/user)
+/obj/structure/telephone_transmitter/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>You can use a multitool on it to change it's name and category.</span>"
 
-/obj/structure/transmitter/update_icon()
+/obj/structure/telephone_transmitter/update_icon()
 	. = ..()
 	SEND_SIGNAL(src, COMSIG_TRANSMITTER_UPDATE_ICON)
 	if(attached_to.loc != src)
@@ -70,14 +72,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	else
 		icon_state = base_icon_state
 
-/obj/structure/transmitter/proc/override_delete()
+/obj/structure/telephone_transmitter/proc/override_delete()
 	SIGNAL_HANDLER
 	recall_phone()
 	return QDEL_HINT_LETMELIVE
 
-
+/// TODO: KILL THIS. MAKE IT A PROC. HAVE FUNNY LITTLE SOUNDS FROM EACH FAILURE
 #define TRANSMITTER_UNAVAILABLE(T) (\
-	T.get_calling_phone() \
+	T.	() \
 	|| !T.attached_to \
 	|| T.attached_to.loc != T \
 	|| !T.enabled\
@@ -87,7 +89,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	var/list/phone_list = list()
 
 	for(var/t in GLOB.transmitters)
-		var/obj/structure/transmitter/T = t
+		var/obj/structure/telephone_transmitter/T = t
 		if(TRANSMITTER_UNAVAILABLE(T) || !T.callable) // Phone not available
 			continue
 
@@ -102,12 +104,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	return phone_list
 
-/obj/structure/transmitter/ui_status(mob/user, datum/ui_state/state)
+/obj/structure/telephone_transmitter/ui_status(mob/user, datum/ui_state/state)
 	. = ..()
 	if(TRANSMITTER_UNAVAILABLE(src))
 		return UI_CLOSE
 
-/obj/structure/transmitter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
+/obj/structure/telephone_transmitter/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -128,13 +130,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	update_icon()
 
-/obj/structure/transmitter/ui_static_data(mob/user)
+/obj/structure/telephone_transmitter/ui_static_data(mob/user)
 	. = list()
 
 	.["available_transmitters"] = get_transmitters() - list(phone_id)
 	var/list/transmitters = list()
 	for(var/i in GLOB.transmitters)
-		var/obj/structure/transmitter/T = i
+		var/obj/structure/telephone_transmitter/T = i
 		transmitters += list(list(
 			"phone_category" = T.phone_category,
 			"phone_color" = T.phone_color,
@@ -144,7 +146,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	.["transmitters"] = transmitters
 
-/obj/structure/transmitter/proc/call_phone(var/mob/living/carbon/human/user, calling_phone_id)
+/obj/structure/telephone_transmitter/proc/call_phone(var/mob/living/carbon/human/user, calling_phone_id)
 	var/list/transmitters = get_transmitters()
 	transmitters -= phone_id
 
@@ -152,7 +154,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		to_chat(user, span_purple("[icon2html(src, user)] No transmitters could be located to call!"))
 		return
 
-	var/obj/structure/transmitter/T = transmitters[calling_phone_id]
+	var/obj/structure/telephone_transmitter/T = transmitters[calling_phone_id]
 	if(!istype(T) || QDELETED(T))
 		transmitters -= T
 		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(T)], QDELETED returned: [QDELETED(T)])")
@@ -174,7 +176,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	user.put_in_active_hand(attached_to)
 	attached_to.setup_signal(user)
 
-/obj/structure/transmitter/attack_hand(mob/user)
+/obj/structure/telephone_transmitter/attack_hand(mob/user)
 	. = ..()
 
 	if(!attached_to || attached_to.loc != src)
@@ -190,7 +192,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		ui_interact(user)
 		return
 
-	var/obj/structure/transmitter/T = get_calling_phone()
+	var/obj/structure/telephone_transmitter/T = get_calling_phone()
 
 	if(T.attached_to && ismob(T.attached_to.loc))
 		var/mob/M = T.attached_to.loc
@@ -210,14 +212,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 #undef TRANSMITTER_UNAVAILABLE
 
-/obj/structure/transmitter/ui_interact(mob/user, datum/tgui/ui)
+/obj/structure/telephone_transmitter/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "PhoneMenu", phone_id)
 		ui.open()
 
-/obj/structure/transmitter/proc/reset_call(var/timeout = FALSE)
-	var/obj/structure/transmitter/T = get_calling_phone()
+/obj/structure/telephone_transmitter/proc/reset_call(var/timeout = FALSE)
+	var/obj/structure/telephone_transmitter/T = get_calling_phone()
 	if(T)
 		if(T.attached_to && ismob(T.attached_to.loc))
 			var/mob/M = T.attached_to.loc
@@ -252,7 +254,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	STOP_PROCESSING(SSobj, src)
 
-/obj/structure/transmitter/process()
+/obj/structure/telephone_transmitter/process()
 	if(caller)
 		if(!attached_to)
 			STOP_PROCESSING(SSobj, src)
@@ -265,12 +267,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 				next_ring = world.time + 3 SECONDS
 
 	else if(calling)
-		var/obj/structure/transmitter/T = get_calling_phone()
+		var/obj/structure/telephone_transmitter/T = get_calling_phone()
 		if(!T)
 			STOP_PROCESSING(SSobj, src)
 			return
 
-		var/obj/item/phone/P = T.attached_to
+		var/obj/item/telephone_receiver/P = T.attached_to
 
 		if(P && attached_to.loc == src && P.loc == T && next_ring < world.time)
 			playsound(get_turf(attached_to), 'sound/machines/telephone/telephone_ring.ogg', 20, FALSE, 14)
@@ -282,7 +284,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return
 
 
-/obj/structure/transmitter/proc/recall_phone()
+/obj/structure/telephone_transmitter/proc/recall_phone()
 	if(ismob(attached_to.loc))
 		var/mob/M = attached_to.loc
 		M.dropItemToGround(attached_to)
@@ -293,7 +295,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	update_icon()
 
-/obj/structure/transmitter/proc/get_calling_phone()
+/obj/structure/telephone_transmitter/proc/get_calling_phone()
 	if(calling)
 		return calling
 	else if(caller)
@@ -301,17 +303,17 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	return
 
-/obj/structure/transmitter/proc/handle_speak(datum/source, list/speech_args, mob/living/speaker)
+/obj/structure/telephone_transmitter/proc/handle_speak(datum/source, list/speech_args, mob/living/speaker)
 	SIGNAL_HANDLER
 
 //	if(language.flags & TONGUELESS_SPEECH)
 //		return
 
-	var/obj/structure/transmitter/T = get_calling_phone()
+	var/obj/structure/telephone_transmitter/T = get_calling_phone()
 	if(!istype(T))
 		return
 
-	var/obj/item/phone/P = T.attached_to
+	var/obj/item/telephone_receiver/P = T.attached_to
 
 	if(!P || !attached_to)
 		return
@@ -319,7 +321,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	P.handle_hear(source, speech_args, speaker)
 	attached_to.handle_hear(source, speech_args, speaker)
 
-/obj/structure/transmitter/attackby(obj/item/W, mob/user)
+/obj/structure/telephone_transmitter/attackby(obj/item/W, mob/user)
 	if(W == attached_to)
 		recall_phone()
 	if(istype(W, /obj/item/multitool))
@@ -328,7 +330,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		. = ..()
 
 
-/obj/structure/transmitter/proc/rename_phone(mob/user)
+/obj/structure/telephone_transmitter/proc/rename_phone(mob/user)
 	var/choices = list(
 	PHONE_RENAME_CAT,
 	PHONE_RENAME_ID,
@@ -352,7 +354,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 				auto_name = FALSE
 
 
-/obj/structure/transmitter/Destroy()
+/obj/structure/telephone_transmitter/Destroy()
 	if(attached_to)
 		if(attached_to.loc == src)
 			UnregisterSignal(attached_to, COMSIG_PARENT_PREQDELETED)
@@ -367,14 +369,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	reset_call()
 	return ..()
 
-/obj/item/phone
+/obj/item/telephone_receiver
 	name = "telephone"
 	icon = 'modular_thabes/modules/phonestuff/icons/obj.dmi'
 	icon_state = "rpb_phone"
 
 	w_class = WEIGHT_CLASS_BULKY
 
-	var/obj/structure/transmitter/attached_to
+	var/obj/structure/telephone_transmitter/attached_to
 
 	var/raised = FALSE
 	var/zlevel_transfer = FALSE
@@ -384,20 +386,20 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	force = 0
 	throwforce = 0
 
-/obj/item/phone/Initialize(mapload)
+/obj/item/telephone_receiver/Initialize(mapload)
 	. = ..()
-	if(istype(loc, /obj/structure/transmitter))
+	if(istype(loc, /obj/structure/telephone_transmitter))
 		attach_to(loc)
 
-/obj/item/phone/Destroy()
+/obj/item/telephone_receiver/Destroy()
 	remove_attached()
 	return ..()
 
-/obj/item/phone/Moved()
+/obj/item/telephone_receiver/Moved()
 	. = ..()
 	check_range()
 
-/obj/item/phone/proc/check_range()
+/obj/item/telephone_receiver/proc/check_range()
 	SIGNAL_HANDLER
 
 	if(!attached_to)
@@ -411,7 +413,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 			visible_message("<span class='notice'>[src] flies back to [attached_to].</span>")
 		forceMove(get_turf(attached_to))
 
-/obj/item/phone/proc/handle_speak(datum/source, list/speech_args, mob/living/speaker)
+/obj/item/telephone_receiver/proc/handle_speak(datum/source, list/speech_args, mob/living/speaker)
 	SIGNAL_HANDLER
 
 	if(!attached_to || loc == attached_to)
@@ -420,13 +422,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	attached_to.handle_speak(source, speech_args, speaker)
 
-/obj/item/phone/proc/handle_hear(datum/source, list/speech_args, mob/living/speaker)
+/obj/item/telephone_receiver/proc/handle_hear(datum/source, list/speech_args, mob/living/speaker)
 	var/new_message = speech_args[SPEECH_MESSAGE]
 	var/language = speech_args[SPEECH_LANGUAGE]
 	if(!attached_to)
 		return
 
-	var/obj/structure/transmitter/T = attached_to.get_calling_phone()
+	var/obj/structure/telephone_transmitter/T = attached_to.get_calling_phone()
 
 	if(!T)
 		return
@@ -441,13 +443,14 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	var/mob/living/carbon/M = loc
 
+	var/atom/movable/virtualspeaker/v_speaker = new(null, speaker, src) //??? from what i gather because of radio... shit? you need this for dchat? idfk, say code is incomprehendable and im not about to reverse engineer that shit
 	for(var/mob/dead/observer/observer in GLOB.player_list)
 		if(M.client.prefs.chat_toggles & CHAT_GHOSTRADIO)
-			observer.Hear(composed_message, speaker, language, new_message, FREQ_PHONE)
+			observer.Hear(composed_message, v_speaker, language, new_message, FREQ_PHONE)
 
 	M.Hear(composed_message, speaker, language, new_message, FREQ_PHONE)
 
-/obj/item/phone/proc/attach_to(var/obj/structure/transmitter/to_attach)
+/obj/item/telephone_receiver/proc/attach_to(var/obj/structure/telephone_transmitter/to_attach)
 	if(!istype(to_attach))
 		return
 
@@ -456,15 +459,15 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	attached_to = to_attach
 
 
-/obj/item/phone/proc/remove_attached()
+/obj/item/telephone_receiver/proc/remove_attached()
 	attached_to = null
 
-/obj/item/phone/attack_hand(mob/user)
+/obj/item/telephone_receiver/attack_hand(mob/user)
 	if(attached_to && get_dist(user, attached_to) > attached_to.range)
 		return FALSE
 	return ..()
 
-/obj/item/phone/attack_self(mob/user)
+/obj/item/telephone_receiver/attack_self(mob/user)
 	..()
 	if(raised)
 		set_raised(FALSE, user)
@@ -474,7 +477,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		to_chat(user, span_notice("You raise [src] to your ear."))
 
 
-/obj/item/phone/proc/set_raised(var/to_raise, var/mob/living/carbon/human/H)
+/obj/item/telephone_receiver/proc/set_raised(var/to_raise, var/mob/living/carbon/human/H)
 	if(!istype(H))
 		return
 
@@ -495,27 +498,27 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 
 	H.update_inv_hands()
 
-/obj/item/phone/dropped(var/mob/user)
+/obj/item/telephone_receiver/dropped(var/mob/user)
 	. = ..()
 	UnregisterSignal(user, COMSIG_MOB_SAY)
 	UnregisterSignal(user, COMSIG_MOVABLE_MOVED)
 
 	set_raised(FALSE, user)
 
-/obj/item/phone/on_enter_storage(obj/item/storage/S)
+/obj/item/telephone_receiver/on_enter_storage(obj/item/storage/S)
 	. = ..()
 	if(attached_to)
 		attached_to.recall_phone()
 
-/obj/item/phone/pickup(mob/user)
+/obj/item/telephone_receiver/pickup(mob/user)
 	. = ..()
 	setup_signal(user)
 
-/obj/item/phone/proc/setup_signal(mob/user)
+/obj/item/telephone_receiver/proc/setup_signal(mob/user)
 	RegisterSignal(user, COMSIG_MOB_SAY, .proc/handle_speak)
 	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/check_range)
 
-/obj/item/phone/proc/do_zlevel_check()
+/obj/item/telephone_receiver/proc/do_zlevel_check()
 	if(!attached_to || !loc.z || !attached_to.z)
 		return FALSE
 
@@ -534,7 +537,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 		return TRUE
 	return FALSE
 
-/obj/item/phone/proc/transmitter_move_handler(var/datum/source)
+/obj/item/telephone_receiver/proc/transmitter_move_handler(var/datum/source)
 	SIGNAL_HANDLER
 	zlevel_transfer = FALSE
 	if(zlevel_transfer_timer)
@@ -542,12 +545,12 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/transmitter)
 	UnregisterSignal(attached_to, COMSIG_MOVABLE_MOVED)
 
 //rotary desk phones (need a touch tone handset at some point)
-/obj/structure/transmitter/rotary
+/obj/structure/telephone_transmitter/rotary
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
 	desc = "The finger plate is a little stiff."
 
-/obj/structure/transmitter/touchtone
+/obj/structure/telephone_transmitter/touchtone
 	name = "touch-tone telephone"
 	icon_state = "rotary_phone"//placeholder
 	desc = "Ancient aliens, its all true. I'm an expert just like you!"

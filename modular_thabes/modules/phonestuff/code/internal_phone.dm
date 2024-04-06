@@ -1,23 +1,23 @@
-/// from /obj/structure/transmitter/update_icon()
+/// from /obj/structure/telephone_transmitter/update_icon()
 #define COMSIG_TRANSMITTER_UPDATE_ICON "transmitter_update_icon"
 
 #define PHONE_RENAME_CAT "category"
 #define PHONE_RENAME_ID "phone_id"
 
-/obj/structure/transmitter/internal
+/obj/structure/telephone_transmitter/internal
 	name = "\improper internal telephone receiver"
 	desc = "A telephone box compacted enough to fit inside a bag, while the phone lies outside on a handle. Unfortunately, this and the heavy duty battery leave less space for items."
 
-	phone_type = /obj/item/phone
+	phone_type = /obj/item/telephone_receiver
 
 	var/atom/relay_obj
 
-/obj/structure/transmitter/internal/ui_host(mob/user, datum/tgui/ui)
+/obj/structure/telephone_transmitter/internal/ui_host(mob/user, datum/tgui/ui)
 	if(!relay_obj)
 		return ..()
 	return relay_obj
 
-/obj/structure/transmitter/internal/Destroy()
+/obj/structure/telephone_transmitter/internal/Destroy()
 	relay_obj = null
 	return ..()
 
@@ -37,7 +37,7 @@ GLOBAL_LIST_EMPTY_TYPED(radio_packs, /obj/item/storage/backpack/radio)
 
 	var/autotag = TRUE
 
-	var/obj/structure/transmitter/internal/internal_transmitter
+	var/obj/structure/telephone_transmitter/internal/internal_transmitter
 
 /obj/item/storage/backpack/radio/ComponentInitialize()
 	. = ..()

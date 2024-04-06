@@ -232,7 +232,7 @@
 		M.fax_name = replacetext(M.fax_name,oldtitle,title)
 
 //THABES ADDITION BEGIN: PHONE SHIT
-	for(var/obj/structure/transmitter/M in A)
+	for(var/obj/structure/telephone_transmitter/M in A)
 		if(!M.auto_name)
 			continue
 		M.phone_id = replacetext(M.phone_id,oldtitle,title)
