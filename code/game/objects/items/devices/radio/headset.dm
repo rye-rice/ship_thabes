@@ -254,25 +254,25 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 //solgov
 /obj/item/radio/headset/solgov
-	name = "\improper Protectorate headset"
+	name = "\improper SolGov headset"
 	desc = "Worn by bureaucrats and, occasionally, Sonnensoldneren."
 	icon_state = "solgov_headset"
 	keyslot = new /obj/item/encryptionkey/solgov
 
 /obj/item/radio/headset/solgov/captain
-	name = "\improper Protectorate official radio headset"
-	desc = "Worn by various officials and leaders from Protectorate. Fancy hat not included."
+	name = "\improper SolGov official radio headset"
+	desc = "Worn by various officials and leaders from SolGov. Fancy hat not included."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
 /obj/item/radio/headset/solgov/alt
-	name = "\improper Protectorate bowman headset"
+	name = "\improper SolGov bowman headset"
 	desc = "Worn by bureaucrats and, occasionally, Sonnensoldneren. Protects ears from flashbangs."
 	icon_state = "solgov_headset_alt"
 
 /obj/item/radio/headset/solgov/alt/captain
-	name = "\improper Protectorate official bowman headset"
-	desc = "Worn by various officials and leaders from Protectorate. Fancy hat not included. Protects ears from flashbangs."
+	name = "\improper SolGov official bowman headset"
+	desc = "Worn by various officials and leaders from SolGov. Fancy hat not included. Protects ears from flashbangs."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 

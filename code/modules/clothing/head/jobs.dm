@@ -43,13 +43,13 @@
 	icon_state = "captain_nt"
 
 /obj/item/clothing/head/caphat/frontier
-	name = "\improper USCM commander's cap"
-	desc = "An imposing peaked cap, meant for a commander of the USCM."
+	name = "\improper Frontiersmen commander's cap"
+	desc = "An imposing peaked cap, meant for a commander of the Frontiersmen."
 	icon_state = "frontier_cap"
 
 /obj/item/clothing/head/caphat/frontier/admiral
-	name = "\improper USCM admiral's cap"
-	desc = "An imposing peaked cap meant for only the highest of officers of the USCM pirate fleet."
+	name = "\improper Frontiersmen admiral's cap"
+	desc = "An imposing peaked cap meant for only the highest of officers of the Frontiersmen pirate fleet."
 	icon_state = "frontier_admiral_cap"
 
 //Head of Personnel

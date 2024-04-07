@@ -1,9 +1,9 @@
 /*
-Protectorate Representative
+SolGov Representative
 */
 
 /datum/job/solgov
-	name = "Protectorate Representative"
+	name = "SolGov Representative"
 	wiki_page = "Government_Attaché"
 	minimal_player_age = 7
 	officer = TRUE

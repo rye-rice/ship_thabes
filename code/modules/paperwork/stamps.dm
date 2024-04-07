@@ -102,7 +102,7 @@
 	dye_color = DYE_SYNDICATE
 
 /obj/item/stamp/solgov
-	name = "Protectorate rubber stamp"
+	name = "SolGov rubber stamp"
 	icon_state = "stamp-solgov"
 
 /obj/item/stamp/inteq

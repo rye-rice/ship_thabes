@@ -1,14 +1,14 @@
 // ********************************************************************
-// ** Protectorate **
+// ** SolGov **
 // ********************************************************************
 /datum/antagonist/ert/solgov
-	name = "Protectorate Sonnensöldner"
+	name = "SolGov Sonnensöldner"
 	outfit = /datum/outfit/job/solgov/ert
 	random_names = FALSE
 	role = "Sonnensöldner"
 
 /datum/antagonist/ert/official/solgov
-	name = "Protectorate Inspector"
+	name = "SolGov Inspector"
 	outfit = /datum/outfit/job/solgov/ert/inspector
 	role = "Solarian Inspector"
 

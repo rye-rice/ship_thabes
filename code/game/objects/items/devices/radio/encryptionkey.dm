@@ -83,7 +83,7 @@
 	channels = list(RADIO_CHANNEL_AI_PRIVATE = 1)
 
 /obj/item/encryptionkey/solgov
-	name = "\improper Protectorate encryption key"
+	name = "\improper SolGov encryption key"
 	icon = 'icons/obj/radio.dmi'
 	icon_state = "solgov_cypherkey"
 	channels = list(RADIO_CHANNEL_SOLGOV = 1)
