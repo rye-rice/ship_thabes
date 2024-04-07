@@ -83,7 +83,6 @@
 	item_state = "cage"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
-	dynamic_hair_suffix = ""
 
 /obj/item/storage/box/holy/sentinel
 	name = "Stone Sentinel Kit"
@@ -521,9 +520,9 @@
 
 /obj/item/nullrod/scythe/talking/necro/attack(mob/living/target)
 	..()
-	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(/datum/status_effect/stacking/saw_bleed)
+	var/datum/status_effect/stacking/saw_bleed/B = target.has_status_effect(STATUS_EFFECT_SAWBLEED)
 	if(!B)
-		target.apply_status_effect(/datum/status_effect/stacking/saw_bleed,bleed_stacks_per_hit)
+		target.apply_status_effect(STATUS_EFFECT_SAWBLEED,bleed_stacks_per_hit)
 	else
 		B.add_stacks(bleed_stacks_per_hit)
 

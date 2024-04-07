@@ -217,7 +217,7 @@
 	desc = "Use this to keep prisoners in line."
 	gender = PLURAL
 	icon = 'icons/obj/items_and_weapons.dmi'
-	icon_state = "legcuff"
+	icon_state = "handcuff"
 	lefthand_file = 'icons/mob/inhands/equipment/security_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	flags_1 = CONDUCT_1
@@ -404,18 +404,18 @@
 	item_state = "bola_r"
 	breakouttime = 300
 	slowdown = 0
-	var/datum/status_effect/gonbola_pacify/effect_reference
+	var/datum/status_effect/gonbolaPacify/effectReference
 
 /obj/item/restraints/legcuffs/bola/gonbola/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	. = ..()
 	if(iscarbon(hit_atom))
 		var/mob/living/carbon/C = hit_atom
-		effect_reference = C.apply_status_effect(/datum/status_effect/gonbola_pacify)
+		effectReference = C.apply_status_effect(STATUS_EFFECT_GONBOLAPACIFY)
 
 /obj/item/restraints/legcuffs/bola/gonbola/dropped(mob/user)
 	. = ..()
-	if(effect_reference)
-		QDEL_NULL(effect_reference)
+	if(effectReference)
+		QDEL_NULL(effectReference)
 
 /obj/item/restraints/legcuffs/bola/watcher //tribal bola for tribal lizards
 	name = "watcher Bola"

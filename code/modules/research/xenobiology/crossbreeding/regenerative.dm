@@ -265,8 +265,6 @@ Regenerative extracts:
 		target.visible_message("<span class='warning'>The [target] suddenly changes color!</span>")
 		var/mob/living/simple_animal/slime/S = target
 		S.random_colour()
-	if(isjellyperson(target))
-		target.reagents.add_reagent(/datum/reagent/mutationtoxin/jelly,5)
 	organ_loss += 17
 
 
@@ -344,7 +342,7 @@ Regenerative extracts:
 	slime_heal_modifier = 0.3
 
 /obj/item/slimecross/regenerative/adamantine/core_effect(mob/living/target, mob/user) //WIP - Find out why this doesn't work.
-	target.apply_status_effect(/datum/status_effect/slimeskin)
+	target.apply_status_effect(STATUS_EFFECT_SLIMESKIN)
 	brute_loss = (10 + (target.getBruteLoss() * 0.65)) //most common damage type, let's not go overboard
 	jelly_amount *= 0.5
 
@@ -353,4 +351,4 @@ Regenerative extracts:
 	effect_desc = "Partially heals the target and temporarily makes them immortal, but pacifistic."
 
 /obj/item/slimecross/regenerative/rainbow/core_effect(mob/living/target, mob/user)
-	target.apply_status_effect(/datum/status_effect/rainbow_protection)
+	target.apply_status_effect(STATUS_EFFECT_RAINBOWPROTECTION)
