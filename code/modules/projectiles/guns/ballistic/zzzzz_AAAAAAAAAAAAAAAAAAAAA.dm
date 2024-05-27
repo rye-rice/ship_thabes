@@ -295,8 +295,8 @@
 //	eject_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
 //	eject_empty_sound = 'sound/weapons/gun/smg/uzi_unload.ogg'
 
-	spread = 15
-	spread_unwielded = 35
+	spread = 25
+	spread_unwielded = 45
 	dual_wield_spread = 35
 	wield_slowdown = 0.25
 	wield_delay = 0.2 SECONDS
@@ -315,7 +315,7 @@
 
 /obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.1 SECONDS)
+	AddComponent(/datum/component/automatic_fire, 0.09 SECONDS)
 
 /obj/item/ammo_box/magazine/uzim9mm
 	name = "spitter pistol magazine (9mm)"
