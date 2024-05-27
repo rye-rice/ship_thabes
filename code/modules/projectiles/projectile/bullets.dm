@@ -1,6 +1,6 @@
 /obj/projectile/bullet
 	name = "bullet"
-	icon_state = "gauss"
+	icon_state = "bullet_new"
 	damage = 60
 	speed = 0.4
 	damage_type = BRUTE
