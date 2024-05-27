@@ -237,7 +237,7 @@
 
 /obj/item/gun/ballistic/automatic/pistol/mauler
 	name = "Mauler machine pistol"
-	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
+	desc = "A shoal-based full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. Chambered in 9mm."
 	icon_state = "mauler"
 	item_state = "hp_generic"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -262,14 +262,6 @@
 /obj/item/gun/ballistic/automatic/pistol/mauler/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/automatic_fire, 0.06 SECONDS)
-
-/obj/item/gun/ballistic/automatic/pistol/mauler/factory
-	desc = "A full auto machine pistol. It has insane stopping power, although it is mostly useless with outside of CQC and anything with armor. This example has been kept in especially good shape, and may as well be fresh out of the workshop. Chambered in 9mm."
-	item_state = "hp_generic_fresh"
-
-/obj/item/gun/ballistic/automatic/pistol/mauler/factory/update_overlays()
-	. = ..()
-	. += "[initial(icon_state)]_factory"
 
 /obj/item/ammo_box/magazine/m9mm_mauler
 	name = "mauler machine pistol magazine (9mm)"

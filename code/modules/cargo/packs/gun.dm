@@ -262,7 +262,7 @@
 	name = "Accelerator laser canon Crate"
 	desc = "Contains a laser gun that grows in strength the more ground it covers. Less practical than it sounds"
 	cost = 4500
-	contains = list(/obj/item/gun/energy/lasercannon/unrestricted)
+	contains = list(/obj/item/gun/energy/lasercannon)
 	crate_name = "laser crate"
 
 /datum/supply_pack/gun/e10
@@ -598,7 +598,7 @@
 	name = "M90 Auto Rifle Crate"
 	desc = "Contains a M90 with grenade launcher. Chambered in 5.56mm."
 	cost = 4000
-	contains = list(/obj/item/gun/ballistic/automatic/smg/m90/unrestricted)
+	contains = list(/obj/item/gun/ballistic/automatic/smg/m90)
 	crate_name = "auto rifle crate"
 
 /datum/supply_pack/gun/firestrom
@@ -820,22 +820,3 @@
 	cost = 4000
 	contains = list(/obj/item/gun/ballistic/automatic/ebr)
 	crate_name = "auto rifle crate"
-
-/*
-		Firing pins
-*/
-
-/datum/supply_pack/gun/firingpins
-	name = "Standard Firing Pins Crate"
-	desc = "Upgrade your arsenal with 10 standard firing pins."
-	cost = 2000
-	contains = list(/obj/item/storage/box/firingpins,
-					/obj/item/storage/box/firingpins)
-	crate_name = "firing pins crate"
-
-/datum/supply_pack/gun/lasertag_pins
-	name = "Laser Tag Firing Pins Crate"
-	desc = "Three laser tag firing pins used in laser-tag units to ensure users are wearing their vests."
-	cost = 1500
-	contains = list(/obj/item/storage/box/lasertagpins)
-	crate_name = "laser tag pin crate"
