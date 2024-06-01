@@ -30,17 +30,13 @@
 	display_name = "bandana, red"
 	path = /obj/item/clothing/mask/bandana/red
 
-/datum/gear/bible
-	display_name = "bible"
-	path = /obj/item/storage/book/bible
-
 /datum/gear/flask
 	display_name = "flask"
 	path = /obj/item/reagent_containers/food/drinks/flask
 
 /datum/gear/mug
 	display_name = "coffee mug"
-	path = /obj/item/reagent_containers/food/drinks/britcup
+	path = /obj/item/reagent_containers/food/drinks/mug
 
 /datum/gear/rilena_mug
 	display_name = "coffee mug, rilena"
@@ -101,10 +97,6 @@
 /datum/gear/cane
 	display_name = "cane"
 	path = /obj/item/cane
-
-/datum/gear/radio
-	display_name = "hand radio"
-	path = /obj/item/radio
 
 /datum/gear/lizard
 	display_name = "toy, lizard plushie"
