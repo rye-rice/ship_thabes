@@ -1,7 +1,3 @@
-/obj/item/gun/ballistic/automatic/assault/p16/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.18 SECONDS)
-
 /obj/item/gun/ballistic/automatic/gal
 	name = "CM-F4"
 	desc = "The standard issue DMR of CLIP. Dates back to the Xenofauna War for long range support against xenofauna. Chambered in .308."
@@ -107,8 +103,10 @@
 	mag_type = /obj/item/ammo_box/magazine/m9mm_cm70
 	can_suppress = FALSE
 	burst_size = 3
-	fire_delay = 1.2
-	actions_types = list(/datum/action/item_action/toggle_firemode)
+	burst_delay = 0.1 SECONDS
+	fire_delay = 0.4 SECONDS
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
+	default_firemode = FIREMODE_SEMIAUTO
 	manufacturer = MANUFACTURER_MINUTEMAN
 
 	fire_sound = 'sound/weapons/gun/pistol/cm70.ogg'
@@ -153,8 +151,9 @@
 	eject_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/hmg/cm40_unload.ogg'
 
+	fire_delay = 0.1 SECONDS
 
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	weapon_weight = WEAPON_MEDIUM
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -284,7 +283,7 @@
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	bolt_type = BOLT_TYPE_STANDARD
 	weapon_weight = WEAPON_LIGHT
-	mag_display = TRUE
+	show_magazine_on_sprite = TRUE
 	manufacturer = MANUFACTURER_IMPORT
 
 //	fire_sound = 'sound/weapons/gun/smg/uzi.ogg'
@@ -300,6 +299,7 @@
 	dual_wield_spread = 35
 	wield_slowdown = 0.25
 	wield_delay = 0.2 SECONDS
+	fire_delay = 0.09 SECONDS
 
 	fire_sound = 'sound/weapons/gun/smg/spitter.ogg'
 	rack_sound = 'sound/weapons/gun/smg/spitter_cocked.ogg'
@@ -312,10 +312,6 @@
 	eject_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 	eject_empty_sound = 'sound/weapons/gun/smg/spitter_unload.ogg'
 
-
-/obj/item/gun/ballistic/automatic/smg/mini_uzi/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.09 SECONDS)
 
 /obj/item/ammo_box/magazine/uzim9mm
 	name = "spitter pistol magazine (9mm)"
@@ -341,8 +337,7 @@
 	mag_type = /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	can_suppress = FALSE
 	burst_size = 1
-	actions_types = list()
-	fire_delay = 0
+	fire_delay = 0.05 SECONDS
 	spread = 40
 	spread_unwielded = 80
 
@@ -359,10 +354,6 @@
 
 	manufacturer = MANUFACTURER_IMPORT
 	wield_slowdown = 0.5
-
-/obj/item/gun/ballistic/automatic/smg/pounder/Initialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.05 SECONDS)
 
 /obj/item/ammo_box/magazine/c22lr_pounder_pan
 	name = "pan magazine (.22 LR)"
@@ -390,10 +381,11 @@
 	spread = 15
 	recoil = 2
 	recoil_unwielded = 7
+	fire_delay = 0.16 SECONDS
 
 	bolt_type = BOLT_TYPE_STANDARD
-	mag_display = TRUE
-	mag_display_ammo = TRUE
+	show_magazine_on_sprite = TRUE
+	show_magazine_on_sprite_ammo = TRUE
 	tac_reloads = FALSE
 	fire_sound = 'sound/weapons/gun/hmg/shredder.ogg'
 	rack_sound = 'sound/weapons/gun/hmg/shredder_cocked_alt.ogg'
@@ -406,10 +398,6 @@
 	eject_empty_sound = 'sound/weapons/gun/hmg/shredder_unload.ogg'
 
 	manufacturer = MANUFACTURER_IMPORT
-
-/obj/item/gun/ballistic/automatic/hmg/shredder/ComponentInitialize()
-	. = ..()
-	AddComponent(/datum/component/automatic_fire, 0.16 SECONDS)
 
 /obj/item/ammo_box/magazine/m12_shredder
 	name = "box magazine (12g)"
