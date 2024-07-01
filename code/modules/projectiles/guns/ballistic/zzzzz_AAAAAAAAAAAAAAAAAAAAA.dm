@@ -474,3 +474,53 @@
 		chambered.BB.light_system = MOVABLE_LIGHT
 		chambered.BB.light_color = COLOR_SOFT_RED
 		chambered.BB.light_range = 2
+
+/obj/item/gun/ballistic/automatic/smg/m90
+	name = "\improper SMR-80 \"Hydra\""
+	desc = "Scarborough Arms' premier modular assault rifle platform. This is the basic configuration, optimized for light weight and handiness. A very well-regarded, if expensive and rare, assault rifle. Chambered in 5.56mm CLIP."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "hydra"
+	item_state = "hydra"
+
+	slot_flags = ITEM_SLOT_BACK
+
+	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST, FIREMODE_FULLAUTO, FIREMODE_OTHER)
+	default_firemode = FIREMODE_SEMIAUTO
+	wield_delay = 0.8 SECONDS
+	wield_slowdown = 0.6
+
+	fire_delay = 0.2 SECONDS
+
+	fire_sound = 'sound/weapons/gun/rifle/hydra.ogg'
+
+	load_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	load_empty_sound = 'sound/weapons/gun/rifle/ar_reload.ogg'
+	eject_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+	eject_empty_sound = 'sound/weapons/gun/rifle/ar_unload.ogg'
+
+	rack_sound = 'sound/weapons/gun/rifle/ar_cock.ogg'
+	spread_unwielded = 20
+
+/obj/item/gun/ballistic/shotgun/bulldog //TODO: REPATH TO LIKE /obj/item/gun/ballistic/shotgun/automatic/bulldog
+	name = "\improper SG-60r \"Bulldog\""
+	desc = "A bullpup combat shotgun usually seen with a characteristic drum magazine. Wildly popular among Syndicate strike teams during the ICW, although it proved less useful against military-grade equipment. Still popular among former Syndicate factions, especially the Ramzi Clique pirates. Chambered in 12g."
+
+/obj/item/gun/ballistic/automatic/smg/c20r
+	name = "\improper C-20r SMG"
+	desc = "A bullpup .45 SMG designated 'C-20r.' Its buttstamp reads 'Scarborough Arms - Per falcis, per pravitas.'"
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "c20r"
+
+/obj/item/gun/ballistic/revolver/syndi
+	name = "\improper R-23 \"Viper\""
+	desc = "An imposing revolver used by officers and certain agents of Syndicate member factions during the ICW, still favored by captains and high-ranking officers of the former Syndicate. Chambered in .357 Magnum."
+	icon = 'icons/obj/guns/48x32guns.dmi'
+	icon_state = "syndi_revolver"
+	item_state = "sa_generic"
+	semi_auto = TRUE //double action s
+	safety_wording = "safety"
+
+/obj/item/gun/ballistic/automatic/pistol/syndi
+	name = "PC-76 \"Ringneck\""
+	desc = "A compact handgun used by most Syndicate-affiliated groups. Small enough to conceal in most pockets, making it popular for covert elements and simply as a compact defensive weapon. Chambered in 10mm."
+	item_state = "sa_generic"
