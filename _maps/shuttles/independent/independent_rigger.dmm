@@ -834,21 +834,6 @@
 	},
 /turf/open/floor/plasteel/mono/white,
 /area/ship/medical)
-"jS" = (
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/door/airlock/mining/glass{
-	name = "Mech Bay"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "jW" = (
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating,
@@ -866,13 +851,6 @@
 "kC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/engineering)
-"kG" = (
-/obj/machinery/door/poddoor{
-	id = "riggs_cargo";
-	name = "Mech Bay Blast Door"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "kV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -952,6 +930,21 @@
 /obj/effect/turf_decal/corner/opaque/yellow/half,
 /turf/open/floor/plasteel,
 /area/ship/hallway/central)
+"lR" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/door/airlock/mining/glass{
+	name = "Exosuit Bay"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "lW" = (
 /obj/machinery/atmospherics/components/binary/pump{
 	name = "engine fuel pump"
@@ -1464,6 +1457,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"sH" = (
+/obj/machinery/door/poddoor{
+	id = "riggs_cargo";
+	name = "Exosuit Bay Blast Door"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "sL" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /turf/open/floor/plasteel/grimy,
@@ -1485,22 +1485,6 @@
 /obj/structure/cable,
 /turf/open/floor/plating,
 /area/ship/maintenance/starboard)
-"sT" = (
-/obj/machinery/door/poddoor{
-	id = "riggs_cargo";
-	name = "Mech Bay Blast Door"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 4;
-	id = "riggs_airshield";
-	locked = 1
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "sV" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4{
 	dir = 1
@@ -1856,6 +1840,22 @@
 	},
 /turf/open/floor/plasteel/mono,
 /area/ship/hallway/central)
+"xs" = (
+/obj/machinery/door/poddoor{
+	id = "riggs_cargo";
+	name = "Exosuit Bay Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "riggs_airshield";
+	locked = 1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "xD" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -2389,6 +2389,29 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew/dorm)
+"CP" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
+	dir = 4
+	},
+/obj/structure/catwalk/over,
+/obj/structure/closet/wall/orange/directional/north{
+	name = "tool closet"
+	},
+/obj/item/storage/toolbox/mechanical,
+/obj/item/storage/belt/utility,
+/obj/item/clothing/glasses/welding,
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plating,
+/area/ship/engineering)
 "CQ" = (
 /obj/effect/turf_decal/industrial/outline/yellow,
 /obj/structure/closet/crate/bin,
@@ -3259,6 +3282,22 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/cargo)
+"NN" = (
+/obj/machinery/door/poddoor{
+	id = "riggs_cargo";
+	name = "Exosuit Bay Blast Door"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "riggs_airshield";
+	locked = 1
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/cargo)
 "NO" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer2{
 	dir = 1
@@ -3306,22 +3345,6 @@
 /obj/machinery/autolathe,
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/hallway/central)
-"Oy" = (
-/obj/machinery/door/poddoor{
-	id = "riggs_cargo";
-	name = "Mech Bay Blast Door"
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 8;
-	id = "riggs_airshield";
-	locked = 1
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/cargo)
 "OJ" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
@@ -4448,29 +4471,6 @@
 /obj/structure/catwalk/over,
 /turf/open/floor/plating,
 /area/ship/engineering)
-"ZZ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
-	dir = 4
-	},
-/obj/structure/catwalk/over,
-/obj/structure/closet/wall/orange/directional/north{
-	name = "tool closet"
-	},
-/obj/item/storage/toolbox/mechanical,
-/obj/item/storage/belt/utility,
-/obj/item/clothing/glasses/welding,
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plating,
-/area/ship/engineering)
 
 (1,1,1) = {"
 Ly
@@ -5062,12 +5062,12 @@ Ly
 Ly
 Ly
 Ly
-sT
+xs
 qQ
 my
 zy
 hP
-jS
+lR
 ci
 Xg
 IB
@@ -5096,7 +5096,7 @@ Ly
 Ly
 Ly
 Ly
-kG
+sH
 hy
 SY
 ji
@@ -5130,7 +5130,7 @@ Ly
 Ly
 Ly
 Ly
-kG
+sH
 yW
 pO
 Wm
@@ -5144,7 +5144,7 @@ TF
 Iq
 Iq
 kC
-ZZ
+CP
 hI
 yq
 OQ
@@ -5164,7 +5164,7 @@ Ly
 Ly
 Ly
 yo
-kG
+sH
 yW
 Hy
 wZ
@@ -5198,7 +5198,7 @@ Ly
 Ly
 Ly
 Ly
-kG
+sH
 NA
 QT
 ib
@@ -5232,7 +5232,7 @@ Ly
 Ly
 Ly
 Ly
-Oy
+NN
 QB
 Bp
 JS

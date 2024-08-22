@@ -365,6 +365,25 @@
 /obj/effect/spawner/structure/window/shuttle,
 /turf/open/floor/plating,
 /area/ship/science/robotics)
+"bx" = (
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 4;
+	id = "heron_mechbayholo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/machinery/door/poddoor{
+	id = "heron_mechbayshut";
+	name = "Exosuit Bay Shutters"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/science/robotics)
 "bC" = (
 /obj/effect/turf_decal/siding/wideplating/dark{
 	dir = 4
@@ -1452,31 +1471,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ship/hallway/fore)
-"gb" = (
-/obj/structure/closet/wall/orange/directional/north{
-	name = "Chief Engineer's Locker"
-	},
-/obj/item/clothing/under/rank/engineering/chief_engineer,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/head/beret/ce,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/shoes/workboots{
-	pixel_y = -7
-	},
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/radio/headset/heads/ce,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
-/obj/item/pipe_dispenser{
-	pixel_y = -10
-	},
-/obj/item/storage/belt/utility/chief/full{
-	pixel_y = -11;
-	pixel_x = 9
-	},
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "gd" = (
 /obj/structure/railing{
 	dir = 4;
@@ -1993,21 +1987,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hangar)
-"ia" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/research{
-	name = "Mech Bay"
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/science/robotics)
 "ib" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 4
@@ -2863,6 +2842,28 @@
 /obj/effect/turf_decal/atmos/nitrogen,
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
+"lc" = (
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/suit/hazardvest,
+/obj/item/clothing/under/rank/engineering/engineer/nt,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/head/welding,
+/obj/item/clothing/head/hardhat/weldhat,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/head/beret/eng/hazard,
+/obj/item/clothing/glasses/meson/engine,
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Engineering locker"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/belt/utility/full/engi{
+	pixel_y = -10;
+	pixel_x = 5
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "le" = (
 /obj/effect/turf_decal/corner/transparent/beige/full,
 /obj/effect/turf_decal/corner/transparent/black/half{
@@ -3476,16 +3477,6 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/engineering/atmospherics)
-"mQ" = (
-/obj/machinery/door/firedoor/border_only,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/airlock/research{
-	name = "Mech Bay"
-	},
-/turf/open/floor/plasteel/patterned/grid,
-/area/ship/science/robotics)
 "mR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4{
 	dir = 4
@@ -4543,25 +4534,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/engine/o2,
 /area/ship/engineering/atmospherics)
-"rp" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 4;
-	id = "heron_mechbayholo";
-	locked = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/machinery/door/poddoor{
-	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/science/robotics)
 "rs" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 6
@@ -5876,6 +5848,31 @@
 	},
 /turf/open/floor/plasteel/tech/grid,
 /area/ship/security/armory)
+"vj" = (
+/obj/structure/closet/wall/orange/directional/north{
+	name = "Chief Engineer's Locker"
+	},
+/obj/item/clothing/under/rank/engineering/chief_engineer,
+/obj/item/clothing/suit/toggle/hazard,
+/obj/item/storage/backpack/industrial,
+/obj/item/clothing/head/beret/ce,
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/clothing/shoes/workboots{
+	pixel_y = -7
+	},
+/obj/item/clothing/gloves/color/yellow,
+/obj/item/radio/headset/heads/ce,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
+/obj/item/pipe_dispenser{
+	pixel_y = -10
+	},
+/obj/item/storage/belt/utility/chief/full{
+	pixel_y = -11;
+	pixel_x = 9
+	},
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/dark,
+/area/ship/engineering)
 "vl" = (
 /obj/effect/turf_decal/siding/thinplating,
 /obj/effect/turf_decal/trimline/opaque/blue/line,
@@ -5944,6 +5941,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/ship/hallway/aft)
+"vy" = (
+/obj/machinery/power/shieldwallgen/atmos{
+	anchored = 1;
+	dir = 8;
+	id = "heron_mechbayholo";
+	locked = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "heron_mechbayshut";
+	name = "Exosuit Bay Shutters"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/science/robotics)
 "vz" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4;
@@ -7280,13 +7296,6 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/engineering)
-"AC" = (
-/obj/machinery/door/poddoor{
-	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/science/robotics)
 "AD" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer2{
 	dir = 1
@@ -7370,6 +7379,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/security)
+"Bi" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/research{
+	name = "Exosuit Bay"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/science/robotics)
 "Bn" = (
 /obj/structure/railing{
 	dir = 2;
@@ -7802,6 +7821,13 @@
 "CZ" = (
 /turf/open/floor/engine/n2,
 /area/ship/engineering/atmospherics)
+"Dc" = (
+/obj/machinery/door/poddoor{
+	id = "heron_mechbayshut";
+	name = "Exosuit Bay Shutters"
+	},
+/turf/open/floor/plasteel/patterned/ridged,
+/area/ship/science/robotics)
 "Dd" = (
 /obj/structure/railing{
 	dir = 2;
@@ -10632,28 +10658,6 @@
 	},
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hangar)
-"Ny" = (
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/suit/hazardvest,
-/obj/item/clothing/under/rank/engineering/engineer/nt,
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/head/hardhat/weldhat,
-/obj/item/clothing/suit/toggle/hazard,
-/obj/item/storage/backpack/industrial,
-/obj/item/clothing/head/beret/eng/hazard,
-/obj/item/clothing/glasses/meson/engine,
-/obj/structure/closet/wall/orange/directional/north{
-	name = "Engineering locker"
-	},
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/belt/utility/full/engi{
-	pixel_y = -10;
-	pixel_x = 5
-	},
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plasteel/dark,
-/area/ship/engineering)
 "NC" = (
 /obj/effect/turf_decal/techfloor{
 	dir = 8
@@ -11837,25 +11841,6 @@
 	},
 /turf/open/floor/plating,
 /area/ship/hangar)
-"SG" = (
-/obj/machinery/power/shieldwallgen/atmos{
-	anchored = 1;
-	dir = 8;
-	id = "heron_mechbayholo";
-	locked = 1
-	},
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/machinery/door/poddoor{
-	id = "heron_mechbayshut";
-	name = "Mechbay Shutters"
-	},
-/turf/open/floor/plasteel/patterned/ridged,
-/area/ship/science/robotics)
 "SH" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -13434,6 +13419,21 @@
 /obj/item/storage/cans/sixbeer,
 /turf/open/floor/carpet/green,
 /area/ship/crew/dorm)
+"Yk" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer4,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/machinery/door/airlock/research{
+	name = "Exosuit Bay"
+	},
+/turf/open/floor/plasteel/patterned/grid,
+/area/ship/science/robotics)
 "Yl" = (
 /obj/structure/railing{
 	dir = 2;
@@ -14153,7 +14153,7 @@ FJ
 LY
 He
 hr
-Ny
+lc
 ht
 AA
 vI
@@ -14192,7 +14192,7 @@ eA
 RC
 Oy
 hr
-gb
+vj
 Gp
 oA
 yu
@@ -14278,7 +14278,7 @@ hr
 Rf
 vx
 DT
-mQ
+Bi
 Kp
 ZZ
 bj
@@ -14290,7 +14290,7 @@ cB
 yC
 uZ
 EF
-rp
+bx
 "}
 (11,1,1) = {"
 ju
@@ -14329,7 +14329,7 @@ hp
 pj
 dp
 dN
-AC
+Dc
 "}
 (12,1,1) = {"
 ju
@@ -14356,7 +14356,7 @@ NU
 ZH
 vg
 gz
-ia
+Yk
 Kd
 th
 xC
@@ -14368,7 +14368,7 @@ XB
 dS
 IF
 up
-SG
+vy
 "}
 (13,1,1) = {"
 ju

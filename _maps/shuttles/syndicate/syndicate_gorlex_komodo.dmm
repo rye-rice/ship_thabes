@@ -162,6 +162,20 @@
 	},
 /turf/template_noop,
 /area/template_noop)
+"cw" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 8;
+	id = "syndie_mechbay";
+	name = "Exosuit Bay"
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/cargo)
 "cG" = (
 /obj/effect/turf_decal/industrial/warning/corner{
 	dir = 4
@@ -338,6 +352,18 @@
 /obj/machinery/power/apc/auto_name/directional/north,
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
+"ep" = (
+/obj/machinery/button/door{
+	dir = 8;
+	id = "syndie_mechbay";
+	name = "Exosuit Bay Door";
+	pixel_x = 24
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 6
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/cargo)
 "es" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/techfloor{
@@ -960,20 +986,6 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ship/hallway/aft)
-"jA" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 8;
-	id = "syndie_mechbay";
-	name = "Mechbay"
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/cargo)
 "jD" = (
 /obj/effect/spawner/lootdrop/salvage_capacitor,
 /obj/effect/decal/cleanable/shreds,
@@ -1153,31 +1165,6 @@
 	},
 /turf/open/floor/circuit/green/off,
 /area/ship/maintenance/starboard)
-"lr" = (
-/obj/structure/closet/wall/orange/directional/south{
-	name = "Engineering locker"
-	},
-/obj/item/clothing/shoes/workboots,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/head/hardhat/red,
-/obj/item/clothing/head/hardhat/weldhat/orange{
-	pixel_x = 7;
-	pixel_y = 2
-	},
-/obj/item/clothing/glasses/meson/engine,
-/obj/item/storage/belt/utility/full/engi,
-/obj/machinery/atmospherics/components/binary/pump{
-	dir = 8;
-	name = "engine fuel pump"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/item/clothing/under/syndicate/hardliners,
-/obj/item/clothing/suit/hazardvest/hardliners,
-/obj/item/gun/energy/plasmacutter,
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "ls" = (
 /obj/structure/railing/corner,
 /obj/effect/turf_decal/steeldecal/steel_decals_central4,
@@ -2034,23 +2021,6 @@
 "tf" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/security/armory)
-"tn" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 10
-	},
-/obj/structure/closet/crate,
-/obj/effect/spawner/lootdrop/costume,
-/obj/item/storage/box/emptysandbags,
-/obj/effect/spawner/lootdrop/maintenance,
-/obj/machinery/button/door{
-	dir = 4;
-	id = "syndie_mechbay";
-	name = "mechbay door";
-	pixel_x = -24
-	},
-/obj/item/radio/intercom/directional/south,
-/turf/open/floor/plasteel/tech,
-/area/ship/cargo)
 "tr" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/railing{
@@ -2096,18 +2066,6 @@
 "tC" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/bridge)
-"tD" = (
-/obj/machinery/button/door{
-	dir = 8;
-	id = "syndie_mechbay";
-	name = "mechbay door";
-	pixel_x = 24
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 6
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/cargo)
 "tF" = (
 /obj/effect/turf_decal/corner_techfloor_grid{
 	dir = 6
@@ -2458,26 +2416,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ship/crew/canteen)
-"wG" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/cable{
-	icon_state = "1-8"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/effect/turf_decal/industrial/shutoff{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/trinary/mixer/flipped{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/engineering)
 "wJ" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/steeldecal/steel_decals4{
@@ -2768,6 +2706,27 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/maintenance/port)
+"zh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/industrial/shutoff{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/trinary/mixer/flipped{
+	dir = 1
+	},
+/obj/item/paper/guides/jobs/engi/combustion_thruster,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "zw" = (
 /obj/effect/turf_decal/borderfloor,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4275,6 +4234,23 @@
 	},
 /turf/open/floor/plasteel/telecomms_floor,
 /area/ship/cargo)
+"PC" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 10
+	},
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/costume,
+/obj/item/storage/box/emptysandbags,
+/obj/effect/spawner/lootdrop/maintenance,
+/obj/machinery/button/door{
+	dir = 4;
+	id = "syndie_mechbay";
+	name = "Exosuit Bay Door";
+	pixel_x = -24
+	},
+/obj/item/radio/intercom/directional/south,
+/turf/open/floor/plasteel/tech,
+/area/ship/cargo)
 "PE" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/turf_decal/trimline/transparent/bar/filled/line{
@@ -5070,6 +5046,31 @@
 /obj/machinery/computer/helm/viewscreen/directional/north,
 /turf/open/floor/pod,
 /area/ship/cargo)
+"WF" = (
+/obj/structure/closet/wall/orange/directional/south{
+	name = "Engineering locker"
+	},
+/obj/item/clothing/shoes/workboots,
+/obj/item/clothing/head/welding,
+/obj/item/clothing/head/hardhat/red,
+/obj/item/clothing/head/hardhat/weldhat/orange{
+	pixel_x = 7;
+	pixel_y = 2
+	},
+/obj/item/clothing/glasses/meson/engine,
+/obj/item/storage/belt/utility/full/engi,
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 8;
+	name = "engine fuel pump"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/item/clothing/under/syndicate/hardliners,
+/obj/item/clothing/suit/hazardvest/hardliners,
+/obj/item/gun/energy/plasmacutter,
+/turf/open/floor/plasteel/tech,
+/area/ship/engineering)
 "WK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -5624,11 +5625,11 @@ my
 hy
 fZ
 ah
-wG
+zh
 yb
 YR
 nA
-lr
+WF
 hY
 "}
 (6,1,1) = {"
@@ -5737,7 +5738,7 @@ CM
 Ep
 uJ
 es
-tD
+ep
 uV
 Ep
 vY
@@ -5755,8 +5756,8 @@ Bx
 CM
 kG
 Ep
-jA
-jA
+cw
+cw
 Ep
 Ep
 Ep
@@ -5777,7 +5778,7 @@ ph
 Ko
 Eb
 ke
-tn
+PC
 Ep
 xJ
 TB
