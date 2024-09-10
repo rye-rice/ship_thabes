@@ -340,6 +340,8 @@ EMPTY_GUN_HELPER(automatic/pistol/rattlesnake)
 		)
 	)
 
+	fire_delay = 0.1 SECONDS
+
 	recoil = -2
 	recoil_unwielded = -2
 	spread_unwielded = 0

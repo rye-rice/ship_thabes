@@ -154,6 +154,8 @@
 /obj/item/storage/pistolcase/viper
 /obj/item/storage/pistolcase/viper/PopulateContents()
 	new /obj/item/gun/ballistic/revolver/viper/indie/no_mag(src)
+	new /obj/item/ammo_box/a357/empty(src)
+	new /obj/item/ammo_box/a357/empty(src)
 
 /obj/item/storage/pistolcase/commander
 /obj/item/storage/pistolcase/commander/PopulateContents()
