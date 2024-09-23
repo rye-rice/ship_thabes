@@ -5,7 +5,7 @@
 	light_power = 2
 	var/cooldowntime = 0
 	break_sound = 'sound/hallucinations/veryfar_noise.ogg'
-	debris = list(/obj/item/stack/sheet/runed_metal = 1)
+	debris = list(/obj/item/stack/sheet/mineral/hidden/hellstone = 1)
 
 /obj/structure/destructible/cult/proc/conceal() //for spells that hide cult presence
 	density = FALSE
@@ -63,13 +63,6 @@
 /obj/structure/destructible/cult/update_icon_state()
 	icon_state = "[initial(icon_state)][anchored ? null : "_off"]"
 	return ..()
-
-/obj/structure/destructible/cult/attackby(obj/I, mob/user, params)
-	if(istype(I, /obj/item/melee/cultblade/dagger) && iscultist(user))
-		set_anchored(!anchored)
-		to_chat(user, "<span class='notice'>You [anchored ? "":"un"]secure \the [src] [anchored ? "to":"from"] the floor.</span>")
-	else
-		return ..()
 
 /obj/structure/destructible/cult/proc/check_menu(mob/user)
 	if(!istype(user))
