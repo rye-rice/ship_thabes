@@ -20,6 +20,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 	var/obj/structure/telephone_transmitter/calling
 	var/obj/structure/telephone_transmitter/caller
 
+	var/ringtone = 'modular_thabes/modules/phonestuff/sound/telephone/touchtone_ring.ogg'
+
 	var/next_ring = 0
 
 	var/phone_type = /obj/item/telephone_receiver
@@ -58,6 +60,10 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 
 /obj/structure/telephone_transmitter/examine(mob/user)
 	. = ..()
+	if(caller)
+		. += "<span class='bold'>Caller ID: [caller.phone_id]</span>"
+	if(calling)
+		. += "<span class='bold'>Caller ID: [calling.phone_id]</span>"
 	. += "<span class='notice'>You can use a multitool on it to change it's name and category.</span>"
 
 /obj/structure/telephone_transmitter/update_icon()
@@ -79,7 +85,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 
 /// TODO: KILL THIS. MAKE IT A PROC. HAVE FUNNY LITTLE SOUNDS FROM EACH FAILURE
 #define TRANSMITTER_UNAVAILABLE(T) (\
-	T.	() \
+	T.get_calling_phone() \
 	|| !T.attached_to \
 	|| T.attached_to.loc != T \
 	|| !T.enabled\
@@ -152,6 +158,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 
 	if(!length(transmitters) || !(calling_phone_id in transmitters))
 		to_chat(user, span_purple("[icon2html(src, user)] No transmitters could be located to call!"))
+		playsound(src, 'modular_thabes/modules/phonestuff/sound/telephone/call_fail.ogg', 20, FALSE, 14)
 		return
 
 	var/obj/structure/telephone_transmitter/T = transmitters[calling_phone_id]
@@ -160,6 +167,8 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 		CRASH("Qdelled/improper atom inside transmitters list! (istype returned: [istype(T)], QDELETED returned: [QDELETED(T)])")
 
 	if(TRANSMITTER_UNAVAILABLE(T))
+		to_chat(user, span_purple("[icon2html(src, user)] Your call has failed."))
+		playsound(src, 'modular_thabes/modules/phonestuff/sound/telephone/call_fail.ogg', 20, FALSE, 14)
 		return
 
 	calling = T
@@ -167,7 +176,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 	T.update_icon()
 
 	to_chat(user, span_purple("[icon2html(src, user)] Dialing [calling_phone_id].."))
-	playsound(src, 'sound/machines/telephone/rtb_handset_1.ogg')
+	playsound(src, 'modular_thabes/modules/phonestuff/sound/telephone/rtb_handset_1.ogg')
 	timeout_timer_id = addtimer(CALLBACK(src, .proc/reset_call, TRUE), timeout_duration, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
 
 	START_PROCESSING(SSobj, src)
@@ -202,7 +211,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 			T.timeout_timer_id = null
 
 	to_chat(user, span_purple("[icon2html(src, user)] Picked up a call from [T.phone_id]."))
-	playsound(src, 'sound/machines/telephone/rtb_handset_1.ogg')
+	playsound(src, 'modular_thabes/modules/phonestuff/sound/telephone/rtb_handset_1.ogg')
 
 	user.put_in_active_hand(attached_to)
 	attached_to.setup_signal(user)
@@ -224,11 +233,13 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 		if(T.attached_to && ismob(T.attached_to.loc))
 			var/mob/M = T.attached_to.loc
 			to_chat(M, span_purple("[icon2html(src, M)] [phone_id] has hung up on you."))
+			playsound(T.attached_to, 'modular_thabes/modules/phonestuff/sound/telephone/busy.ogg', 20, FALSE, 14)
 
 		if(attached_to && ismob(attached_to.loc))
 			var/mob/M = attached_to.loc
 			if(timeout)
-				to_chat(M, span_purple("[icon2html(src, M)] Your call to [T.phone_id] has reached voicemail, you immediately disconnect the line."))
+				to_chat(M, span_purple("[icon2html(src, M)] Your call to [T.phone_id] has reached a busy tone."))
+				playsound(T.attached_to, 'modular_thabes/modules/phonestuff/sound/telephone/busy.ogg', 20, FALSE, 14)
 			else
 				to_chat(M, span_purple("[icon2html(src, M)] You have hung up on [T.phone_id]."))
 
@@ -262,8 +273,9 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 
 		if(attached_to.loc == src)
 			if(next_ring < world.time)
-				playsound(loc, 'sound/machines/telephone/telephone_ring.ogg', 75)
+				playsound(loc, ringtone, 75)
 				visible_message(span_warning("[src] rings vigorously!"))
+				playsound(caller.attached_to, 'modular_thabes/modules/phonestuff/sound/telephone/ringback.ogg', 20, FALSE, 14)
 				next_ring = world.time + 3 SECONDS
 
 	else if(calling)
@@ -275,7 +287,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 		var/obj/item/telephone_receiver/P = T.attached_to
 
 		if(P && attached_to.loc == src && P.loc == T && next_ring < world.time)
-			playsound(get_turf(attached_to), 'sound/machines/telephone/telephone_ring.ogg', 20, FALSE, 14)
+			playsound(get_turf(attached_to), ringtone, 20, FALSE, 14)
 			visible_message(span_warning("[src] rings vigorously!"))
 			next_ring = world.time + 3 SECONDS
 
@@ -288,7 +300,7 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 	if(ismob(attached_to.loc))
 		var/mob/M = attached_to.loc
 		M.dropItemToGround(attached_to)
-		playsound(src, 'sound/machines/telephone/rtb_handset_1.ogg', 100, FALSE, 7)
+		playsound(src, 'modular_thabes/modules/phonestuff/sound/telephone/rtb_handset_1.ogg', 100, FALSE, 7)
 
 	attached_to.forceMove(src)
 	reset_call()
@@ -549,8 +561,10 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 	name = "rotary telephone"
 	icon_state = "rotary_phone"
 	desc = "The finger plate is a little stiff."
+	ringtone = 'modular_thabes/modules/phonestuff/sound/telephone/telephone_ring.ogg'
 
 /obj/structure/telephone_transmitter/touchtone
 	name = "touch-tone telephone"
 	icon_state = "rotary_phone"//placeholder
 	desc = "Ancient aliens, its all true. I'm an expert just like you!"
+
