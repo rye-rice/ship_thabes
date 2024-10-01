@@ -556,15 +556,19 @@ GLOBAL_LIST_EMPTY_TYPED(transmitters, /obj/structure/telephone_transmitter)
 		deltimer(zlevel_transfer_timer)
 	UnregisterSignal(attached_to, COMSIG_MOVABLE_MOVED)
 
+MAPPING_DIRECTIONAL_HELPERS(/obj/structure/telephone_transmitter, 28)
+
 //rotary desk phones (need a touch tone handset at some point)
 /obj/structure/telephone_transmitter/rotary
 	name = "rotary telephone"
-	icon_state = "rotary_phone"
+	base_icon_state = "rotary"
+	icon_state = "rotary"
 	desc = "The finger plate is a little stiff."
 	ringtone = 'modular_thabes/modules/phonestuff/sound/telephone/telephone_ring.ogg'
 
 /obj/structure/telephone_transmitter/touchtone
 	name = "touch-tone telephone"
-	icon_state = "rotary_phone"//placeholder
-	desc = "Ancient aliens, its all true. I'm an expert just like you!"
+	base_icon_state = "touchtone"
+	icon_state = "touchtone"//placeholder
+	desc = "A touch tone telephone, to place on desks and such"
 
