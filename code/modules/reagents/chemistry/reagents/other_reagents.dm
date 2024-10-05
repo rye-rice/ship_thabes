@@ -598,7 +598,7 @@
 	name = "Sulfur"
 	description = "A sickly yellow solid mostly known for its nasty smell. It's actually much more helpful than it looks in biochemisty."
 	reagent_state = SOLID
-	color = "#BF8C00" // rgb: 191, 140, 0
+	color = "#f0e518"
 	taste_description = "rotten eggs"
 
 /datum/reagent/carbon
@@ -908,6 +908,14 @@
 	color = "#A8A8A8" // rgb: 168, 168, 168
 	taste_description = "metal"
 
+/datum/reagent/quartz
+	name = "Quartz"
+	description = "A fine dust of Quartz, a precursor to silicon and glass."
+	reagent_state = SOLID
+	color = "#fcedff"
+	taste_mult = 0
+	material = /datum/material/quartz
+
 /datum/reagent/silicon
 	name = "Silicon"
 	description = "A tetravalent metalloid, silicon is less reactive than its chemical analog carbon."
@@ -1184,6 +1192,67 @@
 		M.losebreath += 2
 		M.confused = min(M.confused + 2, 5)
 	..()
+
+/datum/reagent/carbon_monoxide
+	name = "Carbon Monoxide"
+	description = "A highly dangerous gas for sapients."
+	reagent_state = GAS
+	metabolization_rate = 1.5 * REAGENTS_METABOLISM
+	color = "#96898c"
+	var/accumilation
+
+/datum/reagent/carbon_monoxide/on_mob_life(mob/living/carbon/victim)
+	accumilation += volume
+	switch(accumilation)
+		if(10 to 50)
+			victim.Dizzy(accumilation/20)
+			to_chat(src, "<span class='warning'>You feel dizzy.</span>")
+		if(50 to 150)
+			to_chat(victim, "<span class='warning'>[pick("Your head hurts.", "Your head pounds.")]</span>")
+			victim.Dizzy(accumilation)
+			victim.adjustStaminaLoss(1)
+		if(150 to 250)
+			to_chat(victim, "<span class='warning'>[pick("Your head hurts a lot.", "Your head pounds incessantly.")]</span>")
+			victim.adjustStaminaLoss(3)
+			victim.Dizzy(accumilation/20)
+			victim.confused += (accumilation/50)
+			victim.gain_trauma(/datum/brain_trauma/mild/expressive_aphasia)
+		if(250 to 450)
+			to_chat(victim, "<span class='userdanger'>[pick("What were you doing...?", "Where are you...?", "What's going on...?")]</span>")
+			victim.adjustStaminaLoss(10)
+			victim.Stun(35)
+
+			victim.Dizzy(accumilation/20)
+			victim.confused += (accumilation/50)
+			victim.drowsyness += (accumilation/50)
+
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+
+			victim.gain_trauma(/datum/brain_trauma/mild/concussion)
+			victim.gain_trauma(/datum/brain_trauma/mild/speech_impediment)
+
+		if(450 to 3000)
+			victim.Unconscious(20 SECONDS)
+
+			victim.drowsyness += (accumilation/100)
+			victim.adjustToxLoss(accumilation/100*REM, 0)
+		if(3000 to INFINITY) //anti salt measure, if they reach this, just fucking kill them at this point
+			victim.death()
+			victim.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+			victim.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+
+			qdel(src)
+			return
+	return ..()
+
+/datum/reagent/carbon_monoxide/on_mob_delete(mob/living/living_mob)
+	var/mob/living/carbon/living_carbon = living_mob
+	if(accumilation <= 150)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/concussion)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/speech_impediment)
+		living_carbon.cure_trauma_type(/datum/brain_trauma/mild/expressive_aphasia)
+
 
 /datum/reagent/stimulum
 	name = "Stimulum"
@@ -1558,18 +1627,70 @@
 	color = "#328242"
 	taste_description = "primordial essence"
 	reagent_state = LIQUID
+	var/list/turf_whitelist = list(
+	/turf/open/floor/plating/asteroid,
+	/turf/open/lava,
+	/turf/open/acid,
+	/turf/open/floor/plating/moss,
+	/turf/open/floor/plating/grass
+	)
 
-/datum/reagent/genesis/expose_turf(turf/T, reac_volume)
-	if(istype(T, /turf/open/floor/grass))//prevents spamming effect via. smoke or such
-		return
-	if(isplatingturf(T) || istype(T, /turf/open/floor/plasteel))
-		var/turf/open/floor/F = T
-		playsound(T, 'sound/effects/bubbles.ogg', 50)
-		F.PlaceOnTop(/turf/open/floor/grass, flags = CHANGETURF_INHERIT_AIR)
-		new /obj/effect/spawner/lootdrop/flower(T)
-		if(prob(75))
-			new /obj/effect/spawner/lootdrop/flora(T)
-	..()
+/datum/reagent/genesis/expose_turf(turf/exposed_turf, reac_volume)
+	var/allowed = FALSE //idk how to do this better
+	for(var/turf/checked_turf as anything in turf_whitelist)
+		if(!istype(exposed_turf, checked_turf))
+			continue
+		else
+			allowed = TRUE
+			break
+	if(!allowed)
+		return ..()
+
+	if(isopenturf(exposed_turf))
+		var/turf/open/floor/terraform_target = exposed_turf
+
+		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/acid)) //if hazard, reeplace with basin
+			if(istype(terraform_target, /turf/open/lava))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin, flags = CHANGETURF_INHERIT_AIR)
+			if(istype(terraform_target, /turf/open/acid))
+				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/whitesands/dried, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>As the serum touches [terraform_target.name], it all starts drying up, leaving a dry basin behind!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin) || istype(terraform_target, /turf/open/floor/plating/asteroid/whitesands/dried)|| istype(terraform_target, /turf/open/floor/plating/asteroid/sand)) //if basin, replace with water
+			return ..()
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/purple))
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/sand/terraform, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The chemicals in the sand disolve, and the sand looks more natural.</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+		if(!istype(terraform_target, /turf/open/floor/plating/asteroid/dirt)) // if not dirt, acutally terraform
+			terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/dirt, flags = CHANGETURF_INHERIT_AIR)
+			terraform_target.visible_message("<span class='notice'>The harsh land becomes fertile dirt, but more work needs to be done for it to be growable and breathable. Perhaps add grass?</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			return ..()
+
+
+		if(istype(terraform_target, /turf/open/floor/plating/asteroid/dirt/grass)) //if grass, plant shit
+			for(var/obj/object as anything in terraform_target.contents)
+				if(!istype(object, /obj/structure/flora))
+					continue
+				terraform_target.visible_message("<span class='danger'>Theres already flora on the tile!</span>")
+				return ..()
+
+			terraform_target.visible_message("<span class='notice'>As the serum touches the grass, suddenly flora grows out of it!</span>")
+			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
+			if(prob(70))
+				new /obj/effect/spawner/lootdrop/flower(exposed_turf)
+			else if(prob(5))
+				new /obj/structure/flora/ash/garden(exposed_turf)
+			else
+				new /obj/effect/spawner/lootdrop/flora(exposed_turf)
+
+	return ..()
 
 /datum/reagent/genesis/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
 	. = ..()

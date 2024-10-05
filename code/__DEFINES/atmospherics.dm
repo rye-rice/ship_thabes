@@ -67,7 +67,7 @@
 #define OPEN_HEAT_TRANSFER_COEFFICIENT 0.4
 /// a hack for now
 #define WINDOW_HEAT_TRANSFER_COEFFICIENT 0.1
-/// a hack to help make vacuums "cold", sacrificing realism for gameplay
+/// a hack to help make vacuums BIOME_COLD, sacrificing realism for gameplay
 #define HEAT_CAPACITY_VACUUM 7000
 
 //FIRE
@@ -223,6 +223,7 @@
 #define ATMOS_TANK_FUEL "o2=33000;plasma=66000;TEMP=293.15"
 #define ATMOS_TANK_HYDROGEN_FUEL "o2=33000;h2=66000;TEMP=293.15"
 
+
 //PLANETARY
 /// what pressure you have to be under to increase the effect of equipment meant for lavaland
 #define LAVALAND_EQUIPMENT_EFFECT_PRESSURE 90
@@ -234,9 +235,9 @@
 
 
 //ATMOS MIX IDS
-
-
-
+#define DESERT_DEFAULT_ATMOS "o2=20;n2=80;TEMP=350.15" //TEMP UNTIL  CRASHING STOPS
+//#define DESERT_DEFAULT_ATMOS "DESERT_ATMOS"
+#define SHROUDED_DEFAULT_ATMOS "SHROUDED_ATMOS"
 
 //ATMOSIA GAS MONITOR TAGS
 #define ATMOS_GAS_MONITOR_INPUT_O2 "o2_in"
@@ -339,6 +340,7 @@
 #define GAS_HYDROGEN "h2"
 #define GAS_CHLORINE "cl2"
 #define GAS_HYDROGEN_CHLORIDE "hcl"
+#define GAS_CO "co"
 
 #define GAS_FLAG_DANGEROUS (1<<0)
 #define GAS_FLAG_BREATH_PROC (1<<1)

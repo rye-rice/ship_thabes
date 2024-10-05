@@ -4,11 +4,13 @@
 	desc = "Looks cold."
 	icon = 'icons/turf/snow.dmi'
 	baseturfs = /turf/open/floor/plating/asteroid/icerock
-	icon_state = "snow"
-	icon_plating = "snow"
+	icon_state = "snow_0"
+	icon_plating = "snow_0"
 	initial_gas_mix = ICEMOON_DEFAULT_ATMOS
 	slowdown = 1.5
-	base_icon_state = "snow"
+	base_icon_state = "snow_"
+	max_icon_states = 3
+	floor_variance = 100
 	flags_1 = NONE
 	planetary_atmos = TRUE
 	footstep = FOOTSTEP_SNOW
@@ -180,7 +182,7 @@
 	bullet_sizzle = TRUE
 	bullet_bounce_sound = null
 	digResult = /obj/item/stack/sheet/mineral/snow
-	floor_variance = 100
+	floor_variance = 0
 	max_icon_states = 7
 	dug = TRUE
 
