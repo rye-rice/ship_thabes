@@ -46,6 +46,7 @@
 #define HIDEFACIALHAIR (1<<9)
 #define HIDENECK (1<<10)
 #define HIDEHORNS (1<<11) 	// Used for hiding Sarathi horns.
+#define HIDESNOUT (1<<11)
 
 //bitflags for clothing coverage - also used for limbs
 #define HEAD (1<<0)
@@ -149,7 +150,7 @@ GLOBAL_LIST_INIT(security_vest_allowed, typecacheof(list(
 	/obj/item/gun/energy,
 	/obj/item/gun/grenadelauncher,
 	/obj/item/flamethrower,
-	/obj/item/kitchen/knife/combat,
+	/obj/item/melee/knife/combat,
 	/obj/item/melee/baton,
 	/obj/item/melee/classic_baton/telescopic,
 	/obj/item/reagent_containers/spray/pepper,
@@ -174,5 +175,4 @@ GLOBAL_LIST_INIT(security_wintercoat_allowed, typecacheof(list(
 	/obj/item/tank/internals/plasmaman,
 	/obj/item/toy)))
 
-//WS Port - Internals checker
 #define GET_INTERNAL_SLOTS(C) list(C.head, C.wear_mask)

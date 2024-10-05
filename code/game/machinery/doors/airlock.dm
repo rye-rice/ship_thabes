@@ -958,7 +958,7 @@
 						to_chat(user, "<span class='warning'>You need at least 2 metal sheets to reinforce [src].</span>")
 						return
 					to_chat(user, "<span class='notice'>You start reinforcing [src].</span>")
-					if(do_after(user, 20, TRUE, src))
+					if(do_after(user, 20, src))
 						if(!panel_open || !S.use(2))
 							return
 						user.visible_message("<span class='notice'>[user] reinforces \the [src] with metal.</span>",
@@ -972,7 +972,7 @@
 						to_chat(user, "<span class='warning'>You need at least 2 plasteel sheets to reinforce [src].</span>")
 						return
 					to_chat(user, "<span class='notice'>You start reinforcing [src].</span>")
-					if(do_after(user, 20, TRUE, src))
+					if(do_after(user, 20, src))
 						if(!panel_open || !S.use(2))
 							return
 						user.visible_message("<span class='notice'>[user] reinforces \the [src] with plasteel.</span>",
@@ -1226,7 +1226,7 @@
 				var/time_to_open = 50
 				playsound(src, pry_sound, 100, TRUE, mono_adj = TRUE) //is it aliens or just the CE being a dick?
 				prying_so_hard = TRUE
-				if(do_after(user, time_to_open, TRUE, src))
+				if(do_after(user, time_to_open, src))
 					open(2)
 					if(density && !open(2))
 						to_chat(user, "<span class='warning'>Despite your attempts, [src] refuses to open.</span>")
@@ -1236,13 +1236,28 @@
 		return
 
 	if(!operating)
-		if(istype(I, /obj/item/fireaxe)) //being fireaxe'd
-			var/obj/item/fireaxe/axe = I
-			if(axe && !axe.wielded)
+		if(istype(I, /obj/item/melee/axe/fire)) //being fireaxe'd
+			var/obj/item/melee/axe/fire/axe = I
+			if(axe && !HAS_TRAIT(axe, TRAIT_WIELDED))
 				to_chat(user, "<span class='warning'>You need to be wielding \the [axe] to do that!</span>")
 				return
 		INVOKE_ASYNC(src, (density ? PROC_REF(open) : PROC_REF(close)), 2)
 
+/obj/machinery/door/airlock/deconstruct_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_start_check(user, amount=0))
+		return FALSE
+	var/decon_time = 5 SECONDS
+	if(welded)
+		decon_time += 5 SECONDS
+	if(locked)
+		decon_time += 5 SECONDS
+	if(seal)
+		decon_time += 15 SECONDS
+	if (I.use_tool(src, user, decon_time, volume=100))
+		to_chat(user, "<span class='warning'>You cut open the [src].</span>")
+		deconstruct(FALSE, user)
+		return TRUE
 
 /obj/machinery/door/airlock/open(forced=0)
 	if(operating || welded || locked || seal || !wires)
@@ -1414,7 +1429,7 @@
 		playsound(src, 'sound/machines/creaking.ogg', 100, TRUE, mono_adj = TRUE)
 
 
-	if(do_after(user, time_to_open, TRUE, src))
+	if(do_after(user, time_to_open, src))
 		if(density && !open(2)) //The airlock is still closed, but something prevented it opening. (Another player noticed and bolted/welded the airlock in time!)
 			to_chat(user, "<span class='warning'>Despite your efforts, [src] managed to resist your attempts to open it!</span>")
 

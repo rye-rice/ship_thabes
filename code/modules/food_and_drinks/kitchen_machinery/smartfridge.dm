@@ -245,6 +245,7 @@
 	icon = 'icons/obj/hydroponics/equipment.dmi'
 	icon_state = "drying_rack"
 	use_power = IDLE_POWER_USE
+	circuit = null
 	idle_power_usage = IDLE_DRAW_MINIMAL
 	active_power_usage = ACTIVE_DRAW_MINIMAL
 	visible_contents = FALSE
@@ -258,7 +259,6 @@
 
 /obj/machinery/smartfridge/drying_rack/on_deconstruction()
 	new /obj/item/stack/sheet/mineral/wood(drop_location(), 10)
-	..()
 
 /obj/machinery/smartfridge/drying_rack/RefreshParts()
 /obj/machinery/smartfridge/drying_rack/default_deconstruction_screwdriver()
@@ -366,7 +366,7 @@
 /obj/machinery/smartfridge/drinks/accept_check(obj/item/O)
 	if(!istype(O, /obj/item/reagent_containers) || (O.item_flags & ABSTRACT) || !O.reagents || !O.reagents.reagent_list.len)
 		return FALSE
-	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/food/condiment))
+	if(istype(O, /obj/item/reagent_containers/glass) || istype(O, /obj/item/reagent_containers/food/drinks) || istype(O, /obj/item/reagent_containers/condiment))
 		return TRUE
 
 // ----------------------------

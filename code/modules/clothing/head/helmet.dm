@@ -6,7 +6,7 @@
 	icon_state = "helmet"
 	item_state = "helmet"
 	var/flashlight_state = "helmet_flight_overlay"
-	armor = list("melee" = 35, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	cold_protection = HEAD
 	min_cold_protection_temperature = HELMET_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -219,6 +219,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
+	supports_variations = KEPORI_VARIATION
 	unique_reskin = list(
 		"None" = "helmetalt",
 		"Desert" = "helmetalt_desert",
@@ -286,7 +287,7 @@
 	visor_flags_inv = HIDEFACE
 	toggle_cooldown = 0
 	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
-	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	dog_fashion = null
 
 /obj/item/clothing/head/helmet/justice
@@ -327,7 +328,7 @@
 	desc = "An extremely robust, space-worthy helmet in a nefarious red and black stripe pattern."
 	icon_state = "swatsyndie"
 	item_state = "swatsyndie"
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
+	armor = list("melee" = 40, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 50, "bio" = 90, "rad" = 20, "fire" = 100, "acid" = 100)
 	cold_protection = HEAD
 	min_cold_protection_temperature = SPACE_HELM_MIN_TEMP_PROTECT
 	heat_protection = HEAD
@@ -492,7 +493,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	flash_protect = FLASH_PROTECTION_WELDER
 	flags_inv = HIDEHAIR|HIDEFACIALHAIR|HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH | PEPPERPROOF | SEALS_EYES
 	strip_delay = 80
 
 /obj/item/clothing/head/helmet/swat/inteq
@@ -501,6 +502,7 @@
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/helmet/inteq
@@ -509,6 +511,7 @@
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"
 	can_flashlight = TRUE
+	supports_variations = KEPORI_VARIATION | VOX_VARIATION
 	content_overlays = TRUE
 
 /obj/item/clothing/head/solgov
@@ -565,6 +568,7 @@
 	icon_state = "m10helm"
 	can_flashlight = TRUE
 	dog_fashion = null
+	supports_variations = null
 	unique_reskin = list(
 		"None" = "m10helm",
 		"Desert" = "m10helm_desert",
@@ -580,6 +584,7 @@
 	can_flashlight = TRUE
 	dog_fashion = null
 	allow_post_reskins = TRUE
+	supports_variations = null
 	unique_reskin = list(
 		"None" = "x11helm",
 		"Desert" = "x11helm_desert",
@@ -587,9 +592,3 @@
 		"Snow" = "x11helm_snow",
 		"Urban" = "x11helm_urban",
 		)
-
-/obj/item/clothing/head/helmet/bulletproof/x11/frontier
-	name = "\improper Frontiersmen X11 Helmet"
-	desc = "A heavily modified X11 used by the Frontiersmen pirate fleet."
-	icon_state = "x11helm_frontier"
-	unique_reskin = null
