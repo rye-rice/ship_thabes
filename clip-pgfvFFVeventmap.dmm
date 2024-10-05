@@ -3,170 +3,150 @@
 /turf/open/water/stormy_planet_lit,
 /area/template_noop)
 "ab" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/obj/machinery/deployable_turret/spotlight,
+/turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
 "ad" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
+/obj/structure/railing/thick{
+	dir = 9
 	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 "af" = (
-/obj/structure/barricade/concrete{
+/obj/structure/railing/thick{
 	dir = 8
 	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
 "ag" = (
 /obj/machinery/deployable_turret/spotlight,
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"ah" = (
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/turf/open/floor/concrete/slab_3,
+/turf/open/floor/concrete/pavement,
 /area/ruin/powered)
 "ai" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
 /obj/structure/barricade/concrete,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/turf/closed/wall/concrete,
 /area/template_noop)
 "al" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
+/obj/effect/turf_decal/road{
+	icon_state = "road_arrow"
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
 "am" = (
 /obj/structure/barricade/concrete,
 /turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
 "ap" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
 "aq" = (
-/obj/structure/fluff/sealadder,
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
+/area/ruin/powered)
 "as" = (
 /obj/effect/turf_decal/seasidedecal,
 /turf/open/water/stormy_planet_lit,
 /area/template_noop)
 "au" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#ffffff";
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi';
-	icon_state = "stairs_t"
+/obj/structure/fluff/vehicle/crane/cranecargo{
+	dir = 1
 	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 "av" = (
-/obj/structure/barricade/concrete,
-/turf/closed/wall/concrete,
-/area/template_noop)
-"aw" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi'
+/obj/structure/barricade/concrete{
+	dir = 4
 	},
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 "ay" = (
 /turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
-"az" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete,
-/area/ruin/powered)
 "aA" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
+/obj/machinery/light/floor,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
 "aB" = (
-/obj/structure/barricade/concrete{
-	dir = 4
+/obj/structure/railing/thick{
+	dir = 8
 	},
-/obj/structure/barricade/concrete,
+/obj/machinery/light/directional/east,
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 "aE" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 5
-	},
-/obj/machinery/computer/crew,
-/obj/machinery/light_switch{
-	pixel_x = -10;
-	pixel_y = 21
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/storage)
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
 "aG" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 9;
+	id = "gut_grid"
 	},
-/area/template_noop)
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
 "aI" = (
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 "aJ" = (
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"aK" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
+/obj/structure/railing/thick{
+	dir = 4
 	},
+/turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
+"aK" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5;
+	id = "gut_grid"
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
 "aN" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"aQ" = (
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/powered)
+"aR" = (
+/obj/machinery/power/shieldwallgen/atmos/roundstart{
+	id = "gut_holo"
+	},
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "gut_cargo";
+	name = "Blast Shutters"
+	},
+/obj/structure/cable{
+	icon_state = "0-6"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"aV" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"aW" = (
 /obj/structure/barricade/concrete{
 	dir = 4
 	},
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"aQ" = (
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/powered)
-"aR" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#8a8681";
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"aV" = (
-/obj/machinery/deployable_turret/spotlight,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"aW" = (
-/obj/machinery/deployable_turret/spotlight,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
 "aX" = (
-/obj/machinery/power/floodlight,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/structure/closet/crate/secure/weapon,
+/obj/machinery/light/directional/north,
+/obj/item/grenade/frag,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "aY" = (
 /obj/structure/barricade/concrete{
 	dir = 1
@@ -174,280 +154,56 @@
 /turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
 "aZ" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
+/obj/structure/railing/corner/thick,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"bf" = (
+/obj/effect/turf_decal/number/right_one,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
 "bl" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
-/area/ship/storage)
-"bs" = (
-/obj/machinery/light/street,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"bz" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/industrial/traffic/corner{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"bD" = (
-/obj/effect/turf_decal/road/stop{
-	dir = 4
+/obj/effect/turf_decal/road{
+	icon_state = "road_arrow"
 	},
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"bK" = (
+/area/ruin/powered)
+"bs" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/obj/structure/cable{
+	icon_state = "4-9"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"bz" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"bD" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
+"bK" = (
+/obj/structure/window/reinforced/spawner/east,
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/machinery/portable_atmospherics/canister/fuel,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
 "bL" = (
-/obj/effect/turf_decal/number/left_zero,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
+/obj/structure/fluff/vehicle/crane{
+	dir = 1;
+	on = 0
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
 "ce" = (
-/obj/structure/table/reinforced,
-/obj/item/folder,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"co" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/machinery/door/poddoor{
-	id = "gut_engines";
-	name = "Thruster Blast Door"
-	},
-/obj/structure/cable,
-/turf/open/floor/plating,
-/area/ship/storage)
-"ct" = (
-/obj/structure/fluff/vehicle/crane/cranecargo{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"cu" = (
-/turf/template_noop,
-/area/ruin/powered)
-"cz" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"cS" = (
-/obj/effect/turf_decal/road{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"cX" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"db" = (
-/obj/structure/cable{
-	icon_state = "1-10"
-	},
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"df" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"dg" = (
-/turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered)
-"dy" = (
-/obj/structure/railing/thick,
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/ammo_box/c45,
-/obj/item/ammo_box/c45,
-/obj/item/ammo_box/c45,
-/obj/item/ammo_box/c45,
-/obj/item/ammo_box/c45,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"dI" = (
-/obj/structure/shipping_container/nt,
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"dN" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/obj/machinery/light/directional/north,
-/obj/docking_port/mobile{
-	dir = 4;
-	launch_status = 0;
-	port_direction = 8
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"dP" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/structure/fluff/vehicle/crawler{
-	dir = 8;
-	on = 0
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"dS" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/obj/structure/fluff/vehicle/truck{
-	dir = 4;
-	on = 0
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"eh" = (
-/obj/structure/railing/thick,
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"en" = (
-/turf/closed/wall/concrete/reinforced,
-/area/template_noop)
-"eL" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"ft" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"fw" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners,
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"fP" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"fX" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/storage)
-"gk" = (
-/obj/structure/railing/thick{
-	dir = 9
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"gm" = (
-/obj/structure/fluff/vehicle/crawler{
-	dir = 8;
-	on = 0
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"gn" = (
-/obj/structure/rack,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"gt" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/ruin/powered)
-"gz" = (
-/obj/structure/closet/secure_closet/engineering_welding,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"gE" = (
-/obj/effect/turf_decal/techfloor,
-/obj/structure/closet/crate,
-/obj/item/tank/internals/emergency_oxygen/engi,
-/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
-/obj/item/clothing/mask/gas/frontier,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"gG" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
-/obj/item/storage/toolbox/mechanical,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"gJ" = (
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"gS" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"gV" = (
-/obj/structure/railing/corner/thick{
-	dir = 4;
-	pixel_y = -21
-	},
-/obj/effect/turf_decal/road/stripes{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"gW" = (
-/obj/structure/chair/office{
-	dir = 8
-	},
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"gY" = (
-/obj/structure/railing/thick,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"he" = (
-/obj/structure/railing/thick,
-/obj/structure/railing/corner/thick{
-	pixel_x = -27
-	},
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"hf" = (
-/obj/structure/barricade/concrete,
-/turf/open/floor/concrete/pavement,
-/area/ruin/powered)
-"hv" = (
-/obj/machinery/button/door,
-/turf/open/floor/concrete,
-/area/ruin/powered)
-"hA" = (
 /obj/machinery/power/shieldwallgen/atmos/roundstart{
 	dir = 1;
 	id = "gut_holo"
@@ -474,261 +230,33 @@
 	},
 /turf/open/floor/engine/hull/interior,
 /area/ship/storage)
-"hD" = (
-/obj/effect/turf_decal/road/line/opaque/white,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"hI" = (
-/obj/structure/fluff/vehicle/crawler/crawler_blue{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"hJ" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"hP" = (
-/obj/structure/shipping_container/white,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"hR" = (
-/obj/machinery/light/floor,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"ij" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"iC" = (
-/obj/effect/turf_decal/road{
-	icon_state = "road_arrow"
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"iF" = (
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"iG" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners,
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/structure/tank_dispenser{
-	anchored = 0
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"iU" = (
-/obj/structure/railing/corner/thick,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"jr" = (
-/obj/machinery/light/small/directional/south,
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"ju" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	color = "#808080";
-	dir = 8
-	},
+"co" = (
+/obj/effect/turf_decal/techfloor,
+/obj/structure/closet/crate,
+/obj/item/tank/internals/emergency_oxygen/engi,
+/obj/item/clothing/suit/space/hardsuit/security/independent/frontier,
+/obj/item/clothing/mask/gas/frontiersmen,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"jw" = (
-/obj/structure/table/reinforced,
-/obj/machinery/button/door,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"jP" = (
+"ct" = (
 /obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_y = 9
+	pixel_x = 8;
+	pixel_y = 11
 	},
 /obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = -8
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 6;
-	pixel_y = -3
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = -5;
-	pixel_y = 14
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"kc" = (
-/obj/machinery/light/directional/south,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"kq" = (
-/obj/machinery/power/terminal,
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"kV" = (
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"kW" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 1;
-	pixel_y = 8
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
 	pixel_x = 8;
 	pixel_y = -5
 	},
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"ld" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"lk" = (
-/obj/structure/shipping_container/red,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"lm" = (
-/obj/structure/barricade/concrete{
+"cz" = (
+/obj/effect/turf_decal/techfloor,
+/obj/effect/turf_decal/industrial/loading{
 	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/item/binoculars,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"lD" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"lN" = (
-/obj/machinery/light/small/directional/north,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"lY" = (
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"mf" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"mi" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"mo" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	color = "#808080";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/obj/machinery/light/directional/east,
-/obj/machinery/power/apc/auto_name/directional/north,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"mx" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"mE" = (
-/obj/structure/fluff/vehicle/crane{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"mF" = (
-/obj/effect/turf_decal/industrial/caution,
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"mR" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	color = "#808080";
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "1-8"
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"nh" = (
+"cS" = (
 /obj/effect/turf_decal/techfloor,
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /obj/structure/cable{
@@ -736,310 +264,11 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"nn" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
-"np" = (
-/obj/structure/railing{
-	dir = 8;
-	layer = 4.1
-	},
-/obj/effect/turf_decal/spline/fancy/opaque/black{
-	dir = 8
-	},
-/obj/structure/cable{
-	icon_state = "2-5"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"nv" = (
-/obj/structure/railing/thick,
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"nw" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"nQ" = (
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1;
-	pixel_x = -11
-	},
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
+"cX" = (
+/obj/machinery/light/small/directional/north,
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"nY" = (
-/obj/effect/turf_decal/number/right_one,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"oa" = (
-/obj/structure/shipping_container/nt,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"ou" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"oz" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"oA" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/obj/effect/turf_decal/road/stripes{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"oN" = (
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = -8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"oP" = (
-/obj/structure/falsewall/titanium,
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"oR" = (
-/obj/machinery/computer/cargo/retro{
-	dir = 8
-	},
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"oY" = (
-/obj/structure/railing/thick{
-	dir = 10
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"pj" = (
-/obj/structure/railing/thick,
-/obj/effect/turf_decal/road/stripes{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"ps" = (
-/obj/effect/turf_decal/road,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"px" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/ballistic/automatic/pistol/mauler,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
-"pC" = (
-/obj/machinery/light/small/directional/east,
-/turf/open/floor/concrete,
-/area/ruin/powered)
-"pH" = (
-/obj/machinery/light/directional/south,
-/obj/effect/turf_decal/industrial/traffic/corner,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"pI" = (
-/obj/structure/shipping_container/dark_red{
-	layer = 4.6
-	},
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"pL" = (
-/turf/open/floor/concrete,
-/area/ruin/powered)
-"pN" = (
-/obj/structure/railing/thick,
-/obj/structure/fermenting_barrel{
-	pixel_x = -8
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"qe" = (
-/obj/structure/fluff/vehicle/crane{
-	dir = 8;
-	on = 0
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"qq" = (
-/obj/structure/fluff/vehicle/crawler{
-	dir = 8;
-	on = 0
-	},
-/obj/machinery/light/directional/west,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"qr" = (
-/obj/structure/shipping_container/med,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"qt" = (
-/obj/structure/barricade/concrete,
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"qH" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"qM" = (
-/obj/machinery/computer/helm/retro{
-	dir = 8
-	},
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"qX" = (
-/obj/structure/closet/secure_closet/engineering_electrical,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"re" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"rk" = (
-/obj/effect/turf_decal/road/line,
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = -5;
-	pixel_y = 14
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"ro" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"rw" = (
-/obj/machinery/door/poddoor/shutters/preopen{
-	dir = 4
-	},
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/floor/plating,
-/area/ruin/powered)
-"rF" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"rN" = (
-/obj/structure/railing/thick,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"rQ" = (
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/storage)
-"rZ" = (
-/obj/effect/turf_decal/road/edge,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"sf" = (
-/obj/structure/fluff/vehicle/crane/cranecargo{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"sx" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"sJ" = (
-/turf/open/floor/white,
-/area/template_noop)
-"sN" = (
-/obj/structure/shipping_container/red,
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/caution,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"sZ" = (
-/obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/machinery/door/firedoor/border_only{
-	dir = 1
-	},
-/obj/machinery/door/firedoor/border_only,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
-"tj" = (
+"db" = (
 /obj/machinery/door/window/brigdoor/southright{
 	dir = 4
 	},
@@ -1049,1077 +278,31 @@
 /obj/effect/turf_decal/spline/fancy/opaque/black,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"tk" = (
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/secure/gear,
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
-"tA" = (
-/obj/effect/turf_decal/road/line,
-/obj/structure/fluff/vehicle/crane{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"tC" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/gun/ballistic/automatic/smg/firestorm{
-	spawnwithmagazine = 0
-	},
-/obj/item/gun/ballistic/automatic/smg/firestorm{
-	spawnwithmagazine = 0
-	},
-/obj/item/gun/ballistic/automatic/smg/firestorm{
-	spawnwithmagazine = 0
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"tK" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"tL" = (
-/obj/structure/railing/corner/thick{
-	dir = 4;
-	pixel_y = -21
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"tR" = (
-/obj/effect/turf_decal/road/line/opaque/white{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"tX" = (
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/storage)
-"tY" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/turf/open/floor/concrete,
+"dg" = (
+/turf/open/floor/mineral/titanium/blue,
 /area/ruin/powered)
-"ud" = (
-/obj/structure/barricade/concrete{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/traffic,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"uf" = (
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/oil{
-	pixel_x = 8;
-	pixel_y = 12
-	},
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"ur" = (
-/obj/structure/railing/thick,
-/obj/structure/railing/corner/thick{
-	dir = 8;
-	pixel_x = 27
-	},
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"uu" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/obj/item/clothing/under/frontiersmen,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"uv" = (
-/obj/machinery/light/street{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"uy" = (
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/obj/structure/barricade/concrete{
-	dir = 4
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"uI" = (
-/obj/structure/crate_shelf,
-/obj/effect/spawner/lootdrop/crate_spawner,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"uN" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"uY" = (
-/obj/effect/turf_decal/road/line,
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = -1;
-	pixel_y = 2
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"vg" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/obj/item/grenade/frag,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"vo" = (
-/obj/effect/turf_decal/road/line/opaque/white{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"vD" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/ruin/powered)
-"vH" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
-/obj/item/storage/firstaid/fire,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"vJ" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"vY" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"wc" = (
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"wg" = (
-/obj/machinery/computer/cargo/retro,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"wR" = (
-/obj/machinery/power/shuttle/engine/electric{
-	dir = 1
-	},
-/obj/structure/cable,
-/obj/machinery/door/poddoor{
-	id = "gut_engines";
-	name = "Thruster Blast Door"
-	},
-/turf/open/floor/plating,
-/area/ship/storage)
-"xg" = (
-/obj/machinery/power/port_gen/pacman/super,
+"dy" = (
 /obj/effect/turf_decal/industrial/hatch/yellow,
-/obj/structure/cable/yellow{
-	icon_state = "0-8"
-	},
-/obj/machinery/button/door{
-	dir = 1;
-	id = "gut_engines";
-	name = "Engine Shutters";
-	pixel_y = -22
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
-"xo" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/obj/structure/cable{
-	icon_state = "4-9"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"xu" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/smes/shuttle/precharged{
+/obj/machinery/door/firedoor/border_only{
 	dir = 1
 	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"xF" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"xJ" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"xL" = (
-/obj/effect/turf_decal/road/line/opaque/white{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"xT" = (
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"yv" = (
-/obj/effect/turf_decal/road{
-	dir = 6;
-	icon_state = "road_arrow"
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"yA" = (
-/obj/structure/sign/number,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/powered)
-"yC" = (
-/obj/effect/turf_decal/road/stop{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"yH" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"zh" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/caution,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"zn" = (
-/obj/structure/barricade/concrete{
-	dir = 4
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"zr" = (
-/obj/machinery/deployable_turret/spotlight,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"zv" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 4
-	},
+/obj/machinery/door/firedoor/border_only,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
-"zD" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"zE" = (
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_y = 9
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"zQ" = (
-/obj/structure/railing/corner{
-	dir = 1
-	},
-/obj/structure/cable{
-	icon_state = "1-5"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"zX" = (
-/obj/structure/railing/corner/thick{
-	dir = 1;
-	pixel_y = -21
-	},
-/obj/effect/turf_decal/road/stripes{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"zZ" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
+"dI" = (
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/obj/structure/shipping_container/black,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Av" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/turf_decal/techfloor{
-	dir = 5
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
 	},
-/obj/structure/closet/crate/secure/weapon,
-/obj/machinery/light/directional/north,
-/obj/item/grenade/frag,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"AB" = (
-/turf/open/floor/concrete/pavement,
-/area/ruin/powered)
-"AL" = (
-/obj/structure/railing/corner/thick{
-	dir = 1;
-	pixel_y = -21
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"AW" = (
-/obj/structure/cable/yellow{
-	icon_state = "6-8"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"Bd" = (
-/obj/structure/railing/corner{
-	dir = 8
-	},
+/obj/machinery/door/firedoor/border_only,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/plasteel/stairs{
-	dir = 1
-	},
+/turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
-"Bf" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/obj/structure/barricade/concrete,
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"By" = (
-/obj/effect/turf_decal/road{
-	dir = 4;
-	icon_state = "road_arrow"
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"BD" = (
-/obj/structure/railing/corner/thick{
-	dir = 1;
-	pixel_y = -21
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"BH" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5;
-	id = "gut_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/storage)
-"Ca" = (
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/storage)
-"Ch" = (
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/gun/ballistic/automatic/pistol/spitter,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"Cs" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/ruin/powered)
-"CP" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"CX" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/ruin/powered)
-"CY" = (
-/obj/structure/railing/thick,
-/turf/open/floor/plasteel/stairs{
-	color = "#a8a39e";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"Dc" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "0-1"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"Dl" = (
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/obj/structure/table/reinforced,
-/obj/item/phone,
-/obj/item/reagent_containers/food/drinks/mug{
-	pixel_x = 12
-	},
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"Dp" = (
-/obj/effect/turf_decal/box/corners,
-/obj/structure/shipping_container/med,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"DC" = (
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"DG" = (
-/obj/structure/fluff/vehicle/truck/truckcargo{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Ea" = (
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = 11
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Eg" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"Ez" = (
-/turf/closed/wall/concrete,
-/area/ruin/powered)
-"EI" = (
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/obj/structure/fluff/stop{
-	dir = 8;
-	layer = 3.39
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"ER" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"Ft" = (
-/obj/structure/shipping_container/white,
-/turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered)
-"FE" = (
-/obj/effect/turf_decal/industrial/caution{
-	dir = 1
-	},
-/obj/effect/turf_decal/industrial/caution,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"FL" = (
-/obj/structure/railing/corner/thick{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"FR" = (
-/obj/machinery/light/directional/west,
-/obj/structure/filingcabinet/double,
-/obj/structure/table/reinforced,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"FS" = (
-/obj/structure/reagent_dispensers/watertank,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Gd" = (
-/obj/machinery/light/directional/west,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"Gl" = (
-/obj/effect/turf_decal/box/corners,
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/machinery/portable_atmospherics/canister/oxygen,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Gq" = (
-/obj/structure/railing/thick{
-	dir = 4
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Gu" = (
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "gut_cargo";
-	name = "Blast Shutters"
-	},
-/turf/open/floor/engine/hull/interior,
-/area/ship/storage)
-"GB" = (
-/obj/structure/shipping_container/green,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"GF" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/obj/structure/fluff/stop{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"GU" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/obj/effect/turf_decal/industrial/traffic,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Hb" = (
-/obj/effect/turf_decal/industrial/traffic/corner,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Ho" = (
-/obj/machinery/light/street{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"HC" = (
-/obj/effect/turf_decal/road{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"HE" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"HF" = (
-/obj/structure/window/reinforced/spawner/east,
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/machinery/portable_atmospherics/canister/fuel,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"HX" = (
-/obj/effect/turf_decal/road/line,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Ia" = (
-/obj/structure/railing/corner/thick{
-	dir = 4;
-	pixel_y = -21
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Ib" = (
-/obj/structure/crate_shelf,
-/obj/effect/spawner/lootdrop/crate_spawner,
-/obj/item/storage/firstaid/fire,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"Ij" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Il" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/obj/structure/barricade/concrete,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"In" = (
-/obj/effect/turf_decal/techfloor,
-/obj/effect/turf_decal/industrial/loading{
-	dir = 1
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"Is" = (
-/obj/effect/turf_decal/road/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"IF" = (
-/obj/structure/barricade/concrete{
-	dir = 4
-	},
-/obj/structure/barricade/concrete,
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"IN" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-9"
-	},
-/obj/structure/cable{
-	icon_state = "5-10"
-	},
-/obj/machinery/power/terminal,
-/obj/machinery/door/firedoor/border_only,
-/obj/effect/turf_decal/industrial/warning,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/item/stack/cable_coil/red{
-	pixel_x = 8;
-	pixel_y = 5
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"IQ" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
-/obj/item/gun/ballistic/rifle/illestren,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"IV" = (
-/obj/structure/railing/thick,
-/obj/structure/fermenting_barrel{
-	pixel_x = -8
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"JK" = (
-/obj/structure/barricade/concrete{
-	dir = 8
-	},
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"JQ" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/machinery/portable_atmospherics/canister/toxins,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"JX" = (
-/obj/structure/closet/crate/large,
-/turf/open/floor/mineral/titanium/blue,
-/area/ruin/powered)
-"JZ" = (
-/turf/open/floor/wood/birch,
-/area/ruin/powered)
-"Ks" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 9;
-	id = "gut_grid"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ship/storage)
-"Ku" = (
-/obj/machinery/light/directional/west,
-/obj/structure/rack,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/obj/item/ammo_box/magazine/spitter_9mm,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"KL" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"KR" = (
-/obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered)
-"Lp" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning,
-/obj/machinery/power/smes/shuttle/precharged{
-	dir = 1
-	},
-/obj/structure/window/plasma/reinforced/spawner,
-/obj/structure/cable{
-	icon_state = "0-2"
-	},
-/turf/open/floor/plasteel/tech/techmaint,
-/area/ship/storage)
-"Lx" = (
-/obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/structure/barricade/concrete,
-/obj/machinery/door/poddoor/shutters/preopen,
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered)
-"LB" = (
-/obj/structure/barricade/concrete{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement,
-/area/ruin/powered)
-"Mf" = (
-/obj/structure/chair/comfy/shuttle{
-	dir = 8;
-	name = "tactical chair"
-	},
-/obj/effect/turf_decal/techfloor{
-	dir = 4
-	},
-/obj/effect/turf_decal/industrial/warning{
-	color = "#808080";
-	dir = 8
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"Ms" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/ammo_box/c22lr_box,
-/obj/item/ammo_box/c22lr_box,
-/obj/item/ammo_box/c22lr_box,
-/obj/item/ammo_box/c22lr_box,
-/obj/item/ammo_box/c22lr_box,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/obj/item/ammo_box/magazine/c22lr_pounder_pan,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"ME" = (
-/obj/effect/turf_decal/box/corners,
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/machinery/portable_atmospherics/canister/toxins,
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"MI" = (
-/obj/effect/turf_decal/road/stop{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Ne" = (
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"Nh" = (
-/obj/effect/turf_decal/road/line,
-/obj/structure/fermenting_barrel{
-	anchored = 1;
-	pixel_x = 8;
-	pixel_y = -5
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"NP" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Os" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Ov" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 9
-	},
-/obj/machinery/computer/helm,
-/obj/machinery/turretid/ship{
-	id = "gut_grid";
-	pixel_y = 24
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/storage)
-"Ox" = (
-/obj/machinery/porta_turret/ship/ballistic{
-	dir = 5;
-	id = "gut_grid"
-	},
-/turf/closed/wall/mineral/plastitanium,
-/area/ship/storage)
-"OL" = (
-/obj/structure/fans/tiny,
-/obj/machinery/door/poddoor{
-	id = "gut_launchdoor"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/storage)
-"ON" = (
-/obj/effect/turf_decal/industrial/traffic/fulltile,
-/obj/machinery/door/airlock/hatch{
-	dir = 4
-	},
-/turf/open/floor/plasteel/tech,
-/area/ruin/powered)
-"Pb" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/item/storage/toolbox/ammo/a850r,
-/obj/item/storage/toolbox/ammo/a850r,
-/obj/item/storage/toolbox/ammo/a850r,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Po" = (
-/obj/structure/fermenting_barrel{
-	pixel_x = -8;
-	pixel_y = 10
-	},
-/obj/structure/fermenting_barrel{
-	pixel_x = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"PG" = (
-/obj/structure/cable{
-	icon_state = "4-10"
-	},
-/turf/open/floor/plasteel/tech,
-/area/ship/storage)
-"PH" = (
-/obj/effect/turf_decal/road{
-	icon_state = "road_arrow"
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"PT" = (
-/obj/machinery/light/directional/east{
-	pixel_x = 23
-	},
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"PX" = (
-/obj/machinery/deployable_turret/hmg{
-	dir = 1
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Qf" = (
-/obj/effect/turf_decal/industrial/caution/red,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Qk" = (
-/obj/structure/closet/crate/large,
-/obj/machinery/portable_atmospherics/canister/toxins,
-/turf/open/floor/concrete/slab_3,
-/area/ruin/powered)
-"Qx" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"QA" = (
-/obj/structure/railing/thick,
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"QB" = (
-/obj/effect/turf_decal/road{
-	icon_state = "road_arrow"
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"QI" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/structure/reagent_dispensers/fueltank,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"QJ" = (
-/obj/structure/shipping_container/cyan{
-	layer = 4.6
-	},
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"Rg" = (
-/obj/structure/railing/thick,
-/turf/open/water/stormy_planet_lit,
-/area/template_noop)
-"Rq" = (
-/obj/machinery/light/directional/south{
-	pixel_y = -27
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"RR" = (
-/obj/machinery/mass_driver{
-	dir = 1;
-	id = "gut_launchdoor"
-	},
-/turf/open/floor/engine/hull/reinforced/interior,
-/area/ship/storage)
-"RS" = (
-/obj/structure/barricade/concrete,
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"RW" = (
-/obj/structure/railing/thick,
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"Se" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/shipping_container/lime,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Sf" = (
-/obj/machinery/power/smes{
-	charge = 5e+006
-	},
-/obj/effect/turf_decal/industrial/outline/yellow,
-/obj/effect/turf_decal/industrial/radiation{
-	dir = 5
-	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/storage)
-"Sh" = (
-/obj/effect/turf_decal/road/line,
-/obj/structure/closet/crate/wooden,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"SI" = (
-/obj/machinery/door/airlock/hatch,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"ST" = (
+"dN" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
@@ -2136,164 +319,161 @@
 	},
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
-"Tb" = (
-/obj/effect/turf_decal/industrial/traffic/corner{
-	dir = 4
-	},
-/obj/machinery/light/directional/east,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Tc" = (
-/obj/machinery/door/poddoor,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"Tr" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
+"dP" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/gear,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"dS" = (
+/obj/effect/turf_decal/industrial/warning{
 	dir = 8
 	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"eh" = (
+/obj/structure/railing/thick,
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
 /area/template_noop)
-"Tu" = (
+"en" = (
 /obj/effect/turf_decal/industrial/warning{
 	dir = 4
 	},
 /obj/machinery/light/directional/east,
 /turf/open/floor/plasteel/patterned/brushed,
 /area/ship/storage)
-"Tx" = (
-/obj/structure/sign/number/two,
-/turf/closed/wall/concrete/reinforced,
-/area/ruin/powered)
-"TQ" = (
-/obj/effect/turf_decal/industrial/traffic,
+"eB" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
 /turf/open/floor/concrete/stormy_planet_lit,
 /area/template_noop)
-"TU" = (
-/obj/effect/turf_decal/road/edge{
+"eD" = (
+/obj/effect/turf_decal/road{
 	dir = 4
+	},
+/obj/structure/fluff/vehicle/truck{
+	dir = 4;
+	on = 0
 	},
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"TW" = (
+"eK" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"eL" = (
+/obj/effect/turf_decal/road{
+	icon_state = "road_arrow"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"ft" = (
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/ballistic/automatic/pistol/mauler,
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"fw" = (
+/obj/structure/table/reinforced,
+/obj/item/folder,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"fP" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"fX" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 4
+	},
+/turf/open/floor/plasteel/patterned/brushed,
+/area/ship/storage)
+"gk" = (
 /obj/machinery/porta_turret/ship/ballistic{
 	dir = 9;
 	id = "gut_grid"
 	},
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/storage)
-"Uk" = (
-/obj/structure/barricade/concrete,
-/obj/effect/turf_decal/road/stripes{
+"gm" = (
+/obj/effect/turf_decal/road/stop{
 	dir = 4
 	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Uu" = (
-/obj/structure/falsewall/titanium,
-/obj/structure/falsewall/titanium,
-/turf/open/water/stormy_planet_lit,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/ruin/powered)
-"UA" = (
-/obj/effect/turf_decal/box/corners{
-	dir = 4
+"gn" = (
+/obj/structure/railing/corner{
+	dir = 8
 	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"UB" = (
-/obj/structure/railing/thick,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 8;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"UD" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners{
-	dir = 8
-	},
-/obj/structure/closet/crate/wooden,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/obj/item/grenade/firecracker,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"UE" = (
-/obj/effect/turf_decal/techfloor{
-	dir = 8
-	},
-/obj/structure/chair/comfy/shuttle{
-	dir = 1;
-	name = "tactical chair"
-	},
-/turf/open/floor/plasteel/telecomms_floor,
-/area/ship/storage)
-"UV" = (
-/turf/open/floor/plasteel/stairs{
-	dir = 1;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/ship/storage)
-"Vs" = (
-/obj/structure/railing/thick{
-	dir = 8
-	},
-/obj/effect/turf_decal/road{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"VC" = (
-/obj/effect/turf_decal/road/line{
 	dir = 1
 	},
-/obj/effect/turf_decal/box/corners{
-	dir = 4
+/area/ship/storage)
+"gE" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1
 	},
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/obj/machinery/portable_atmospherics/canister/toxins,
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"VH" = (
-/obj/structure/closet/crate/large{
-	anchored = 1
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"VV" = (
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/ruin/powered)
-"VW" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 8
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Wa" = (
-/obj/structure/railing/thick,
-/turf/open/water/stormy_planet_lit,
-/area/ruin/powered)
-"Wo" = (
+/area/ship/storage)
+"gG" = (
 /obj/item/storage/firstaid/fire,
 /turf/open/floor/concrete/tiles,
 /area/ruin/powered)
-"Wv" = (
-/obj/effect/turf_decal/road{
-	dir = 4
+"gS" = (
+/obj/machinery/porta_turret/ship/ballistic{
+	dir = 5;
+	id = "gut_grid"
 	},
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"gV" = (
+/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
+/turf/open/floor/plating,
+/area/ship/storage)
+"gW" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 9
 	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/ruin/powered)
-"WG" = (
+/obj/machinery/computer/helm,
+/obj/machinery/turretid/ship{
+	id = "gut_grid";
+	pixel_y = 24
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"gY" = (
+/obj/structure/railing/thick,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"he" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 5
+	},
+/obj/machinery/computer/crew,
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 21
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"hf" = (
 /obj/structure/railing{
 	dir = 8;
 	layer = 4.1
@@ -2306,100 +486,31 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"WY" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
+"hv" = (
+/obj/machinery/button/door,
+/turf/open/floor/concrete,
+/area/ruin/powered)
+"hA" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "gut_launchdoor"
 	},
-/obj/structure/fluff/stop{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Xr" = (
-/obj/machinery/power/shieldwallgen/atmos/roundstart{
-	id = "gut_holo"
-	},
-/obj/machinery/door/poddoor/shutters{
-	dir = 4;
-	id = "gut_cargo";
-	name = "Blast Shutters"
-	},
-/obj/structure/cable{
-	icon_state = "0-6"
-	},
-/turf/open/floor/engine/hull/interior,
+/turf/open/floor/engine/hull/reinforced/interior,
 /area/ship/storage)
-"XI" = (
-/obj/effect/turf_decal/road/line,
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"XP" = (
-/obj/effect/turf_decal/industrial/traffic{
-	dir = 4
-	},
+"hD" = (
+/obj/effect/turf_decal/road/line/opaque/white,
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"XX" = (
-/turf/open/floor/plasteel/stairs{
-	color = "#f2ebe4";
-	dir = 4;
-	icon = 'icons/obj/stairs.dmi'
-	},
-/area/template_noop)
-"Ya" = (
-/obj/effect/turf_decal/road/line,
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Yf" = (
-/obj/structure/cable{
-	icon_state = "2-10"
-	},
+"hI" = (
 /turf/open/floor/plasteel/tech,
 /area/ship/storage)
-"Yi" = (
-/obj/structure/railing/thick,
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/pavement/stormy_planet_lit,
-/area/template_noop)
-"Yl" = (
-/obj/effect/turf_decal/box/corners,
-/turf/open/floor/concrete/pavement,
-/area/template_noop)
-"Yw" = (
-/obj/effect/turf_decal/road/stripes{
-	dir = 4
-	},
-/turf/open/floor/concrete/stormy_planet_lit,
-/area/template_noop)
-"Yz" = (
-/obj/effect/spawner/structure/window/plasma/reinforced/plastitanium,
-/turf/open/floor/plating,
-/area/ship/storage)
-"YH" = (
-/obj/structure/barricade/concrete{
+"hJ" = (
+/obj/effect/turf_decal/road/line{
 	dir = 1
 	},
-/obj/machinery/photocopier,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"YK" = (
-/obj/effect/spawner/lootdrop/crate_spawner,
-/turf/open/floor/concrete/tiles,
-/area/ruin/powered)
-"YL" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
+/obj/effect/turf_decal/box/corners{
+	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/floor/plasteel/patterned/brushed,
-/area/ship/storage)
-"YN" = (
-/obj/effect/turf_decal/road/line,
-/obj/effect/turf_decal/box/corners,
 /obj/structure/closet/crate/large{
 	anchored = 1
 	},
@@ -2411,7 +522,258 @@
 /obj/item/clothing/under/frontiersmen,
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"YT" = (
+"hP" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/obj/structure/fluff/vehicle/crane{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"ij" = (
+/obj/structure/barricade/concrete{
+	dir = 4
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"iC" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 8
+	},
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"iF" = (
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"iG" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"iO" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"iU" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/turf/open/floor/plasteel/telecomms_floor,
+/area/ship/storage)
+"ja" = (
+/obj/structure/fluff/vehicle/crawler/crawler_blue{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"jr" = (
+/obj/structure/cable{
+	icon_state = "4-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"jw" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#808080";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"jB" = (
+/obj/effect/turf_decal/industrial/caution/red,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"jP" = (
+/turf/open/floor/plasteel/stairs{
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/ship/storage)
+"kc" = (
+/obj/structure/railing{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/effect/turf_decal/spline/fancy/opaque/black{
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "2-5"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"kq" = (
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"kv" = (
+/obj/structure/railing/corner/thick{
+	dir = 4;
+	pixel_y = -21
+	},
+/obj/effect/turf_decal/road/stripes{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"kG" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"kV" = (
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"kW" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"ld" = (
+/obj/structure/fluff/vehicle/crane{
+	dir = 8;
+	on = 0
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"lk" = (
+/obj/structure/shipping_container/nt,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"lm" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#808080";
+	dir = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"lD" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"lN" = (
+/obj/structure/cable/yellow{
+	icon_state = "6-8"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"lY" = (
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"mf" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"mi" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-5"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"mx" = (
+/obj/structure/cable{
+	icon_state = "1-10"
+	},
+/obj/structure/cable{
+	icon_state = "2-10"
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"mE" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"mF" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"mG" = (
+/obj/structure/fluff/sealadder,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"nh" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#808080";
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"nn" = (
+/obj/machinery/power/smes{
+	charge = 5e+006
+	},
+/obj/effect/turf_decal/industrial/outline/yellow,
+/obj/effect/turf_decal/industrial/radiation{
+	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"np" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
@@ -2434,7 +796,891 @@
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/storage)
-"Zc" = (
+"nv" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-9"
+	},
+/obj/structure/cable{
+	icon_state = "5-10"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/stack/cable_coil/red{
+	pixel_x = 8;
+	pixel_y = 5
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"nw" = (
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"nQ" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"nY" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 5
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/power/terminal,
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/turf_decal/industrial/warning,
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"oa" = (
+/obj/machinery/power/port_gen/pacman/super,
+/obj/effect/turf_decal/industrial/hatch/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	dir = 1;
+	id = "gut_engines";
+	name = "Engine Shutters";
+	pixel_y = -22
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/storage)
+"oz" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ship/storage)
+"oA" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"oP" = (
+/obj/structure/falsewall/titanium,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"oR" = (
+/obj/effect/turf_decal/industrial/warning,
+/obj/effect/decal/cleanable/oil{
+	pixel_x = 8;
+	pixel_y = 12
+	},
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"oY" = (
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning,
+/obj/machinery/power/smes/shuttle/precharged{
+	dir = 1
+	},
+/obj/structure/window/plasma/reinforced/spawner,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/tech/techmaint,
+/area/ship/storage)
+"pj" = (
+/obj/structure/railing/thick,
+/obj/effect/turf_decal/road/stripes{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"ps" = (
+/obj/effect/turf_decal/road{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"px" = (
+/obj/structure/shipping_container/white,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"pC" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"pH" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/machinery/door/poddoor{
+	id = "gut_engines";
+	name = "Thruster Blast Door"
+	},
+/obj/structure/cable,
+/turf/open/floor/plating,
+/area/ship/storage)
+"pI" = (
+/obj/machinery/power/shuttle/engine/electric{
+	dir = 1
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor{
+	id = "gut_engines";
+	name = "Thruster Blast Door"
+	},
+/turf/open/floor/plating,
+/area/ship/storage)
+"pL" = (
+/turf/open/floor/concrete,
+/area/ruin/powered)
+"pN" = (
+/obj/structure/closet/crate/large,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"qe" = (
+/obj/structure/shipping_container/cyan{
+	layer = 4.6
+	},
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"qq" = (
+/obj/structure/barricade/concrete{
+	dir = 4
+	},
+/obj/structure/barricade/concrete,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"qr" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/obj/structure/barricade/concrete,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"qt" = (
+/obj/structure/barricade/concrete,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"qH" = (
+/obj/machinery/light/street,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"qM" = (
+/obj/structure/falsewall/titanium,
+/obj/structure/falsewall/titanium,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"qX" = (
+/obj/structure/closet/secure_closet/engineering_welding,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"re" = (
+/obj/machinery/computer/cargo/retro,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"rk" = (
+/obj/structure/shipping_container/nt,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"ro" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"rw" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete,
+/area/ruin/powered)
+"rC" = (
+/obj/machinery/power/floodlight,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"rF" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"rL" = (
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"rN" = (
+/obj/structure/railing/thick,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"rQ" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ship/storage)
+"rZ" = (
+/obj/effect/turf_decal/road/edge{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"sf" = (
+/obj/structure/shipping_container/red,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"sq" = (
+/obj/structure/railing/corner/thick{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"sr" = (
+/obj/structure/railing/corner/thick{
+	dir = 4;
+	pixel_y = -21
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"sx" = (
+/obj/structure/closet/crate/large,
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"sJ" = (
+/turf/open/floor/white,
+/area/template_noop)
+"sN" = (
+/obj/machinery/light/small/directional/south,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"sZ" = (
+/obj/effect/turf_decal/industrial/caution,
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"tj" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"tk" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"tA" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"tC" = (
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_y = 9
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"tK" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"tL" = (
+/obj/structure/railing/thick,
+/obj/structure/fermenting_barrel{
+	pixel_x = -8
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"tR" = (
+/obj/structure/shipping_container/white,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"tY" = (
+/obj/effect/turf_decal/industrial/caution{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"ud" = (
+/obj/structure/shipping_container/green,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"uf" = (
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_y = 9
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = -8
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = -5;
+	pixel_y = 14
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"ur" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"us" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"uu" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"uv" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"uy" = (
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/pet/dog/corgi/capybara,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"uI" = (
+/obj/structure/crate_shelf,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"uN" = (
+/turf/template_noop,
+/area/ruin/powered)
+"uY" = (
+/obj/effect/turf_decal/road/line,
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"vg" = (
+/obj/structure/fermenting_barrel{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1;
+	pixel_x = -11
+	},
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"vo" = (
+/obj/effect/turf_decal/road/line/opaque/white{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"vA" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"vD" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"vH" = (
+/obj/structure/closet/secure_closet/engineering_electrical,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"vJ" = (
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"vY" = (
+/obj/effect/turf_decal/techfloor{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/obj/docking_port/mobile{
+	dir = 4;
+	launch_status = 0;
+	port_direction = 8
+	},
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"vZ" = (
+/obj/machinery/deployable_turret/hmg{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"wc" = (
+/obj/machinery/light/directional/south,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"wg" = (
+/obj/structure/fermenting_barrel{
+	pixel_x = -8;
+	pixel_y = 10
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"wR" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/storage/toolbox/ammo/a850r,
+/obj/item/storage/toolbox/ammo/a850r,
+/obj/item/storage/toolbox/ammo/a850r,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"xo" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/obj/item/gun/ballistic/rifle/illestren,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"xu" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"xH" = (
+/obj/effect/turf_decal/road/edge,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"xJ" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"xL" = (
+/obj/structure/fluff/vehicle/crane{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"xT" = (
+/obj/structure/shipping_container/med,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"yv" = (
+/obj/effect/turf_decal/road{
+	icon_state = "road_arrow"
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"yw" = (
+/obj/effect/turf_decal/road/stop{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"yA" = (
+/obj/structure/sign/number,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/powered)
+"yC" = (
+/obj/structure/railing/corner/thick{
+	dir = 4;
+	pixel_y = -21
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"yH" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zh" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/obj/effect/turf_decal/industrial/caution,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zn" = (
+/obj/structure/railing/thick,
+/obj/structure/fermenting_barrel{
+	pixel_x = -8
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zv" = (
+/obj/structure/railing/thick,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45,
+/obj/item/ammo_box/c45,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zD" = (
+/obj/structure/railing/corner/thick{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zE" = (
+/obj/structure/fluff/vehicle/crane/cranecargo{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"zQ" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/ruin/powered)
+"zX" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/ruin/powered)
+"zZ" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Av" = (
+/obj/structure/railing/thick,
+/obj/structure/railing/corner/thick{
+	pixel_x = -27
+	},
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"AB" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"AL" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"AW" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"Bd" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"By" = (
+/obj/structure/railing/thick{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"BD" = (
+/turf/closed/wall/concrete/reinforced,
+/area/template_noop)
+"BS" = (
+/obj/structure/railing/corner/thick{
+	dir = 1;
+	pixel_y = -21
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"BZ" = (
+/obj/structure/railing/thick,
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Cs" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/ruin/powered)
+"CK" = (
+/obj/structure/railing/thick{
+	dir = 8
+	},
+/obj/effect/turf_decal/road/stripes{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"CP" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"CY" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/industrial/traffic/corner,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Dc" = (
+/obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Dl" = (
+/obj/machinery/light/directional/south,
+/obj/effect/turf_decal/industrial/traffic/corner{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Dp" = (
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"DC" = (
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"DG" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Ea" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Eg" = (
+/obj/effect/turf_decal/industrial/traffic/corner,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Ez" = (
+/turf/closed/wall/concrete,
+/area/ruin/powered)
+"EI" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/concrete,
+/area/ruin/powered)
+"ER" = (
+/obj/structure/fluff/vehicle/crane{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Ft" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"FE" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"FL" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"FN" = (
+/obj/structure/railing/thick,
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"FR" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"FS" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Ga" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Gd" = (
+/obj/machinery/door/poddoor/shutters{
+	dir = 4;
+	id = "gut_cargo";
+	name = "Blast Shutters"
+	},
+/turf/open/floor/engine/hull/interior,
+/area/ship/storage)
+"Gl" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#ffffff";
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi';
+	icon_state = "stairs_t"
+	},
+/area/template_noop)
+"Gq" = (
+/obj/effect/turf_decal/box/corners,
+/obj/structure/shipping_container/med,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"GB" = (
+/obj/structure/shipping_container/red,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"GF" = (
+/obj/structure/crate_shelf,
+/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/item/storage/firstaid/fire,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"GU" = (
+/obj/structure/barricade/concrete{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"GZ" = (
+/obj/structure/barricade/concrete,
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Ha" = (
+/obj/structure/railing/thick{
+	dir = 10
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Hb" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"Ho" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"HC" = (
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"HE" = (
 /obj/effect/turf_decal/road/line{
 	dir = 1
 	},
@@ -2443,22 +1689,171 @@
 	},
 /turf/open/floor/concrete/pavement,
 /area/template_noop)
-"Zf" = (
-/obj/machinery/light/directional/north,
-/turf/open/floor/concrete/stormy_planet_lit,
+"HF" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/concrete/slab_3,
 /area/ruin/powered)
-"ZD" = (
-/obj/structure/chair/office{
+"HJ" = (
+/obj/effect/turf_decal/road/stripes{
 	dir = 4
 	},
 /turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"HL" = (
+/obj/machinery/deployable_turret/spotlight,
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_3,
 /area/ruin/powered)
-"ZG" = (
-/obj/structure/closet/crate/critter,
-/mob/living/simple_animal/pet/dog/corgi/capybara,
+"HX" = (
+/obj/effect/turf_decal/road/line,
 /turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
-"ZW" = (
+"HZ" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"Ia" = (
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Ib" = (
+/obj/effect/turf_decal/road{
+	dir = 4
+	},
+/obj/structure/fluff/stop{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Ij" = (
+/obj/effect/turf_decal/industrial/traffic{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Il" = (
+/obj/effect/turf_decal/road{
+	dir = 5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"In" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"Is" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"IC" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/obj/effect/turf_decal/industrial/traffic,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"IF" = (
+/obj/effect/turf_decal/road/line,
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"IN" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"IQ" = (
+/obj/structure/fermenting_barrel{
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/structure/fermenting_barrel{
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = -8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"IV" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/obj/item/grenade/frag,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"IZ" = (
+/obj/effect/turf_decal/number/left_zero,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"JK" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/obj/structure/barricade/concrete{
+	dir = 4
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"JX" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/obj/item/clothing/under/frontiersmen,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"JZ" = (
+/turf/open/floor/wood/birch,
+/area/ruin/powered)
+"Ks" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	id = "gut_launchdoor"
+	},
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"Ku" = (
+/obj/effect/turf_decal/industrial/traffic/fulltile,
+/obj/machinery/door/airlock/hatch{
+	dir = 4
+	},
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered)
+"KA" = (
 /obj/structure/railing/thick{
 	dir = 4
 	},
@@ -2467,6 +1862,693 @@
 	pixel_y = -22
 	},
 /turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"KL" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"KO" = (
+/obj/structure/railing/thick,
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"KR" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/shipping_container/black,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Lk" = (
+/obj/machinery/deployable_turret/spotlight,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"Lp" = (
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/gun/ballistic/automatic/pistol/spitter,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"Lx" = (
+/obj/effect/turf_decal/industrial/traffic/fulltile,
+/obj/structure/barricade/concrete,
+/obj/machinery/door/poddoor/shutters/preopen,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered)
+"LB" = (
+/obj/structure/fluff/vehicle/crawler{
+	dir = 8;
+	on = 0
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"LN" = (
+/obj/effect/turf_decal/road/stop{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Mf" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/obj/structure/fluff/vehicle/crane{
+	dir = 1;
+	on = 0
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"Ms" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"ME" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/binoculars,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"MI" = (
+/obj/structure/fluff/vehicle/crawler{
+	dir = 8;
+	on = 0
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Ne" = (
+/turf/open/floor/concrete/pavement,
+/area/template_noop)
+"Nh" = (
+/obj/machinery/door/poddoor/shutters/preopen{
+	dir = 4
+	},
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"NH" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"NP" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Os" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#8a8681";
+	dir = 1;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"Ov" = (
+/obj/machinery/light/directional/west,
+/obj/structure/rack,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/obj/item/ammo_box/magazine/spitter_9mm,
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"Pb" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Po" = (
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"PG" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/gun/ballistic/automatic/smg/firestorm{
+	spawnwithmagazine = 0
+	},
+/obj/item/gun/ballistic/automatic/smg/firestorm{
+	spawnwithmagazine = 0
+	},
+/obj/item/gun/ballistic/automatic/smg/firestorm{
+	spawnwithmagazine = 0
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"PT" = (
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"PX" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Qf" = (
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Qk" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/phone,
+/obj/item/reagent_containers/food/drinks/mug{
+	pixel_x = 12
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"Qx" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"QA" = (
+/obj/structure/barricade/concrete{
+	dir = 1
+	},
+/obj/machinery/photocopier,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"QJ" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/turf/open/floor/concrete,
+/area/ruin/powered)
+"Rg" = (
+/obj/structure/railing/thick,
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"Rq" = (
+/obj/machinery/light/directional/south{
+	pixel_y = -27
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Rs" = (
+/obj/structure/railing/thick,
+/turf/open/floor/plasteel/stairs{
+	color = "#f2ebe4";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"RR" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"RS" = (
+/obj/structure/barricade/concrete,
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"RW" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Sf" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/machinery/portable_atmospherics/canister/toxins,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Sh" = (
+/obj/effect/turf_decal/road/line,
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"SI" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"ST" = (
+/obj/machinery/computer/helm/retro{
+	dir = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"Tb" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/obj/structure/fluff/vehicle/crawler{
+	dir = 8;
+	on = 0
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Tc" = (
+/obj/machinery/door/poddoor,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Tr" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/c22lr_box,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/obj/item/ammo_box/magazine/c22lr_pounder_pan,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Tu" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/ruin/powered)
+"Tx" = (
+/obj/structure/sign/number/two,
+/turf/closed/wall/concrete/reinforced,
+/area/ruin/powered)
+"TI" = (
+/obj/machinery/light/street{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"TM" = (
+/obj/structure/railing/thick{
+	dir = 8
+	},
+/obj/structure/barricade/concrete,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"TQ" = (
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/obj/structure/fluff/stop{
+	dir = 8;
+	layer = 3.39
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"TU" = (
+/obj/effect/turf_decal/road/edge{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"TW" = (
+/obj/effect/turf_decal/road/edge{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Uk" = (
+/obj/structure/barricade/concrete,
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"Uu" = (
+/obj/structure/shipping_container/dark_red{
+	layer = 4.6
+	},
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"UA" = (
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"UB" = (
+/obj/effect/turf_decal/road{
+	dir = 6
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"UD" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"UE" = (
+/obj/machinery/light/directional/east{
+	pixel_x = 23
+	},
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"UV" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/shipping_container/lime,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Vs" = (
+/obj/effect/turf_decal/road/line,
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = -5;
+	pixel_y = 14
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = 11
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"VC" = (
+/obj/effect/turf_decal/road/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/box/corners{
+	dir = 4
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 1;
+	pixel_y = 8
+	},
+/obj/structure/fermenting_barrel{
+	anchored = 1;
+	pixel_x = 8;
+	pixel_y = -5
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"VH" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/structure/closet/crate/wooden,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"VJ" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"VV" = (
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/ruin/powered)
+"Wa" = (
+/obj/structure/railing/thick,
+/turf/open/water/stormy_planet_lit,
+/area/ruin/powered)
+"Wo" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/obj/item/storage/firstaid/fire,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"Ws" = (
+/obj/structure/fluff/vehicle/truck/truckcargo{
+	dir = 1
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Wv" = (
+/obj/effect/turf_decal/road/line,
+/obj/structure/closet/crate/wooden,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/obj/item/grenade/firecracker,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"WG" = (
+/obj/effect/turf_decal/road/line,
+/obj/effect/turf_decal/box/corners,
+/obj/structure/closet/crate/large{
+	anchored = 1
+	},
+/obj/structure/tank_dispenser{
+	anchored = 0
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"WS" = (
+/obj/structure/railing/thick,
+/obj/effect/turf_decal/road/stripes{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"WY" = (
+/obj/effect/turf_decal/road/line,
+/obj/structure/fluff/vehicle/crane{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Xn" = (
+/obj/effect/turf_decal/road/stripes{
+	dir = 4
+	},
+/obj/structure/fluff/stop{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Xr" = (
+/turf/open/floor/engine/hull/reinforced/interior,
+/area/ship/storage)
+"Xx" = (
+/obj/structure/barricade/concrete{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"XI" = (
+/obj/machinery/computer/cargo/retro{
+	dir = 8
+	},
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"XP" = (
+/turf/open/floor/concrete/slab_3,
+/area/ruin/powered)
+"XX" = (
+/obj/effect/turf_decal/industrial/traffic/fulltile,
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/plasteel/tech,
+/area/ruin/powered)
+"Ya" = (
+/obj/effect/turf_decal/road/line,
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Yf" = (
+/obj/machinery/light/street{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Yi" = (
+/obj/effect/turf_decal/road,
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Yl" = (
+/obj/effect/turf_decal/road/line/opaque/white{
+	dir = 4
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Yt" = (
+/obj/structure/railing/corner/thick{
+	dir = 1;
+	pixel_y = -21
+	},
+/obj/effect/turf_decal/road/stripes{
+	dir = 1
+	},
+/turf/open/floor/concrete/stormy_planet_lit,
+/area/template_noop)
+"Yw" = (
+/obj/effect/turf_decal/road/line/opaque/white{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"Yz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "tactical chair"
+	},
+/obj/effect/turf_decal/techfloor{
+	dir = 4
+	},
+/obj/effect/turf_decal/industrial/warning{
+	color = "#808080";
+	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/power/apc/auto_name/directional/north,
+/turf/open/floor/plasteel/tech,
+/area/ship/storage)
+"YH" = (
+/obj/structure/table/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"YK" = (
+/obj/effect/spawner/lootdrop/crate_spawner,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"YL" = (
+/obj/effect/turf_decal/road{
+	dir = 6;
+	icon_state = "road_arrow"
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"YN" = (
+/obj/effect/turf_decal/road{
+	dir = 4;
+	icon_state = "road_arrow"
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
+/area/template_noop)
+"YT" = (
+/obj/machinery/light/directional/west,
+/obj/structure/filingcabinet/double,
+/obj/structure/table/reinforced,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"Zc" = (
+/obj/structure/rack,
+/turf/open/floor/concrete/tiles,
+/area/ruin/powered)
+"Zf" = (
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 8;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/ruin/powered)
+"Zu" = (
+/obj/structure/railing/thick,
+/turf/open/floor/plasteel/stairs{
+	color = "#a8a39e";
+	dir = 4;
+	icon = 'icons/obj/stairs.dmi'
+	},
+/area/template_noop)
+"ZD" = (
+/obj/structure/railing/thick,
+/obj/structure/railing/corner/thick{
+	dir = 8;
+	pixel_x = 27
+	},
+/turf/open/water/stormy_planet_lit,
+/area/template_noop)
+"ZG" = (
+/turf/open/floor/concrete/pavement,
+/area/ruin/powered)
+"ZW" = (
+/obj/structure/railing/thick{
+	dir = 8
+	},
+/obj/effect/turf_decal/road{
+	dir = 8
+	},
+/turf/open/floor/concrete/pavement/stormy_planet_lit,
 /area/template_noop)
 
 (1,1,1) = {"
@@ -2660,15 +2742,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Av
+By
+By
+By
+By
+By
+By
+TM
+as
 aa
 aa
 aa
@@ -2790,15 +2872,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Rg
+ay
+aQ
+VJ
+Lk
+VJ
+aQ
+am
+as
 aa
 aa
 aa
@@ -2920,15 +3002,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Rg
+ay
+HZ
+XP
+XP
+XP
+us
+am
+as
 aa
 aa
 aa
@@ -3050,15 +3132,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Rg
+ay
+HL
+XP
+rC
+XP
+Lk
+am
+as
 aa
 aa
 aa
@@ -3180,15 +3262,15 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Rg
+ay
+HZ
+XP
+XP
+XP
+us
+am
+as
 aa
 aa
 aa
@@ -3310,14 +3392,14 @@ aa
 aa
 aa
 aa
-he
-qH
-qH
-qH
-qH
-qH
-qH
-Il
+Rg
+ay
+aQ
+XP
+Lk
+XP
+aQ
+am
 as
 aa
 aa
@@ -3380,656 +3462,6 @@ aa
 aa
 "}
 (8,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-aQ
-af
-aV
-af
-aQ
-am
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(9,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-ah
-aJ
-aJ
-aJ
-aZ
-am
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(10,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-ag
-aJ
-aX
-aJ
-aV
-am
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(11,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-ah
-aJ
-aJ
-aJ
-aZ
-am
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(12,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-aQ
-aJ
-aV
-aJ
-aQ
-am
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(13,1,1) = {"
 aa
 aa
 aa
@@ -4159,7 +3591,7 @@ aa
 aa
 aa
 "}
-(14,1,1) = {"
+(9,1,1) = {"
 aa
 aa
 aa
@@ -4220,14 +3652,664 @@ aa
 aa
 aa
 aa
-ur
-Gq
-Gq
-Gq
-ZW
+ZD
+aJ
+aJ
+aJ
+KA
 ay
 am
 am
+as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(10,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Rg
+ay
+ay
+am
+as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(11,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+Rg
+ay
+aZ
+am
+as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(12,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+sJ
+aa
+aa
+aa
+aa
+Rg
+ay
+gY
+iO
+as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(13,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+sJ
+aa
+aa
+aa
+aa
+aa
+Rg
+ay
+gY
+NH
+as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+"}
+(14,1,1) = {"
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+aa
+aa
+aa
+sJ
+sJ
+aa
+sJ
+aa
+sJ
+aa
+aa
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
+Rg
+ay
+gY
+mG
 as
 aa
 aa
@@ -4333,20 +4415,20 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+sJ
 sJ
 aa
 aa
 aa
+sJ
+sJ
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+sJ
+sJ
 aa
 aa
 aa
@@ -4356,8 +4438,8 @@ aa
 aa
 Rg
 ay
-ay
-am
+gY
+Uk
 as
 aa
 aa
@@ -4466,17 +4548,17 @@ aa
 aa
 aa
 aa
+sJ
+sJ
+sJ
+aa
+aa
+sJ
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+sJ
+sJ
 aa
 aa
 aa
@@ -4486,8 +4568,8 @@ aa
 aa
 Rg
 ay
-iU
-am
+gY
+kG
 as
 aa
 aa
@@ -4594,30 +4676,30 @@ aa
 aa
 aa
 aa
+aa
 sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aa
 aa
 aa
 aa
 sJ
 sJ
+sJ
+aa
+sJ
+aa
+aa
+sJ
+aa
+aa
 aa
 aa
 aa
 aa
 Rg
 ay
-gY
-aK
+sq
+am
 as
 aa
 aa
@@ -4725,20 +4807,20 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+sJ
 aa
 sJ
 sJ
+sJ
+sJ
+sJ
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -4746,8 +4828,8 @@ aa
 aa
 Rg
 ay
-gY
-ap
+ay
+am
 as
 aa
 aa
@@ -4854,30 +4936,30 @@ aa
 aa
 aa
 aa
+sJ
+sJ
+sJ
+sJ
 aa
+sJ
+sJ
+sJ
+sJ
+sJ
+sJ
 sJ
 aa
 aa
 aa
 sJ
-sJ
-aa
-sJ
-aa
-sJ
-aa
-aa
-sJ
-aa
-aa
 aa
 aa
 aa
 aa
 Rg
 ay
-gY
-aq
+ay
+am
 as
 aa
 aa
@@ -4984,30 +5066,30 @@ aa
 aa
 aa
 aa
-aa
-aa
-sJ
 sJ
 aa
 aa
 aa
-sJ
-sJ
 aa
 aa
+sJ
 sJ
 sJ
 aa
 aa
 aa
+sJ
+sJ
+aa
+sJ
 aa
 aa
 aa
 aa
 Rg
 ay
-gY
-aG
+ay
+am
 as
 aa
 aa
@@ -5115,18 +5197,18 @@ aa
 aa
 aa
 aa
-aa
-sJ
-sJ
 sJ
 aa
 aa
 sJ
 aa
 aa
+sJ
+aa
 aa
 sJ
-sJ
+aa
+aa
 aa
 aa
 aa
@@ -5136,8 +5218,8 @@ aa
 aa
 Rg
 ay
-gY
-ad
+ay
+am
 as
 aa
 aa
@@ -5250,23 +5332,23 @@ aa
 aa
 aa
 aa
-sJ
-sJ
-sJ
 aa
 sJ
 aa
 aa
+aa
+aa
+aa
+aa
+aa
 sJ
-aa
-aa
 aa
 aa
 aa
 aa
 Rg
 ay
-FL
+ay
 am
 as
 aa
@@ -5376,19 +5458,19 @@ aa
 aa
 aa
 sJ
-aa
-sJ
-sJ
-sJ
-sJ
-sJ
 sJ
 aa
 aa
 aa
 aa
+sJ
 aa
 aa
+aa
+aa
+aa
+aa
+sJ
 aa
 aa
 aa
@@ -5504,14 +5586,7 @@ aa
 aa
 aa
 aa
-sJ
-sJ
-sJ
-sJ
 aa
-sJ
-sJ
-sJ
 sJ
 sJ
 sJ
@@ -5519,15 +5594,22 @@ sJ
 aa
 aa
 aa
+aa
+aa
 sJ
+aa
+aa
+sJ
+aa
+aa
 aa
 aa
 aa
 aa
 Rg
 ay
-ay
-am
+ab
+ai
 as
 aa
 aa
@@ -5639,17 +5721,17 @@ aa
 aa
 aa
 aa
+sJ
+aa
+sJ
+aa
+sJ
+aa
 aa
 sJ
 sJ
 sJ
 aa
-aa
-aa
-sJ
-sJ
-aa
-sJ
 aa
 aa
 aa
@@ -5763,23 +5845,23 @@ aa
 aa
 aa
 aa
-aa
-aa
-sJ
-aa
-aa
-sJ
-aa
-aa
-sJ
-aa
-aa
 sJ
 aa
 aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sJ
+sJ
 aa
 aa
 aa
@@ -5892,16 +5974,16 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+sJ
 sJ
 aa
 aa
 aa
 aa
 aa
-sJ
+aa
+aa
+aa
 aa
 aa
 aa
@@ -5915,9 +5997,9 @@ aa
 aa
 aa
 Rg
-ay
-ay
 am
+Xx
+Ga
 as
 aa
 aa
@@ -6025,29 +6107,29 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 sJ
-sJ
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
 aa
 aa
 aa
 Rg
 ay
-ay
-am
+aI
+vA
 as
 aa
 aa
@@ -6155,27 +6237,27 @@ aa
 aa
 aa
 aa
-sJ
-sJ
-sJ
-sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
 aa
 aa
 sJ
-aa
-aa
-sJ
-aa
-aa
-aa
 aa
 aa
 aa
 Rg
-ay
+am
 aW
 av
 as
@@ -6284,21 +6366,21 @@ aa
 aa
 aa
 aa
-sJ
 aa
 aa
 aa
 aa
-sJ
-aa
-sJ
-aa
-sJ
 aa
 aa
-sJ
-sJ
-sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -6413,7 +6495,6 @@ aa
 aa
 aa
 aa
-sJ
 aa
 aa
 aa
@@ -6428,8 +6509,9 @@ aa
 aa
 aa
 aa
-sJ
-sJ
+aa
+aa
+aa
 aa
 aa
 aa
@@ -6542,8 +6624,6 @@ aa
 aa
 aa
 aa
-sJ
-sJ
 aa
 aa
 aa
@@ -6559,13 +6639,15 @@ aa
 aa
 aa
 aa
-sJ
+aa
+aa
+aa
 aa
 aa
 aa
 aa
 Rg
-am
+ay
 ab
 ai
 as
@@ -6690,14 +6772,14 @@ aa
 aa
 aa
 aa
-sJ
+aa
 aa
 aa
 aa
 Rg
 ay
-aI
-al
+ay
+am
 as
 aa
 aa
@@ -6820,14 +6902,14 @@ aa
 aa
 aa
 aa
-sJ
+aa
 aa
 aa
 aa
 Rg
+ay
+ay
 am
-aN
-aB
 as
 aa
 aa
@@ -7066,17 +7148,17 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+Av
+By
+By
+By
+By
+Gl
+Hb
+In
+Os
+ay
+as
 aa
 aa
 aa
@@ -7196,28 +7278,28 @@ aa
 aa
 aa
 aa
+Rg
+qH
+ay
+ay
+ay
+Gl
+Hb
+In
+Os
+ay
+as
+UE
 aa
 aa
+UE
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+UE
 Rg
 ay
-aW
-av
+ay
+am
 as
 aa
 aa
@@ -7326,25 +7408,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 Rg
+ay
+ay
+ay
+af
+af
+af
+af
+af
+af
+af
+af
+af
+af
+ZW
+By
+By
+CK
+Ha
 ay
 ay
 am
@@ -7456,25 +7538,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 Rg
+ay
+ay
+ay
+yv
+aI
+aI
+yv
+aI
+aI
+yv
+aI
+aI
+YL
+fP
+ay
+ay
+kv
+gY
 ay
 ay
 am
@@ -7586,25 +7668,25 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 Rg
+ay
+ay
+ay
+Ft
+Ft
+Ft
+Ft
+Ft
+Ft
+Ft
+Ft
+aI
+aI
+fP
+ay
+ay
+pj
+Zu
 ay
 ay
 am
@@ -7716,25 +7798,25 @@ aa
 aa
 aa
 aa
-he
-qH
-qH
-qH
-qH
-au
-aA
-aw
-aR
-ay
-as
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 Rg
+qH
+ay
+Ya
+Qx
+yH
+Is
+UD
+Qx
+yH
+Is
+UD
+aI
+aI
+fP
+TI
+ay
+pj
+FN
 ay
 ay
 am
@@ -7847,24 +7929,24 @@ aa
 aa
 aa
 Rg
-bs
 ay
 ay
-ay
+Ya
+aI
 au
-aA
-aw
-aR
+CP
+HX
+aI
+aI
+CP
+HX
+aI
+YN
+fP
 ay
-as
-PT
-aa
-aa
-PT
-aa
-aa
-PT
-Rg
+ay
+pj
+ay
 ay
 ay
 am
@@ -7979,22 +8061,22 @@ aa
 Rg
 ay
 ay
+Ya
+UA
+Gq
+rF
+KL
+UA
+Po
+rF
+KL
+aI
+aI
+fP
 ay
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-Vs
-qH
-qH
-oA
-oY
+ay
+pj
+ay
 ay
 ay
 am
@@ -8109,22 +8191,22 @@ aa
 Rg
 ay
 ay
-ay
-QB
+Ya
 aI
 aI
-QB
+CP
+HX
 aI
 aI
-QB
+CP
+HX
 aI
 aI
-yv
 fP
 ay
 ay
-gV
-gY
+pj
+Rs
 ay
 ay
 am
@@ -8237,21 +8319,21 @@ aa
 aa
 aa
 Rg
+qH
 ay
-ay
-ay
-NP
-NP
-NP
-NP
-NP
-NP
-NP
-NP
+Ya
 aI
 aI
+CP
+HX
+aI
+aI
+NP
+HX
+aI
+YN
 fP
-ay
+TI
 ay
 pj
 eh
@@ -8367,24 +8449,24 @@ aa
 aa
 aa
 Rg
-bs
+ay
 ay
 Ya
 Qx
-yH
+GB
 Is
 Tr
 Qx
-yH
+PG
 Is
-Tr
+UV
 aI
 aI
 fP
-uv
 ay
-pj
-RW
+ay
+Yt
+gY
 ay
 ay
 am
@@ -8500,21 +8582,21 @@ Rg
 ay
 ay
 Ya
+Ne
+Ne
+tK
+IF
 aI
-sf
+PT
 CP
 HX
 aI
 aI
-CP
-HX
-aI
-By
 fP
 ay
 ay
-pj
-ay
+eK
+BZ
 ay
 ay
 am
@@ -8630,21 +8712,21 @@ Rg
 ay
 ay
 Ya
-UA
+FE
 Dp
-rF
-KL
+Ho
+IN
 UA
-Gl
+kV
 rF
 KL
 aI
-aI
+YN
 fP
 ay
 ay
-pj
 ay
+gY
 ay
 ay
 am
@@ -8757,13 +8839,13 @@ aa
 aa
 aa
 Rg
-ay
+qH
 ay
 Ya
-aI
-aI
-CP
-HX
+Ne
+Ne
+tK
+uY
 aI
 aI
 CP
@@ -8771,10 +8853,10 @@ HX
 aI
 aI
 fP
+TI
 ay
 ay
-pj
-UB
+gY
 ay
 ay
 am
@@ -8887,24 +8969,24 @@ aa
 aa
 aa
 Rg
-bs
+ay
 ay
 Ya
+Ne
+Ne
+tK
+uY
 aI
 aI
 CP
 HX
 aI
 aI
-re
-HX
-aI
-By
 fP
-uv
 ay
-pj
-CY
+ay
+ay
+gY
 ay
 ay
 am
@@ -9020,20 +9102,20 @@ Rg
 ay
 ay
 Ya
-Qx
+FL
 lk
-Is
+HE
 Ms
 Qx
-tC
+yH
 Is
-Se
+UD
 aI
-aI
+YN
 fP
 ay
 ay
-zX
+ay
 gY
 ay
 ay
@@ -9155,7 +9237,7 @@ Ne
 tK
 uY
 aI
-VH
+aI
 CP
 HX
 aI
@@ -9164,7 +9246,7 @@ fP
 ay
 ay
 ld
-nv
+gY
 ay
 ay
 am
@@ -9277,21 +9359,21 @@ aa
 aa
 aa
 Rg
-ay
+qH
 ay
 Ya
-Eg
-Yl
+UA
+aI
 hJ
-zD
+KL
 UA
 kV
 rF
 KL
 aI
-By
+aI
 fP
-ay
+TI
 ay
 ay
 gY
@@ -9407,27 +9489,27 @@ aa
 aa
 aa
 Rg
-bs
+ay
 ay
 Ya
-Ne
-Ne
-tK
-XI
 aI
 aI
 CP
 HX
 aI
 aI
-fP
+CP
+HX
+aI
+YN
+eB
 uv
-ay
-ay
-gY
-ay
-ay
-am
+uv
+uv
+IC
+eK
+eK
+GZ
 as
 aa
 aa
@@ -9540,21 +9622,21 @@ Rg
 ay
 ay
 Ya
-Ne
-Ne
-tK
-XI
 aI
 aI
 CP
 HX
 aI
 aI
-fP
+CP
+Vs
+aI
+aI
+aY
+vZ
 ay
-ay
-ay
-gY
+ab
+Dc
 ay
 ay
 am
@@ -9670,21 +9752,21 @@ Rg
 ay
 ay
 Ya
-eL
-oa
-Zc
-df
 Qx
 yH
 Is
-Tr
+UD
+Qx
+PX
+Is
+VH
 aI
-By
-fP
+aI
+aY
 ay
+IZ
 ay
-ay
-gY
+Dc
 ay
 ay
 am
@@ -9797,24 +9879,24 @@ aa
 aa
 aa
 Rg
-ay
+qH
 ay
 Ya
-Ne
-Ne
-tK
-XI
 aI
 aI
 CP
 HX
 aI
 aI
-fP
+CP
+Wv
+aI
+YN
+aY
+jB
+bf
 ay
-ay
-qe
-gY
+Dc
 ay
 ay
 am
@@ -9927,24 +10009,24 @@ aa
 aa
 aa
 Rg
-bs
+ay
 ay
 Ya
 UA
-aI
+kV
 uu
-KL
+JX
 UA
 kV
-rF
-KL
+Sf
+WG
 aI
 aI
-fP
-uv
+aY
+vZ
 ay
-ay
-gY
+ab
+Dc
 ay
 ay
 am
@@ -10067,16 +10149,16 @@ HX
 aI
 aI
 CP
-HX
+WY
 aI
-By
+aI
 JK
 ij
 ij
 ij
 GU
-ld
-ld
+HJ
+HJ
 RS
 as
 aa
@@ -10197,16 +10279,16 @@ HX
 aI
 aI
 CP
-rk
+HX
+aI
+YL
 aI
 aI
-aY
-PX
+aI
+aI
+rN
 ay
-aW
-TQ
-ay
-ay
+sr
 am
 as
 aa
@@ -10317,27 +10399,27 @@ aa
 aa
 aa
 Rg
-ay
+qH
 ay
 Ya
 Qx
 yH
 Is
-Tr
+KR
 Qx
-oz
+yH
 Is
 UD
 aI
 aI
-aY
+aI
+aI
+aI
+aI
+rN
 ay
-bL
-ay
-TQ
-ay
-ay
-am
+gY
+iO
 as
 aa
 aa
@@ -10447,7 +10529,7 @@ aa
 aa
 aa
 Rg
-bs
+ay
 ay
 Ya
 aI
@@ -10459,15 +10541,15 @@ aI
 CP
 Sh
 aI
-By
-aY
-Qf
-nY
+aI
+aI
+aI
+aI
+aI
+rN
 ay
-TQ
-ay
-ay
-am
+gY
+NH
 as
 aa
 aa
@@ -10582,22 +10664,22 @@ ay
 Ya
 UA
 kV
-lD
-YN
+rF
+HX
 UA
-kV
+Qf
 VC
 iG
 aI
+YL
 aI
-aY
-PX
+aI
+aI
+aI
+rN
 ay
-aW
-TQ
-ay
-ay
-am
+gY
+mG
 as
 aa
 aa
@@ -10709,24 +10791,24 @@ aa
 Rg
 ay
 ay
-Ya
-aI
-aI
-CP
-HX
-aI
-aI
-CP
+ay
+tA
+tA
+tA
+tA
+tA
+tA
+tA
 tA
 aI
 aI
-uy
-zn
-zn
-zn
-ud
-Yw
-Yw
+aI
+aI
+aI
+aI
+rN
+ay
+gY
 Uk
 as
 aa
@@ -10837,27 +10919,27 @@ aa
 aa
 aa
 Rg
+qH
 ay
 ay
-Ya
+yv
 aI
 aI
-CP
-HX
+yv
 aI
 aI
-CP
-HX
+yv
+aI
 aI
 yv
 aI
 aI
 aI
-aI
+Ws
 rN
 ay
-Ia
-am
+gY
+kG
 as
 aa
 aa
@@ -10967,27 +11049,27 @@ aa
 aa
 aa
 Rg
-bs
 ay
-Ya
-Qx
-yH
-Is
+ay
+Eg
+FR
 zZ
-Qx
-yH
-Is
-Tr
-aI
-aI
-aI
-aI
-aI
-aI
-rN
+zZ
+zZ
+FR
+zZ
+zZ
+zZ
+zZ
+zZ
+rL
+Xn
+Ft
+yw
+KO
 ay
-gY
-aK
+BS
+am
 as
 aa
 aa
@@ -11099,25 +11181,25 @@ aa
 Rg
 ay
 ay
-Ya
-aI
-aI
-CP
-HX
-aI
-aI
-CP
+aQ
+aQ
+Ku
+aQ
+aQ
+aQ
 Nh
-aI
-aI
-aI
-aI
-aI
-aI
-rN
+Nh
+Nh
+Nh
+aQ
+aQ
+tA
+LN
+tA
+WS
 ay
-gY
-ap
+ay
+am
 as
 aa
 aa
@@ -11228,26 +11310,26 @@ aa
 aa
 Rg
 ay
-ay
-Ya
-UA
-kV
-rF
-HX
-UA
+CY
+aQ
+XP
+XP
+XP
+Lp
+Ov
 ME
 kW
 fw
+YH
+YT
+aQ
 aI
-yv
-aI
-aI
-aI
-aI
+hD
+vo
 rN
 ay
-gY
-aq
+ay
+am
 as
 aa
 aa
@@ -11357,27 +11439,27 @@ aa
 aa
 aa
 Rg
-ay
-ay
-ay
-VW
-VW
-VW
-VW
-VW
-VW
-VW
-VW
+qH
+Dc
+aQ
+XP
+XP
+XP
+XP
+XP
+Qk
+SI
+iF
+iF
+iF
+aQ
 aI
-aI
-aI
-aI
-aI
-aI
+hD
+vo
 rN
 ay
-gY
-aG
+ay
+am
 as
 aa
 aa
@@ -11487,27 +11569,27 @@ aa
 aa
 aa
 Rg
-bs
 ay
-ay
-QB
+Dc
+EI
+XP
+XP
+XP
+XP
+XP
+QA
+ST
+XI
+iF
+Zc
+aQ
 aI
 aI
-QB
 aI
-aI
-QB
-aI
-aI
-QB
-aI
-aI
-aI
-DG
 rN
 ay
-gY
-ad
+ay
+am
 as
 aa
 aa
@@ -11618,25 +11700,25 @@ aa
 aa
 Rg
 ay
-ay
-Hb
+Dc
+aQ
 sx
 XP
 XP
 XP
-sx
 XP
-XP
-XP
-XP
-XP
-Tb
-WY
-NP
-bD
-Yi
+QJ
+QJ
+QJ
+pL
+QJ
+aQ
+cX
+aI
+aI
+rN
 ay
-AL
+ay
 am
 as
 aa
@@ -11748,23 +11830,23 @@ aa
 aa
 Rg
 ay
-ay
+Dl
 aQ
-aQ
-ON
-aQ
-aQ
-aQ
+sx
+XP
+HF
+XP
+XP
 rw
-rw
-rw
-rw
-aQ
-aQ
-VW
-MI
-VW
-QA
+pL
+pL
+pL
+pL
+yA
+aI
+hD
+vo
+rN
 ay
 ay
 am
@@ -11878,26 +11960,26 @@ aa
 aa
 Rg
 ay
-pH
+ay
 aQ
-aJ
-aJ
-aJ
-Ch
+aQ
+Ez
+Ez
 Ku
-lm
-jw
-ce
-wc
-FR
-aQ
+Ku
+Ez
+Ez
+Ez
+pL
+pL
+yA
 aI
 hD
 vo
 rN
 ay
-ay
-am
+ab
+ai
 as
 aa
 aa
@@ -12007,20 +12089,20 @@ aa
 aa
 aa
 Rg
-bs
-TQ
+ay
+ay
+ay
 aQ
-aJ
-aJ
-aJ
-aJ
-aJ
-Dl
-gW
+uI
 iF
 iF
 iF
-aQ
+iF
+uI
+Ez
+pL
+pL
+Tx
 aI
 hD
 vo
@@ -12138,19 +12220,19 @@ aa
 aa
 Rg
 ay
-TQ
-az
-aJ
-aJ
-aJ
-aJ
-aJ
-YH
-qM
-oR
-iF
-gn
+ay
+mE
 aQ
+uI
+iF
+iF
+iF
+iF
+uI
+Ez
+pL
+pL
+Lx
 aI
 aI
 aI
@@ -12268,26 +12350,26 @@ aa
 aa
 Rg
 ay
-TQ
+ay
+ay
 aQ
-Qk
-aJ
-aJ
-aJ
-aJ
-tY
-tY
-tY
+iF
+iF
+iF
+iF
+iF
+iF
+Ez
 pL
-tY
+hv
 aQ
 cX
 aI
 aI
 rN
-ay
-ay
 am
+Xx
+Ga
 as
 aa
 aa
@@ -12398,16 +12480,16 @@ aa
 aa
 Rg
 ay
-bz
+ay
+ay
 aQ
-Qk
-aJ
-ou
-aJ
-aJ
+uI
 pC
-pL
-pL
+iF
+iF
+pC
+uI
+Ez
 pL
 pL
 yA
@@ -12416,8 +12498,8 @@ hD
 vo
 rN
 ay
-ay
-am
+aI
+vA
 as
 aa
 aa
@@ -12529,14 +12611,14 @@ aa
 Rg
 ay
 ay
+mE
 aQ
-aQ
-Ez
-Ez
-ON
-ON
-Ez
-Ez
+uI
+YK
+iF
+iF
+YK
+uI
 Ez
 pL
 pL
@@ -12545,7 +12627,7 @@ aI
 hD
 vo
 rN
-ay
+am
 aW
 av
 as
@@ -12661,12 +12743,12 @@ ay
 ay
 ay
 aQ
-uI
 iF
 iF
 iF
 iF
-uI
+iF
+iF
 Ez
 pL
 pL
@@ -12789,13 +12871,13 @@ aa
 Rg
 ay
 ay
-kc
+ay
 aQ
 uI
+YK
 iF
 iF
-iF
-iF
+YK
 uI
 Ez
 pL
@@ -12803,7 +12885,7 @@ pL
 Lx
 aI
 aI
-aI
+ja
 rN
 ay
 ay
@@ -12911,22 +12993,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
-ay
-ay
+ad
+af
+af
+af
+af
+af
+aY
+ab
+mE
 aQ
+uI
+YK
 iF
 iF
-iF
-iF
-iF
-iF
+YK
+uI
 Ez
 pL
 hv
@@ -12935,7 +13017,7 @@ cX
 aI
 aI
 rN
-am
+ay
 ab
 ai
 as
@@ -13041,22 +13123,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-Rg
+Ij
+aI
+aI
+aI
+aI
+Rq
+aY
 ay
-ay
-ay
+ER
 aQ
-uI
-gG
+iF
+iF
 iF
 iF
 gG
-uI
+iF
 Ez
 pL
 pL
@@ -13066,8 +13148,8 @@ hD
 vo
 rN
 ay
-aI
-al
+ay
+am
 as
 aa
 aa
@@ -13164,22 +13246,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
+oP
+oP
+oP
+oP
+oP
+oP
+oP
+Ij
+aI
+tC
+aI
+xT
+aI
+aY
 ay
 ay
-kc
 aQ
 uI
 YK
@@ -13195,9 +13277,9 @@ aI
 hD
 vo
 rN
+ay
+ay
 am
-aN
-aB
 as
 aa
 aa
@@ -13294,29 +13376,29 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
+oP
+dg
+dg
+dg
+dg
+dg
+oP
+Ij
+aI
+tR
+aI
+aI
+aI
+aY
 ay
-ay
-ay
+mE
 aQ
+uI
+YK
 iF
 iF
-iF
-iF
-iF
-iF
+pC
+uI
 Ez
 pL
 pL
@@ -13424,36 +13506,36 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Rg
-ay
+oP
+dg
+dg
+px
+dg
+dg
+oP
+Ij
+aI
+aI
+aI
+aI
+aI
+aY
 ay
 ay
 aQ
-uI
-YK
 iF
 iF
-YK
-uI
-Ez
+iF
+iF
+iF
+iF
+XX
 pL
 pL
 Lx
 aI
 aI
-hI
+aI
 rN
 ay
 ay
@@ -13554,28 +13636,28 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-gk
-xF
-xF
-xF
-xF
-xF
+oP
+dg
+dg
+dg
+dg
+dg
+oP
+zh
+aI
+aI
+wg
+yC
+Rq
 aY
-aW
-kc
+ay
+ay
 aQ
-uI
+GF
 YK
 iF
 iF
-YK
+Wo
 uI
 Ez
 pL
@@ -13586,8 +13668,8 @@ aI
 aI
 rN
 ay
-aW
-av
+ay
+am
 as
 aa
 aa
@@ -13684,33 +13766,33 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+oP
+dg
+dg
+dg
+dg
+dg
+oP
 Ij
 aI
 aI
 aI
-aI
-Rq
+rN
+AB
 aY
 ay
 mE
 aQ
-iF
-iF
+uI
+YK
 iF
 iF
 Wo
-iF
+uI
 Ez
 pL
 pL
-yA
+aQ
 aI
 hD
 vo
@@ -13815,32 +13897,32 @@ aa
 aa
 aa
 oP
-oP
-oP
-oP
-oP
-oP
-oP
+dg
+dg
+dg
+dg
+dg
+dg
 Ij
 aI
 zE
 aI
-qr
-aI
+rN
+AL
 aY
 ay
 ay
 aQ
-uI
-YK
-iF
-iF
-YK
-uI
-Ez
-pL
-pL
-yA
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+Ku
+aQ
+aQ
 aI
 hD
 vo
@@ -13950,27 +14032,27 @@ dg
 dg
 dg
 dg
-oP
+dg
 Ij
 aI
-hP
 aI
 aI
+rN
 aI
-aY
 ay
-kc
+ay
+ay
+ay
 aQ
-uI
-YK
-iF
-iF
-gG
-uI
-Ez
-pL
-pL
-Tx
+vJ
+LB
+DC
+RW
+Tb
+aQ
+aI
+aI
+eD
 aI
 hD
 vo
@@ -14077,30 +14159,30 @@ aa
 oP
 dg
 dg
-Ft
 dg
 dg
-oP
+dg
+dg
 Ij
 aI
 aI
 aI
+zn
 aI
-aI
-aY
+ay
+ay
 ay
 ay
 aQ
-iF
-iF
-iF
-iF
-iF
-iF
-KR
-pL
-pL
-Lx
+vJ
+DC
+DC
+DC
+ro
+aQ
+cX
+aI
+HC
 aI
 aI
 aI
@@ -14210,28 +14292,28 @@ dg
 dg
 dg
 dg
-oP
+dg
 zh
 aI
+tY
 aI
-Po
 tL
-Rq
+AW
 aY
 ay
 ay
+ay
 aQ
-Ib
-YK
-iF
-iF
-vH
-uI
-Ez
-pL
-hv
+vJ
+DC
+DC
+DC
+ro
 aQ
-cX
+aI
+aI
+HC
+aI
 aI
 aI
 rN
@@ -14340,27 +14422,27 @@ dg
 dg
 dg
 dg
-oP
+dg
 Ij
 aI
 aI
-aI
-rN
+wR
+zv
 mf
 aY
 ay
-kc
+ay
+ay
 aQ
-uI
-YK
-iF
-iF
-vH
-uI
-Ez
-pL
-pL
+vJ
+MI
+DC
+DC
+ro
 aQ
+aI
+aI
+HC
 aI
 hD
 vo
@@ -14470,27 +14552,27 @@ dg
 dg
 dg
 dg
-dg
+oP
 Ij
-aI
+ct
 ct
 aI
-rN
-XX
+zD
+Rq
 aY
 ay
 ay
+ay
 aQ
+vJ
+DC
+DC
+DC
+ro
 aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-ON
-aQ
-aQ
+aI
+aI
+HC
 aI
 hD
 vo
@@ -14600,27 +14682,27 @@ dg
 dg
 dg
 dg
-dg
+qM
 Ij
 aI
+ud
 aI
 aI
-rN
 aI
-ay
+aY
 ay
 ay
 ay
 aQ
 vJ
-qq
 DC
-Gd
-dP
+DC
+DC
+ro
 aQ
 aI
 aI
-dS
+HC
 aI
 hD
 vo
@@ -14728,17 +14810,17 @@ oP
 dg
 dg
 dg
-dg
-dg
-dg
+pN
+pN
+qM
 Ij
 aI
 aI
-aI
+xo
 IV
 aI
-ay
-ay
+aY
+ab
 ay
 ay
 aQ
@@ -14748,7 +14830,7 @@ DC
 DC
 ro
 aQ
-cX
+aI
 aI
 HC
 aI
@@ -14855,18 +14937,18 @@ aa
 aa
 aa
 oP
-dg
-dg
-dg
-dg
-dg
-dg
+oP
+oP
+oP
+oP
+oP
+oP
 zh
 aI
-FE
 aI
-pN
-HE
+xu
+aI
+Rq
 aY
 ay
 ay
@@ -14876,9 +14958,9 @@ vJ
 DC
 DC
 DC
-ro
+Tb
 aQ
-aI
+cX
 aI
 HC
 aI
@@ -14984,29 +15066,29 @@ aa
 aa
 aa
 aa
-oP
-dg
-dg
-dg
-dg
-dg
-dg
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 Ij
 aI
+uf
 aI
-Pb
-dy
-gS
+aI
+aI
 aY
 ay
 ay
 ay
 aQ
-vJ
+Ia
 gm
-DC
-DC
-ro
+Pb
+gm
+Tu
 aQ
 aI
 aI
@@ -15114,32 +15196,32 @@ aa
 aa
 aa
 aa
-oP
-dg
-dg
-dg
-dg
-dg
-oP
-Ij
-Ea
-Ea
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+rk
 aI
-BD
-Rq
+aI
+aI
+aI
+aI
 aY
 ay
 ay
 ay
-aQ
-vJ
-DC
-DC
-DC
-ro
-aQ
+aI
+Ib
 aI
 aI
+aI
+TQ
+Yf
+aI
+Yf
 HC
 aI
 hD
@@ -15244,16 +15326,16 @@ aa
 aa
 aa
 aa
-oP
-dg
-dg
-dg
-dg
-dg
+aa
+aa
+aa
+aa
+aa
+qe
 Uu
 Ij
 aI
-GB
+aI
 aI
 aI
 aI
@@ -15261,16 +15343,16 @@ aY
 ay
 ay
 ay
-aQ
-vJ
-DC
-DC
-DC
-ro
-aQ
-aI
 aI
 HC
+aI
+aI
+aI
+TW
+Yi
+Yi
+Yi
+xH
 aI
 hD
 vo
@@ -15374,33 +15456,33 @@ aa
 aa
 aa
 aa
-oP
-dg
-dg
-dg
-JX
-JX
-Uu
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 Ij
 aI
-aI
+ur
 IQ
 vg
 aI
 aY
-aW
 ay
 ay
-aQ
-vJ
-DC
-DC
-DC
-ro
-aQ
-aI
+ay
 aI
 HC
+aI
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aI
 aI
 aI
@@ -15504,33 +15586,33 @@ aa
 aa
 aa
 aa
-oP
-oP
-oP
-oP
-oP
-oP
-oP
-zh
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+sf
 aI
-aI
+uy
+FS
 FS
 aI
-Rq
 aY
 ay
 ay
 ay
-aQ
-vJ
-DC
-DC
-DC
-dP
-aQ
-cX
 aI
 HC
+aI
+aI
+aI
+aI
+Yl
+Yl
+Yl
+aI
 aI
 aI
 aI
@@ -15643,7 +15725,7 @@ aa
 aa
 Ij
 aI
-jP
+aI
 aI
 aI
 aI
@@ -15651,16 +15733,16 @@ aY
 ay
 ay
 ay
-aQ
-Wv
-yC
-vY
-yC
-uN
-aQ
-aI
 aI
 HC
+aI
+aI
+aI
+aI
+Yw
+Yw
+Yw
+aI
 aI
 hD
 vo
@@ -15771,7 +15853,7 @@ aa
 aa
 aa
 aa
-dI
+Ij
 aI
 aI
 aI
@@ -15782,15 +15864,15 @@ ay
 ay
 ay
 aI
-GF
-aI
-aI
-aI
-EI
-Ho
-aI
-Ho
 HC
+aI
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 aI
 hD
 vo
@@ -15899,14 +15981,14 @@ aa
 aa
 aa
 aa
-QJ
-pI
-Ij
-aI
-aI
-aI
-aI
-aI
+aa
+aa
+sN
+aQ
+ZG
+ZG
+aQ
+cX
 aY
 ay
 ay
@@ -16032,9 +16114,9 @@ aa
 aa
 aa
 Ij
-aI
-QI
-oN
+tk
+ZG
+ZG
 nQ
 aI
 aY
@@ -16046,11 +16128,11 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 aI
 aI
@@ -16161,11 +16243,11 @@ aa
 aa
 aa
 aa
-sN
-aI
+zh
+tk
 ZG
-JQ
-JQ
+ZG
+nQ
 aI
 aY
 ay
@@ -16176,11 +16258,11 @@ HC
 aI
 aI
 aI
-tR
-tR
-tR
-tR
+fP
 aI
+aI
+aI
+HC
 aI
 aI
 aI
@@ -16291,14 +16373,14 @@ aa
 aa
 aa
 aa
-Ij
-aI
-aI
-aI
-aI
-aI
+sN
+aQ
+ZG
+ZG
+aQ
+cX
 aY
-ay
+ab
 ay
 ay
 aI
@@ -16306,11 +16388,11 @@ HC
 aI
 aI
 aI
-xL
-xL
-xL
-xL
+fP
 aI
+aI
+aI
+HC
 aI
 hD
 vo
@@ -16436,11 +16518,11 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 hD
 vo
@@ -16551,12 +16633,12 @@ aa
 aa
 aa
 aa
-jr
-aQ
-AB
-AB
-aQ
-cX
+Ij
+aI
+aI
+aI
+aI
+aI
 aY
 ay
 ay
@@ -16566,17 +16648,17 @@ HC
 aI
 aI
 aI
-cS
-cS
-cS
-cS
+fP
 aI
+aI
+aI
+HC
 aI
 hD
 vo
 rN
 ay
-ay
+aZ
 am
 as
 aa
@@ -16682,11 +16764,11 @@ aa
 aa
 aa
 Ij
-LB
-AB
-AB
-hf
 aI
+aI
+aI
+aI
+Rq
 aY
 ay
 ay
@@ -16696,18 +16778,18 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 aI
 aI
 rN
 ay
-ay
-am
+gY
+iO
 as
 aa
 aa
@@ -16812,10 +16894,10 @@ aa
 aa
 aa
 zh
-LB
-AB
-AB
-hf
+aI
+aI
+aI
+aI
 aI
 aY
 ay
@@ -16826,18 +16908,18 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 aI
 aI
 rN
 ay
-ay
-am
+gY
+NH
 as
 aa
 aa
@@ -16941,14 +17023,14 @@ aa
 aa
 aa
 aa
-jr
-aQ
-AB
-AB
-aQ
-cX
+Ij
+aI
+aI
+aI
+aI
+aI
 aY
-aW
+ay
 ay
 ay
 aI
@@ -16956,18 +17038,18 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 hD
 vo
 rN
 ay
-ay
-am
+gY
+mG
 as
 aa
 aa
@@ -17086,18 +17168,18 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 hD
 vo
 rN
 ay
-ay
-am
+gY
+Uk
 as
 aa
 aa
@@ -17216,18 +17298,18 @@ HC
 aI
 aI
 aI
+fP
 aI
 aI
 aI
-aI
-aI
+HC
 aI
 hD
 vo
 rN
 ay
-iU
-am
+gY
+kG
 as
 aa
 aa
@@ -17346,7 +17428,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -17356,8 +17438,8 @@ aI
 aI
 rN
 ay
-gY
-aK
+sq
+am
 as
 aa
 aa
@@ -17461,7 +17543,7 @@ aa
 aa
 aa
 aa
-zh
+sZ
 aI
 aI
 aI
@@ -17476,7 +17558,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -17486,8 +17568,8 @@ aI
 aI
 rN
 ay
-gY
-ap
+ay
+am
 as
 aa
 aa
@@ -17606,7 +17688,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -17616,8 +17698,8 @@ hD
 vo
 rN
 ay
-gY
-aq
+ay
+am
 as
 aa
 aa
@@ -17698,35 +17780,35 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Ij
+ad
+af
+af
+af
+af
+aB
+af
+af
+af
+af
+af
+af
+af
+aB
+af
+af
+af
+af
+af
+af
+af
+af
+af
+aB
 aI
 aI
 aI
 aI
-aI
+Bd
 aY
 ay
 ay
@@ -17736,7 +17818,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -17746,8 +17828,8 @@ hD
 vo
 rN
 ay
-gY
-aG
+ay
+am
 as
 aa
 aa
@@ -17828,36 +17910,36 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Ij
-aI
-aI
-aI
-aI
-aI
-aY
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+ZG
+ZG
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+ZG
+ZG
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+ZG
+ZG
+aQ
+aQ
+aQ
+aQ
 ay
 ay
 ay
@@ -17866,7 +17948,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -17876,8 +17958,8 @@ hD
 vo
 rN
 ay
-gY
-ad
+ay
+am
 as
 aa
 aa
@@ -17958,37 +18040,37 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Ij
-aI
-aI
-aI
-aI
-Rq
-aY
-ay
+aQ
+ZG
+al
+ZG
+ap
+aE
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+aE
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+aE
+ap
+ZG
+al
+ZG
+aE
+aQ
+DG
 ay
 ay
 aI
@@ -17996,7 +18078,7 @@ HC
 aI
 aI
 aI
-aI
+fP
 aI
 aI
 aI
@@ -18006,7 +18088,7 @@ aI
 aI
 rN
 ay
-FL
+ay
 am
 as
 aa
@@ -18088,45 +18170,45 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+aQ
+ZG
+ZG
 mF
-aI
-aI
-aI
-aI
-aI
-aY
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+ZG
+ZG
+aQ
 ay
 ay
 ay
 aI
-HC
-aI
-aI
-aI
-aI
+Il
+ps
+ps
+ps
+UB
 aI
 aI
 aI
@@ -18218,41 +18300,41 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-Ij
-aI
-aI
-aI
-aI
-aI
-aY
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+Wa
+ZG
+ZG
+aQ
 ay
 ay
 ay
 aI
-HC
+aI
 aI
 aI
 aI
@@ -18267,7 +18349,7 @@ vo
 rN
 ay
 ay
-am
+ai
 as
 aa
 aa
@@ -18348,41 +18430,41 @@ aa
 aa
 aa
 aa
-gk
-xF
-xF
-xF
-xF
-mx
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-mx
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-xF
-mx
-aI
-aI
-aI
-aI
-gJ
-aY
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+Wa
+ap
+ZG
+aQ
 ay
 ay
 ay
 aI
-HC
+aI
 aI
 aI
 aI
@@ -18478,41 +18560,40 @@ aa
 aa
 aa
 aa
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-DC
-DC
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-DC
-DC
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-DC
-DC
-aQ
-aQ
-aQ
+Tc
+ZG
+ap
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+Wa
+ZG
+ZG
 aQ
 ay
 ay
 ay
 aI
-HC
 aI
 aI
 aI
@@ -18520,7 +18601,8 @@ aI
 aI
 aI
 aI
-aI
+ay
+gY
 aI
 hD
 vo
@@ -18608,42 +18690,39 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+aG
+aR
+Gd
+ce
+rQ
+lY
+lY
+gk
+gV
+gV
+gV
+rQ
+rQ
+oz
+uN
+Wa
+ZG
+ZG
 aQ
-DC
-PH
-DC
-hR
-Gd
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-Gd
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-Gd
-hR
-DC
-PH
-DC
-Gd
-aQ
-lN
 ay
 ay
-aI
-HC
-aI
+ay
 aI
 aI
 aI
@@ -18651,13 +18730,16 @@ aI
 aI
 aI
 aI
+aI
+ay
+gY
 aI
 aI
 aI
 rN
-ay
-ay
 am
+Xx
+Ga
 as
 aa
 aa
@@ -18738,36 +18820,36 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+rQ
+vY
+bs
+co
+rQ
+rQ
+rQ
+rQ
+gW
+iC
+jP
+lD
+nn
+rQ
+rQ
+Wa
+ZG
+ZG
 aQ
-DC
-DC
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-DC
-DC
-aQ
 ay
 ay
 ay
@@ -18779,15 +18861,15 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 aI
 aI
 rN
 ay
-ay
-am
+aI
+vA
 as
 aa
 aa
@@ -18869,8 +18951,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 lY
@@ -18879,24 +18961,24 @@ lY
 lY
 lY
 lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
+rQ
+aV
+bz
+cz
+dy
+dP
+ft
+rQ
+he
+iU
+jP
+lN
+np
+oA
+pH
 Wa
-DC
-DC
+ap
+ZG
 aQ
 ay
 ay
@@ -18909,14 +18991,14 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 hD
 vo
 rN
-ay
-ay
+am
+aW
 av
 as
 aa
@@ -18999,8 +19081,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
 lY
@@ -19009,24 +19091,24 @@ lY
 lY
 lY
 lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
+rQ
+aV
+bD
+cS
+dI
+dS
+dS
+gn
+hf
+hf
+kc
+mi
+nv
+oR
+pI
 Wa
-hR
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -19039,8 +19121,8 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 hD
 vo
@@ -19129,8 +19211,8 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
 lY
@@ -19139,24 +19221,24 @@ lY
 lY
 lY
 lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
+rQ
+aX
+bK
+db
+dN
+en
+fX
+gE
+hI
+jr
+kq
+mx
+nY
+oY
+pI
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -19169,8 +19251,8 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 hD
 vo
@@ -19259,8 +19341,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 lY
@@ -19271,42 +19353,42 @@ lY
 lY
 Ks
 Xr
-Gu
+Xr
 hA
 rQ
-lY
-lY
-TW
-Yz
-Yz
-Yz
 rQ
 rQ
-tX
-cu
+rQ
+Yz
+jw
+lm
+nh
+oa
+rQ
+rQ
 Wa
-DC
-DC
+ZG
+ZG
 aQ
+DG
 ay
 ay
+aI
+aI
+aI
+aI
+aI
+aI
+aI
+aI
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+gY
 aI
 aI
 aI
 rN
-am
-ab
+ay
+ay
 ai
 as
 aa
@@ -19389,8 +19471,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 lY
@@ -19399,24 +19481,24 @@ lY
 lY
 lY
 lY
-rQ
-dN
-xo
-gE
+aK
 rQ
 rQ
 rQ
 rQ
-Ov
-UE
-UV
-kq
-Sf
+lY
+lY
+gS
 rQ
 rQ
+rQ
+rQ
+rQ
+oz
+uN
 Wa
-DC
-DC
+ap
+ZG
 aQ
 ay
 ay
@@ -19429,15 +19511,15 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 aI
 aI
 rN
 ay
-aI
-al
+ay
+am
 as
 aa
 aa
@@ -19519,8 +19601,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
 lY
@@ -19529,24 +19611,24 @@ lY
 lY
 lY
 lY
-rQ
-ER
-xJ
-In
-sZ
-tk
-px
-rQ
-aE
-fX
-UV
-AW
-YT
-xu
-co
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
 Wa
-hR
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -19559,15 +19641,15 @@ aI
 aI
 aI
 aI
-aI
-aI
+ay
+gY
 aI
 hD
 vo
 rN
+ay
+ay
 am
-aN
-aB
 as
 aa
 aa
@@ -19649,8 +19731,8 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
 lY
@@ -19659,38 +19741,38 @@ lY
 lY
 lY
 lY
-rQ
-ER
-bK
-nh
-nn
-YL
-YL
-Bd
-WG
-WG
-np
-zQ
-IN
-uf
-wR
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+gY
 aI
 hD
 vo
@@ -19779,8 +19861,8 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 lY
@@ -19789,38 +19871,38 @@ lY
 lY
 lY
 lY
-rQ
-Av
-HF
-tj
-ST
-Tu
-zv
-bl
-xT
-PG
-Yf
-db
-Dc
-Lp
-wR
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+gY
 aI
 hD
 vo
@@ -19908,56 +19990,56 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-OL
-Ca
-Ca
-RR
-rQ
-rQ
-rQ
-rQ
-mo
-mR
-ju
-Mf
-xg
-rQ
-rQ
-Wa
-DC
-DC
 aQ
-lN
+ZG
+ZG
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+hP
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+ZG
+ZG
+aQ
 ay
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+gY
 aI
 aI
 aI
 rN
 ay
 ay
-av
+am
 as
 aa
 aa
@@ -20038,49 +20120,49 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-BH
-rQ
-rQ
-rQ
-rQ
-lY
-lY
-Ox
-rQ
-rQ
-rQ
-rQ
-rQ
-tX
-cu
-Wa
-hR
-DC
+aQ
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
 aQ
 ay
 ay
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+gY
 aI
 aI
 aI
@@ -20168,49 +20250,49 @@ aa
 aa
 aa
 aa
-Tc
-DC
-hR
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+aQ
+ag
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ag
 aQ
 ay
 ay
 ay
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
-aI
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+gY
 aI
 hD
 vo
@@ -20298,35 +20380,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+aQ
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+bL
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
 aQ
 ay
 ay
@@ -20428,35 +20510,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+aQ
+ZG
+ZG
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+ZG
+ZG
 aQ
 ay
 ay
@@ -20558,35 +20640,35 @@ aa
 aa
 aa
 aa
-aQ
-DC
-DC
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-DC
-DC
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+JZ
+lY
+lY
+lY
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
 ay
 ay
@@ -20688,37 +20770,37 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-aQ
-ay
+Ea
 ay
 ay
 ay
@@ -20818,35 +20900,35 @@ aa
 aa
 aa
 aa
-aQ
-zr
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-zr
+Tc
+ZG
+ap
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+JZ
+JZ
+lY
+lY
+lY
+qq
+nw
+nw
+nw
+Ez
+Ez
+zQ
+zQ
 aQ
 ay
 ay
@@ -20948,39 +21030,39 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+aG
+aR
+Gd
+ce
+rQ
+lY
+lY
+gk
+gV
+gV
+gV
+rQ
+rQ
+oz
+lY
+qt
+nw
+nw
+VV
+VV
+vH
+Ez
+zX
+zX
 aQ
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
 aQ
-ay
-ay
-ay
+aQ
+aQ
 ay
 ay
 ay
@@ -21079,38 +21161,38 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
+lY
+lY
+rQ
 vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-DC
-DC
+bs
+co
+rQ
+rQ
+rQ
+rQ
+gW
+iC
+jP
+lD
+nn
+rQ
+rQ
+qt
+nw
+re
+VV
+VV
+wc
+Ez
+vD
+VV
+VV
+VV
+VV
 aQ
-ay
-ay
-ay
 ay
 ay
 ay
@@ -21209,38 +21291,38 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-JZ
-lY
-lY
-lY
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
-aQ
-ay
-ay
-ay
+rQ
+aV
+bz
+cz
+dy
+dP
+ft
+rQ
+he
+iU
+jP
+lN
+np
+oA
+pH
+qt
+nw
+re
+tj
+VV
+VV
+xJ
+VV
+VV
+VV
+VV
+VV
+xJ
 ay
 ay
 ay
@@ -21339,38 +21421,38 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
-aQ
-Os
-ay
-ay
+rQ
+aV
+bD
+cS
+dI
+dS
+dS
+gn
+hf
+hf
+kc
+mi
+nv
+oR
+pI
+qt
+nw
+re
+VV
+VV
+VV
+xJ
+VV
+VV
+VV
+VV
+VV
+xJ
 ay
 ay
 ay
@@ -21469,38 +21551,38 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-JZ
-JZ
-lY
-lY
-lY
-IF
+rQ
+aX
+bK
+db
+dN
+en
+fX
+gE
+hI
+jr
+kq
+mx
+nY
+oY
+pI
+qt
 nw
-nw
-nw
-Ez
+re
+VV
+VV
+wc
 Ez
 vD
-vD
+VV
+VV
+VV
+VV
 aQ
-ay
-ay
-ay
 ay
 ay
 ay
@@ -21599,25 +21681,25 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 Ks
 Xr
-Gu
+Xr
 hA
 rQ
-lY
-lY
-TW
-Yz
-Yz
-Yz
 rQ
 rQ
-tX
-lY
+rQ
+Yz
+jw
+lm
+nh
+oa
+rQ
+rQ
 qt
 nw
 nw
@@ -21729,38 +21811,38 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-rQ
-dN
-xo
-gE
+aK
 rQ
 rQ
 rQ
 rQ
-Ov
-UE
-UV
-kq
-Sf
+JZ
+JZ
+gS
 rQ
 rQ
-qt
+rQ
+rQ
+rQ
+oz
+lY
+lY
+qr
 nw
-wg
-VV
-VV
-cz
+nw
+nw
+Ez
 Ez
 Zf
-VV
-VV
-VV
-VV
+Zf
 aQ
+ay
+ay
+ay
 ay
 ay
 ay
@@ -21859,38 +21941,36 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
-rQ
-ER
-xJ
-In
-sZ
-tk
-px
-rQ
-aE
-fX
-UV
-AW
-YT
-xu
-co
-qt
-nw
-wg
-ZD
-VV
-VV
-SI
-VV
-VV
-VV
-VV
-VV
-SI
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
+aQ
+Ea
 ay
 ay
 ay
@@ -21900,11 +21980,13 @@ ay
 ay
 ay
 ay
-gY
-aI
-aI
-aI
-rN
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 ay
 ay
 am
@@ -21989,38 +22071,35 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
-rQ
-ER
-bK
-nh
-nn
-YL
-YL
-Bd
-WG
-WG
-np
-zQ
-IN
-uf
-wR
-qt
-nw
-wg
-VV
-VV
-VV
-SI
-VV
-VV
-VV
-VV
-VV
-SI
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
+aQ
 ay
 ay
 ay
@@ -22030,11 +22109,14 @@ ay
 ay
 ay
 ay
-gY
-aI
-aI
-aI
-rN
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 ay
 ay
 am
@@ -22119,37 +22201,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-rQ
-Av
-HF
-tj
-ST
-Tu
-zv
-bl
-xT
-PG
-Yf
-db
-Dc
-Lp
-wR
-qt
-nw
-wg
-VV
-VV
-cz
-Ez
-Zf
-VV
-VV
-VV
-VV
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
 ay
 ay
@@ -22160,11 +22239,14 @@ ay
 ay
 ay
 ay
-gY
-aI
-hD
-vo
-rN
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 ay
 ay
 am
@@ -22248,38 +22330,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-OL
-Ca
-Ca
+aQ
+ZG
+ZG
 RR
-rQ
-rQ
-rQ
-rQ
-mo
-mR
-ju
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
 Mf
-xg
-rQ
-rQ
-qt
-nw
-nw
-VV
-VV
-gz
-Ez
-CX
-CX
-aQ
-aQ
-aQ
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+RR
+ZG
+ZG
 aQ
 ay
 ay
@@ -22290,11 +22369,14 @@ ay
 ay
 ay
 ay
-gY
-aI
-hD
-vo
-rN
+ay
+ay
+ay
+ay
+ay
+ay
+ay
+ay
 ay
 ay
 am
@@ -22378,35 +22460,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-BH
-rQ
-rQ
-rQ
-rQ
-JZ
-JZ
-Ox
-rQ
-rQ
-rQ
-rQ
-rQ
-tX
-lY
-lY
-Bf
-nw
-nw
-nw
-Ez
-Ez
-gt
-gt
+aQ
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
 aQ
 ay
 ay
@@ -22420,11 +22502,11 @@ ay
 ay
 ay
 ay
-gY
-aI
-hD
-vo
-rN
+ay
+ay
+ay
+ay
+ay
 ay
 ay
 am
@@ -22508,37 +22590,37 @@ aa
 aa
 aa
 aa
-Tc
-DC
-hR
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
 aQ
-Os
+ag
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ap
+ZG
+al
+ZG
+ag
+aQ
+ay
 ay
 ay
 ay
@@ -22638,35 +22720,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+aQ
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+bL
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+ZG
+xL
+ZG
+ZG
 aQ
 ay
 ay
@@ -22769,34 +22851,34 @@ aa
 aa
 aa
 aQ
-DC
-DC
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+ZG
+ZG
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+mF
+ZG
+ZG
 aQ
 ay
 ay
@@ -22898,36 +22980,36 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+lY
+JZ
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+lY
+lY
+JZ
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
-DC
-DC
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-DC
-DC
-aQ
 ay
 ay
 ay
@@ -22946,7 +23028,7 @@ ay
 ay
 ay
 ay
-ay
+aZ
 am
 as
 aa
@@ -23028,36 +23110,36 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+lY
+JZ
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+lY
+lY
+JZ
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-aQ
 ay
 ay
 ay
@@ -23076,8 +23158,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+iO
 as
 aa
 aa
@@ -23158,36 +23240,36 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ap
+lY
+lY
+lY
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+Wa
+ap
+ZG
 aQ
-zr
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-hR
-DC
-PH
-DC
-zr
-aQ
 ay
 ay
 ay
@@ -23206,8 +23288,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+NH
 as
 aa
 aa
@@ -23288,36 +23370,36 @@ aa
 aa
 aa
 aa
+Tc
+ZG
+ZG
+lY
+lY
+aG
+aR
+Gd
+ce
+rQ
+JZ
+JZ
+gk
+gV
+gV
+gV
+rQ
+rQ
+oz
+JZ
+JZ
+JZ
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-DC
-aQ
 ay
 ay
 ay
@@ -23336,8 +23418,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+mG
 as
 aa
 aa
@@ -23419,34 +23501,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
+lY
+lY
+rQ
 vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-vY
-DC
-DC
+bs
+co
+rQ
+rQ
+rQ
+rQ
+gW
+iC
+jP
+lD
+nn
+rQ
+rQ
+JZ
+JZ
+lY
+lY
+lY
+lY
+Wa
+ZG
+ZG
 aQ
 ay
 ay
@@ -23466,8 +23548,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+Uk
 as
 aa
 aa
@@ -23549,34 +23631,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-lY
+rQ
+aV
+bz
+cz
+dy
+dP
+ft
+rQ
+he
+iU
+jP
+lN
+np
+oA
+pH
 JZ
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-lY
-lY
 JZ
 lY
 lY
 lY
 lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -23596,8 +23678,8 @@ ay
 ay
 ay
 ay
-iU
-am
+gY
+kG
 as
 aa
 aa
@@ -23679,34 +23761,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
-lY
+rQ
+aV
+bD
+cS
+dI
+dS
+dS
+gn
+hf
+hf
+kc
+mi
+nv
+oR
+pI
 JZ
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-lY
-lY
 JZ
 lY
 lY
 lY
 lY
 Wa
-DC
-DC
+ap
+ZG
 aQ
 ay
 ay
@@ -23726,8 +23808,8 @@ ay
 ay
 ay
 ay
-gY
-aK
+sq
+am
 as
 aa
 aa
@@ -23809,34 +23891,34 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
+rQ
+aX
+bK
+db
+dN
+en
+fX
+gE
+hI
+jr
+kq
+mx
+nY
+oY
+pI
 lY
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
-JZ
+lY
 lY
 lY
 lY
 lY
 Wa
-hR
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -23856,8 +23938,8 @@ ay
 ay
 ay
 ay
-gY
-ap
+ay
+am
 as
 aa
 aa
@@ -23939,34 +24021,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
 Ks
 Xr
-Gu
+Xr
 hA
 rQ
-JZ
-JZ
-TW
-Yz
-Yz
-Yz
 rQ
 rQ
-tX
-JZ
-JZ
-JZ
+rQ
+Yz
+jw
+lm
+nh
+oa
+rQ
+rQ
+lY
+lY
 lY
 lY
 lY
 lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -23986,8 +24068,8 @@ ay
 ay
 ay
 ay
-gY
-aq
+ay
+am
 as
 aa
 aa
@@ -24069,34 +24151,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-rQ
-dN
-xo
-gE
+aK
 rQ
 rQ
 rQ
 rQ
-Ov
-UE
-UV
-kq
-Sf
+lY
+lY
+gS
 rQ
 rQ
-JZ
-JZ
+rQ
+rQ
+rQ
+oz
+lY
+lY
+lY
 lY
 lY
 lY
 lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -24116,8 +24198,8 @@ ay
 ay
 ay
 ay
-gY
-aG
+ay
+am
 as
 aa
 aa
@@ -24199,34 +24281,34 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ap
 lY
 lY
-rQ
-ER
-xJ
-In
-sZ
-tk
-px
-rQ
-aE
-fX
-UV
-AW
-YT
-xu
-co
+lY
+lY
+lY
+lY
+lY
+lY
+lY
 JZ
 JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
 lY
 lY
 lY
 lY
 Wa
-DC
-DC
+ap
+ZG
 aQ
 ay
 ay
@@ -24246,8 +24328,8 @@ ay
 ay
 ay
 ay
-gY
-ad
+ay
+am
 as
 aa
 aa
@@ -24329,34 +24411,34 @@ aa
 aa
 aa
 Tc
-DC
-hR
+ZG
+ZG
 lY
 lY
-rQ
-ER
-bK
-nh
-nn
-YL
-YL
-Bd
-WG
-WG
-np
-zQ
-IN
-uf
-wR
+lY
+lY
+lY
+lY
+lY
+lY
+lY
 JZ
 JZ
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+lY
 lY
 lY
 lY
 lY
 Wa
-hR
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -24376,7 +24458,7 @@ ay
 ay
 ay
 ay
-FL
+ay
 am
 as
 aa
@@ -24459,25 +24541,25 @@ aa
 aa
 aa
 Tc
-DC
-DC
+ZG
+ZG
 lY
 lY
-rQ
-Av
-HF
-tj
-ST
-Tu
-zv
-bl
-xT
-PG
-Yf
-db
-Dc
-Lp
-wR
+lY
+lY
+lY
+lY
+lY
+lY
+lY
+JZ
+JZ
+lY
+lY
+lY
+lY
+lY
+lY
 lY
 lY
 lY
@@ -24485,8 +24567,8 @@ lY
 lY
 lY
 Wa
-DC
-DC
+ZG
+ZG
 aQ
 ay
 ay
@@ -24588,35 +24670,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-OL
-Ca
-Ca
-RR
-rQ
-rQ
-rQ
-rQ
-mo
-mR
-ju
-Mf
-xg
-rQ
-rQ
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
+aQ
+ZG
+ZG
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+aq
+ZG
+ZG
 aQ
 ay
 ay
@@ -24637,7 +24719,7 @@ ay
 ay
 ay
 ay
-am
+ai
 as
 aa
 aa
@@ -24718,35 +24800,35 @@ aa
 aa
 aa
 aa
-Tc
+aQ
+ZG
+al
 DC
+aA
+aN
+bl
 DC
-lY
-lY
-BH
-rQ
-rQ
-rQ
-rQ
-lY
-lY
-Ox
-rQ
-rQ
-rQ
-rQ
-rQ
-tX
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
+aA
 DC
+eL
 DC
+aA
+DC
+bl
+aN
+aA
+DC
+bl
+DC
+aA
+aN
+bl
+DC
+aA
+DC
+eL
+ZG
+ZG
 aQ
 ay
 ay
@@ -24848,35 +24930,35 @@ aa
 aa
 aa
 aa
-Tc
-DC
-hR
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-hR
-DC
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
+aQ
 aQ
 ay
 ay
@@ -24978,38 +25060,36 @@ aa
 aa
 aa
 aa
-Tc
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
-aQ
-ay
-ay
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+BD
 ay
 ay
 ay
@@ -25028,6 +25108,8 @@ ay
 ay
 ay
 am
+Xx
+Ga
 as
 aa
 aa
@@ -25108,36 +25190,36 @@ aa
 aa
 aa
 aa
-aQ
-DC
-DC
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-JZ
-JZ
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-lY
-Wa
-DC
-DC
-aQ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+BD
 ay
 ay
 ay
@@ -25156,8 +25238,8 @@ ay
 ay
 ay
 ay
-ay
-am
+aI
+vA
 as
 aa
 aa
@@ -25238,36 +25320,36 @@ aa
 aa
 aa
 aa
-aQ
-DC
-DC
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-mi
-DC
-DC
-aQ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+BD
 ay
 ay
 ay
@@ -25285,8 +25367,8 @@ ay
 ay
 ay
 ay
-ay
-ay
+am
+aW
 av
 as
 aa
@@ -25368,36 +25450,36 @@ aa
 aa
 aa
 aa
-aQ
-DC
-PH
-DC
-hR
-ft
-PH
-DC
-hR
-DC
-iC
-DC
-hR
-DC
-PH
-ft
-hR
-DC
-PH
-DC
-hR
-ft
-PH
-DC
-hR
-DC
-iC
-DC
-DC
-aQ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ay
 ay
 ay
@@ -25498,36 +25580,36 @@ aa
 aa
 aa
 aa
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
-aQ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 ay
 ay
 ay
@@ -25657,7 +25739,7 @@ aa
 aa
 aa
 aa
-en
+aa
 ay
 ay
 ay
@@ -25675,8 +25757,8 @@ ay
 ay
 ay
 ay
-am
-ab
+ay
+ay
 ai
 as
 aa
@@ -25787,7 +25869,7 @@ aa
 aa
 aa
 aa
-en
+aa
 ay
 ay
 ay
@@ -25806,8 +25888,8 @@ ay
 ay
 ay
 ay
-aI
-al
+ay
+am
 as
 aa
 aa
@@ -25917,7 +25999,9 @@ aa
 aa
 aa
 aa
-en
+aa
+ay
+ay
 ay
 ay
 ay
@@ -25936,8 +26020,6 @@ ay
 ay
 ay
 am
-aN
-aB
 as
 aa
 aa
@@ -26178,7 +26260,7 @@ aa
 aa
 aa
 aa
-ay
+aa
 ay
 ay
 ay
@@ -26308,6 +26390,7 @@ aa
 aa
 aa
 aa
+aa
 ay
 ay
 ay
@@ -26326,8 +26409,7 @@ ay
 ay
 ay
 ay
-ay
-av
+am
 as
 aa
 aa
@@ -26438,7 +26520,7 @@ aa
 aa
 aa
 aa
-ay
+aa
 ay
 ay
 ay
@@ -26568,7 +26650,7 @@ aa
 aa
 aa
 aa
-ay
+aa
 ay
 ay
 ay
@@ -26698,7 +26780,7 @@ aa
 aa
 aa
 aa
-ay
+aa
 ay
 ay
 ay
@@ -29316,7 +29398,7 @@ ay
 ay
 ay
 ay
-ay
+aZ
 am
 as
 aa
@@ -29446,8 +29528,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+iO
 as
 aa
 aa
@@ -29576,8 +29658,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+NH
 as
 aa
 aa
@@ -29706,8 +29788,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+mG
 as
 aa
 aa
@@ -29836,8 +29918,8 @@ ay
 ay
 ay
 ay
-ay
-am
+gY
+Uk
 as
 aa
 aa
@@ -29966,8 +30048,8 @@ ay
 ay
 ay
 ay
-iU
-am
+gY
+kG
 as
 aa
 aa
@@ -30096,8 +30178,8 @@ ay
 ay
 ay
 ay
-gY
-aK
+sq
+am
 as
 aa
 aa
@@ -30226,8 +30308,8 @@ ay
 ay
 ay
 ay
-gY
-ap
+ay
+am
 as
 aa
 aa
@@ -30356,8 +30438,8 @@ ay
 ay
 ay
 ay
-gY
-aq
+ay
+am
 as
 aa
 aa
@@ -30486,8 +30568,8 @@ ay
 ay
 ay
 ay
-gY
-aG
+ay
+am
 as
 aa
 aa
@@ -30616,8 +30698,8 @@ ay
 ay
 ay
 ay
-gY
-ad
+ay
+am
 as
 aa
 aa
@@ -30746,7 +30828,7 @@ ay
 ay
 ay
 ay
-FL
+ay
 am
 as
 aa
@@ -31007,7 +31089,7 @@ ay
 ay
 ay
 ay
-am
+ai
 as
 aa
 aa
@@ -31395,9 +31477,9 @@ ay
 ay
 ay
 ay
-ay
-ay
 am
+Xx
+Ga
 as
 aa
 aa
@@ -31526,8 +31608,8 @@ ay
 ay
 ay
 ay
-ay
-am
+aI
+vA
 as
 aa
 aa
@@ -31655,8 +31737,8 @@ ay
 ay
 ay
 ay
-ay
-ay
+am
+aW
 av
 as
 aa
@@ -32045,8 +32127,8 @@ ay
 ay
 ay
 ay
-am
-ab
+ay
+ay
 ai
 as
 aa
@@ -32159,26 +32241,26 @@ aa
 aa
 aa
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-aI
-al
-as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -32289,26 +32371,26 @@ aa
 aa
 aa
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-am
-aN
-aB
-as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -32419,26 +32501,26 @@ aa
 aa
 aa
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-am
-as
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -32549,26 +32631,26 @@ aa
 aa
 aa
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-am
-as
+aa
+aa
+sJ
+sJ
+aa
+sJ
+sJ
+sJ
+sJ
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -32679,26 +32761,26 @@ aa
 aa
 aa
 aa
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-ay
-av
-as
+aa
+aa
+sJ
+sJ
+sJ
+aa
+sJ
+sJ
+aa
+aa
+sJ
+sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -32811,12 +32893,12 @@ aa
 aa
 aa
 aa
+sJ
 aa
 aa
 aa
 aa
-aa
-aa
+sJ
 aa
 aa
 aa
@@ -32941,11 +33023,11 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+sJ
+sJ
+sJ
+sJ
+sJ
 aa
 aa
 aa
@@ -33201,14 +33283,14 @@ aa
 aa
 aa
 aa
-sJ
-sJ
 aa
-sJ
-sJ
-sJ
-sJ
-sJ
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -33331,13 +33413,13 @@ aa
 aa
 aa
 aa
+aa
+aa
 sJ
 sJ
 sJ
 aa
 sJ
-sJ
-aa
 aa
 sJ
 sJ
@@ -33461,18 +33543,18 @@ aa
 aa
 aa
 aa
-sJ
+aa
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
 aa
 sJ
-aa
-aa
-aa
-aa
-aa
-aa
+sJ
 aa
 aa
 aa
@@ -33591,18 +33673,18 @@ aa
 aa
 aa
 aa
+aa
+aa
+aa
+aa
+aa
+aa
+aa
 sJ
+aa
+aa
+aa
 sJ
-sJ
-sJ
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aa
 aa
 aa
@@ -33727,12 +33809,12 @@ aa
 aa
 aa
 aa
+sJ
+sJ
 aa
 aa
-aa
-aa
-aa
-aa
+sJ
+sJ
 aa
 aa
 aa
@@ -33857,10 +33939,10 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
+sJ
+sJ
+sJ
+sJ
 aa
 aa
 aa
@@ -33983,14 +34065,14 @@ aa
 aa
 aa
 aa
-sJ
-sJ
-sJ
+aa
+aa
+aa
+aa
 aa
 sJ
 aa
-sJ
-sJ
+aa
 aa
 aa
 aa
@@ -34121,8 +34203,8 @@ aa
 aa
 aa
 aa
-sJ
-sJ
+aa
+aa
 aa
 aa
 aa
@@ -34242,656 +34324,6 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(246,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-sJ
-aa
-aa
-sJ
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(247,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-sJ
-sJ
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(248,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(249,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(250,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 sJ
 sJ
 sJ
@@ -34900,786 +34332,6 @@ sJ
 aa
 sJ
 sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(251,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-sJ
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(252,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(253,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-sJ
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(254,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(255,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-"}
-(256,1,1) = {"
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
 aa
 aa
 aa

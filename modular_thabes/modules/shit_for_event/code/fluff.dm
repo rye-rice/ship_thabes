@@ -266,7 +266,7 @@
 	light_color = "#feffed"
 	light_power = 0
 	light_range = 5
-	pass_flags = PASSTABLE | PASSMOB | PASSGLASS | PASSGRILLE | PASSBLOB | PASSMOB | PASSCLOSEDTURF
+	pass_flags = PASSTABLE | PASSMOB | PASSGLASS | PASSGRILLE  | PASSMOB | PASSCLOSEDTURF
 	generic_canpass = TRUE
 
 	var/obj/machinery/deployable_turret/spotlight/linked_spotlighter
