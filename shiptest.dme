@@ -547,8 +547,8 @@
 #include "code\datums\components\remote_materials.dm"
 #include "code\datums\components\riding.dm"
 #include "code\datums\components\rotation.dm"
-#include "code\datums\components\shiny.dm"
 #include "code\datums\components\shielded.dm"
+#include "code\datums\components\shiny.dm"
 #include "code\datums\components\shrink.dm"
 #include "code\datums\components\sitcomlaughter.dm"
 #include "code\datums\components\sizzle.dm"
@@ -3545,5 +3545,4 @@
 #include "modular_thabes\modules\shit_for_event\code\event_areas.dm"
 #include "modular_thabes\modules\shit_for_event\code\event_clothing.dm"
 #include "modular_thabes\modules\shit_for_event\code\fluff.dm"
-#include "modular_thabes\modules\thabes_guns\code\event_guns.dm"
 // END_INCLUDE

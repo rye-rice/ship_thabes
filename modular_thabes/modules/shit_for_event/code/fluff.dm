@@ -461,3 +461,20 @@
 
 /obj/structure/fluff/vehicle/crawler/crawler_cargo
 	icon_state = "crawler_cargo"
+
+/obj/machinery/light/street
+	name = "floor light"
+	icon = 'modular_thabes/modules/shit_for_event/icons/city_props_32x64.dmi'
+	base_state = "streetlight"		// base description and icon_state
+	icon_state = "streetlight"
+	layer = SIGN_LAYER
+	no_emergency = TRUE
+
+/obj/structure/fluff/stop
+	name = "stop sign"
+	desc = "An stop sign."
+	icon = 'modular_thabes/modules/shit_for_event/icons/city_props_32x64.dmi'
+	icon_state = "stop"
+	density = FALSE
+
+	layer = SIGN_LAYER
