@@ -101,12 +101,15 @@
 	reagent_to_extract = /datum/reagent/asphalt
 	extracted_reagent_visible_name = "tar"
 
+#define STORMY_ATMOS "o2=22;n2=82;TEMP=273.15 "
+
 /turf/open/water/stormy_planet_lit
 	color = "#466382"
 	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
 	baseturfs = /turf/open/water/stormy_planet_lit
+	initial_gas_mix = STORMY_ATMOS
 
 /turf/open/water/stormy_planet_lit/ComponentInitialize()
 	. = ..()
@@ -117,6 +120,7 @@
 	light_range = 2
 	light_power = 1
 	baseturfs = /turf/open/floor/concrete/stormy_planet_lit
+	initial_gas_mix = STORMY_ATMOS
 
 //light_color = "#1b364d"
 
@@ -126,6 +130,7 @@
 	light_power = 1
 
 	baseturfs = /turf/open/floor/concrete/pavement/stormy_planet_lit
+	initial_gas_mix = STORMY_ATMOS
 
 /turf/open/floor/concrete/pavement/stormy_planet_lit/ComponentInitialize()
 	. = ..()
