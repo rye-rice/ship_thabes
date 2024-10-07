@@ -142,6 +142,7 @@
 	desc = "Uh oh! Looks like an admin hasn't finished setting up yet! Better not dock until this description disapears!"
 	token_icon_state = "bus"
 	preserve_level = TRUE
+	gravity = TRUE
 
 
 /datum/overmap/static_object/testmap
@@ -154,3 +155,18 @@
 /datum/map_template/test_punchcard
 	name = "test_punchcard"
 	mappath = 'punchcard_test_map.dmm'
+
+
+/datum/overmap/static_object/frontiersmen_base
+	name = "unidentified story planetoid"
+	desc = "A world covered in frequent storms. A very small patch of ocean appears to be above the water and inhabited"
+	token_icon_state = "hazard"
+	preserve_level = TRUE
+	default_baseturf = /turf/open/water/stormy_planet_lit
+	map_to_load = /datum/map_template/frontiersmen_base
+	weather_controller_type = /datum/weather_controller/storms_n_shit
+	gravity = TRUE
+
+/datum/map_template/frontiersmen_base
+	name = "ffv base"
+	mappath = 'clip-pgfvFFVeventmap.dmm'

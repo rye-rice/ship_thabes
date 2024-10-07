@@ -135,3 +135,8 @@
 		/datum/weather/rain/heavy/storm = 50,
 		/datum/weather/rain/heavy/storm/blocking = 30,
 	)
+
+/datum/weather_controller/storms_n_shit
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm_intense = 50,
+	)
