@@ -6,10 +6,10 @@
 	icon_plating = "sand"
 	planetary_atmos = TRUE
 	base_icon_state = WHITESANDS_SAND_ENV
-	initial_gas_mix = WHITESANDS_ATMOS //Fallback, and used to tell the AACs that this is the exterior
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS //Fallback, and used to tell the AACs that this is the exterior
 	digResult = /obj/item/stack/ore/glass/whitesands
 	max_icon_states = 0
 	floor_variance = 0
@@ -55,10 +55,10 @@
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried/lit
 
 /turf/open/floor/plating/grass/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 
 /turf/open/floor/plating/asteroid/basalt/whitesands
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
 	icon_state = "whitesands_basalt0"
@@ -77,7 +77,7 @@
 	base_icon_state = "ws_grass"
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands
 	turf_type = /turf/open/floor/plating/asteroid/whitesands/grass
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
