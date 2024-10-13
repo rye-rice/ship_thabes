@@ -130,7 +130,7 @@
 		GAS_HYDROGEN				= new/datum/tlv/dangerous,
 		GAS_CHLORINE				= new/datum/tlv/dangerous,
 		GAS_HYDROGEN_CHLORIDE		= new/datum/tlv/dangerous,
-		GAS_CO						= new/datum/tlv/dangerous
+		GAS_CO						= new/datum/tlv/dangerous,
 	)
 
 /obj/machinery/airalarm/server // No checks here.
