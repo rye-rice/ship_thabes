@@ -9,7 +9,7 @@
 
 	faction_icon = "bg_clip"
 
-	box = /obj/item/storage/box/survival/clip
+	box = /obj/item/storage/box/survival/extended
 
 // 	var/list/selectable_alt_titles = list()
 
@@ -18,6 +18,7 @@
 	if(visualsOnly)
 		return
 	H.faction |= list(FACTION_PLAYER_MINUTEMAN)
+	H.grant_language(/datum/language/draconic/clip)
 /* 	if(selectable_alt_titles)
 		var/selection = input(H, "Select an alternative name for your role.", "Job Title", alt_title) as null|anything in selectable_alt_titles)
 	if(!selection)
@@ -275,7 +276,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag
 	courierbag = /obj/item/storage/backpack/messenger
 
-	box = /obj/item/storage/box/survival/clip/balaclava
+	box = /obj/item/storage/box/survival/extended/balaclava
 
 /datum/outfit/job/clip/minutemen/deckhand
 	name = "CLIP Minutemen - Deckhand"
@@ -512,12 +513,14 @@
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
-	box = /obj/item/storage/box/survival/clip/balaclava
+	box = /obj/item/storage/box/survival/extended/balaclava
 	shoes = null
 
 	backpack = /obj/item/storage/backpack/security/clip
 	satchel = /obj/item/storage/backpack/satchel/sec/clip
 	duffelbag = /obj/item/storage/backpack/security/clip //to-do: bug rye for clip duffles // rye. rye. give me 20 pound bag of ice //done
+
+	backpack_contents = list(/obj/item/clothing/mask/gas/clip=1)
 
 /datum/outfit/job/clip/minutemen/grunt/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
