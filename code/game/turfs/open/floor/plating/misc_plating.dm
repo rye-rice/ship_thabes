@@ -54,9 +54,9 @@
 	initial_gas_mix = LAVALAND_DEFAULT_ATMOS
 	planetary_atmos = TRUE
 	attachment_holes = FALSE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 	var/smooth_icon = 'icons/turf/floors/ash.dmi'
@@ -123,9 +123,9 @@
 	flags_1 = NONE
 	attachment_holes = FALSE
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/beach/try_replace_tile(obj/item/stack/tile/T, mob/user, params)
@@ -175,9 +175,9 @@
 	gender = PLURAL
 	name = "iron sand"
 	desc = "Like sand, but more <i>metal</i>."
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/ironsand/Initialize(mapload, inherited_virtual_z)
@@ -193,8 +193,8 @@
 /turf/open/floor/plating/ice
 	name = "ice sheet"
 	desc = "A sheet of solid ice. Looks slippery."
-	icon = 'icons/turf/snow.dmi'
-	icon_state = "ice"
+	icon = 'icons/turf/planetary/icemoon.dmi'
+	icon_state = "dark_ice"
 	initial_gas_mix = FROZEN_ATMOS
 	initial_temperature = 180
 	planetary_atmos = TRUE
@@ -242,11 +242,6 @@
 /turf/open/floor/plating/ice/iceberg
 	name = "cracked ice floor"
 	desc = "A sheet of solid ice. It looks cracked, yet still slippery."
-	icon_state = "ice1"
-
-/turf/open/floor/plating/ice/iceberg/Initialize(mapload, inherited_virtual_z)
-	. = ..()
-	icon_state = "ice[rand(1,8)]"
 
 /turf/open/floor/plating/ice/iceberg/lit
 	light_range = 2
@@ -266,9 +261,9 @@
 	initial_temperature = 180
 	attachment_holes = FALSE
 	planetary_atmos = TRUE
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 /turf/open/floor/plating/snowed/cavern
@@ -305,7 +300,7 @@
 	smoothing_flags = SMOOTH_BITMASK
 	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_GRASS)
 	canSmoothWith = list(SMOOTH_GROUP_CLOSED_TURFS, SMOOTH_GROUP_FLOOR_GRASS)
-	layer = HIGH_TURF_LAYER
+	layer = GRASS_TURF_LAYER
 	var/smooth_icon = 'icons/turf/floors/grass.dmi'
 
 /turf/open/floor/plating/grass/Initialize(mapload, inherited_virtual_z)
@@ -325,9 +320,9 @@
 	desc = "Upon closer examination, it's still dirt."
 	icon_state = "sand"
 	bullet_bounce_sound = null
-	footstep = FOOTSTEP_SAND
-	barefootstep = FOOTSTEP_SAND
-	clawfootstep = FOOTSTEP_SAND
+	footstep = FOOTSTEP_ASTEROID
+	barefootstep = FOOTSTEP_ASTEROID
+	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	tiled_dirt = FALSE
 

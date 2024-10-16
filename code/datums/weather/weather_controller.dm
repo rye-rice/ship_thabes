@@ -87,8 +87,17 @@
 			/datum/weather/hailstorm = 20
 			)
 
+/datum/weather_controller/snow_planet/severe
+		possible_weathers = list(
+			/datum/weather/snow_storm = 50,
+			/datum/weather/hailstorm = 10
+			)
+
 /datum/weather_controller/desert
 	possible_weathers = list(/datum/weather/sandstorm = 100)
+
+/datum/weather_controller/desert_yellow
+	possible_weathers = list(/datum/weather/sandstorm/desert = 100)
 
 /datum/weather_controller/lush
 	possible_weathers = list(
@@ -104,6 +113,13 @@
 		/datum/weather/nuclear_fallout/normal = 10,
 	)
 
+/datum/weather_controller/toxic
+	possible_weathers = list(
+		/datum/weather/rain/toxic = 60,
+		/datum/weather/rain/toxic/heavy = 40,
+		/datum/weather/rain/toxic/heavy/blocking = 20,
+	)
+
 /datum/weather_controller/shrouded
 	possible_weathers = list(/datum/weather/shroud_storm = 100)
 
@@ -112,4 +128,10 @@
 		/datum/weather/sandstorm/rockplanet/harmless = 80,
 		/datum/weather/sandstorm/rockplanet = 20,
 		/datum/weather/snowfall = 5,
+	)
+
+/datum/weather_controller/waterplanet
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm = 50,
+		/datum/weather/rain/heavy/storm/blocking = 30,
 	)

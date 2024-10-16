@@ -211,7 +211,7 @@ Override makes it so the alert is not replaced until cleared by a clear_alert wi
 
 /atom/movable/screen/alert/sweat
 	name = "Sweating"
-	desc = "You're sweating and the heat is starting to hurt. Get somewhere cooler and take off any insulating clothing like a fire suit."
+	desc = "You're sweating and the heat is starting to hurt. Stay hydrated, get somewhere cooler, and take off any insulating clothing like a fire suit."
 	icon_state = "sweat"
 
 /atom/movable/screen/alert/shiver
@@ -444,26 +444,6 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	desc = "Your queen has been killed, you will suffer movement penalties and loss of hivemind. A new queen cannot be made until you recover."
 	icon_state = "alien_noqueen"
 	alerttooltipstyle = "alien"
-
-//GUARDIANS
-
-/atom/movable/screen/alert/cancharge
-	name = "Charge Ready"
-	desc = "You are ready to charge at a location!"
-	icon_state = "guardian_charge"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/canstealth
-	name = "Stealth Ready"
-	desc = "You are ready to enter stealth!"
-	icon_state = "guardian_canstealth"
-	alerttooltipstyle = "parasite"
-
-/atom/movable/screen/alert/instealth
-	name = "In Stealth"
-	desc = "You are in stealth and your next attack will do bonus damage!"
-	icon_state = "guardian_instealth"
-	alerttooltipstyle = "parasite"
 
 //SILICONS
 
