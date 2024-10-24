@@ -506,7 +506,6 @@
 	jobtype = /datum/job/officer
 	job_icon = "clip_cmm2"
 	ears = /obj/item/radio/headset/alt
-	box = /obj/item/storage/box/survival/clip/balaclava
 	shoes = /obj/item/clothing/shoes/combat // shoos
 
 	backpack = /obj/item/storage/backpack/security/clip
