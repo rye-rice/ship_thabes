@@ -170,7 +170,7 @@
 // #endif
 
 	if(!preserve_level)
-		token.desc += " It may not still be here if you leave it."
+		token.desc += span_notice("\nIt may not still be here if you leave it.")
 		token.update_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
@@ -179,6 +179,13 @@
 	token_icon_state = planet.icon_state
 	desc = planet.desc
 	default_color = planet.color
+	var/orestext
+	if(planet.primary_ores)
+		orestext += span_boldnotice("\nInitial scans show a high concentration of the following ores:\n")
+		for(var/obj/ore as anything in planet.primary_ores)
+			var/hex = ORES_TO_COLORS_LIST[ore]
+			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
+		desc += orestext
 	..()
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
@@ -258,7 +265,10 @@
 	return ..()
 
 /datum/overmap/dynamic/empty/choose_level_type()
-	return
+	var/datum/overmap/event/current_event = locate(/datum/overmap/event) in get_nearby_overmap_objects()
+	if(!current_event)
+		return
+	current_event.modify_emptyspace_mapgen(src)
 
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))

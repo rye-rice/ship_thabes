@@ -124,6 +124,7 @@
 /obj/effect/spawner/lootdrop/grille_or_trash
 	name = "maint grille or trash spawner"
 	loot = list(/obj/structure/grille = 5,
+			/obj/item/flashlight/flare/burnt = 1,
 			/obj/item/cigbutt = 1,
 			/obj/item/trash/cheesie = 1,
 			/obj/item/trash/candy = 1,
@@ -1016,6 +1017,7 @@
 	loot = list(
 		/obj/structure/grille/broken = 5,
 		/obj/structure/grille = 5,
+		/obj/item/flashlight/flare/burnt = 1,
 		/obj/item/cigbutt = 1,
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/candy = 1,
@@ -1048,6 +1050,7 @@
 
 /obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
 	loot = list(
+		/obj/item/flashlight/flare/burnt = 30,
 		/obj/effect/decal/cleanable/greenglow/filled = 30,
 		/obj/effect/decal/cleanable/greenglow/ecto = 1,
 		/obj/effect/decal/cleanable/glass = 30,
@@ -1294,3 +1297,18 @@
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
 	/obj/item/storage/ration/crayons = 2 // :)
 	)
+
+/obj/effect/spawner/lootdrop/chem_jug
+	loot = list(
+	/obj/item/reagent_containers/glass/chem_jug/carbon,
+	/obj/item/reagent_containers/glass/chem_jug/oxygen,
+	/obj/item/reagent_containers/glass/chem_jug/nitrogen,
+	/obj/item/reagent_containers/glass/chem_jug/hydrogen,
+	/obj/item/reagent_containers/glass/chem_jug/radium,
+	/obj/item/reagent_containers/glass/chem_jug/aluminium,
+	/obj/item/reagent_containers/glass/chem_jug/chlorine,
+	/obj/item/reagent_containers/glass/chem_jug/copper,
+	/obj/item/reagent_containers/glass/chem_jug/bromine,
+	/obj/item/reagent_containers/glass/chem_jug/iodine,
+	/obj/item/reagent_containers/glass/chem_jug/potassium,
+	/obj/item/reagent_containers/glass/chem_jug/sulfur)

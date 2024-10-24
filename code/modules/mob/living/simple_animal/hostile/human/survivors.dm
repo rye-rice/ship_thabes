@@ -8,6 +8,7 @@
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	)
+	armor_base = /obj/item/clothing/suit/hooded/survivor
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
@@ -150,7 +151,7 @@
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
 			/obj/item/melee/knife/combat = 3,
-			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			/obj/item/storage/ration/shredded_beef = 30
 			)
 		)
 	if (prob(15)) //mayhaps a medkit
@@ -203,7 +204,6 @@
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 				/obj/item/clothing/under/rank/prisoner = 10,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-				/obj/item/clothing/under/color/khaki/buster = 5,
 				/obj/item/clothing/under/rank/cargo/miner = 5
 				)
 			)

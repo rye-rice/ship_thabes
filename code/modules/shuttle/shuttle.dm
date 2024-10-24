@@ -552,7 +552,7 @@
 		CRASH("The towed shuttles of [src] is cyclic, a shuttle is ontop of itself!")
 
 //this is to check if this shuttle can physically dock at dock S
-/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S)
+/obj/docking_port/mobile/proc/canDock(obj/docking_port/stationary/S, intention_to_dock = TRUE)
 	//coordinate of combined shuttle bounds in our dock's vector space (positive Y towards shuttle direction, positive determinant, our dock at (0,0))
 	var/list/bounds = return_union_bounds(get_all_towed_shuttles())
 	var/tow_dwidth = bounds[1]
@@ -577,7 +577,7 @@
 		// attempt to move us where we currently are, it will get weird.
 			return SHUTTLE_ALREADY_DOCKED
 
-	if(S.adjust_dock_for_landing)
+	if(S.adjust_dock_for_landing && intention_to_dock)
 		S.adjust_dock_to_shuttle(src)
 
 	if(istype(S, /obj/docking_port/stationary/transit))
@@ -595,13 +595,24 @@
 	if(tow_rheight > S.height-S.dheight)
 		return SHUTTLE_HEIGHT_TOO_LARGE
 
+	for(var/obj/docking_port/stationary/current_port as anything in docking_points)
+		//if any of our docks has disable_on_owner_ship_dock set, has something docked to us, and we aren't going to a transit zone or an adjustable dock(usually planetary), don't land
+		if(current_port.disable_on_owner_ship_dock && current_port.docked && (!istype(S, /obj/docking_port/stationary/transit) || !S.adjust_dock_for_landing))
+			return SHUTTLE_OUR_MOBILEDOCK_FORBIDS_DOCKING
 
+	//if the docking port has disable_on_owner_ship_dock set and the target ship is docked to something, don't land. very much don't land.
+	if(S.disable_on_owner_ship_dock && S.owner_ship.docked)
+		return SHUTTLE_TARGET_MOBILEDOCK_FORBIDS_DOCKING
 
+	for(var/turf/closed/indestructible/edgeturf as anything in S.return_turfs())
+		if(!istype(edgeturf))
+			continue
+		return SHUTTLE_TOUCHES_EDGE
 
 	return SHUTTLE_CAN_DOCK
 
-/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE)
-	var/status = canDock(S)
+/obj/docking_port/mobile/proc/check_dock(obj/docking_port/stationary/S, silent=FALSE, intention_to_dock = TRUE)
+	var/status = canDock(S, intention_to_dock)
 	if(status == SHUTTLE_CAN_DOCK)
 		return TRUE
 	else
