@@ -2431,51 +2431,13 @@
 /turf/open/floor/plating/airless,
 /area/ship/external/dark)
 "wJ" = (
-/obj/item/storage/box/flashbangs{
-	pixel_x = -7;
-	pixel_y = 7
-	},
 /obj/item/storage/box/zipties{
-	pixel_x = 8;
-	pixel_y = 7
-	},
-/obj/item/storage/box/flashes{
-	pixel_y = -1
-	},
-/obj/item/screwdriver{
-	pixel_x = -5;
-	pixel_y = -5
-	},
-/obj/item/screwdriver{
-	pixel_x = -2;
-	pixel_y = -5
-	},
-/obj/item/screwdriver{
-	pixel_x = 1;
-	pixel_y = -5
-	},
-/obj/item/screwdriver{
 	pixel_x = 4;
-	pixel_y = -5
-	},
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "equipment locker"
-	},
-/obj/effect/turf_decal/corner/opaque/purple/border{
-	dir = 1
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/item/storage/box/zipties{
-	pixel_y = 7;
-	pixel_x = 4
+	pixel_y = 7
 	},
 /obj/item/storage/box/flashes{
-	pixel_y = -1;
-	pixel_x = -7
+	pixel_x = -7;
+	pixel_y = -1
 	},
 /obj/item/screwdriver{
 	pixel_x = -5;
@@ -2952,40 +2914,6 @@
 /turf/open/floor/mineral/titanium,
 /area/ship/medical)
 "zN" = (
-/obj/item/grenade/frag{
-	pixel_x = -8;
-	pixel_y = -1
-	},
-/obj/item/grenade/frag{
-	pixel_x = -3;
-	pixel_y = -8
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 13;
-	pixel_y = 3
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 7;
-	pixel_y = 1
-	},
-/obj/item/grenade/smokebomb{
-	pixel_x = 11;
-	pixel_y = -5
-	},
-/obj/structure/closet/secure_closet/wall/directional/west{
-	icon_state = "sec_wall";
-	name = "equipment locker"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
-/obj/effect/turf_decal/corner/opaque/purple{
-	dir = 10
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
 /obj/structure/closet/secure_closet/wall/directional/west{
 	icon_state = "sec_wall";
 	name = "ordnance locker"
@@ -3008,8 +2936,8 @@
 	pixel_y = -6
 	},
 /obj/item/grenade/smokebomb{
-	pixel_y = 2;
-	pixel_x = 13
+	pixel_x = 13;
+	pixel_y = 2
 	},
 /obj/item/grenade/smokebomb{
 	pixel_x = 7;
@@ -4179,24 +4107,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/canteen)
-"GI" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/porta_turret/ship/pgf/light{
-	dir = 5;
-	id = "crying_sun_grid";
-	mode = 1
-	},
-/obj/merge_conflict_marker{
-	name = "---Merge Conflict Marker---",
-	desc = "A best-effort merge was performed. You must resolve this conflict yourself (manually) and remove this object once complete."
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/floor/engine/hull,
-/area/ship/external/dark)
 "GL" = (
 /obj/item/radio/intercom/wideband/directional/west,
 /obj/effect/turf_decal/siding/wood{
@@ -7543,7 +7453,7 @@ xz
 xz
 xz
 xh
-GI
+KB
 KM
 Te
 EM
