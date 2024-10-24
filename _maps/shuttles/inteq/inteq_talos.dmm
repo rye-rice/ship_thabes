@@ -886,6 +886,22 @@
 "fK" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/maintenance/starboard)
+"fL" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating/dark{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/official/ion_carbine{
+	pixel_x = -32
+	},
+/obj/item/toy/plush/moth/deadhead{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "fN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -3207,6 +3223,32 @@
 /obj/structure/sign/number/one,
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/storage/starboard)
+"tt" = (
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/sign/poster/retro/lasergun_new{
+	pixel_x = -32
+	},
+/obj/item/storage/guncase/inherit{
+	pixel_x = 2;
+	pixel_y = -2
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/storage/guncase/inherit{
+	pixel_y = 2;
+	pixel_x = -2
+	},
+/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
+/obj/item/ammo_box/magazine/m12g_bulldog,
+/obj/item/ammo_box/magazine/m12g_bulldog{
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "tu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer2{
 	dir = 10
@@ -4288,6 +4330,19 @@
 "Ap" = (
 /turf/closed/wall/mineral/plastitanium,
 /area/ship/maintenance/port)
+"Aq" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/rack,
+/obj/effect/turf_decal/siding/thinplating/dark,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/storage/guncase/pistol/inherit,
+/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
+/obj/item/ammo_box/magazine/co9mm,
+/obj/item/ammo_box/magazine/co9mm,
+/turf/open/floor/plasteel/tech/grid,
+/area/ship/security/armory)
 "Ar" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4;
@@ -5301,32 +5356,6 @@
 "Hq" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ship/security/armory)
-"Hv" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/retro/lasergun_new{
-	pixel_x = -32
-	},
-/obj/item/storage/guncase/inherit{
-	pixel_x = 2;
-	pixel_y = -2
-	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/storage/guncase/inherit{
-	pixel_y = 2;
-	pixel_x = -2
-	},
-/obj/item/gun/ballistic/shotgun/automatic/bulldog/inteq/no_mag,
-/obj/item/ammo_box/magazine/m12g_bulldog,
-/obj/item/ammo_box/magazine/m12g_bulldog{
-	pixel_y = -1
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "HB" = (
 /obj/machinery/suit_storage_unit/inherit/industrial,
 /obj/item/clothing/suit/space/hardsuit/engine,
@@ -5431,6 +5460,23 @@
 	},
 /turf/open/floor/plasteel/tech,
 /area/ship/security/armory)
+"Ix" = (
+/obj/effect/turf_decal/industrial/warning{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
+	dir = 8;
+	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","tritium","n20");
+	id_tag = null
+	},
+/obj/machinery/atmospherics/pipe/simple/purple/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/engine/vacuum,
+/area/ship/engineering/engine)
 "IB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -5504,23 +5550,6 @@
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/patterned/grid,
 /area/ship/hallway/port)
-"Je" = (
-/obj/effect/turf_decal/industrial/warning{
-	dir = 8
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{
-	dir = 8;
-	filter_types = list("n2","co2","bz","water_vapor","miasma","freon","pluox","tritium","n20","no2","nob");
-	id_tag = null
-	},
-/obj/machinery/atmospherics/pipe/simple/purple/hidden{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/dark/hidden/layer1{
-	dir = 10
-	},
-/turf/open/floor/engine/vacuum,
-/area/ship/engineering/engine)
 "Jk" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating/airless,
@@ -6533,22 +6562,6 @@
 	},
 /turf/open/floor/engine/air,
 /area/ship/engineering/engine)
-"QP" = (
-/obj/structure/rack,
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/obj/effect/decal/cleanable/dirt,
-/obj/structure/sign/poster/official/ion_carbine{
-	pixel_x = -32
-	},
-/obj/item/toy/plush/moth/deadhead{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "QR" = (
 /obj/effect/turf_decal/corner/opaque/yellow,
 /obj/effect/turf_decal/corner/opaque/brown{
@@ -7401,19 +7414,6 @@
 /obj/item/radio/intercom/directional/south,
 /turf/open/floor/plasteel/tech,
 /area/ship/storage/port)
-"Wp" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/structure/rack,
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/storage/guncase/pistol/inherit,
-/obj/item/gun/ballistic/automatic/pistol/commander/inteq,
-/obj/item/ammo_box/magazine/co9mm,
-/obj/item/ammo_box/magazine/co9mm,
-/turf/open/floor/plasteel/tech/grid,
-/area/ship/security/armory)
 "Wr" = (
 /obj/machinery/light/small/directional/north,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -8012,7 +8012,7 @@ iD
 Lo
 dw
 ge
-Je
+Ix
 Yp
 ZE
 rV
@@ -8598,9 +8598,9 @@ hT
 sq
 Rg
 Hq
-QP
+fL
 bI
-Hv
+tt
 Hq
 sw
 sw
@@ -8634,7 +8634,7 @@ Rg
 Hq
 TK
 Qa
-Wp
+Aq
 Hq
 sw
 sw
