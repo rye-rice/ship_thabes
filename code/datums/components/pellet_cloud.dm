@@ -46,8 +46,6 @@
 	var/mob/living/shooter
 
 /datum/component/pellet_cloud/Initialize(projectile_type=/obj/item/shrapnel, magnitude=5)
-	if(!isammocasing(parent) && !isgrenade(parent) && !islandmine(parent) && !issupplypod(parent))
-		return COMPONENT_INCOMPATIBLE
 
 	if(magnitude < 1)
 		stack_trace("Invalid magnitude [magnitude] < 1 on pellet_cloud, parent: [parent]")
@@ -57,10 +55,10 @@
 
 	if(isammocasing(parent))
 		num_pellets = magnitude
-	else if(isgrenade(parent) || islandmine(parent) || issupplypod(parent))
+	else
 		radius = magnitude
 
-/datum/component/pellet_cloud/Destroy(force, silent)
+/datum/component/pellet_cloud/Destroy(force)
 	purple_hearts = null
 	pellets = null
 	targets_hit = null
@@ -76,7 +74,7 @@
 		RegisterSignal(parent, COMSIG_GRENADE_PRIME, PROC_REF(create_blast_pellets))
 	else if(islandmine(parent))
 		RegisterSignal(parent, COMSIG_MINE_TRIGGERED, PROC_REF(create_blast_pellets))
-	else if(issupplypod(parent))
+	else
 		RegisterSignal(parent, COMSIG_SUPPLYPOD_LANDED, PROC_REF(create_blast_pellets))
 
 /datum/component/pellet_cloud/UnregisterFromParent()
@@ -90,7 +88,10 @@
 
 
 /datum/component/pellet_cloud/proc/create_casing_pellets(obj/item/ammo_casing/shell, atom/target, mob/living/user, fired_from, randomspread, spread, zone_override, params, distro)
-	shooter = user
+	if(user)
+		shooter = user
+	else
+		shooter = fired_from
 	var/targloc = get_turf(target)
 	if(!zone_override)
 		zone_override = shooter.zone_selected
@@ -106,8 +107,12 @@
 		RegisterSignal(shell.BB, COMSIG_PROJECTILE_SELF_ON_HIT, PROC_REF(pellet_hit))
 		RegisterSignal(shell.BB, list(COMSIG_PROJECTILE_RANGE_OUT, COMSIG_PARENT_QDELETING), PROC_REF(pellet_range))
 		pellets += shell.BB
-		if(!shell.throw_proj(target, targloc, shooter, params, spread))
-			return
+		if(user)
+			if(!shell.throw_proj(target, targloc, shooter, params, spread))
+				return
+		else
+			if(!shell.throw_proj(target, targloc, null, params, spread, shooter))
+				return
 		if(i != num_pellets)
 			shell.newshot()
 

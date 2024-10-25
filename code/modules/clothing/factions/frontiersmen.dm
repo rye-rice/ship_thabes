@@ -10,7 +10,7 @@
 	can_adjust = FALSE
 	icon = 'icons/obj/clothing/faction/frontiersmen/uniforms.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/uniforms.dmi'
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_SAME_ICON_FILE
 
 /obj/item/clothing/under/frontiersmen/deckhand
 	name = "\improper deckhand jumpsuit"
@@ -47,6 +47,7 @@
 	icon_state = "frontier_surgery"
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 //////////////////
 //Armored suits//
@@ -59,7 +60,7 @@
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
 	blood_overlay_type = "armor"
-	supports_variations = VOX_VARIATION
+	supports_variations = VOX_VARIATION | DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/vest/marine/frontier
 	name = "light tactical armor vest"
@@ -82,6 +83,7 @@
 	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 40, "bomb" = 25, "bio" = 0, "rad" = 0, "fire" = 50, "acid" = 50)
 	icon = 'icons/obj/clothing/faction/frontiersmen/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/suits.dmi'
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 /obj/item/clothing/suit/armor/frontier/fireproof
 	name = "frontiersmen fireproof coat"
@@ -99,6 +101,7 @@
 	cold_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/tank/internals/plasmaman, /obj/item/extinguisher, /obj/item/crowbar)
+	supports_variations = DIGITIGRADE_VARIATION_NO_NEW_ICON
 
 ///////////////
 //Spacesuits//
@@ -129,7 +132,7 @@
 	name = "frontiersman cap"
 	desc = "An olive-green and grey baseball hat, worn by cargo technicians working under the Frontiersmen. Even they have the rights for a cool cap!"
 	icon_state = "frontiersoft"
-	soft_type = "frontiersmen"
+	soft_type = "frontier"
 	icon = 'icons/obj/clothing/faction/frontiersmen/head.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/head.dmi'
 
@@ -230,24 +233,11 @@
 
 	unique_reskin = null
 
-/obj/item/storage/belt/medical/webbing/frontiersmen
-	name = "leather medical bandolier"
-	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
-	icon_state = "frontiermedicalwebbing"
-	item_state = "frontiermedicalwebbing"
-	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
-	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
-
-/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
-	new /obj/item/scalpel(src)
-	new /obj/item/circular_saw(src)
-	new /obj/item/surgicaldrill(src)
-	new /obj/item/retractor(src)
-	new /obj/item/cautery(src)
-	new /obj/item/hemostat(src)
-	new /obj/item/hypospray/mkii(src)
-	update_appearance()
-
+/obj/item/storage/belt/security/military/frontiersmen/illestren/PopulateContents()
+	. = ..()
+	for(var/i in 1 to 4)
+		new /obj/item/ammo_box/magazine/illestren_a850r(src)
+	new /obj/item/grenade/frag(src)
 
 /obj/item/storage/belt/security/military/frontiersmen/skm_ammo/PopulateContents()
 	for(var/i in 1 to 4)
@@ -268,3 +258,30 @@
 	for(var/i in 1 to 4)
 		new /obj/item/reagent_containers/glass/beaker/large/napalm(src)
 	new /obj/item/grenade/frag(src)
+
+
+/obj/item/storage/belt/medical/webbing/frontiersmen
+	name = "leather medical bandolier"
+	desc = "A rudimentary leather bandolier, utilized by both independents and frontiersmen alike. This one is painted white, usually to be worn by a medic."
+	icon_state = "frontiermedicalwebbing"
+	item_state = "frontiermedicalwebbing"
+	icon = 'icons/obj/clothing/faction/frontiersmen/belt.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/faction/frontiersmen/belt.dmi'
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/surgery/PopulateContents()
+	new /obj/item/scalpel(src)
+	new /obj/item/circular_saw(src)
+	new /obj/item/surgicaldrill(src)
+	new /obj/item/retractor(src)
+	new /obj/item/cautery(src)
+	new /obj/item/hemostat(src)
+	new /obj/item/hypospray/mkii(src)
+	update_appearance()
+
+/obj/item/storage/belt/medical/webbing/frontiersmen/combat/PopulateContents()
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/hypospray/medipen/stimulants(src)
+	new /obj/item/reagent_containers/medigel/silver_sulf(src)
+	new /obj/item/reagent_containers/medigel/styptic(src)
+	new /obj/item/stack/medical/gauze/twelve(src)
+	new /obj/item/stack/medical/splint(src)

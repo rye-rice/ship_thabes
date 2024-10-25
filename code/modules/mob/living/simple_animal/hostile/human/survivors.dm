@@ -4,9 +4,11 @@
 	icon_state = "survivor_base"
 	icon_living = "survivor_base"
 	atmos_requirements = list("min_oxy" = 1, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 999, "min_n2" = 0, "max_n2" = 0)
+	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 10, "bomb" = 20, "bio" = 100, "rad" = 20, "fire" = 50, "acid" = 30)
 	loot = list(
 		/obj/effect/mob_spawn/human/corpse/damaged/whitesands
 	)
+	armor_base = /obj/item/clothing/suit/hooded/survivor
 
 /mob/living/simple_animal/hostile/human/hermit/survivor/death(gibbed)
 	move_force = MOVE_FORCE_DEFAULT
@@ -149,7 +151,7 @@
 			/obj/item/stack/sheet/sinew = 5,
 			/obj/item/stack/sheet/bone = 5,
 			/obj/item/melee/knife/combat = 3,
-			/obj/item/reagent_containers/food/snacks/rationpack = 30
+			/obj/item/storage/ration/shredded_beef = 30
 			)
 		)
 	if (prob(15)) //mayhaps a medkit
@@ -202,7 +204,6 @@
 				/obj/item/clothing/under/rank/cargo/miner/lavaland = 10,
 				/obj/item/clothing/under/rank/prisoner = 10,
 				/obj/item/clothing/under/rank/cargo/miner/lavaland/old = 5,
-				/obj/item/clothing/under/color/khaki/buster = 5,
 				/obj/item/clothing/under/rank/cargo/miner = 5
 				)
 			)

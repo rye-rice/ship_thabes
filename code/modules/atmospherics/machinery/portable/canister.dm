@@ -43,14 +43,10 @@
 		"co2" = /obj/machinery/portable_atmospherics/canister/carbon_dioxide,
 		"plasma" = /obj/machinery/portable_atmospherics/canister/toxins,
 		"n2o" = /obj/machinery/portable_atmospherics/canister/nitrous_oxide,
-		"no2" = /obj/machinery/portable_atmospherics/canister/nitryl,
 		"bz" = /obj/machinery/portable_atmospherics/canister/bz,
 		"air" = /obj/machinery/portable_atmospherics/canister/air,
 		"water vapor" = /obj/machinery/portable_atmospherics/canister/water_vapor,
 		"tritium" = /obj/machinery/portable_atmospherics/canister/tritium,
-		"hyper-noblium" = /obj/machinery/portable_atmospherics/canister/nob,
-		"stimulum" = /obj/machinery/portable_atmospherics/canister/stimulum,
-		"pluoxium" = /obj/machinery/portable_atmospherics/canister/pluoxium,
 		"caution" = /obj/machinery/portable_atmospherics/canister,
 		"freon" = /obj/machinery/portable_atmospherics/canister/freon,
 		"hydrogen" = /obj/machinery/portable_atmospherics/canister/hydrogen,
@@ -78,11 +74,23 @@
 	icon_state = "blue"
 	gas_type = GAS_O2
 
+/obj/machinery/portable_atmospherics/canister/ozone
+	name = "ozone canister"
+	desc = "Ozone. Sometimes called as 'pure air', this is far from the truth; ozone is not good for your lungs nor heart."
+	icon_state = "darkblue"
+	gas_type = GAS_O3
+
 /obj/machinery/portable_atmospherics/canister/carbon_dioxide
 	name = "co2 canister"
 	desc = "Carbon dioxide. What the fuck is carbon dioxide?"
 	icon_state = "black"
 	gas_type = GAS_CO2
+
+/obj/machinery/portable_atmospherics/canister/carbon_monoxide
+	name = "co canister"
+	desc = "Carbon Monoxide. Highly dangerous and invisible to the naked eye."
+	icon_state = "black"
+	gas_type = GAS_CO
 
 /obj/machinery/portable_atmospherics/canister/toxins
 	name = "plasma canister"
@@ -113,29 +121,11 @@
 	icon_state = "green"
 	gas_type = GAS_TRITIUM
 
-/obj/machinery/portable_atmospherics/canister/nob
-	name = "hyper-noblium canister"
-	desc = "Hyper-Noblium. More noble than all other gases."
-	icon_state = "nob"
-	gas_type = GAS_HYPERNOB
-
-/obj/machinery/portable_atmospherics/canister/nitryl
-	name = "nitryl canister"
-	desc = "Nitryl gas. Feels great 'til the acid eats your lungs."
-	icon_state = "brown"
-	gas_type = GAS_NITRYL
-
-/obj/machinery/portable_atmospherics/canister/stimulum
-	name = "stimulum canister"
-	desc = "Stimulum. High energy gas, high energy people."
-	icon_state = "darkpurple"
-	gas_type = GAS_STIMULUM
-
-/obj/machinery/portable_atmospherics/canister/pluoxium
-	name = "pluoxium canister"
-	desc = "Pluoxium. Like oxygen, but more bang for your buck."
-	icon_state = "darkblue"
-	gas_type = GAS_PLUOXIUM
+/obj/machinery/portable_atmospherics/canister/argon
+	name = "argon canister"
+	desc = "Argon. A noble gas that prevents other gases from reacting."
+	icon_state = "purple"
+	gas_type = GAS_ARGON
 
 /obj/machinery/portable_atmospherics/canister/water_vapor
 	name = "water vapor canister"
@@ -156,6 +146,24 @@
 	desc = "Hydrogen. Used in thruster fuel."
 	icon_state = "orangews"
 	gas_type = GAS_HYDROGEN
+
+/obj/machinery/portable_atmospherics/canister/methane
+	name = "methane canister"
+	desc = "Methane. Used in thruster fuel along with kitchen stoves."
+	icon_state = "methane"
+	gas_type = GAS_METHANE
+
+/obj/machinery/portable_atmospherics/canister/ammonia
+	name = "ammonia canister"
+	desc = "Ammonia. Used in industrial processes."
+	icon_state = "brown"
+	gas_type = GAS_AMMONIA
+
+/obj/machinery/portable_atmospherics/canister/sulfur_dioxide
+	name = "sulfur dioxide canister"
+	desc = "Sulfur Dioxide. Produced naturally by volcanos."
+	icon_state = "sulfurdioxide"
+	gas_type = GAS_SO2
 
 /obj/machinery/portable_atmospherics/canister/fuel
 	name = "fuel canister"
@@ -194,7 +202,6 @@
 	air_contents.set_moles(GAS_CO2,300)
 	air_contents.set_moles(GAS_PLASMA,1000)
 	air_contents.set_moles(GAS_TRITIUM,100.61)
-	air_contents.set_moles(GAS_NITRYL,1)
 	air_contents.set_temperature(15000)
 
 /obj/machinery/portable_atmospherics/canister/proc/get_time_left()
@@ -280,11 +287,26 @@
 	if(pressure > 100)
 		. += "can-o" + num2text(pressure_display)
 
+/obj/machinery/portable_atmospherics/canister/fire_act(exposed_temperature, exposed_volume)
+	. = ..()
+	var/can_temperature = air_contents.return_temperature()
+	can_temperature += exposed_temperature/20 //equalize with the air - since this means theres an active fire on the canister's tile
+	air_contents.set_temperature(can_temperature)
+	if(exposed_temperature > temperature_resistance)
+		take_damage(max((exposed_temperature - temperature_resistance)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
+
 
 /obj/machinery/portable_atmospherics/canister/temperature_expose(datum/gas_mixture/air, exposed_temperature, exposed_volume)
-	if(exposed_temperature > temperature_resistance)
-		take_damage(5, BURN, 0)
+	if(exposed_temperature > temperature_resistance) //dont equalize temperature as this would affect atmos balance, we only want fires to be more dangerous
+		take_damage(max((exposed_temperature - temperature_resistance)/2, 0), BURN, 0)
+	if(exposed_volume > TANK_RUPTURE_PRESSURE) // implosion
+		take_damage(max((exposed_volume - TANK_RUPTURE_PRESSURE)/2, 0), BURN, 0)
 
+/obj/machinery/portable_atmospherics/canister/take_damage(damage_amount, damage_type, damage_flag, sound_effect, attack_dir, armour_penetration)
+	. = ..()
+	shake_animation(damage_amount, max(damage_amount/2, 2))
 
 /obj/machinery/portable_atmospherics/canister/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
@@ -320,6 +342,22 @@
 
 /obj/machinery/portable_atmospherics/canister/proc/canister_break()
 	disconnect()
+
+	//Give the gas a chance to build up more pressure through reacting
+	air_contents.react(src)
+	var/pressure = air_contents.return_pressure()
+	var/range = (pressure-TANK_RUPTURE_PRESSURE)/TANK_FRAGMENT_SCALE
+	var/turf/epicenter = get_turf(loc)
+	if(range > 2)
+		message_admins("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
+		log_admin("[src] ruptured explosively at [ADMIN_VERBOSEJMP(src)], last touched by [get_mob_by_key(fingerprintslast)]!")
+		log_bomber(get_mob_by_key(fingerprintslast), "was last key to touch", src, "which ruptured explosively")
+		investigate_log("was destroyed.", INVESTIGATE_ATMOS)
+
+		explosion(epicenter, round(range*0.2), round(range*0.5), round(range), round(range*1.5))
+
+		AddComponent(/datum/component/pellet_cloud, /obj/projectile/bullet/shrapnel/hot, round(range))
+
 	var/turf/T = get_turf(src)
 	T.assume_air(air_contents)
 	air_update_turf()
@@ -327,7 +365,6 @@
 	obj_break()
 	density = FALSE
 	playsound(src.loc, 'sound/effects/spray.ogg', 10, TRUE, -3)
-	investigate_log("was destroyed.", INVESTIGATE_ATMOS)
 
 	if(holding)
 		holding.forceMove(T)
@@ -350,6 +387,16 @@
 	if(timing && valve_timer < world.time)
 		valve_open = !valve_open
 		timing = FALSE
+
+	//handle melting
+	var/current_temp = air_contents.return_temperature()
+	if(current_temp > temperature_resistance)
+		take_damage(max((current_temp - temperature_resistance), 0), BRUTE, 0)
+
+	//handle external melting
+	var/turf/open/current_turf = get_turf(src)
+	if(current_turf)
+		temperature_expose(current_turf.air, current_turf.air.return_temperature(), current_turf.air.return_pressure())
 
 	// Handle gas transfer.
 	if(valve_open)

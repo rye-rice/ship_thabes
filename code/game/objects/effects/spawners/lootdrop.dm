@@ -124,6 +124,7 @@
 /obj/effect/spawner/lootdrop/grille_or_trash
 	name = "maint grille or trash spawner"
 	loot = list(/obj/structure/grille = 5,
+			/obj/item/flashlight/flare/burnt = 1,
 			/obj/item/cigbutt = 1,
 			/obj/item/trash/cheesie = 1,
 			/obj/item/trash/candy = 1,
@@ -805,6 +806,7 @@
 		/obj/effect/anomaly/plasmasoul/planetary,
 		/obj/effect/anomaly/phantom/planetary,
 		/obj/effect/anomaly/melter/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/safe
@@ -815,6 +817,7 @@
 		/obj/effect/anomaly/sparkler/planetary,
 		/obj/effect/anomaly/veins/planetary,
 		/obj/effect/anomaly/phantom/planetary,
+		/obj/effect/anomaly/transfusion/planetary,
 	)
 
 /obj/effect/spawner/lootdrop/anomaly/dangerous
@@ -999,8 +1002,8 @@
 
 /obj/effect/spawner/lootdrop/anomaly/storm
 	loot = list(
-		/obj/effect/anomaly/flux,
-		/obj/effect/anomaly/pyro,
+		/obj/effect/anomaly/flux/storm,
+		/obj/effect/anomaly/pyro/storm,
 		/obj/effect/anomaly/sparkler,
 		/obj/effect/anomaly/veins,
 		/obj/effect/anomaly/phantom,
@@ -1014,6 +1017,7 @@
 	loot = list(
 		/obj/structure/grille/broken = 5,
 		/obj/structure/grille = 5,
+		/obj/item/flashlight/flare/burnt = 1,
 		/obj/item/cigbutt = 1,
 		/obj/item/trash/cheesie = 1,
 		/obj/item/trash/candy = 1,
@@ -1046,6 +1050,7 @@
 
 /obj/effect/spawner/lootdrop/waste/trash //debatable if this is actually loot
 	loot = list(
+		/obj/item/flashlight/flare/burnt = 30,
 		/obj/effect/decal/cleanable/greenglow/filled = 30,
 		/obj/effect/decal/cleanable/greenglow/ecto = 1,
 		/obj/effect/decal/cleanable/glass = 30,
@@ -1076,7 +1081,7 @@
 
 /obj/effect/spawner/lootdrop/waste/atmos_can
 	loot = list(
-		/obj/machinery/portable_atmospherics/canister/toxins = 3,
+		/obj/machinery/portable_atmospherics/canister/ammonia = 3,
 		/obj/machinery/portable_atmospherics/canister/carbon_dioxide = 3,
 		/obj/machinery/portable_atmospherics/canister/nitrogen = 3,
 		/obj/machinery/portable_atmospherics/canister/oxygen = 3,
@@ -1087,7 +1092,7 @@
 /obj/effect/spawner/lootdrop/waste/atmos_can/rare
 	loot = list(
 		/obj/machinery/portable_atmospherics/canister/tritium = 3,
-		/obj/machinery/portable_atmospherics/canister/pluoxium = 3
+		/obj/machinery/portable_atmospherics/canister/ozone = 3
 	)
 
 /obj/effect/spawner/lootdrop/waste/salvageable
@@ -1292,3 +1297,18 @@
 	/obj/item/storage/ration/cheese_pizza_slice = 5,
 	/obj/item/storage/ration/crayons = 2 // :)
 	)
+
+/obj/effect/spawner/lootdrop/chem_jug
+	loot = list(
+	/obj/item/reagent_containers/glass/chem_jug/carbon,
+	/obj/item/reagent_containers/glass/chem_jug/oxygen,
+	/obj/item/reagent_containers/glass/chem_jug/nitrogen,
+	/obj/item/reagent_containers/glass/chem_jug/hydrogen,
+	/obj/item/reagent_containers/glass/chem_jug/radium,
+	/obj/item/reagent_containers/glass/chem_jug/aluminium,
+	/obj/item/reagent_containers/glass/chem_jug/chlorine,
+	/obj/item/reagent_containers/glass/chem_jug/copper,
+	/obj/item/reagent_containers/glass/chem_jug/bromine,
+	/obj/item/reagent_containers/glass/chem_jug/iodine,
+	/obj/item/reagent_containers/glass/chem_jug/potassium,
+	/obj/item/reagent_containers/glass/chem_jug/sulfur)
