@@ -3,16 +3,17 @@
 	id = LAVALAND_DEFAULT_ATMOS
 
 	base_gases = list(
-		GAS_O2=5,
-		GAS_N2=10,
+		GAS_SO2=5,
+		GAS_CO=10,
 	)
 	normal_gases = list(
 		GAS_O2=10,
-		GAS_N2=10,
+		GAS_CO=10,
 		GAS_CO2=10,
+		GAS_SO2 =1,
 	)
 	restricted_gases = list(
-		GAS_BZ=10,
+		GAS_ARGON=0.1,
 		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
@@ -38,10 +39,10 @@
 	normal_gases = list(
 		GAS_O2=10,
 		GAS_N2=10,
-		GAS_CO2=10,
+		GAS_ARGON=10,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
+		GAS_AMMONIA=0.1,
 		GAS_H2O=0.1,
 	)
 	restricted_chance = 50
@@ -60,12 +61,12 @@
 		GAS_O2=20,
 	)
 	normal_gases = list(
-		GAS_BZ=2,
+		GAS_O3=2,
 		GAS_CO2=2,
 		GAS_CO=2,
 	)
 	restricted_gases = list(
-		GAS_H2O=1,
+		GAS_ARGON=1,
 	)
 	restricted_chance = 0
 
@@ -82,17 +83,17 @@
 
 
 	base_gases = list(
-		GAS_O2=7,
+		GAS_O3=7,
 		GAS_N2=10,
 	)
 	normal_gases = list(
 		GAS_O2=7,
-		GAS_O2=3,
-		GAS_N2=5,
-		GAS_N2=2
+		GAS_O3=3,
+		GAS_AMMONIA=2,
+		GAS_SO2=3
 	)
 	restricted_gases = list(
-		GAS_H2O=1,
+		GAS_CHLORINE=1,
 	)
 	restricted_chance = 10
 
@@ -116,8 +117,8 @@
 		GAS_CO2=10,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
-		GAS_H2O=0.1,
+		GAS_ARGON=0.1,
+		GAS_SO2=0.1,
 	)
 	restricted_chance = 50
 
@@ -143,7 +144,7 @@
 		GAS_N2=4,
 	)
 	restricted_gases = list(
-		GAS_CO2=0.1,
+		GAS_CO=0.1,
 	)
 	restricted_chance = 0
 
@@ -167,7 +168,7 @@
 		GAS_N2=4,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
+		GAS_O3=0.1,
 	)
 	restricted_chance = 0
 
@@ -191,7 +192,7 @@
 		GAS_N2=1,
 	)
 	restricted_gases = list(
-		GAS_PLASMA=0.1,
+		GAS_CO=0.1,
 	)
 	restricted_chance = 0
 
