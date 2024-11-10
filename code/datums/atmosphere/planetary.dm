@@ -152,7 +152,7 @@
 	maximum_pressure = 135.7 //Nonsense values
 
 	minimum_temp = T20C + 10
-	maximum_temp = T20C + 30
+	maximum_temp = T20C + 20
 
 //welcome to the beach
 
