@@ -674,7 +674,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -684,7 +684,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -694,7 +694,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -704,7 +704,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -714,7 +714,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -724,7 +724,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -740,9 +740,7 @@
 	mineralSpawnChanceList = list(/obj/item/stack/ore/autunite = 5, /obj/item/stack/ore/diamond = 3, /obj/item/stack/ore/sulfur/pyrite = 10, /obj/item/stack/ore/quartzite = 50,
 		/obj/item/stack/ore/galena = 10, /obj/item/stack/ore/plasma = 10, /obj/item/stack/ore/hematite = 45, /obj/item/stack/ore/rutile = 20,
 		/turf/closed/mineral/gibtonite/whitesands = 4, /turf/open/floor/plating/asteroid/whitesands = 2, /obj/item/stack/ore/bluespace_crystal = 4)
-
-
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -760,7 +758,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -770,7 +768,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
@@ -780,7 +778,7 @@
 	environment_type = WHITESANDS_WALL_ENV
 	turf_type = /turf/open/floor/plating/asteroid/whitesands
 	baseturfs = /turf/open/floor/plating/asteroid/whitesands/dried
-	initial_gas_mix = WHITESANDS_ATMOS
+	initial_gas_mix = SANDPLANET_DEFAULT_ATMOS
 	defer_change = TRUE
 	has_borders = TRUE
 
