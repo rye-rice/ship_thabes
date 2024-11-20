@@ -497,6 +497,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		fly.Grant(C)
 
 	C.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/species, multiplicative_slowdown=speedmod)
+	C.bodytemperature = bodytemp_normal
 
 	SEND_SIGNAL(C, COMSIG_SPECIES_GAIN, src, old_species)
 
@@ -2002,7 +2003,7 @@ GLOBAL_LIST_EMPTY(roundstart_races)
 		firemodifier = min(firemodifier, 0)
 
 	// this can go below 5 at log 2.5
-	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2.3,0)
+	burn_damage = max(log(2 - firemodifier, (current_human.bodytemperature - current_human.get_body_temp_normal(apply_change=FALSE))) - 2,0)
 	return burn_damage
 
 /// Handle the air pressure of the environment

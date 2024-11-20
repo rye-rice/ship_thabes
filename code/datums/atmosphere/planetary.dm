@@ -14,7 +14,7 @@
 	)
 	restricted_gases = list(
 		GAS_ARGON=0.1,
-		GAS_H2O=0.1,
+		GAS_BZ=0.1,
 	)
 	restricted_chance = 50
 
@@ -26,8 +26,8 @@
 	// even worse, occasionally there would be a perma-TRITFIRE, if oxygen
 	// concentration was high enough. this caused a bunch of lag and added nothing to the game whatsoever
 	// thus, the temperatures were reduced to 70-90 C
-	minimum_temp = T20C + 40
-	maximum_temp = T20C + 70
+	minimum_temp = T20C + 20
+	maximum_temp = T20C + 50
 
 /datum/atmosphere/icemoon
 	id = ICEMOON_DEFAULT_ATMOS
@@ -43,7 +43,7 @@
 	)
 	restricted_gases = list(
 		GAS_AMMONIA=0.1,
-		GAS_H2O=0.1,
+		GAS_CO2=0.1,
 	)
 	restricted_chance = 50
 
@@ -89,11 +89,11 @@
 	normal_gases = list(
 		GAS_O2=7,
 		GAS_O3=3,
-		GAS_AMMONIA=2,
-		GAS_SO2=3
 	)
 	restricted_gases = list(
 		GAS_CHLORINE=1,
+		GAS_AMMONIA=1,
+		GAS_SO2=3,
 	)
 	restricted_chance = 10
 
@@ -125,8 +125,8 @@
 	minimum_pressure = HAZARD_LOW_PRESSURE + 10
 	maximum_pressure = LAVALAND_EQUIPMENT_EFFECT_PRESSURE - 1
 
-	minimum_temp = 213
-	maximum_temp = 253 //No longer always 180
+	minimum_temp = 233
+	maximum_temp = 263 //No longer always 180
 
 //Jungleplanet
 
@@ -137,7 +137,6 @@
 		GAS_O2=15,
 		GAS_N2=60,
 		GAS_CO2=1,
-		GAS_H2O=1,
 	)
 	normal_gases = list(
 		GAS_O2=1,
