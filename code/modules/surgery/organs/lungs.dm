@@ -335,6 +335,7 @@
 			if(monoxide_reagent)
 				monoxide_reagent.accumulation = min(monoxide_reagent.accumulation, 150)
 				monoxide_reagent.metabolization_rate = 10 //purges 10 per tick
+		breath.adjust_moles(GAS_CO, -gas_breathed)
 
 		breath.adjust_moles(GAS_CO, -gas_breathed)
 
