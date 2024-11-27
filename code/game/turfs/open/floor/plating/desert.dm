@@ -6,6 +6,7 @@
 	icon = 'icons/turf/planetary/desert.dmi'
 	icon_state = "desert"
 	base_icon_state = "desert"
+	layer = SAND_TURF_LAYER
 	footstep = FOOTSTEP_SAND
 	barefootstep = FOOTSTEP_SAND
 	clawfootstep = FOOTSTEP_SAND
@@ -21,7 +22,7 @@
 
 	has_footsteps = TRUE
 	footstep_icon_state = "desert"
-	smooth_icon = 'icons/turf/floors/moonsand.dmi'
+	smooth_icon = 'icons/turf/floors/desertsand.dmi'
 
 /turf/open/floor/plating/asteroid/sand/Initialize(mapload, inherited_virtual_z)
 	. = ..()

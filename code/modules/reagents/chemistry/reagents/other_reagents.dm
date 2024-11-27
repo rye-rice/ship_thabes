@@ -1633,7 +1633,7 @@
 	var/list/turf_whitelist = list(
 	/turf/open/floor/plating/asteroid,
 	/turf/open/lava,
-	/turf/open/acid,
+	/turf/open/water/acid,
 	/turf/open/floor/plating/moss,
 	/turf/open/floor/plating/grass
 	)
@@ -1652,10 +1652,10 @@
 	if(isopenturf(exposed_turf))
 		var/turf/open/floor/terraform_target = exposed_turf
 
-		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/acid)) //if hazard, reeplace with basin
+		if(istype(terraform_target, /turf/open/lava) || istype(terraform_target, /turf/open/water/acid)) //if hazard, reeplace with basin
 			if(istype(terraform_target, /turf/open/lava))
 				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/basalt/lava_land_surface/basin, flags = CHANGETURF_INHERIT_AIR)
-			if(istype(terraform_target, /turf/open/acid))
+			if(istype(terraform_target, /turf/open/water/acid))
 				terraform_target.ChangeTurf(/turf/open/floor/plating/asteroid/whitesands/dried, flags = CHANGETURF_INHERIT_AIR)
 			terraform_target.visible_message("<span class='notice'>As the serum touches [terraform_target.name], it all starts drying up, leaving a dry basin behind!</span>")
 			playsound(exposed_turf, 'sound/effects/bubbles.ogg', 50)
@@ -2010,8 +2010,7 @@
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
 	var/newsize = current_size
-	newsize = (1 + (clamp(volume, 0, 30) / 100)) * RESIZE_DEFAULT_SIZE
-
+	newsize = (1 + (clamp(volume, 0, 25) / 100)) * RESIZE_DEFAULT_SIZE
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
