@@ -142,6 +142,7 @@
 
 /turf/open/floor/plating/asteroid/ex_act(severity, target)
 	. = SEND_SIGNAL(src, COMSIG_ATOM_EX_ACT, severity, target)
+	getDug(TRUE)
 	contents_explosion(severity, target)
 
 //footstep handling
@@ -208,6 +209,13 @@
 		if(old_exited_dirs & Ddir)
 			exited_dirs |= NDir
 
+//should prvent the broken tile sprites from showing up
+/turf/open/floor/plating/asteroid/break_tile()
+	getDug(TRUE)
+	return
+
+/turf/open/floor/burn_tile()
+	return
 
 /turf/open/floor/plating/asteroid/lowpressure
 	initial_gas_mix = OPENTURF_LOW_PRESSURE
@@ -221,3 +229,4 @@
 
 /turf/open/floor/plating/asteroid/ship
 	baseturfs = /turf/open/floor/plating
+
