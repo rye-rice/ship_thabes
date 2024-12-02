@@ -51,8 +51,10 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
-	//controls what kind of sound we play when we land and the maptext comes up
+	///Controls what kind of sound we play when we land and the maptext comes up
 	var/landing_sound
+	///Do we selfloop? If so the borders of the map connect to the other side of the planet. Not recommended.
+	var/selfloop
 
 /datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
@@ -117,7 +119,7 @@
 		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = current_overmap.get_unused_overmap_square() //curious on why theyre "reset" instead of deleted; ask mark
+	var/list/results = current_overmap.get_unused_overmap_square() //unsure on why theyre "reset" instead of deleted; ask mark about this sometime
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -133,7 +135,7 @@
 /**
  * Chooses a type of level for the dynamic level to use.
  */
-/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
+/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE)
 	if(isnull(probabilities))
 		probabilities = current_overmap.dynamic_probabilities
 	if(!isnull(force_encounter))
@@ -141,11 +143,11 @@
 	else
 		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
+	if(!ispath(planet, /datum/planet_type/asteroid) && !ispath(planet, /datum/planet_type/spaceruin)) //these aren't real planets
 		planet_name = "[gen_planet_name()]"
 		Rename(planet_name)
 		token.name = "[planet_name]" + " ([planet.name])"
-	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
 		token.name = "[planet.name]"
 
@@ -153,19 +155,20 @@
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
+	token_icon_state = planet.icon_state
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
+	selfloop = planet.selfloop
+	interference_power = planet.interference_power
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
 
-	if(!preserve_level)
-		token.desc += span_notice("\nIt may not still be here if you leave it.")
-		token.update_appearance()
+	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
@@ -180,7 +183,11 @@
 			var/hex = ORES_TO_COLORS_LIST[ore]
 			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
 		desc += orestext
+
+	if(!preserve_level)
+		token.desc += span_notice("\nIt may not still be here if you leave it.")
 	..()
+
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
@@ -225,6 +232,10 @@
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
 
+	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
+	if(istype(our_likely_vlevel) && selfloop)
+		our_likely_vlevel.selfloop()
+
 	loading = FALSE
 	return TRUE
 
@@ -232,6 +243,7 @@
 	name = "Empty Space"
 	token_icon_state = "signal_ship"
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_SETSIGNALSPRITE)
+	selfloop = TRUE
 	var/static/list/available_icon_options = list(\
 		"signal_none",
 		"signal_ship",
@@ -245,7 +257,8 @@
 		"signal_sword",
 		"signal_skull",
 		"signal_love",
-		"signal_diner")
+		"signal_diner",
+		)
 
 /datum/overmap/dynamic/empty/handle_interaction_on_target(mob/living/user, datum/overmap/interactor, choice)
 	switch(choice)
@@ -451,10 +464,36 @@
 	light_power = 0
 
 /area/overmap_encounter/planetoid/snowball
-	name = "\improper Snowball Planetoid"
+	name = "\improper Snowball Dwarf Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
 	ambientsounds = TUNDRA
-	light_color = COLOR_FOGGY_LIGHT
+	light_color = "#67769e"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/dustball
+	name = "\improper Dustball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#bf9b9b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/duneball
+	name = "\improper Duneball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#be956b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/waterball
+	name = "\improper Waterball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = MINING
+	lighting_colour_tube = "#8affe2"
+	lighting_colour_bulb = "#8affe2"
+	light_color = "#09121a"
 	light_range = 2
 	light_power = 1
 

@@ -87,6 +87,11 @@
 			/datum/weather/hailstorm = 20
 			)
 
+/datum/weather_controller/chill
+		possible_weathers = list(
+			/datum/weather/snowfall = 20
+			)
+
 /datum/weather_controller/snow_planet/severe
 		possible_weathers = list(
 			/datum/weather/snow_storm = 50,
@@ -131,6 +136,11 @@
 		/datum/weather/snowfall = 5,
 	)
 
+/datum/weather_controller/rockplanet/severe
+	possible_weathers = list(
+		/datum/weather/sandstorm/rockplanet = 100,
+	)
+
 /datum/weather_controller/waterplanet
 	possible_weathers = list(
 		/datum/weather/rain/heavy/storm = 50,
@@ -141,4 +151,9 @@
 	possible_weathers = list(
 		/datum/weather/nuclear_fallout = 90,
 		/datum/weather/nuclear_fallout/normal = 10,
+	)
+
+/datum/weather_controller/waterplanet/severe
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm_intense = 100,
 	)

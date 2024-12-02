@@ -103,6 +103,12 @@
 		/mob/living/simple_animal/hostile/bear/cave = 5,
 		/mob/living/simple_animal/hostile/asteroid/lobstrosity/beach = 1,
 	)
+	feature_spawn_chance = 0.5
+	feature_spawn_list = list(
+		/obj/structure/vein/waterplanet = 6,
+		/obj/structure/vein/waterplanet/classtwo = 4,
+		/obj/structure/vein/waterplanet/classthree = 2,
+	)
 
 /datum/biome/cave/waterplanet/flooded
 	open_turf_types = list(/turf/open/water/stormy_planet_underground = 1)
@@ -114,8 +120,7 @@
 	open_turf_types = list(/turf/closed/mineral/random/waterplanet = 1, /turf/open/floor/plating/asteroid/waterplanet = 4)
 	flora_spawn_list = list(/obj/structure/flora/rock/beach = 1, /obj/structure/flora/rock/asteroid = 6)
 	mob_spawn_list = list(
-		/mob/living/simple_animal/hostile/carp = 99,
-		/mob/living/simple_animal/hostile/space_dragon = 1,
+		/mob/living/simple_animal/hostile/carp = 100,
 	)
 
 

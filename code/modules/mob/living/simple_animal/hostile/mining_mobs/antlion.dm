@@ -9,8 +9,7 @@
 	emote_hear = list("clicks its mandibles")
 	emote_see = list("shakes the sand off itself")
 
-	health = 65
-	maxHealth = 65
+	maxHealth = 55
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
@@ -48,7 +47,7 @@
 	AIStatus = AI_OFF
 	mob_size = MOB_SIZE_TINY
 	new /obj/effect/temp_visual/burrow_sand_splash(my_turf)
-	addtimer(CALLBACK(src, .proc/diggy), 4 SECONDS)
+	addtimer(CALLBACK(src, .proc/diggy), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/diggy()
 	var/list/turf_targets = list()
@@ -65,7 +64,7 @@
 	if(length(turf_targets))
 		forceMove(pick(turf_targets))
 
-	addtimer(CALLBACK(src, .proc/emerge), 2 SECONDS)
+	addtimer(CALLBACK(src, .proc/emerge), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/emerge()
 	var/turf/my_turf = get_turf(src)
@@ -87,8 +86,7 @@
 	icon_living = "queen"
 	icon_dead = "queen_dead"
 	mob_size = MOB_SIZE_LARGE
-	health = 275
-	maxHealth = 275
+	maxHealth = 175
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 
