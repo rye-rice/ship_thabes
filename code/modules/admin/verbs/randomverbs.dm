@@ -70,9 +70,9 @@
 			return
 		switch(sender)
 			if (RADIO_CHANNEL_SYNDICATE)
-				sender = input("From what branch?", "Syndicate") as null|anything in list("Syndicate High Command", "The Anti-Corporation Liberation Front", "The Gorlex Marauders", "Donk! Corporation", "Cybersun Virtual Solutions", "The Galactic Engineer's Concordat", "The Naturalienwissenschaftlicher Studentenverbindungs-Verband")
+				sender = input("From what faction?", "Syndicate") as null|anything in list("Liberation Front Leadership", "Gorlex Republic Military Command", "Cybersun Industries", "the Student-Union of Naturalistic Sciences")
 			if (RADIO_CHANNEL_MINUTEMEN)
-				sender = input("From what division?", "Minutemen") as null|anything in list("CLIP Minutemen Headquarters", "The Galactic Optium Labor Divison", "The Biohazard Assesment and Removal Division")
+				sender = input("From what division?", "Minutemen") as null|anything in list("the Colonial League Minutemen", "the Galactic Optium Labor Divison", "the Biohazard Assesment and Removal Division")
 			if (RADIO_CHANNEL_INTEQ)
 				sender = "Inteq Risk Management"
 			if ("Outpost")
@@ -854,7 +854,7 @@
 
 		switch(ruin_force)
 			if("Random")
-				//Can't use pickweight as it might be from "everything"
+				//Can't use pick_weight as it might be from "everything"
 				ruin_target = select_from[pick(select_from)]
 			else
 				var/selected_ruin = tgui_input_list(usr, "Which ruin?", "Spawn Ruin", select_from, 60 SECONDS)
@@ -907,11 +907,93 @@
 		return
 
 	var/overmap_type = tgui_input_list(usr, "What type of Star System?", "Spawn Overmap", typesof(/datum/overmap_star_system/), 60 SECONDS)
+	var/datum/overmap_star_system/nova
 	if(!overmap_type)
 		return
 
+	if(tgui_alert(usr, "Edit spawn parameters?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		var/inputed
+		nova = new overmap_type(FALSE)
+
+		inputed = input(usr, "Choose sector size", "Spawn Overmap", nova.size) as num
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.size = inputed
+
+		inputed = tgui_input_list(usr, "Choose Map Generator", "Spawn Overmap", list(OVERMAP_GENERATOR_SOLAR, OVERMAP_GENERATOR_RANDOM, OVERMAP_GENERATOR_NONE))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		nova.generator_type = inputed
+
+		inputed = tgui_alert(usr, "Have an outpost generate immediatey in this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+		inputed = tgui_alert(usr, "Should players be able to jump to this sector?", "Spawn Overmap", list("Yes", "No"))
+		if(!inputed)
+			QDEL_NULL(nova)
+			return
+		switch(inputed)
+			if("Yes")
+				nova.has_outpost = TRUE
+			if("No")
+				nova.has_outpost = FALSE
+
+	if(tgui_alert(usr, "Edit Overmap Colors?", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		if(!nova)
+			nova = new overmap_type(FALSE)
+
+		nova.override_object_colors = TRUE
+		var/inputed
+		inputed = input(usr, "Set Primary Color (Planets):", nova.primary_color) as color|null
+		if(inputed)
+			nova.primary_color = inputed
+		inputed = input(usr, "Set Secondary Color (Background):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.secondary_color = inputed
+
+
+		inputed = tgui_alert(usr, "Set a primary hazard color (Dangerous Hazards)? If no then primary hazard color will be set to the color of the sun.", "Spawn Overmap", list("Yes", "No"), 10 SECONDS)
+		switch(inputed)
+			if("Yes")
+				inputed = input(usr, "Set Primary Hazard Color (Dangerous Hazards):", nova.hazard_primary_color) as color|null
+				if(inputed)
+					nova.hazard_primary_color = inputed
+			if("No")
+				nova.hazard_primary_color = null
+		inputed = input(usr, "Set Secondary Hazard Color (Less Dangerous Hazards):", nova.secondary_color) as color|null
+		if(inputed)
+			nova.hazard_secondary_color = inputed
+
+		inputed = input(usr, "Set Primary Structure Color (Ships):", nova.primary_structure_color) as color|null
+		if(inputed)
+			nova.primary_structure_color = inputed
+
+		inputed = input(usr, "Set Secondary Structure Color (Outposts):", nova.secondary_structure_color) as color|null
+		if(inputed)
+			nova.secondary_structure_color = inputed
+
+		inputed = tgui_input_list(usr, "Choose Background sprite", "Spawn Overmap", list("overmap", "overmap_dark", "overmap_black_bg"))
+		if(inputed)
+			nova.overmap_icon_state = inputed
+
+	if(tgui_alert(usr, "Give sector custom name? If no inherits from basetype or picks randomly", "Spawn Overmap", list("Yes", "No"), 10 SECONDS) == "Yes")
+		nova.name = input(usr, "Set Sector name:", "Spawn Overmap") as text|null
+
 	message_admins("Generating Star System type: [overmap_type], this may take some time!")
-	var/datum/overmap_star_system/nova = SSovermap.spawn_new_star_system(overmap_type)
+	if(nova)
+		nova.setup_system()
+		nova = SSovermap.spawn_new_star_system(nova)
+	else
+		nova = SSovermap.spawn_new_star_system(overmap_type)
 	if(!nova)
 		message_admins("Failed to generate Star System [overmap_type]!")
 		return

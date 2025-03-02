@@ -7,7 +7,7 @@
 // of the currently selected path
 
 /datum/buildmode_mode/modify_overmap/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Set datum type")] -> Right Mouse Button on buildmode button\n\
 		[span_bold("Copy datum type")] -> Left Mouse Button + Alt on Overmap Token\n\
 		[span_bold("Place datum")] -> Left Mouse Button on  Overmap Token\n\
@@ -92,7 +92,7 @@ the parameters are from the client, meaning object is what they clicked on, not 
 			switch(action_type)
 				if("Strict type")
 					var/i = 0
-					for(var/datum/overmap/target in SSovermap.overmap_objects)
+					for(var/datum/overmap/target in selected_overmap_datum.current_overmap.overmap_objects)
 						if(target.type == O_type)
 							i++
 							qdel(target)
@@ -126,7 +126,7 @@ the parameters are from the client, meaning object is what they clicked on, not 
 	return ..()
 
 /datum/buildmode_mode/move_overmap/show_help(client/target_client)
-	to_chat(target_client, span_purple(examine_block(
+	to_chat(target_client, span_purple(boxed_message(
 		"[span_bold("Select")] -> Left Mouse Button on a overmap token\n\
 		[span_bold("Throw")] -> Right Mouse Button on a overmap spot"))
 	)

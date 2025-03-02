@@ -26,6 +26,8 @@
 	var/token_icon_state = "ship_generic"
 	/// The prefix of the ship's name.
 	var/prefix = "ISV"
+	/// The name of the ship's manufacturer.
+	var/manufacturer = "Unknown"
 	/// The full name of the ship's faction.
 	var/faction_name = "Independent"
 	var/faction_path = /datum/faction/independent
@@ -45,6 +47,9 @@
 	var/officer_time_coeff = 1
 
 	var/static/list/outfits
+
+	/// checks if we should NOT spawn /obj/effect/spawner/random/test_ship_matspawn, delete this when ships have new mats mapped in
+	var/matbundle_spawned = FALSE
 
 /datum/map_template/shuttle/proc/prerequisites_met()
 	return TRUE
@@ -345,21 +350,21 @@
 
 /datum/map_template/shuttle/subshuttles/pill
 	file_name = "independent_pill"
-	name = "Pill-Class Torture Device"
+	name = "Pill-class Torture Device"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pillb
 	file_name = "independent_blackpill"
-	name = "Blackpill-Class Manned Torpedo"
+	name = "Blackpill-class Manned Torpedo"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
 
 /datum/map_template/shuttle/subshuttles/pills
 	file_name = "independent_superpill"
-	name = "Superpill-Class Experimental Engineering Platform"
+	name = "Superpill-class Experimental Engineering Platform"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "Pill"
 	name_categories = list("PILLS")
@@ -376,12 +381,7 @@
 	token_icon_state = "ship_tiny_generic"
 	prefix = "ISV"
 
-//your subshuttle here //why is my subshuttle here
-/datum/map_template/shuttle/subshuttles/heron
-	file_name = "nanotrasen_falcon"
-	name = "Falcon Dropship"
-	token_icon_state = "ship_tiny_generic"
-	prefix = "NTSV"
+//your subshuttle here //why is my subshuttle here // its no longer there
 
 /datum/map_template/shuttle/subshuttles/crux
 	file_name = "minutemen_crux"
@@ -391,7 +391,7 @@
 
 /datum/map_template/shuttle/subshuttles/ancon
 	file_name = "nanotrasen_ancon"
-	name = "Nanotrasen Ancon-Class Command Ship"
+	name = "Nanotrasen Ancon-class Command Ship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "NTSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -404,14 +404,14 @@
 
 /datum/map_template/shuttle/subshuttles/anvil
 	file_name = "inteq_anvil"
-	name = "Anvil-Class Dropship"
+	name = "Anvil-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "IRMV"
 	name_categories = list("GENERAL", "SPACE")
 
 /datum/map_template/shuttle/subshuttles/runner
 	file_name = "syndicate_runner"
-	name = "Runner-Class Ambulance"
+	name = "Runner-class Ambulance"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "CSSV"
 	name_categories = list("GENERAL", "SPACE")
@@ -438,3 +438,19 @@
 	name = "Brawler-class Dropship"
 	token_icon_state = "ship_tiny_generic"
 	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/haymaker
+	file_name = "frontiersmen_haymaker"
+	name = "Haymaker-class Command Post"
+	prefix = "SV"
+
+/datum/map_template/shuttle/subshuttles/skink
+	file_name = "nanotrasen_skink"
+	name = "Skink-class Cargo Runner"
+	token_icon_state = "ship_tiny_generic"
+	prefix = "NTSV"
+
+/datum/map_template/shuttle/subshuttles/bambulance
+	file_name = "cybersun_bambulance"
+	name = "Gauze-class Ambulance Pod"
+	prefix = "CSSV"

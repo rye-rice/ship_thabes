@@ -51,10 +51,12 @@
 	///The X bounds of the virtual z level
 	var/vlevel_width = QUADRANT_MAP_SIZE
 
-	//controls what kind of sound we play when we land and the maptext comes up
+	///Controls what kind of sound we play when we land and the maptext comes up
 	var/landing_sound
+	///Do we selfloop? If so the borders of the map connect to the other side of the planet. Not recommended.
+	var/selfloop
 
-/datum/overmap/dynamic/Initialize(position, load_now=TRUE, ...)
+/datum/overmap/dynamic/Initialize(position, datum/overmap_star_system/system_spawned_in, load_now=TRUE, ...)
 	. = ..()
 
 	vlevel_height = CONFIG_GET(number/overmap_encounter_size)
@@ -117,7 +119,7 @@
 		return //Dont fuck over stranded people
 
 	log_shuttle("[src] [REF(src)] UNLOAD")
-	var/list/results = current_overmap.get_unused_overmap_square() //curious on why theyre "reset" instead of deleted; ask mark
+	var/list/results = current_overmap.get_unused_overmap_square() //dynamic turfs reseting was intentional, apparently isn't a worry, so maybe refactor this into asking SSovermap to spawn a new dynamic datum then self destructing
 	overmap_move(results["x"], results["y"])
 
 	for(var/obj/docking_port/stationary/dock as anything in reserve_docks)
@@ -133,19 +135,19 @@
 /**
  * Chooses a type of level for the dynamic level to use.
  */
-/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE) //TODO: This is a awful way of hanlding random planets. If maybe it picked from a list of datums that then would be applied on the dynamic datum, it would be a LOT better.
+/datum/overmap/dynamic/proc/choose_level_type(load_now = TRUE)
 	if(isnull(probabilities))
 		probabilities = current_overmap.dynamic_probabilities
-	if(istype(force_encounter, /datum/planet_type/))
+	if(!isnull(force_encounter))
 		planet = force_encounter
 	else
-		planet = SSmapping.planet_types[force_encounter ? force_encounter : pickweightAllowZero(probabilities)]
+		planet = SSmapping.planet_types[force_encounter ? force_encounter : pick_weight_allow_zero(probabilities)]
 
-	if(planet.planet !=DYNAMIC_WORLD_ASTEROID && planet.planet != DYNAMIC_WORLD_SPACERUIN) //these aren't real planets
+	if(!ispath(planet, /datum/planet_type/asteroid) && !ispath(planet, /datum/planet_type/spaceruin)) //these aren't real planets
 		planet_name = "[gen_planet_name()]"
 		Rename(planet_name)
 		token.name = "[planet_name]" + " ([planet.name])"
-	if(planet.planet == DYNAMIC_WORLD_ASTEROID || planet.planet == DYNAMIC_WORLD_SPACERUIN)
+	if(!ispath(planet, /datum/planet_type/asteroid) || !ispath(planet, /datum/planet_type/spaceruin))
 		Rename(planet.name)
 		token.name = "[planet.name]"
 
@@ -153,25 +155,20 @@
 	ruin_type = planet.ruin_type
 	default_baseturf = planet.default_baseturf
 	gravity = planet.gravity
+	token_icon_state = planet.icon_state
 	mapgen = planet.mapgen
 	weather_controller_type = planet.weather_controller_type
 	landing_sound = planet.landing_sound
 	preserve_level = planet.preserve_level //it came to me while I was looking at chickens
+	selfloop = planet.selfloop
+	interference_power = planet.interference_power
 
 	if(vlevel_height >= 255 && vlevel_width >= 255) //little easter egg
 		planet_name = "LV-[pick(rand(11111,99999))]"
 		token.icon_state = "sector"
 		Rename(planet_name)
 
-// - SERVER ISSUE: LOADING ALL PLANETS AT ROUND START KILLS PERFORMANCE BEYOND WHAT IS REASONABLE. OPTIMIZE SSMOBS IF YOU WANT THIS BACK
-// #ifdef FULL_INIT //Initialising planets roundstart isn't NECESSARY, but is very nice in production. Takes a long time to load, though.
-// 	if(load_now)
-// 		load_level() //Load the level whenever it's randomised
-// #endif
-
-	if(!preserve_level)
-		token.desc += " It may not still be here if you leave it."
-		token.update_appearance()
+	alter_token_appearance()
 
 /datum/overmap/dynamic/alter_token_appearance()
 	if(!planet)
@@ -179,7 +176,18 @@
 	token_icon_state = planet.icon_state
 	desc = planet.desc
 	default_color = planet.color
+	var/orestext
+	if(planet.primary_ores)
+		orestext += span_boldnotice("\nInitial scans show a high concentration of the following ores:\n")
+		for(var/obj/ore as anything in planet.primary_ores)
+			var/hex = ORES_TO_COLORS_LIST[ore]
+			orestext += "<font color='[hex]'>	- [ore.name]\n</font>"
+		desc += orestext
+
+	if(!preserve_level)
+		token.desc += span_notice("\nIt may not still be here if you leave it.")
 	..()
+
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
@@ -214,7 +222,7 @@
 	log_shuttle("[src] [REF(src)] LEVEL_INIT")
 
 	// use the ruin type in template if it exists, or pick from ruin list if IT exists; otherwise null
-	var/selected_ruin = template || (ruin_type ? pickweightAllowZero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
+	var/selected_ruin = template || (ruin_type ? pick_weight_allow_zero(SSmapping.ruin_types_probabilities[ruin_type]) : null)
 	var/list/dynamic_encounter_values = current_overmap.spawn_dynamic_encounter(src, selected_ruin)
 	if(!length(dynamic_encounter_values))
 		return FALSE
@@ -224,6 +232,10 @@
 	ruin_turfs = dynamic_encounter_values[3]
 	spawned_ruins = dynamic_encounter_values[4]
 
+	var/datum/virtual_level/our_likely_vlevel = mapzone.virtual_levels[1]
+	if(istype(our_likely_vlevel) && selfloop)
+		our_likely_vlevel.selfloop()
+
 	loading = FALSE
 	return TRUE
 
@@ -231,6 +243,7 @@
 	name = "Empty Space"
 	token_icon_state = "signal_ship"
 	interaction_options = list(INTERACTION_OVERMAP_DOCK, INTERACTION_OVERMAP_QUICKDOCK, INTERACTION_OVERMAP_SETSIGNALSPRITE)
+	selfloop = TRUE
 	var/static/list/available_icon_options = list(\
 		"signal_none",
 		"signal_ship",
@@ -244,7 +257,8 @@
 		"signal_sword",
 		"signal_skull",
 		"signal_love",
-		"signal_diner")
+		"signal_diner",
+		)
 
 /datum/overmap/dynamic/empty/handle_interaction_on_target(mob/living/user, datum/overmap/interactor, choice)
 	switch(choice)
@@ -258,12 +272,18 @@
 	return ..()
 
 /datum/overmap/dynamic/empty/choose_level_type()
-	return
+	var/datum/overmap/event/current_event = locate(/datum/overmap/event) in get_nearby_overmap_objects()
+	if(!current_event)
+		return
+	current_event.modify_emptyspace_mapgen(src)
 
 /datum/overmap/dynamic/empty/post_undocked(datum/overmap/ship/controlled/dock_requester)
 	if(length(mapzone?.get_mind_mobs()))
 		return //Dont fuck over stranded people? tbh this shouldn't be called on this condition, instead of bandaiding it inside
 	log_shuttle("[src] [REF(src)] UNLOAD")
+	if(mapzone)
+		mapzone.clear_reservation()
+		QDEL_NULL(mapzone)
 	qdel(src)
 
 /datum/overmap/dynamic/spaceruin
@@ -297,6 +317,16 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	has_gravity = STANDARD_GRAVITY
 	always_unpowered = TRUE
+	//these vars are from atom but do nothing when on an area, should be okay to use
+	light_range = 2
+	light_power = 0.80
+	light_color = "#FFFFFF"
+
+/area/overmap_encounter/planetoid/update_light()
+	for(var/turf/updating_turf as anything in contents)
+		if(!istype(updating_turf))
+			continue
+		SEND_SIGNAL(updating_turf, COMSIG_OVERMAPTURF_UPDATE_LIGHT, light_range, light_power, light_color)
 
 // Used for caves on multi-biome planetoids.
 /area/overmap_encounter/planetoid/cave
@@ -304,6 +334,8 @@
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
 	allow_weather = FALSE
+	light_range = 0
+	light_power = 0
 
 /area/overmap_encounter/planetoid/cave/explored
 	area_flags = VALID_TERRITORY
@@ -313,6 +345,9 @@
 /area/overmap_encounter/planetoid/lava
 	name = "\improper Volcanic Planetoid"
 	ambientsounds = MINING
+	light_color = COLOR_LAVAPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/lava/explored
 	area_flags = VALID_TERRITORY
@@ -321,11 +356,9 @@
 	name = "\improper Frozen Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CAVE
 	ambientsounds = SPOOKY
-
-/area/overmap_encounter/planetoid/snowball
-	name = "\improper Snowball Planetoid"
-	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
-	ambientsounds = TUNDRA
+	light_color = COLOR_ICEPLANET_LIGHT
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/ice/explored
 	area_flags = VALID_TERRITORY
@@ -334,6 +367,9 @@
 	name = "\improper Sandy Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = MINING
+	light_color = COLOR_SANDPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/sand/explored
 	area_flags = VALID_TERRITORY
@@ -342,6 +378,9 @@
 	name = "\improper Jungle Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = AWAY_MISSION
+	light_range = 2
+	light_power = 1
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /area/overmap_encounter/planetoid/jungle/explored
 	area_flags = VALID_TERRITORY
@@ -350,6 +389,9 @@
 	name = "\improper Battlefield Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_CITY
 	ambientsounds = SPOOKY
+	light_color = COLOR_FOGGY_LIGHT
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/battlefield/explored
 	area_flags = VALID_TERRITORY
@@ -359,6 +401,9 @@
 	name = "\improper Rocky Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = AWAY_MISSION
+	light_color = COLOR_ROCKPLANET_LIGHT
+	light_range = 2
+	light_power = 0.6
 
 /area/overmap_encounter/planetoid/rockplanet/explored
 	area_flags = VALID_TERRITORY
@@ -367,15 +412,17 @@
 	name = "\improper Beach Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = BEACH
+	light_color = COLOR_BEACHPLANET_LIGHT
+	light_range = 2
+	light_power = 0.80
 
 /area/overmap_encounter/planetoid/waterplanet
 	name = "\improper Water Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = MINING
-
-/area/overmap_encounter/planetoid/rockplanet/explored//for use in ruins
-	area_flags = UNIQUE_AREA
-	area_flags = VALID_TERRITORY | UNIQUE_AREA
+	light_color = "#09121a"
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/beachplanet/explored
 	area_flags = VALID_TERRITORY
@@ -384,6 +431,9 @@
 	name = "\improper Waste Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_HANGAR
 	ambientsounds = MAINTENANCE
+	light_color = COLOR_WASTEPLANET_LIGHT
+	light_range = 2
+	light_power = 0.2
 
 /area/overmap_encounter/planetoid/wasteplanet/explored
 	area_flags = VALID_TERRITORY
@@ -393,29 +443,79 @@
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	area_flags = HIDDEN_AREA | CAVES_ALLOWED | FLORA_ALLOWED | MOB_SPAWN_ALLOWED //allows jaunters to work
 	ambientsounds = REEBE
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_VERY_LIGHT_GRAY
 
 /area/overmap_encounter/planetoid/desert
 	name = "\improper Desert Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
+	light_range = 2
+	light_power = 0.6
+	light_color = "#ffd2bd"
 
 /area/overmap_encounter/planetoid/shrouded
 	name = "\improper Shrouded Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = DESERT
+	light_range = 0
+	light_power = 0
+
+/area/overmap_encounter/planetoid/snowball
+	name = "\improper Snowball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_STONE_CORRIDOR
+	ambientsounds = TUNDRA
+	light_color = "#67769e"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/dustball
+	name = "\improper Dustball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#bf9b9b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/duneball
+	name = "\improper Duneball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_PLAIN
+	ambientsounds = DESERT
+	light_color = "#be956b"
+	light_range = 2
+	light_power = 1
+
+/area/overmap_encounter/planetoid/waterball
+	name = "\improper Waterball Dwarf Planetoid"
+	sound_environment = SOUND_ENVIRONMENT_QUARRY
+	ambientsounds = MINING
+	lighting_colour_tube = "#8affe2"
+	lighting_colour_bulb = "#8affe2"
+	light_color = "#09121a"
+	light_range = 2
+	light_power = 1
 
 /area/overmap_encounter/planetoid/moon
 	name = "\improper Planetoid Moon"
 	ambientsounds = SPACE
 	sound_environment = SOUND_AREA_SPACE
+	light_range = 2
+	light_power = 1
+	light_color = "#FFFFFF" // should look liminal, due to moons lighting
 
 /area/overmap_encounter/planetoid/asteroid
 	name = "\improper Asteroid Field"
 	sound_environment = SOUND_ENVIRONMENT_QUARRY
 	ambientsounds = SPACE
+	light_range = 0
+	light_power = 0
 
 /area/overmap_encounter/planetoid/gas_giant
 	name = "\improper Gas Giant"
 	sound_environment = SOUND_ENVIRONMENT_MOUNTAINS
 	ambientsounds = REEBE
 	has_gravity = GAS_GIANT_GRAVITY
+	light_range = 2
+	light_power = 0.6
+	light_color = COLOR_DARK_MODERATE_ORANGE

@@ -87,7 +87,14 @@
 	display_name = "hazard jacket"
 	path = /obj/item/clothing/suit/toggle/hazard
 
+/datum/gear/suit/jacket/windbreaker
+	display_name = "windbreaker, colorable"
+	path = /obj/item/clothing/suit/toggle/windbreaker
+
 //Suspenders
+/datum/gear/suit/suspenders
+	subtype_path = /datum/gear/suit/suspenders
+
 /datum/gear/suit/suspenders/red
 	display_name = "suspenders, red"
 	path = /obj/item/clothing/suit/toggle/suspenders

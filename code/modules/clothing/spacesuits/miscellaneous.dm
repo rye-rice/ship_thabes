@@ -153,7 +153,7 @@ Contains:
 	desc = "Yarr."
 	w_class = WEIGHT_CLASS_NORMAL
 	flags_inv = 0
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/transforming/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/melee/energy/sword/saber/pirate, /obj/item/clothing/glasses/eyepatch, /obj/item/reagent_containers/food/drinks/bottle/rum)
 	slowdown = 0
 	armor = list("melee" = 30, "bullet" = 50, "laser" = 30,"energy" = 40, "bomb" = 30, "bio" = 30, "rad" = 30, "fire" = 60, "acid" = 75)
 	strip_delay = 40
@@ -363,7 +363,7 @@ Contains:
 	armor = list("melee" = 30, "bullet" = 10, "laser" = 10, "energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 10, "fire" = 100, "acid" = 100)
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF
-	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/transforming/cleaving_saw)
+	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/melee/spear, /obj/item/organ/regenerative_core/legion, /obj/item/kinetic_crusher, /obj/item/resonator, /obj/item/melee/cleaving_saw)
 
 /obj/item/clothing/suit/space/hardsuit/berserker/RemoveHelmet()
 	var/obj/item/clothing/head/helmet/space/hardsuit/berserker/helm = helmet
@@ -500,7 +500,7 @@ Contains:
 	desc = "The integrated helmet of the combat medic hardsuit, this has a bright, glowing facemask."
 	icon_state = "hardsuit0-combatmedic"
 	item_state = "hardsuit0-combatmedic"
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	hardsuit_type = "combatmedic"
 
 /obj/item/clothing/suit/space/hardsuit/combatmedic
@@ -509,7 +509,7 @@ Contains:
 	icon_state = "combatmedic"
 	item_state = "combatmedic"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/combatmedic
-	armor = list("melee" = 35, "bullet" = 10, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
+	armor = list("melee" = 35, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 5, "bio" = 100, "rad" = 50, "fire" = 65, "acid" = 75)
 	allowed = list(/obj/item/gun, /obj/item/melee/baton, /obj/item/circular_saw, /obj/item/tank/internals, /obj/item/storage/box/pillbottles,\
 	/obj/item/storage/firstaid, /obj/item/stack/medical/gauze, /obj/item/stack/medical/suture, /obj/item/stack/medical/mesh, /obj/item/storage/bag/chemistry)
 
@@ -525,7 +525,7 @@ Contains:
 	icon_state = "vacsuit_solgov"
 	desc = "Originally designed by independent contractors on Luna for the purposes of survival in hazardous environments, the lightweight Tortoise Microlite Armored Suit now sees widespread use by SolGov's exploration teams."
 	item_state = "vacsuit_solgov"
-	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy, /obj/item/tank/internals)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/energy, /obj/item/tank/internals)
 	armor = list("bio" = 100, "rad" = 50, "fire" = 60, "acid" = 75)
 	slowdown = 0.5
 	w_class = WEIGHT_CLASS_NORMAL
@@ -536,6 +536,7 @@ Contains:
 	desc = "A lightly armored space suit for IRMG personnel for EVA operations, it seems more flexible than most space suits."
 	item_state = "space-inteq"
 	icon_state = "space-inteq"
+	slowdown = 0.8
 	armor = list("melee" = 15, "bullet" = 10, "laser" = 10, "energy" = 10, "bomb" = 15, "bio" = 100, "rad" = 50, "fire" = 75, "acid" = 75)
 	w_class = WEIGHT_CLASS_NORMAL
 

@@ -91,7 +91,7 @@
 	icon_state = "galena"
 	item_state = "galena"
 	material_flags = MATERIAL_NO_EFFECTS
-	custom_materials = list(/datum/material/lead=9480,/datum/material/sulfur=500,/datum/material/silver=20)
+	custom_materials = list(/datum/material/lead=948,/datum/material/sulfur=50,/datum/material/silver=2)
 	refined_type = /obj/item/stack/sheet/mineral/lead
 	scan_state = "galena"
 	spreadChance = 20
@@ -132,7 +132,7 @@
 	item_state = "phoron"
 
 	points = 15
-	custom_materials = list(/datum/material/plasma=775, /datum/material/sulfur=25, /datum/material/carbon=50, /datum/material/quartz=100)
+	custom_materials = list(/datum/material/plasma=1650, /datum/material/sulfur=50, /datum/material/carbon=100, /datum/material/quartz=200)
 	refined_type = /obj/item/stack/ore/slag
 	mine_experience = 5
 	scan_state = "phoron"
@@ -153,6 +153,7 @@
 
 /obj/item/stack/ore/sulfur
 	name = "sulfur dust"
+	singular_name = "sulfur dust"
 	icon_state = "sulfur"
 	item_state = "sulfur"
 	grind_results = list(/datum/reagent/sulfur = 10)
@@ -230,6 +231,7 @@
 //alt version for jungle planets
 /obj/item/stack/ore/graphite/coal
 	name = "coal"
+	singular_name = "coal"
 
 	custom_materials = list(/datum/material/carbon=200)
 	refined_type = /obj/item/stack/ore/slag
@@ -254,6 +256,7 @@
 
 /obj/item/stack/ore/quartzite
 	name = "quartzite"
+	singular_name = "quartzite"
 	icon_state = "quartzite"
 	item_state = "quartzite"
 

@@ -26,7 +26,6 @@ Mineral Sheets
 GLOBAL_LIST_INIT(sandstone_recipes, list ( \
 	new/datum/stack_recipe("pile of dirt", /obj/machinery/hydroponics/soil, 3, time = 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("sandstone door", /obj/structure/mineral_door/sandstone, 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Assistant Statue", /obj/structure/statue/sandstone/assistant, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Breakdown into sand", /obj/item/stack/ore/glass, 1, one_per_turf = 0, on_floor = 1) \
 	))
 
@@ -75,7 +74,7 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 	name = "empty sandbag"
 	desc = "A bag to be filled with sand."
 	icon_state = "sandbag"
-	w_class = WEIGHT_CLASS_TINY
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/emptysandbag/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/ore/glass))
@@ -109,9 +108,6 @@ GLOBAL_LIST_INIT(sandbag_recipes, list ( \
 GLOBAL_LIST_INIT(diamond_recipes, list ( \
 	new/datum/stack_recipe("diamond door", /obj/structure/mineral_door/transparent/diamond, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("diamond tile", /obj/item/stack/tile/mineral/diamond, 1, 4, 20),  \
-	new/datum/stack_recipe("Captain Statue", /obj/structure/statue/diamond/captain, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("AI Hologram Statue", /obj/structure/statue/diamond/ai1, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("AI Core Statue", /obj/structure/statue/diamond/ai2, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/diamond/get_main_recipes()
@@ -148,7 +144,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 	new/datum/stack_recipe("uranium door", /obj/structure/mineral_door/uranium, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("uranium tile", /obj/item/stack/tile/mineral/uranium, 1, 4, 20), \
 	new/datum/stack_recipe("Nuke Statue", /obj/structure/statue/uranium/nuke, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Engineer Statue", /obj/structure/statue/uranium/eng, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/uranium/get_main_recipes()
@@ -171,11 +166,11 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
  * Plasma
  */
 /obj/item/stack/sheet/mineral/plasma
-	name = "solid plasma"
-	icon = 'icons/obj/materials/sheets.dmi'
-	icon_state = "sheet-plasma"
-	item_state = "sheet-plasma"
-	singular_name = "plasma sheet"
+	name = "plasma crystals"
+	icon = 'icons/obj/materials/ingots.dmi'
+	icon_state = "ingot-plasma"
+	item_state = "ingot-plasma"
+	singular_name = "plasma crystal"
 	sheettype = "plasma"
 	resistance_flags = FLAMMABLE
 	max_integrity = 100
@@ -189,7 +184,6 @@ GLOBAL_LIST_INIT(uranium_recipes, list ( \
 GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	new/datum/stack_recipe("plasma door", /obj/structure/mineral_door/transparent/plasma, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("plasma tile", /obj/item/stack/tile/mineral/plasma, 1, 4, 20), \
-	new/datum/stack_recipe("Scientist Statue", /obj/structure/statue/plasma/scientist, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/plasma/get_main_recipes()
@@ -244,12 +238,7 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 	new/datum/stack_recipe("chemical crate", /obj/structure/closet/crate/chem, 1, time = 15, one_per_turf = TRUE, on_floor = TRUE), \
 	new/datum/stack_recipe("gold tile", /obj/item/stack/tile/mineral/gold, 1, 4, 20), \
 	new/datum/stack_recipe("blank plaque", /obj/item/plaque, 1), \
-	new/datum/stack_recipe("HoS Statue", /obj/structure/statue/gold/hos, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("HOP Statue", /obj/structure/statue/gold/head_of_personnel, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("CE Statue", /obj/structure/statue/gold/ce, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("RD Statue", /obj/structure/statue/gold/rd, 5, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("Simple Crown", /obj/item/clothing/head/crown, 5), \
-	new/datum/stack_recipe("CMO Statue", /obj/structure/statue/gold/cmo, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/gold/get_main_recipes()
@@ -301,11 +290,6 @@ GLOBAL_LIST_INIT(gold_recipes, list ( \
 GLOBAL_LIST_INIT(silver_recipes, list ( \
 	new/datum/stack_recipe("silver door", /obj/structure/mineral_door/silver, 10, one_per_turf = 1, on_floor = 1), \
 	new/datum/stack_recipe("silver tile", /obj/item/stack/tile/mineral/silver, 1, 4, 20), \
-	new/datum/stack_recipe("Med Officer Statue", /obj/structure/statue/silver/md, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Janitor Statue", /obj/structure/statue/silver/janitor, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Sec Officer Statue", /obj/structure/statue/silver/sec, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Sec Borg Statue", /obj/structure/statue/silver/secborg, 5, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Med Borg Statue", /obj/structure/statue/silver/medborg, 5, one_per_turf = 1, on_floor = 1), \
 	))
 
 /obj/item/stack/sheet/mineral/silver/get_main_recipes()
@@ -474,7 +458,8 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
  */
 
 /obj/item/stack/sheet/mineral/coal
-	name = "carbon rod"
+	name = "carbon rods"
+	singular_name = "carbon rod"
 	desc = "A rod of pure carbon."
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-graphite"
@@ -541,7 +526,8 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
  * Sulfur
  */
 /obj/item/stack/sheet/mineral/sulfur
-	name = "sulfur crystal"
+	name = "sulfur crystals"
+	singular_name = "sulfur crystal"
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-sulfur"
 	item_state = "ingot-sulfur"
@@ -566,16 +552,6 @@ GLOBAL_LIST_INIT(abductor_recipes, list ( \
 	point_value = 3
 	merge_type = /obj/item/stack/sheet/mineral/copper
 
-/* sprites for this look real bad, resprite
-GLOBAL_LIST_INIT(copper_recipes, list ( \
-	new/datum/stack_recipe("Copper Door", /obj/structure/mineral_door/copper, 10, one_per_turf = 1, on_floor = 1), \
-	new/datum/stack_recipe("Copper Tile", /obj/item/stack/tile/mineral/copper, 1, 4, 20), \
-	new/datum/stack_recipe("Quartermaster Statue", /obj/structure/statue/copper/dimas, 10, one_per_turf = 1, on_floor = 1), \
-	))
-/obj/item/stack/sheet/mineral/copper/Initialize(mapload, new_amount, merge = TRUE)
-	recipes = GLOB.copper_recipes
-	. = ..()
-*/
 /obj/item/stack/sheet/mineral/copper/fifty
 	amount = 50
 
@@ -594,7 +570,7 @@ GLOBAL_LIST_INIT(copper_recipes, list ( \
 	singular_name = "lead bar"
 	sheettype = "lead"
 	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
-	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
+	grind_results = list(/datum/reagent/toxin/leadacetate = 20)
 	point_value = 2
 	merge_type = /obj/item/stack/sheet/mineral/lead
 
@@ -608,17 +584,17 @@ GLOBAL_LIST_INIT(copper_recipes, list ( \
 	amount = 5
 
 /obj/item/stack/sheet/mineral/silicon
-	name = "silicon crystal"
+	name = "silicon crystals"
 	desc = "Looks tasty."
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-silicon"
 	item_state = "ingot-silicon"
-	singular_name = "ingot-silicon"
+	singular_name = "silicon crystal"
 	sheettype = "lead"
 	custom_materials = list(/datum/material/silicon=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/toxin/leadacetate = 20) //maybe make it a more unique reagent?
 	point_value = 2
-	merge_type = /obj/item/stack/sheet/mineral/lead
+	merge_type = /obj/item/stack/sheet/mineral/silicon
 
 /obj/item/stack/sheet/mineral/silicon/fifty
 	amount = 50
@@ -630,12 +606,13 @@ GLOBAL_LIST_INIT(copper_recipes, list ( \
 	amount = 5
 
 /obj/item/stack/sheet/mineral/quartz
-	name = "quartz crystal"
+	name = "quartz crystals"
+	singular_name = "quartz crystal"
 	icon = 'icons/obj/materials/ingots.dmi'
 	icon_state = "ingot-quartz"
 	item_state = "ingot-quartz"
 	sheettype = "quartz"
-	custom_materials = list(/datum/material/lead=MINERAL_MATERIAL_AMOUNT)
+	custom_materials = list(/datum/material/quartz=MINERAL_MATERIAL_AMOUNT)
 	grind_results = list(/datum/reagent/quartz = 20) //maybe make it a more unique reagent?
 	point_value = 1
 	merge_type = /obj/item/stack/sheet/mineral/quartz

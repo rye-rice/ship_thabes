@@ -36,7 +36,7 @@
 		/obj/item/radio/headset/headset_srv = 2,
 		/obj/item/clothing/accessory/waistcoat = 2,
 		/obj/item/clothing/suit/apron/chef = 3,
-		/obj/item/clothing/head/soft/mime = 2,
+		/obj/item/clothing/head/soft = 2,
 		/obj/item/storage/box/mousetraps = 2,
 		/obj/item/circuitboard/machine/dish_drive = 1,
 		/obj/item/clothing/suit/toggle/chef = 1,
@@ -245,8 +245,7 @@
 		/obj/item/clothing/under/rank/medical/geneticist = 2,
 		/obj/item/clothing/shoes/sneakers/white = 2,
 		/obj/item/clothing/suit/toggle/labcoat/genetics = 2,
-		/obj/item/storage/backpack/genetics = 2,
-		/obj/item/storage/backpack/satchel/gen = 2)
+		/obj/item/storage/backpack/genetics = 2)
 	generate_items_inside(items_inside,src)
 	return
 

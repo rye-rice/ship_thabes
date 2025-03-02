@@ -84,9 +84,6 @@
 				to_chat(user, "<span class='notice'>You forcefully pry off the planks, destroying them in the process.</span>")
 	return make_plating()
 
-/turf/open/floor/wood/cold
-	initial_temperature = 255.37
-
 /turf/open/floor/wood/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
@@ -135,7 +132,7 @@
 	icon_state = "fairygrass[rand(0,3)]"
 
 /turf/open/floor/grass/fairy/beach
-	baseturfs = /turf/open/floor/plating/beach/sand
+	baseturfs = /turf/open/floor/plating/asteroid/sand
 	planetary_atmos = TRUE
 
 /turf/open/floor/grass/snow
@@ -165,20 +162,6 @@
 /turf/open/floor/grass/snow/crowbar_act(mob/living/user, obj/item/I)
 	return
 
-/turf/open/floor/grass/snow/basalt //By your powers combined, I am captain planet
-	gender = NEUTER
-	name = "volcanic floor"
-	icon = 'icons/turf/floors.dmi'
-	icon_state = "basalt"
-	ore_type = /obj/item/stack/ore/glass/basalt
-	initial_gas_mix = OPENTURF_LOW_PRESSURE
-	slowdown = 0
-
-/turf/open/floor/grass/snow/basalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
-
 /turf/open/floor/grass/snow/safe
 	slowdown = 1.5
 	planetary_atmos = FALSE
@@ -197,11 +180,6 @@
 	barefootstep = FOOTSTEP_ASTEROID
 	clawfootstep = FOOTSTEP_ASTEROID
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-
-/turf/open/floor/grass/fakebasalt/spawniconchange()
-	if(prob(15))
-		icon_state = "basalt[rand(0, 12)]"
-		set_basalt_light(src)
 
 /turf/open/floor/carpet
 	name = "carpet"

@@ -271,6 +271,9 @@
 
 /turf/closed/deconstruct_act(mob/living/user, obj/item/I)
 	var/act_duration = breakdown_duration
+	if(breakdown_duration == -1)
+		to_chat(user, span_warning("[src] cannot be deconstructed!"))
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	to_chat(user, "<span class='notice'>You begin slicing through the outer plating...</span>")
@@ -323,3 +326,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2

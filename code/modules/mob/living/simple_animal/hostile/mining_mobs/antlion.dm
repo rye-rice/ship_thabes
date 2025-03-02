@@ -9,16 +9,14 @@
 	emote_hear = list("clicks its mandibles")
 	emote_see = list("shakes the sand off itself")
 
-	health = 65
-	maxHealth = 65
+	health = 55
+	maxHealth = 55
 
 	melee_damage_lower = 10
 	melee_damage_upper = 10
-	//sharpness = SHARP_EDGED
 	attack_verb_continuous = "bites"
 	attack_verb_simple = "bite"
 	attack_sound = 'sound/weapons/bite.ogg'
-	//attack_vis_effect = ATTACK_EFFECT_BITE
 
 	//Their "ranged" ability is burrowing
 	ranged = TRUE
@@ -39,40 +37,49 @@
 		burrow()
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/burrow()
-	ranged_cooldown = world.time + ranged_cooldown_time
 	var/turf/my_turf = get_turf(src)
+	if(!isopenturf(my_turf))
+		return
+	if(!istype(my_turf, /turf/open/floor/plating/asteroid))
+		return
+
+	ranged_cooldown = world.time + ranged_cooldown_time
 	playsound(my_turf, 'sound/effects/bamf.ogg', 50, 0)
 	visible_message("<span class='notice'>\The [src] burrows into \the [my_turf]!</span>")
 	burrowed = TRUE
 	invisibility = INVISIBILITY_MAXIMUM
-	AIStatus = AI_OFF
+	toggle_ai(AI_OFF)
 	mob_size = MOB_SIZE_TINY
 	new /obj/effect/temp_visual/burrow_sand_splash(my_turf)
-	addtimer(CALLBACK(src, .proc/diggy), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(diggy)), 2 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/diggy()
 	var/list/turf_targets = list()
 	if(target)
-		for(var/turf/T in range(1, get_turf(target)))
-			if(!isopenturf(T))
+		for(var/turf/possible_emergening_spot in range(1, get_turf(target)))
+			if(!isopenturf(possible_emergening_spot))
 				continue
-			turf_targets += T
+			if(!istype(possible_emergening_spot, /turf/open/floor/plating/asteroid))
+				continue
+			turf_targets += possible_emergening_spot
 	else
-		for(var/turf/T in view(5, src))
-			if(!isopenturf(T))
+		for(var/turf/possible_emergening_spot in view(5, src))
+			if(!isopenturf(possible_emergening_spot))
 				continue
-			turf_targets += T
+			if(!istype(possible_emergening_spot, /turf/open/floor/plating/asteroid))
+				continue
+			turf_targets += possible_emergening_spot
 	if(length(turf_targets))
 		forceMove(pick(turf_targets))
 
-	addtimer(CALLBACK(src, .proc/emerge), 2 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(emerge)), 1 SECONDS)
 
 /mob/living/simple_animal/hostile/asteroid/antlion/proc/emerge()
 	var/turf/my_turf = get_turf(src)
 	visible_message("<span class='danger'>\The [src] erupts from \the [my_turf]!</span>")
 	invisibility = 0
 	burrowed = FALSE
-	AIStatus = AI_ON
+	toggle_ai(AI_ON)
 	mob_size = initial(mob_size)
 	playsound(my_turf, 'sound/effects/bamf.ogg', 50, 0)
 	new /obj/effect/temp_visual/burrow_sand_splash(my_turf)
@@ -87,8 +94,8 @@
 	icon_living = "queen"
 	icon_dead = "queen_dead"
 	mob_size = MOB_SIZE_LARGE
-	health = 275
-	maxHealth = 275
+	health = 175
+	maxHealth = 175
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 

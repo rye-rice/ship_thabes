@@ -29,13 +29,14 @@
 	throw_message = "sinks in slowly, before being pushed out of "
 	deathmessage = "stops moving as green liquid oozes from the carcass!"
 	status_flags = CANPUSH
-	gold_core_spawnable = HOSTILE_SPAWN
 	search_objects = 1
 	wanted_objects = list(
 		/obj/item/stack/ore/diamond,
 		/obj/item/stack/ore/gold,
 		/obj/item/stack/ore/galena,
 		/obj/item/stack/ore/autunite)
+
+	armor = list(melee = 25, bullet = 60, laser = 40, energy = 80, bomb = 80, bio = 80, rad = 80, fire = 80, acid = 80, magic = 80)
 
 	var/chase_time = 100
 	var/will_burrow = TRUE
@@ -45,10 +46,8 @@
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/Initialize()
 	. = ..()
-	var/i = rand(1,3)
-	while(i)
+	for (var/i in 1 to rand(1, 3))
 		loot += pick(/obj/item/stack/ore/galena, /obj/item/stack/ore/gold, /obj/item/stack/ore/autunite, /obj/item/stack/ore/diamond)
-		i--
 	spit = new
 	burrow = new
 	spit.Grant(src)
@@ -164,8 +163,8 @@
 		qdel(src)
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/bullet_act(obj/projectile/P)
-	visible_message("<span class='danger'>The [P.name] is repelled by [name]'s girth!</span>")
-	return BULLET_ACT_BLOCK
+	visible_message("<span class='danger'>The [P.name] is absorbed by [name]'s girth!</span>")
+	. = ..()
 
 /mob/living/simple_animal/hostile/asteroid/goldgrub/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	vision_range = 9
@@ -192,12 +191,3 @@
 /mob/living/simple_animal/hostile/asteroid/goldgrub/lavagrub/death(gibbed)
 	. = ..()
 	flame_radius(get_turf(src), 2)
-
-
-/proc/flame_radius(turf/epicenter, radius = 1, power = 5, fire_color = "red")
-	if(!isturf(epicenter))
-		CRASH("flame_radius used without a valid turf parameter")
-	radius = clamp(radius, 1, 50) //Sanitize inputs
-
-	for(var/turf/turf_to_flame as anything in filled_turfs(epicenter, radius, "circle"))
-		turf_to_flame.IgniteTurf(power, fire_color)

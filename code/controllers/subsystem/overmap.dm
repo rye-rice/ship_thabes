@@ -2,11 +2,8 @@ SUBSYSTEM_DEF(overmap)
 	name = "Overmap"
 	wait = 10
 	init_order = INIT_ORDER_OVERMAP
-	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
+	flags = SS_KEEP_TIMING
 	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
-
-	///Defines which generator to use for the overmap
-	var/generator_type = OVERMAP_GENERATOR_RANDOM
 
 	/// All the existing star systems, it's gonna be atleast 1 including the main system
 	var/list/tracked_star_systems = list()
@@ -55,12 +52,14 @@ SUBSYSTEM_DEF(overmap)
 	outposts = list()
 	events = list()
 
-	default_system = create_new_star_system(new /datum/overmap_star_system/outposted)
-
+	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
 	return ..()
 
 /datum/controller/subsystem/overmap/proc/spawn_new_star_system(datum/overmap_star_system/system_to_spawn=/datum/overmap_star_system)
+	if(istype(system_to_spawn))
+		return create_new_star_system(system_to_spawn)
 	return create_new_star_system(new system_to_spawn)
+
 
 /datum/controller/subsystem/overmap/fire()
 	if(events_enabled)
@@ -81,11 +80,21 @@ SUBSYSTEM_DEF(overmap)
 		if(A.mobile_port.current_ship)
 			return A.mobile_port.current_ship
 		A = A.mobile_port.underlying_turf_area[T]
-	for(var/O in overmap_objects)
-		if(istype(O, /datum/overmap/dynamic))
-			var/datum/overmap/dynamic/D = O
-			if(D.mapzone?.is_in_bounds(source))
-				return D
+	for(var/datum/overmap/dynamic/our_dynamic as anything in overmap_objects)
+		if(!istype(our_dynamic))
+			continue
+		if(our_dynamic.mapzone?.is_in_bounds(source))
+			return our_dynamic
+	for(var/datum/overmap/static_object/our_static as anything in overmap_objects)
+		if(!istype(our_static))
+			continue
+		if(our_static.mapzone?.is_in_bounds(source))
+			return our_static
+	for(var/datum/overmap/outpost/our_outpost as anything in overmap_objects)
+		if(!istype(our_outpost))
+			continue
+		if(our_outpost.mapzone?.is_in_bounds(source))
+			return our_outpost
 
 /// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/controller/subsystem/overmap/proc/player_ship_spawn_allowed()
@@ -184,18 +193,42 @@ SUBSYSTEM_DEF(overmap)
 	. = new /datum/overmap/ship/controlled(ship_loc, system_to_spawn_in, template) //This statement SHOULDN'T runtime (not counting runtimes actually in the constructor) so ship_spawning should always be toggled.
 	ship_spawning = FALSE
 
+/**
+ * Gets the interference power of nearby overmap objects.
+ * Inteded to get called by radios, but i'm sure you could use this for other things.
+ */
+/// Gets the interference power of nearby overmap objects.
+/datum/controller/subsystem/overmap/proc/get_overmap_interference(atom/source)
+	var/datum/overmap/our_overmap_object = get_overmap_object_by_location(source)
+	var/interference_power = 0
+
+	if(istype(our_overmap_object))
+		interference_power += our_overmap_object.interference_power
+		for(var/datum/overmap/nearby_obj as anything in our_overmap_object.get_nearby_overmap_objects(empty_if_src_docked = FALSE))
+			if(!istype(nearby_obj))
+				continue
+			interference_power += nearby_obj.interference_power
+
+		for(var/direction as anything in GLOB.cardinals)
+			var/newcords = our_overmap_object.get_overmap_step(direction)
+			for(var/datum/overmap/nearby_obj as anything in our_overmap_object.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
+				if(!istype(nearby_obj))
+					continue
+				interference_power += nearby_obj.interference_power / 5
+	return interference_power
+
 
 /////////////////////////////////////////////////////////////////////
-/////////////////           OVERMAP DATUM           /////////////////
+/////////////////         STAR SYSTEM DATUM         /////////////////
 /////////////////////////////////////////////////////////////////////
 
 /datum/overmap_star_system
 	/// Name of the star system
 	var/name
-	/// It's x coordinate in the galaxy
-	var/star_x = 0
-	/// It's y coordinate in the galaxy
-	var/star_y = 0
+	/// Name of the star
+	var/starname
+	///Type of the star
+	var/datum/overmap/star/startype
 
 	///Defines which generator to use for the overmap
 	var/generator_type
@@ -220,7 +253,9 @@ SUBSYSTEM_DEF(overmap)
 	///Width/height of the overmap "zlevel"
 	var/size
 	///Do we have a outpost in this system?
-	var/has_outpost = TRUE //TODO SET TO FALSE, ITS ONLY SET TO TRUE FOR TESTING
+	var/has_outpost = FALSE
+	/// Our faction of the outpost
+	var/faction
 
 	///the list of dynamic planets that can spawn in this sector
 	var/list/dynamic_probabilities
@@ -247,124 +282,19 @@ SUBSYSTEM_DEF(overmap)
 	///the icon state for the overmap background. if using a bright background, use "overmap", if dark, "overmap_dark"
 	var/overmap_icon_state = "overmap_dark"
 
-/datum/overmap_star_system/wilderness
-	name = null
-	has_outpost = FALSE
+	//Can players bluespace jump to this sector? Recommended to be FALSE if this is a punchcard or for some event
+	var/can_jump_to = TRUE
+	//can our pallete be selected randomly roundstart? set to no for subtypes or if you dont change the pallete
+	var/can_be_selected_randomly = TRUE
 
-/datum/overmap_star_system/wilderness/oldgen
-	generator_type = OVERMAP_GENERATOR_RANDOM
+/datum/overmap_star_system/New(generate_now=TRUE)
+	if(generate_now)
+		setup_system()
 
-/datum/overmap_star_system/outposted
-	name = "Ligmata Teagarden Memorial sector"
-	has_outpost = TRUE
-
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#ffffdf"
-	secondary_color = "#828282"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#494982"
-	hazard_secondary_color = "#a2b210"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#fbaa51"
-	secondary_structure_color = "#fb1010"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/zx_spectrum_pallete
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#00ffff"
-	secondary_color = "#ff00ff"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#ff0000"
-	hazard_secondary_color = "#0000ff"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffff00"
-	secondary_structure_color = "#00ff00"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-/datum/overmap_star_system/gameboy
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#8bad10"
-	secondary_color = "#0f380f"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#8bad10"
-	hazard_secondary_color = "#306230"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#9bbc0f"
-	secondary_structure_color = "#8bad10"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/virtualboy
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#aa0000"
-	secondary_color = "#ff0000"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#aa0000"
-	hazard_secondary_color = "#550000"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ff0000"
-	secondary_structure_color = "#aa0000"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-/datum/overmap_star_system/qud //hi lamb
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#b1c9c3"
-	secondary_color = "#155352"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#d74200"
-	hazard_secondary_color = "#e99f10"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffffff"
-	secondary_structure_color = "#b154cf"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap"
-
-/datum/overmap_star_system/amber_term
-	//main colors, used for dockable terrestrials, and background
-	primary_color = "#ffb000"
-	secondary_color = "#eb7500"
-
-	//hazard colors, used for the overmap hazards and sun
-	hazard_primary_color = "#ffb000"
-	hazard_secondary_color = "#eb7500"
-
-	//structure colors, used for ships and outposts/colonies
-	primary_structure_color = "#ffcc00"
-	secondary_structure_color = "#ffb000"
-
-	override_object_colors = TRUE
-	overmap_icon_state = "overmap_black_bg"
-
-/datum/overmap_star_system/amber_term/post_edit_token_state(datum/overmap/datum_to_edit)
-	datum_to_edit.token.remove_filter("gloweffect")
-	if(datum_to_edit.token.color)
-		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= datum_to_edit.token.color + "F0", "size"=2, "offset"=1))
-	else
-		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
-
-
-/datum/overmap_star_system/New()
-	var/starname
-	if(!name)
+/datum/overmap_star_system/proc/setup_system()
+	if(!starname)
 		starname = gen_star_name() //we reuse this for the name of the star if name isnt defined, like a uncharted sector or something
+	if(!name)
 		name = starname //we then give it here
 	overmap_objects = list()
 	controlled_ships = list()
@@ -394,17 +324,19 @@ SUBSYSTEM_DEF(overmap)
 	if (!generator_type) //TODO: maybe datumize these?
 		generator_type = OVERMAP_GENERATOR_RANDOM
 
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
+	if ((generator_type == OVERMAP_GENERATOR_SOLAR) || (generator_type == OVERMAP_GENERATOR_RANDOM))
 		var/datum/overmap/star/center
-		var/startype = pick(subtypesof(/datum/overmap/star))
+		if(!startype)
+			startype = pick(subtypesof(/datum/overmap/star))
 		center = new startype(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
-		center.name = starname
+		if(starname)
+			center.name = starname
 		radius_positions = list()
 		for(var/x in 1 to size)
 			for(var/y in 1 to size)
 				radius_positions["[round(sqrt((x - center.x) ** 2 + (y - center.y) ** 2)) + 1]"] += list(list("x" = x, "y" = y))
 		if(!hazard_primary_color)
-			hazard_primary_color = center.spectral_type
+			hazard_primary_color = center.get_rand_spectral_color(center.spectral_type, center.color_vary)
 		else
 			center.custom_color = FALSE
 			center.spectral_type = hazard_primary_color
@@ -412,12 +344,14 @@ SUBSYSTEM_DEF(overmap)
 
 	create_map()
 
-	return ..()
 
 /datum/overmap_star_system/Destroy(force, ...)
+	//if we haven't even generated a map yet, don't freak out about it
+	if(!overmap_container)
+		return ..()
 	if(!force)
-		stack_trace("Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. PANIC.")
-		message_admins("<span class='danger'>Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. CHECK RUNTIMES NOW.</span>")
+		stack_trace("Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING.")
+		message_admins("<span class='danger'>Something has attempted to delete a star system. THIS SHOULD NEVER HAPPEN. STACK TRACING TO SEE WHY THIS IS HAPPENING. CHECK RUNTIMES.</span>")
 		return QDEL_HINT_LETMELIVE
 	stack_trace("Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.")
 	message_admins("<span class='danger'>Something has attempted to delete a star system but it was a force delete, so we are assuming it was inentional. This should still not happen reguardless, but cleaning up the system.</span>")
@@ -434,19 +368,17 @@ SUBSYSTEM_DEF(overmap)
  * The proc that creates all the objects on the overmap, split into seperate procs for redundancy.
  */
 /datum/overmap_star_system/proc/create_map()
-	if (generator_type == OVERMAP_GENERATOR_SOLAR)
-		spawn_events_in_orbits()
-		spawn_ruin_levels_in_orbits()
-	else
-		spawn_events()
-		spawn_ruin_levels()
+	switch(generator_type)
+		if(OVERMAP_GENERATOR_SOLAR)
+			spawn_events_in_orbits()
+			spawn_ruin_levels_in_orbits()
+		if(OVERMAP_GENERATOR_RANDOM)
+			spawn_events()
+			spawn_ruin_levels()
 
 	if(has_outpost)
 		spawn_outpost()
-//		spawn_initial_ships()
 
-	//I the initial ship causes more problem than it's worth anyways, works fine without one too
-	//spawn_initial_ships()
 
 /**
  * VERY Simple random generation for overmap events, spawns the event in a random turf and sometimes spreads it out similar to ores
@@ -467,7 +399,7 @@ SUBSYSTEM_DEF(overmap)
 			return
 		if(!length(orbits))
 			break // Can't fit any more in
-		var/event_type = pickweight(GLOB.overmap_event_pick_list)
+		var/event_type = pick_weight(GLOB.overmap_event_pick_list)
 		var/selected_orbit = pick(orbits)
 
 		var/list/T = get_unused_overmap_square_in_radius(selected_orbit)
@@ -514,7 +446,7 @@ SUBSYSTEM_DEF(overmap)
  * Creates a single outpost somewhere near the center of the system.
  */
 /datum/overmap_star_system/proc/spawn_outpost()
-	var/list/location = get_unused_overmap_square_in_radius(rand(3, round(size/5)))
+	var/list/location = get_unused_overmap_square_in_radius(rand(4, round(size/5)))
 
 	var/datum/overmap/outpost/found_type
 	if(fexists(OUTPOST_OVERRIDE_FILEPATH))
@@ -533,23 +465,17 @@ SUBSYSTEM_DEF(overmap)
 				possible_types -= outpost_type
 		found_type = pick(possible_types)
 
-	new found_type(location, src)
-	return
+	var/datum/overmap/outpost/our_outpost = new found_type(location, src)
 
-/*
-/datum/controller/subsystem/overmap/proc/spawn_initial_ships()
-#ifndef UNIT_TESTS
-	var/datum/map_template/shuttle/selected_template = SSmapping.maplist[pick(SSmapping.maplist)]
-	INIT_ANNOUNCE("Loading [selected_template.name]...")
-	SSovermap.spawn_ship_at_start(selected_template)
-	if(SSdbcore.Connect())
-		var/datum/DBQuery/query_round_map_name = SSdbcore.NewQuery({"
-			UPDATE [format_table_name("round")] SET map_name = :map_name WHERE id = :round_id
-		"}, list("map_name" = selected_template.name, "round_id" = GLOB.round_id))
-		query_round_map_name.Execute()
-		qdel(query_round_map_name)
-#endif
-*/
+	//gets rid of nearby events that casue radio interference
+	for(var/direction as anything in GLOB.cardinals)
+		var/newcords = our_outpost.get_overmap_step(direction)
+		for(var/datum/overmap/event/nearby_event as anything in our_outpost.current_overmap.overmap_container[newcords["x"]][newcords["y"]])
+			if(!istype(nearby_event))
+				continue
+			if(nearby_event.interference_power)
+				qdel(nearby_event)
+	return
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
@@ -565,6 +491,7 @@ SUBSYSTEM_DEF(overmap)
 
 	var/datum/map_generator/mapgen = new dynamic_datum.mapgen
 	var/datum/map_template/ruin/used_ruin = ispath(ruin_type) ? (new ruin_type) : ruin_type
+	SSblackbox.record_feedback("tally", "encounter_spawned", 1, "[dynamic_datum.mapgen]")
 
 	// name is random but PROBABLY unique
 	var/encounter_name = dynamic_datum.planet_name || "\improper Uncharted Space [dynamic_datum.x]/[dynamic_datum.y]-[rand(1111, 9999)]"
@@ -580,6 +507,8 @@ SUBSYSTEM_DEF(overmap)
 	)
 
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+
+	mapgen.pre_generation(dynamic_datum)
 
 	// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
 	log_shuttle("SSOVERMAP: START_DYN_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
@@ -607,6 +536,12 @@ SUBSYSTEM_DEF(overmap)
 
 	if(dynamic_datum.weather_controller_type)
 		new dynamic_datum.weather_controller_type(mapzone)
+
+	var/list/areas_to_update = get_areas(/area/overmap_encounter/planetoid)
+	for(var/area/overmap_encounter/planetoid as anything in areas_to_update)
+		if(mapzone.is_in_bounds(planetoid))
+			planetoid.update_light()
+
 
 	// locates the first dock in the bottom left, accounting for padding and the border
 	var/turf/primary_docking_turf = locate(
@@ -697,28 +632,34 @@ SUBSYSTEM_DEF(overmap)
 	if(static_datum.mapgen)
 		use_mapgen = TRUE
 	var/datum/map_template/map_to_load = ispath(map) ? (new map) : map
+	var/datum/map_zone/mapzone
+	var/datum/virtual_level/vlevel
 
-	// name is random but PROBABLY unique
-	var/encounter_name = static_datum.planet_name || "\improper Uncharted Space [static_datum.x]/[static_datum.y]-[rand(1111, 9999)]"
-	var/datum/map_zone/mapzone = SSmapping.create_map_zone(encounter_name)
-	var/datum/virtual_level/vlevel = SSmapping.create_virtual_level(
-		encounter_name,
-		list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
-		mapzone,
-		map_to_load.width,
-		map_to_load.height,
-		ALLOCATION_QUADRANT,
-		static_datum.border_size
-	)
+	if(static_datum.load_seperate_z)
+		mapzone = map_to_load.load_new_z()
+		vlevel = mapzone.virtual_levels[1]
+	else
+		// name is random but PROBABLY unique
+		var/encounter_name = static_datum.planet_name || "\improper Uncharted Space [static_datum.x]/[static_datum.y]-[rand(1111, 9999)]"
+		mapzone = SSmapping.create_map_zone(encounter_name)
+		vlevel = SSmapping.create_virtual_level(
+			encounter_name,
+			list(ZTRAIT_MINING = TRUE, ZTRAIT_BASETURF = static_datum.default_baseturf, ZTRAIT_GRAVITY = static_datum.gravity),
+			mapzone,
+			map_to_load.width,
+			map_to_load.height,
+			ALLOCATION_QUADRANT,
+			QUADRANT_MAP_SIZE
+		)
 
-	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
+	vlevel.reserve_margin(static_datum.border_size)
 
 	var/datum/map_generator/mapgen
 
 	//if we even use mapgen, do mapgen things, otherwise just load the god damn map
 	if(use_mapgen)
 		mapgen = new static_datum.mapgen
-		// the generataed turfs start unpopulated (i.e. no flora / fauna / etc.). we add that AFTER placing the ruin, relying on the ruin's areas to determine what gets populated
+		mapgen.pre_generation(static_datum)
 		log_shuttle("SSOVERMAP: START_STATIC_E: RUNNING MAPGEN REF [REF(mapgen)] FOR VLEV [vlevel.id] OF TYPE [mapgen.type]")
 		mapgen.generate_turfs(vlevel.get_unreserved_block())
 
@@ -732,8 +673,6 @@ SUBSYSTEM_DEF(overmap)
 		new static_datum.weather_controller_type(mapzone)
 
 	var/list/docking_ports = list()
-//	var/turf/turf_lower = locate(vlevel.low_x,vlevel.low_y)
-//	var/turf/turf_higher = locate(vlevel.high_x,vlevel.high_y)
 
 	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
 		if(port.virtual_z() == vlevel.id)
@@ -819,14 +758,198 @@ SUBSYSTEM_DEF(overmap)
  * Edits a token after it's updated by alter_token_appearance(). Meant for visual effects
  * * token_to_edit - The overmap object we're editing [/datum/overmap/event].
  */
-/// Returns TRUE if players should be allowed to create a ship by "standard" means, and FALSE otherwise.
 /datum/overmap_star_system/proc/post_edit_token_state(datum/overmap/datum_to_edit)
+	datum_to_edit.token.remove_filter("gloweffect")
 	return
+
+/**
+ * Updates everything in the system's token state
+ * Useful for events!
+ */
+/datum/overmap_star_system/proc/update_all_colors()
+	for(var/datum/overmap/current_object as anything in overmap_objects)
+		current_object.alter_token_appearance()
+
+/**
+ * Creates 2 jump points to link an overmap to another one "naturally"
+ * * destination_system - The destination system we want to connect us to [/datum/overmap_star_system].
+ * * point_direction - The direction we spawn the jump point spawn in. In the target system we make one in the opposite direction.
+ */
+//Returns the jump point in our system
+/datum/overmap_star_system/proc/create_jump_point_link(datum/overmap_star_system/destination_system, point_direction)
+	var/datum/overmap/jump_point/point2 = new(destination_system.get_overmap_edge(REVERSE_DIR(point_direction)), destination_system)
+	point2.dir = REVERSE_DIR(point_direction)
+	var/datum/overmap/jump_point/point1 = new(get_overmap_edge(point_direction), src, point2)
+	point1.dir = point_direction
+	point1.alter_token_appearance()
+	point2.alter_token_appearance()
+	return point1
+
+/**
+ * Gets the edge of a star system
+ * * dir - The direction we are getting the edge from.
+ */
+//Returns the jump point in our system
+/datum/overmap_star_system/proc/get_overmap_edge(dir)
+	var/center_coords = round(size / 2 + 1)
+
+	var/edge_x = center_coords
+	var/edge_y = center_coords
+
+	if(dir & NORTH)
+		edge_y = round(size - size/15)
+	else if(dir & SOUTH)
+		edge_y = round(size/15 + 2)
+	if(dir & EAST)
+		edge_x = round(size - size/15)
+	else if(dir & WEST)
+		edge_x = round(size/15 + 2)
+
+	if(edge_x > size) // I don't know how to do this better atm
+		edge_x = size
+	if(edge_y > size)
+		edge_y = size
+
+
+	if(edge_x <= 0) // I don't know how to do this better atm
+		edge_x = size
+	if(edge_y <= 0)
+		edge_y = size
+
+
+	return list("x" = edge_x, "y" = edge_y)
+
+//meant to be a duplicate of default to be selectable in the spawn menu
+/datum/overmap_star_system/wilderness
+	can_be_selected_randomly = FALSE
+
+/datum/overmap_star_system/oldcolors
+	override_object_colors = TRUE
+	can_be_selected_randomly = FALSE
+
+/datum/overmap_star_system/oldgen //wouldnt it be funny to have this generate sometimes just for shits and giggles
+	generator_type = OVERMAP_GENERATOR_RANDOM
+	can_be_selected_randomly = FALSE
+
+/datum/overmap_star_system/safezone
+	name = "Lymantria Teagarden Memorial sector"
+	has_outpost = TRUE
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#ffffdf"
+	secondary_color = "#828282"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#a2b210"
+	hazard_secondary_color = "#5757c5"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#fbaa51"
+	secondary_structure_color = "#fb1010"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+
+	dynamic_probabilities = list(\
+		DYNAMIC_WORLD_BEACHPLANET = 10,
+		DYNAMIC_WORLD_SPACERUIN = 5,
+		DYNAMIC_WORLD_MOON = 20,
+		)
+
+/datum/overmap_star_system/zx_spectrum_pallete
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#00ffff"
+	secondary_color = "#ff00ff"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#ff0000"
+	hazard_secondary_color = "#0000ff"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffff00"
+	secondary_structure_color = "#00ff00"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_black_bg"
+
+/datum/overmap_star_system/gameboy
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#8bad10"
+	secondary_color = "#0f380f"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#8bad10"
+	hazard_secondary_color = "#306230"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#9bbc0f"
+	secondary_structure_color = "#8bad10"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+
+/datum/overmap_star_system/virtualboy
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#aa0000"
+	secondary_color = "#ff0000"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#aa0000"
+	hazard_secondary_color = "#550000"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ff0000"
+	secondary_structure_color = "#aa0000"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_black_bg"
+
+	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
+
+/datum/overmap_star_system/qud //hi lamb
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#b1c9c3"
+	secondary_color = "#155352"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#d74200"
+	hazard_secondary_color = "#e99f10"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffffff"
+	secondary_structure_color = "#b154cf"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap"
+
+/datum/overmap_star_system/amber_term
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#ffb000"
+	secondary_color = "#eb7500"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#ffb000"
+	hazard_secondary_color = "#eb7500"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#ffcc00"
+	secondary_structure_color = "#ffb000"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_black_bg"
+
+	can_be_selected_randomly = FALSE //this overmap does not play well without the filter
+
+/datum/overmap_star_system/amber_term/post_edit_token_state(datum/overmap/datum_to_edit)
+	datum_to_edit.token.remove_filter("gloweffect")
+	if(datum_to_edit.token.color)
+		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= datum_to_edit.token.color + "F0", "size"=2, "offset"=1))
+	else
+		datum_to_edit.token.add_filter("gloweffect", 5, list("type"="drop_shadow", "color"= "#808080", "size"=2, "offset"=1))
 
 /datum/overmap_star_system/ngr
 	name = "Gorlex Controlled - Ecbatana"
-
-	has_outpost = FALSE
+	starname = "Ecbatana"
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#d9ad82"
@@ -842,3 +965,91 @@ SUBSYSTEM_DEF(overmap)
 
 	override_object_colors = TRUE
 	overmap_icon_state = "overmap_dark"
+
+/datum/overmap_star_system/c64
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = "#d9ad82"
+	secondary_color = "#887ecb"
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = "#9f4e44"
+	hazard_secondary_color = "#6abfc6"
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = "#a1683c"
+	secondary_structure_color = "#5cab5e"
+
+	override_object_colors = TRUE
+	overmap_icon_state = "overmap_dark"
+
+//default shiptest overmap
+/datum/overmap_star_system/shiptest
+	has_outpost = TRUE
+	can_be_selected_randomly = FALSE
+
+/datum/overmap_star_system/shiptest/New(generate_now=TRUE)
+	//1/10 rounds
+	if(!prob(10))
+		return ..()
+
+	//Small easter egg so all these palletes doesn't go to waste in the event mines
+	var/list/possible_overmaps = subtypesof(/datum/overmap_star_system)
+
+	//check if can_be_selected_randomly is false, if so remove them
+	for(var/datum/overmap_star_system/interating_overmap as anything in possible_overmaps)
+		if(!interating_overmap.can_be_selected_randomly)
+			possible_overmaps -= interating_overmap
+
+	var/datum/overmap_star_system/picked_overmap = pick(possible_overmaps)
+	if(!picked_overmap)
+		return ..() //something went wrong but we ball
+
+	//main colors, used for dockable terrestrials, and background
+	primary_color = picked_overmap.primary_color
+	secondary_color = picked_overmap.secondary_color
+
+	//hazard colors, used for the overmap hazards and sun
+	hazard_primary_color = picked_overmap.hazard_primary_color
+	hazard_secondary_color = picked_overmap.hazard_secondary_color
+
+	//structure colors, used for ships and outposts/colonies
+	primary_structure_color = picked_overmap.primary_structure_color
+	secondary_structure_color = picked_overmap.secondary_structure_color
+
+	override_object_colors = TRUE
+	overmap_icon_state = picked_overmap.overmap_icon_state
+	return ..()
+
+/datum/overmap_star_system/shiptest/create_map()
+	. = ..()
+	set_station_name(starname)
+
+/datum/overmap_star_system/admin_sandbox
+	name = "Admin Sandbox"
+	size = 20
+	can_be_selected_randomly = FALSE
+	can_jump_to = FALSE
+	generator_type = OVERMAP_GENERATOR_NONE
+
+/datum/overmap_star_system/admin_sandbox/create_map()
+	new /datum/overmap/sandbox_instructions(list("x" = round(size / 2 + 1), "y" = round(size / 2 + 1)), src)
+
+/datum/overmap/sandbox_instructions
+	name = "Admin Sandbox"
+	token_icon_state = "sandbox"
+
+/datum/overmap/sandbox_instructions/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	. = ..()
+	alter_token_appearance()
+
+/datum/overmap/sandbox_instructions/alter_token_appearance()
+	desc = {"
+	[span_boldnotice("Welcome to the admin sandbox!")]
+	This will ONLY appear for the duration of the testmerge so admins can play with their new tools without torturing players. Too much.
+	No, players can't visit here. Unless you throw them here, mwahahahaa.\n
+	The buildmode (F7) tools are:
+	The [span_notice("(//) --> OVERMAP")] tool is to move overmap objects.
+	The [span_notice("MODIF. OVERMAP")] tool is similar in usuage to BUILD ADV but to manipulate the overmap only.
+	"}
+	return ..()

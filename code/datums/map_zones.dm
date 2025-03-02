@@ -166,7 +166,7 @@
 	if(!crosslinked["[direction]"])
 		CRASH("Virtual level tried to unlink a direction that wasn't linked.")
 	var/datum/virtual_level/other_zone = crosslinked["[direction]"]
-	var/reversed_dir = REVERSE_DIR(direction)
+	var/reversed_dir = REVERSE_DIR(text2num(direction))
 	crosslinked -= "[direction]"
 	other_zone.crosslinked -= "[reversed_dir]"
 	clear_dir_linkage(direction)
@@ -207,6 +207,8 @@
 	var/turf/ending = locate(end_x, end_y, z_value)
 	var/list/turfblock = block(beginning, ending)
 	for(var/turf/closed/indestructible/edge/edgy_turf as anything in turfblock)
+		if(!istype(edgy_turf))
+			continue
 		edgy_turf.density = TRUE
 		edgy_turf.opacity = TRUE
 		edgy_turf.destination_z = null
@@ -564,6 +566,25 @@
 	var/abs_y = Turf.y - low_y
 	return locate(up_linkage.low_x + abs_x, up_linkage.low_y + abs_y, up_linkage.z_value)
 
+/datum/virtual_level/proc/get_zone_step(turf/source, direction)
+	// multiz dir is just the up/down dir flags
+	var/multiz_dir = direction & (UP|DOWN)
+	// while the passed dir is normalized to just the cardinals
+	direction &= ~(UP|DOWN)
+	var/turf/my_turf = get_step(source, direction)
+	if(isnull(my_turf))
+		return
+	switch(multiz_dir)
+		// the old version of this code prioritized UP over DOWN when
+		// both were passed. i don't want to fuck with that, so here it is preserved
+		if(UP|DOWN)
+			return get_above_turf(my_turf)
+		if(UP)
+			return get_above_turf(my_turf)
+		if(DOWN)
+			return get_below_turf(my_turf)
+	return my_turf
+
 /datum/virtual_level/proc/get_client_mobs()
 	return get_alive_client_mobs() + get_dead_client_mobs()
 
@@ -639,7 +660,7 @@
 		var/ty = destination_y
 		var/turf/DT = locate(tx, ty, destination_z)
 		var/itercount = 0
-		while(DT.density || istype(DT.loc,/area/shuttle)) // Extend towards the center of the map, trying to look for a better place to arrive
+		while(DT.density) // Extend towards the center of the map, trying to look for a better place to arrive
 			if (itercount++ >= 100)
 				log_game("SPACE Z-TRANSIT ERROR: Could not find a safe place to land [arrived] within 100 iterations.")
 				break

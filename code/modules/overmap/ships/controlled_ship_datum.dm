@@ -1,7 +1,3 @@
-#define SHIPMODULE_BSDRIVE "bluespace_drive"
-#define SHIPMODULE_HELMCONSOLE "helm_console"
-#define SHIPMODULE_TRANSPONDER "transponder"
-
 /**
  * # Simulated overmap ship
  *
@@ -78,7 +74,14 @@
 	///Stations the ship has been blacklisted from landing at, associative station = reason
 	var/list/blacklisted = list()
 
+	///our faction datum, used for cargo stuff
 	var/datum/faction/faction_datum
+
+	///The cooldown for events hitting this ship. Generally used by events with a big consquence and fires slower than normal, like flares
+	COOLDOWN_DECLARE(event_cooldown)
+
+	/// checks if we spawned /obj/effect/spawner/random/test_ship_matspawn on a autolathe on the ship, if TRUE, we don't spawn another when another autolathe is spawned. Delete this var when ships have the new mats mapped
+	var/matbundle_spawned = FALSE
 
 /datum/overmap/ship/controlled/Rename(new_name, force = FALSE)
 	var/oldname = name
@@ -86,12 +89,16 @@
 		return FALSE
 	message_admins("[key_name_admin(usr)] renamed vessel '[oldname]' to '[new_name]'")
 	log_admin("[key_name(src)] has renamed vessel '[oldname]' to '[new_name]'")
+	SSblackbox.record_feedback("text", "ship_renames", 1, new_name)
 	shuttle_port?.name = new_name
 	ship_account.account_holder = new_name
 	if(shipkey)
 		shipkey.name = "ship key ([new_name])"
 	for(var/area/shuttle_area as anything in shuttle_port?.shuttle_areas)
 		shuttle_area.rename_area("[new_name] [initial(shuttle_area.name)]")
+	for(var/datum/weakref/stupid_fax in shuttle_port?.fax_list)
+		var/obj/machinery/fax/our_fax = stupid_fax.resolve()
+		our_fax.fax_name = "[get_area_name(our_fax)] Fax Machine"
 	if(!force)
 		COOLDOWN_START(src, rename_cooldown, 5 MINUTES)
 		if(shuttle_port?.virtual_z() == null)
@@ -110,6 +117,7 @@
 		unique_ship_access = source_template.unique_ship_access
 		job_slots = source_template.job_slots?.Copy()
 		stationary_icon_state = creation_template.token_icon_state
+		matbundle_spawned = creation_template.matbundle_spawned
 		alter_token_appearance()
 		if(create_shuttle)
 			shuttle_port = SSshuttle.load_template(creation_template, src)
@@ -123,6 +131,8 @@
 			refresh_engines()
 		ship_account = new(name, source_template.starting_funds)
 		faction_datum = source_template.faction_datum
+	RegisterSignal(src, COMSIG_OVERMAP_CALIBRATE_JUMP, PROC_REF(do_jump))
+	RegisterSignal(src, COMSIG_OVERMAP_CANCEL_JUMP, PROC_REF(stop_jump))
 
 #ifdef UNIT_TESTS
 	Rename("[source_template]", TRUE)
@@ -465,6 +475,45 @@
 /datum/overmap/ship/controlled/proc/get_faction()
 	return source_template.faction_name
 
+/datum/overmap/ship/controlled/alter_token_appearance()
+	if(!source_template)
+		return ..()
+	desc = {"
+	[span_boldnotice("IFF is reporting the following:")]
+	[span_bold("Affiliation: ")][get_faction()]
+	[span_bold("Class: ")][source_template.short_name]
+	[span_bold("Velocity: ")][round(get_speed(), 0.1)] Gm/s
+	"}
+	return ..()
+
+//when bluespace jumping gets moved to its own machine make this NOT look for non-vewscreen helms
+/datum/overmap/ship/controlled/proc/do_jump(obj/item/source, datum/overmap_star_system/new_system, new_x, new_y)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+	var/list/newpos
+	if(new_x && new_y)
+		newpos = list("x" = new_x, "y" = new_y)
+
+	if(our_helm)
+		our_helm.calibrate_jump(new_system, newpos)
+
+//ditto
+/datum/overmap/ship/controlled/proc/stop_jump(obj/item/source)
+	var/obj/machinery/computer/helm/our_helm
+	for(var/obj/machinery/computer/helm/checked_helm as anything in helms)
+		if(checked_helm.viewer)
+			continue
+		our_helm = checked_helm
+		break
+
+	if(our_helm)
+		our_helm.cancel_jump()
+
+
 /obj/item/key/ship
 	name = "ship key"
 	desc = "A key for locking and unlocking the helm of a ship, comes with a ball chain so it can be worn around the neck. Comes with a cute little shuttle-shaped keychain."
@@ -514,3 +563,4 @@
 
 	master_ship.attempt_key_usage(user, src, src) // hello I am a helm console I promise
 	return TRUE
+

@@ -1,10 +1,3 @@
-#define INTERACTION_OVERMAP_DOCK "Dock to Specific Location"
-#define INTERACTION_OVERMAP_QUICKDOCK "Quick Dock"
-#define INTERACTION_OVERMAP_HAIL "Hail"
-#define INTERACTION_OVERMAP_INTERDICTION "Reverse Dock (Interdiction)"
-#define INTERACTION_OVERMAP_SETSIGNALSPRITE "Set Signal Appearance"
-#define INTERACTION_OVERMAP_SELECTED "ERROR" //use this to end the interaction when it calls the parrent
-
 /**
  * # Overmap objects
  *
@@ -56,6 +49,9 @@
 	/// Token type to instantiate.
 	var/token_type = /obj/overmap
 
+	///How much % of a radio message we scramble of radios nearby/on top of us before sending. Will only scramble 1/5th this value if the radio is an adjacent tile, not 100%. Meant for hazards
+	var/interference_power
+
 	/// The current docking ticket of this object, if any
 	var/datum/docking_ticket/current_docking_ticket
 
@@ -77,6 +73,7 @@
 		current_overmap = SSovermap.default_system
 		stack_trace("[src.name] has no overmap on load!! This is very bad!! Set the object's overmap to the default overmap of the round!!")
 	current_overmap.overmap_objects |= src
+	SSovermap.overmap_objects |= src
 
 	contents = list()
 
@@ -91,9 +88,8 @@
 
 	Initialize(arglist(args))
 
-/datum/overmap/Destroy(force, ...)
+/datum/overmap/Destroy(force)
 	current_overmap.overmap_objects -= src
-	SSovermap.overmap_objects -= src
 	if(current_docking_ticket)
 		QDEL_NULL(current_docking_ticket)
 	if(docked_to)
@@ -110,8 +106,9 @@
  * This proc is called directly after New(). It's done after the basic creation and placement of the token and setup has been completed.
  *
  * * placement_x/y - the X and Y position of the overmap datum.
+ * * system_spawned_in - The star system datum we spawned in.
  */
-/datum/overmap/proc/Initialize(position, ...)
+/datum/overmap/proc/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	PROTECTED_PROC(TRUE)
 	return
 
@@ -164,13 +161,21 @@
 		CRASH("Overmap datum [src] tried to move() to an invalid location. (X: [new_x], Y: [new_y])")
 	if(new_x == x && new_y == y)
 		return
+	if(!current_overmap)
+		current_overmap = SSovermap.default_system
+		CRASH("Overmap datum [src] tried to move() with no valid overmap! What?? Moving to the default sector of SSovermap as a failsafe!")
 	new_x %= current_overmap.size
 	new_y %= current_overmap.size
 	if(new_x == 0) // I don't know how to do this better atm
 		new_x = current_overmap.size
 	if(new_y == 0)
 		new_y = current_overmap.size
-	current_overmap.overmap_container[x][y] -= src
+	try
+		current_overmap.overmap_container[x][y] -= src
+	catch(var/exception/error)
+		new_x = 1
+		new_y = 1
+		message_admins("Something went wrong when [src.name] attempted to move, moving to X1 Y1. Exception: [error.name] at [error.file]: line [error.line]. Check runtimes!") //TODO: Remove this
 	current_overmap.overmap_container[new_x][new_y] += src
 	var/old_x = x
 	var/old_y = y
@@ -179,13 +184,14 @@
 	// Updates the token with the new position.
 	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
 	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVED, old_x, old_y)
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SELF, src)
 	return TRUE
 
 /**
- * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
+ * Gets the coordinates in a specific direction a specific number of spaces from the caller (magnitude, default 1).
  *
- * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
- * * magnitude - The number of spaces to move the overmap datum in the direction.
+ * * dir - The direction getting we are getting the step from the overmap datum. Takes cardinal and diagonal directions.
+ * * magnitude - The number of spaces to get the step from in the direction of dir.
  */
 /datum/overmap/proc/overmap_step(dir, magnitude = 1)
 	SHOULD_NOT_OVERRIDE(TRUE)
@@ -200,6 +206,32 @@
 	else if(dir & WEST)
 		move_x -= magnitude
 	return overmap_move(move_x, move_y)
+
+/**
+ * Moves the overmap datum in a specific direction a specific number of spaces (magnitude, default 1).
+ *
+ * * dir - The direction to move the overmap datum in. Takes cardinal and diagonal directions.
+ * * magnitude - The number of spaces to move the overmap datum in the direction.
+ */
+/datum/overmap/proc/get_overmap_step(dir, magnitude = 1)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	var/move_x = x
+	var/move_y = y
+	if(dir & NORTH)
+		move_y += magnitude
+	else if(dir & SOUTH)
+		move_y -= magnitude
+	if(dir & EAST)
+		move_x += magnitude
+	else if(dir & WEST)
+		move_x -= magnitude
+	move_x %= current_overmap.size
+	move_y %= current_overmap.size
+	if(move_x == 0) // I don't know how to do this better atm
+		move_x = current_overmap.size
+	if(move_y == 0)
+		move_y = current_overmap.size
+	return list("x" = move_x, "y" = move_y)
 
 /**
  * Proc used to rename an overmap datum and everything related to it.
@@ -592,8 +624,13 @@
 	if(!new_system)
 		CRASH("move_overmaps() called with no valid overmap!")
 
-	current_overmap.overmap_container[x][y] -= src
+	try
+		current_overmap.overmap_container[x][y] -= src
+	catch(var/exception/error)
+		message_admins("Something went wrong when [src.name] attempted to move. Exception: [error.name] at [error.file]: line [error.line]. Check runtimes!") //TODO: Remove this
+
 	current_overmap = new_system // finally, we move
+	SEND_SIGNAL(src, COMSIG_OVERMAP_MOVE_SYSTEMS, src, new_x, new_y)
 
 	if(new_x || new_y)
 		overmap_move(new_x, new_y)
@@ -601,6 +638,7 @@
 		var/list/results = current_overmap.get_unused_overmap_square()
 		overmap_move(results["x"], results["y"])
 	alter_token_appearance()
+
 
 
 /*
@@ -619,3 +657,58 @@
 	if(current_overmap.override_object_colors)
 		token.color = current_overmap.primary_color
 	current_overmap.post_edit_token_state(src)
+
+/*
+ * For use when this datum is just completely fucked with no real solutions.
+ *
+ * Calling this when things are fine is a very bad idea. This is meant as a last resort.
+ *
+ */
+/datum/overmap/proc/fsck()
+	//set the current overmap to the default one. If theres no default overmap shit is truly fucked
+	if(!SSovermap.default_system)
+		message_admins(span_userdanger("There is no default overmap set. Consider restarting the round."))
+		CRASH("There is no default overmap set. Consider restarting the round.")
+	current_overmap = SSovermap.default_system
+
+	//reset all docking timers
+	dock_time = null
+	dock_timer_id = null
+	docking = null
+	docked_to = null
+	current_docking_ticket = null
+
+	//reset position to 1 without caring about the consequnces
+	x = 1
+	y = 1
+	current_overmap.overmap_container[1][1] += src
+
+	//if the token doesnt exist make another one
+	if(!token)
+		set_or_create_token()
+	token.abstract_move(OVERMAP_TOKEN_TURF(x, y, current_overmap))
+
+	return TRUE
+
+
+/datum/overmap/vv_get_dropdown()
+	. = ..()
+	VV_DROPDOWN_OPTION("", "---------")
+	VV_DROPDOWN_OPTION(VV_HK_VV_PARENT, "View Variables Of Parent Datum")
+	VV_DROPDOWN_OPTION(VV_HK_UNFSCK_OBJECT, "Unfsck this overmap object | PANIC BUTTON")
+
+/datum/overmap/vv_do_topic(list/href_list)
+	. = ..()
+	if(href_list[VV_HK_UNFSCK_OBJECT])
+		if(!check_rights(R_VAREDIT))
+			return
+		if(tgui_alert(usr, "This is a last resort and will cause problems if there is none, are you SURE?!", "Unfsck Overmap Object", list("Yes", "No"), 20 SECONDS) != "Yes")
+			return
+		try
+			if(fsck())
+				to_chat(usr, span_boldnotice("fsck() returned TRUE, you should be fine."))
+				return
+			to_chat(usr, span_bolddanger("fsck() returned nothing, something went very wrong."))
+		catch
+			to_chat(usr, span_bolddanger("fsck() Runtimed. This is very bad check runtimes now."))
+

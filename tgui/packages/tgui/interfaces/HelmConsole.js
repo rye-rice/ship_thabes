@@ -127,7 +127,11 @@ const SharedContent = (_props, context) => {
                     color={'red'}
                     disabled={
                       // I hate this so much
-                      isViewer || data.speed > 0 || data.docked || data.docking || !ship.candock
+                      isViewer ||
+                      data.speed > 0 ||
+                      data.docked ||
+                      data.docking ||
+                      !ship.candock
                     }
                     onClick={() =>
                       act('quick_dock', {
@@ -155,6 +159,7 @@ const ShipContent = (_props, context) => {
     burnPercentage,
     speed,
     heading,
+    sector,
     eta,
     x,
     y,
@@ -188,6 +193,9 @@ const ShipContent = (_props, context) => {
             <AnimatedNumber value={x} />
             /Y
             <AnimatedNumber value={y} />
+          </LabeledList.Item>
+          <LabeledList.Item label="Sector">
+            <AnimatedNumber value={sector} />
           </LabeledList.Item>
           <LabeledList.Item label="ETA">
             <AnimatedNumber value={eta} />

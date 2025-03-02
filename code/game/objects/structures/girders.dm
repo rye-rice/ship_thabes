@@ -214,6 +214,8 @@
 
 /obj/structure/girder/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if(I.use_tool(src, user, 3 SECONDS, volume=0))
@@ -302,20 +304,15 @@
 	if((mover.pass_flags & PASSGRILLE) || istype(mover, /obj/projectile))
 		return prob(girderpasschance)
 
-/obj/structure/girder/CanAStarPass(ID, dir, caller)
+/obj/structure/girder/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
 	. = !density
-	if(ismovable(caller))
-		var/atom/movable/mover = caller
-		. = . || (mover.pass_flags & PASSGRILLE)
+	if(istype(caller))
+		. = . || (caller.pass_flags & PASSGRILLE)
 
 /obj/structure/girder/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
 		new remains(loc)
-	qdel(src)
-
-/obj/structure/girder/narsie_act()
-	new /obj/structure/girder/cult(loc)
 	qdel(src)
 
 /obj/structure/girder/displaced
@@ -337,56 +334,6 @@
 	if(!(flags_1 & NODECONSTRUCT_1))
 		var/remains = pick(/obj/item/stack/rods, /obj/item/stack/sheet/metal)
 		new remains(loc, 2)
-	qdel(src)
-
-
-
-//////////////////////////////////////////// cult girder //////////////////////////////////////////////
-
-/obj/structure/girder/cult
-	name = "runed girder"
-	desc = "Framework made of a strange and shockingly cold metal. It doesn't seem to have any bolts."
-	icon = 'icons/obj/cult.dmi'
-	icon_state= "cultgirder"
-	can_displace = FALSE
-
-/obj/structure/girder/cult/attackby(obj/item/W, mob/user, params)
-	add_fingerprint(user)
-	if(W.tool_behaviour == TOOL_WELDER)
-		if(!W.tool_start_check(user, amount=0))
-			return
-
-		to_chat(user, "<span class='notice'>You start slicing apart the girder...</span>")
-		if(W.use_tool(src, user, 40, volume=50))
-			to_chat(user, "<span class='notice'>You slice apart the girder.</span>")
-			var/obj/item/stack/sheet/mineral/hidden/hellstone/R = new(drop_location(), 1)
-			transfer_fingerprints_to(R)
-			qdel(src)
-
-	else if(istype(W, /obj/item/stack/sheet/mineral/hidden/hellstone))
-		var/obj/item/stack/sheet/mineral/hidden/hellstone/R = W
-		if(R.get_amount() < 1)
-			to_chat(user, "<span class='warning'>You need at least one sheet of runed metal to construct a runed wall!</span>")
-			return 0
-		user.visible_message("<span class='notice'>[user] begins laying runed metal on [src]...</span>", "<span class='notice'>You begin constructing a runed wall...</span>")
-		if(do_after(user, 50, target = src))
-			if(R.get_amount() < 1)
-				return
-			user.visible_message("<span class='notice'>[user] plates [src] with runed metal.</span>", "<span class='notice'>You construct a runed wall.</span>")
-			R.use(1)
-			var/turf/T = get_turf(src)
-			T.PlaceOnTop(/turf/closed/wall/mineral/cult)
-			qdel(src)
-
-	else
-		return ..()
-
-/obj/structure/girder/cult/narsie_act()
-	return
-
-/obj/structure/girder/cult/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/mineral/hidden/hellstone(drop_location(), 1)
 	qdel(src)
 
 /obj/structure/girder/rcd_vals(mob/user, obj/item/construction/rcd/the_rcd)

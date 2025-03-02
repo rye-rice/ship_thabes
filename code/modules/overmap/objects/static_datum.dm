@@ -14,7 +14,7 @@
 
 	///The active turf reservation, if there is one
 	var/datum/map_zone/mapzone
-	///The border size to use. It's reccomended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
+	///The border size to use. It's recommended to set this to 0 if you  use up the entirety of the allocated space (eg. 255x255 map where theres no bordering map levels)
 	var/border_size = QUADRANT_SIZE_BORDER
 	///The preset map to load
 	var/datum/map_template/map_to_load
@@ -144,7 +144,6 @@
 	preserve_level = TRUE
 	gravity = TRUE
 
-
 /datum/overmap/static_object/testmap
 	name = "test"
 	desc = "TESTMAP"
@@ -164,7 +163,7 @@
 	preserve_level = TRUE
 	default_baseturf = /turf/open/water/stormy_planet_lit
 	map_to_load = /datum/map_template/frontiersmen_base
-	weather_controller_type = /datum/weather_controller/storms_n_shit
+	weather_controller_type = /datum/weather_controller/waterplanet/severe
 	gravity = TRUE
 
 /datum/map_template/frontiersmen_base

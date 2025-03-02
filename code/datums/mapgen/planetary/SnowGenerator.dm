@@ -1,5 +1,5 @@
 /datum/map_generator/planet_generator/snow
-	mountain_height = 0.40
+	mountain_height = 0.45
 	perlin_zoom = 55
 
 	initial_closed_chance = 45
@@ -112,8 +112,8 @@
 	)
 	feature_spawn_chance = 0.1
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/anomaly/ice = 12,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1,
+		/obj/effect/spawner/random/anomaly/ice = 12,
+		/obj/effect/spawner/random/anomaly/big = 1,
 		/obj/structure/spawner/burrow/ice_planet = 80,
 		/obj/structure/vein/ice = 25,
 		/obj/effect/spawner/minefield = 2,
@@ -196,8 +196,7 @@
 
 /datum/biome/iceberg
 	open_turf_types = list(
-		/turf/open/floor/plating/asteroid/iceberg/lit = 6,
-		/turf/open/floor/plating/ice/iceberg/lit = 1,
+		/turf/open/floor/plating/asteroid/iceberg/lit = 7,
 		/turf/closed/mineral/ice = 10
 	)
 	mob_spawn_chance = 2
@@ -212,8 +211,8 @@
 	)
 	feature_spawn_chance = 0.3
 	feature_spawn_list = list(
-		/obj/effect/spawner/lootdrop/anomaly/ice = 100,
-		/obj/effect/spawner/lootdrop/anomaly/big = 1,
+		/obj/effect/spawner/random/anomaly/ice = 100,
+		/obj/effect/spawner/random/anomaly/big = 1,
 		/obj/structure/spawner/burrow/ice_planet/hard = 600,
 		/obj/structure/vein/ice = 300,
 		/obj/structure/vein/ice/classtwo = 500,
@@ -268,7 +267,7 @@
 	feature_spawn_list = list(
 		/obj/structure/spawner/burrow/ice_planet = 60,
 		/obj/structure/spawner/burrow/ice_planet = 40,
-		/obj/effect/spawner/lootdrop/anomaly/ice/cave = 10,
+		/obj/effect/spawner/random/anomaly/ice/cave = 10,
 		/obj/structure/vein/ice = 30,
 		/obj/structure/vein/ice/classtwo = 50,
 		/obj/structure/vein/ice/classthree = 6,

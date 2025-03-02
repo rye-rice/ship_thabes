@@ -60,7 +60,7 @@
 	if(!possible_weathers)
 		return
 	next_weather = world.time + rand(wait_interval_low, wait_interval_high)
-	next_weather_type = pickweight(possible_weathers)
+	next_weather_type = pick_weight(possible_weathers)
 
 /datum/weather_controller/proc/run_weather(datum/weather/weather_datum_type, telegraph = TRUE)
 	if(!ispath(weather_datum_type, /datum/weather))
@@ -87,6 +87,11 @@
 			/datum/weather/hailstorm = 20
 			)
 
+/datum/weather_controller/chill
+		possible_weathers = list(
+			/datum/weather/snowfall = 20
+			)
+
 /datum/weather_controller/snow_planet/severe
 		possible_weathers = list(
 			/datum/weather/snow_storm = 50,
@@ -108,7 +113,8 @@
 
 /datum/weather_controller/chlorine
 	possible_weathers = list(
-		/datum/weather/acid_rain = 30,
+		/datum/weather/rain/toxic = 20,
+		/datum/weather/rain/toxic/heavy = 10,
 		/datum/weather/nuclear_fallout = 40,
 		/datum/weather/nuclear_fallout/normal = 10,
 	)
@@ -130,13 +136,24 @@
 		/datum/weather/snowfall = 5,
 	)
 
+/datum/weather_controller/rockplanet/severe
+	possible_weathers = list(
+		/datum/weather/sandstorm/rockplanet = 100,
+	)
+
 /datum/weather_controller/waterplanet
 	possible_weathers = list(
 		/datum/weather/rain/heavy/storm = 50,
 		/datum/weather/rain/heavy/storm/blocking = 30,
 	)
 
-/datum/weather_controller/storms_n_shit
+/datum/weather_controller/fallout
 	possible_weathers = list(
-		/datum/weather/rain/heavy/storm_intense = 50,
+		/datum/weather/nuclear_fallout = 90,
+		/datum/weather/nuclear_fallout/normal = 10,
+	)
+
+/datum/weather_controller/waterplanet/severe
+	possible_weathers = list(
+		/datum/weather/rain/heavy/storm_intense = 100,
 	)

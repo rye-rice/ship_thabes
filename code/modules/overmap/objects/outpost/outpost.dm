@@ -38,18 +38,23 @@
 	/// The mapzone used by the outpost level and hangars. Using a single mapzone means networked radio messages.
 	var/datum/map_zone/mapzone
 	var/list/datum/hangar_shaft/shaft_datums = list()
+	///The weather the virtual z will have. If null, the outpost will have no weather.
+	var/datum/weather_controller/weather_controller_type
+
 
 	/// The maximum number of missions that may be offered by the outpost at one time.
 	/// Missions which have been accepted do not count against this limit.
-	var/max_missions = 15
+	var/max_missions = 10
 	/// List of missions that can be accepted at this outpost. Missions which have been accepted are removed from this list.
 	var/list/datum/mission/missions
 	/// List of all of the things this outpost offers
 	var/list/supply_packs = list()
 	/// our 'Order number'
 	var/ordernum = 1
+	/// Our faction of the outpost
+	var/datum/faction/faction
 
-/datum/overmap/outpost/Initialize(position, ...)
+/datum/overmap/outpost/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	. = ..()
 	// init our template vars with the correct singletons
 	main_template = SSmapping.outpost_templates[main_template]
@@ -143,19 +148,22 @@
 	return "[person_name] [pick(GLOB.station_suffixes)]"
 
 /datum/overmap/outpost/proc/fill_missions()
+	max_missions = 10 + (SSovermap.controlled_ships.len * 5)
 	while(LAZYLEN(missions) < max_missions)
 		var/mission_type = get_weighted_mission_type()
 		var/datum/mission/M = new mission_type(src)
 		LAZYADD(missions, M)
 
 /datum/overmap/outpost/proc/populate_cargo()
-	ordernum = rand(1, 9000)
+	ordernum = rand(1, 99000)
 
-	for(var/pack in subtypesof(/datum/supply_pack))
-		var/datum/supply_pack/P = new pack()
-		if(!P.contains)
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(/datum/supply_pack))
+		current_pack = new current_pack()
+		if(current_pack.faction)
+			current_pack.faction = SSfactions.faction_path_to_datum(current_pack.faction)
+		if(!current_pack.contains)
 			continue
-		supply_packs[P.type] = P
+		supply_packs += current_pack
 
 /datum/overmap/outpost/proc/load_main_level()
 	if(!main_template)
@@ -176,6 +184,9 @@
 	vlevel.reserve_margin(QUADRANT_SIZE_BORDER)
 
 	main_template.load(vlevel.get_unreserved_bottom_left_turf())
+
+	if(weather_controller_type)
+		new weather_controller_type(mapzone)
 
 	// assoc list of lists of landmarks in a shaft, starting with the main landmark
 	var/list/list/shaft_lists = list()

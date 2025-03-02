@@ -229,6 +229,8 @@
 
 /obj/structure/table/deconstruct_act(mob/living/user, obj/item/I)
 	. = ..()
+	if(.)
+		return FALSE
 	if(!I.tool_start_check(user, amount=0))
 		return FALSE
 	if (I.use_tool(src, user, 1 SECONDS, volume=0))
@@ -681,15 +683,20 @@
 		step(O, get_dir(O, src))
 
 /obj/structure/rack/attackby(obj/item/W, mob/user, params)
+	var/list/modifiers = params2list(params)
 	if (W.tool_behaviour == TOOL_WRENCH && !(flags_1&NODECONSTRUCT_1) && user.a_intent != INTENT_HELP)
 		W.play_tool_sound(src)
 		deconstruct(TRUE)
 		return
 	if(user.a_intent == INTENT_HARM)
 		return ..()
-	if(user.transferItemToLoc(W, drop_location()))
-		W.pixel_x = pick(9,0,-9)
-		W.pixel_y = pick(10,1)
+	if(user.transferItemToLoc(W, drop_location(), silent = FALSE))
+		//Center the icon where the user clicked.
+		if(!LAZYACCESS(modifiers, ICON_X) || !LAZYACCESS(modifiers, ICON_Y))
+			return
+		//Clamp it so that the icon never moves more than 16 pixels in either direction (thus leaving the table turf)
+		W.pixel_x = clamp(text2num(LAZYACCESS(modifiers, ICON_X)) - 16, -(world.icon_size/2), world.icon_size/2)
+		W.pixel_y = clamp(text2num(LAZYACCESS(modifiers, ICON_Y)) - 16, -(world.icon_size/2), world.icon_size/2)
 		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
@@ -701,9 +708,13 @@
 		return
 	if(user.body_position == LYING_DOWN || user.usable_legs < 2)
 		return
+
+	if(user.a_intent != INTENT_HARM)
+		to_chat(user, span_danger("You aren't HARMFUL enough to beat the rack."))
+		return
 	user.changeNext_move(CLICK_CD_MELEE)
 	user.do_attack_animation(src, ATTACK_EFFECT_KICK)
-	user.visible_message("<span class='danger'>[user] kicks [src].</span>", null, null, COMBAT_MESSAGE_RANGE)
+	user.visible_message(span_danger("[user] kicks [src]."), null, null, COMBAT_MESSAGE_RANGE)
 	take_damage(rand(4,8), BRUTE, "melee", 1)
 
 /obj/structure/rack/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
@@ -805,3 +816,13 @@
 				deconstruction_ready = 1
 	else
 		. = ..()
+
+/obj/structure/table/emptycomputer
+	name = "computer table"
+	desc = "An empty section of a control panel, perfect for putting items on."
+	icon = 'icons/obj/structures/emptycomputer.dmi'
+	icon_state = "emptycomputer"
+	smoothing_flags = null
+	smoothing_groups = null
+	canSmoothWith = null
+	can_flip = FALSE
