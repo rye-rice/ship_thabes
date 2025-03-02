@@ -197,8 +197,8 @@
 	weather_overlay = "storm_very"
 	thunder_chance = 20
 	weather_color = "#a3daf7"
-	weather_duration_lower = 420690
-	weather_duration_upper = 420690
+	weather_duration_lower = 420690 SECONDS
+	weather_duration_upper = 420690 SECONDS
 
 	sound_active_outside = /datum/looping_sound/weather/rain/storm/indoors
 	sound_active_inside = /datum/looping_sound/weather/rain/storm

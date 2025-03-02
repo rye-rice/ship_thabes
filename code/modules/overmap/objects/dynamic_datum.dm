@@ -420,7 +420,7 @@
 	name = "\improper Water Planetoid"
 	sound_environment = SOUND_ENVIRONMENT_FOREST
 	ambientsounds = MINING
-	light_color = "#09121a"
+	light_color = "#060c12"
 	light_range = 2
 	light_power = 1
 
