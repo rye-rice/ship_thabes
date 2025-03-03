@@ -49,7 +49,7 @@
 /obj/structure/shipping_container/lime
 	icon_state = "lime"
 
-/obj/effect/spawner/lootdrop/shipping_container
+/obj/effect/spawner/random/shipping_container
 	name = "shipping container spawner"
 	icon = 'modular_thabes/modules/shit_for_event/icons/containers.dmi'
 	icon_state = "random_container"
@@ -350,7 +350,7 @@
 	light_power = 2 //Cit lighting
 	resistance_flags = FIRE_PROOF
 	max_integrity = 500
-	armor = list("melee" = 80, "bullet" = 60, "laser" = 60, "energy" = 30, "bomb" = 20, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 10)
+	armor = list("melee" = 90, "bullet" = 80, "laser" = 70, "energy" = 50, "bomb" = 40, "bio" = 100, "rad" = 50, "fire" = 100, "acid" = 10)
 
 	var/on = TRUE
 	var/datum/looping_sound/vehicle/soundloop
