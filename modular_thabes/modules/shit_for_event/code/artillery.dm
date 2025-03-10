@@ -34,12 +34,19 @@
 /obj/machinery/artillery
 	name = "\improper howitzer"
 	desc = "A manual, crew-operated and towable howitzer, will rain down shells on any of your foes."
-	icon = 'modular_thabes/modules/shit_for_event/icons/mortar.dmi'
+	icon = 'modular_thabes/modules/shit_for_event/icons/howitzer.dmi'
+	icon_state = "howitzer_deployed"
 	var/fire_sound = 'sound/weapons/gun/fire/howitzer_fire.ogg'
 	var/reload_sound = 'sound/weapons/gun/interact/tat36_reload.ogg'
 	var/fall_sound = 'sound/weapons/gun/misc/howitzer_whistle.ogg'
 	obj_integrity = 400
 	max_integrity = 400
+
+	can_be_unanchored = TRUE
+	pixel_x = -16
+	anchored = FALSE // You can move this.
+	offset_per_turfs = 25
+
 	/// Number of turfs to offset from target by 1
 	var/offset_per_turfs = 15
 	///Minimum range to fire
@@ -57,6 +64,13 @@
 	var/target_x
 	var/target_y
 
+	/// What type of shells can we use?
+	var/list/allowed_shells = list(
+		/obj/item/mortal_shell/howitzer,
+		/obj/item/mortal_shell/howitzer/he,
+		/obj/item/mortal_shell/howitzer/incendiary,
+	)
+
 /obj/machinery/artillery/attack_hand(mob/living/user)
 	. = ..()
 	if(.)
@@ -69,11 +83,11 @@
 	inputed = input(usr, "Set target X", "Coords", target_x) as num
 	if(!inputed)
 		return
-	inputed = target_x
+	target_x = inputed
 	inputed = input(usr, "Set target Y", "Coords", target_y) as num
 	if(!inputed)
 		return
-	inputed = target_y
+	target_y = inputed
 
 	var/datum/virtual_level/our_vlevel = get_virtual_level()
 	if(!our_vlevel)
@@ -82,11 +96,13 @@
 	var/real_x = our_vlevel.low_x + target_x - 1
 	var/real_y = our_vlevel.low_y + target_y - 1
 
-	var/turf/target_turf = locate(real_x, real_y)
+	var/turf/target_turf = locate(real_x, real_y, z)
 	var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
 
 	if(!target_turf)
 		user.balloon_alert(user, "Invalid location.")
+		old_x
+
 		return
 
 	if(get_dist(loc, target_turf) < minimum_range)
@@ -133,7 +149,7 @@
 		var/real_x = our_vlevel.low_x + target_x - 1
 		var/real_y = our_vlevel.low_y + target_y - 1
 
-		var/turf/target_turf = locate(real_x, real_y)
+		var/turf/target_turf = locate(real_x, real_y, z)
 		var/list/our_coords = our_vlevel.get_relative_coords(target_turf)
 
 		var/max_offset = round(abs((get_dist_euclide(src,target_turf)))/offset_per_turfs)
@@ -164,6 +180,7 @@
 
 	shell.preparePixelProjectile(get_step(src, pick(GLOB.alldirs)), get_turf(src))
 	shell.firer = src
+	shell.range = shell_range
 	shell.fire(Get_Angle(src,target))
 
 	perform_firing_visuals()
@@ -183,6 +200,8 @@
 /obj/machinery/artillery/mortar
 	name = "\improper mortar"
 	desc = "A manual, crew-operated mortar system intended to rain down shells on anything it's aimed at. Less accurate than a howitzer, but still useful neverless. Needs to be set down first to fire. Ctrl+Click on a tile to deploy, drag the mortar's sprites to mob's sprite to undeploy."
+	icon = 'modular_thabes/modules/shit_for_event/icons/mortar.dmi'
+	icon_state = "mortar_deployed"
 	obj_integrity = 200
 	max_integrity = 200
 	fire_sound = 'sound/weapons/gun/fire/mortar_fire.ogg'
@@ -196,6 +215,12 @@
 	cool_off_time = 1 SECONDS
 	///Time to load a shell
 	reload_time = 0.5 SECONDS
+
+	allowed_shells = list(
+		/obj/item/mortal_shell/he,
+		/obj/item/mortal_shell/incendiary,
+		/obj/item/mortal_shell/smoke,
+	)
 
 
 // Shells themselves //
@@ -231,30 +256,30 @@
 /obj/item/mortal_shell/howitzer
 	name = "\improper 150mm artillery shell"
 	desc = "An unlabeled 150mm shell, probably a casing."
-	icon = 'modular_thabes/modules/shit_for_event/icons/mortar.dmi'
-	icon_state = "mortar_ammo"
+	icon = 'modular_thabes/modules/shit_for_event/icons/howitzer.dmi'
+	icon_state = "howitzer"
 	w_class = WEIGHT_CLASS_BULKY
 
 /obj/item/mortal_shell/howitzer/incendiary
 	name = "\improper 150mm incendiary artillery shell"
 	desc = "An 150mm artillery shell, loaded with explosives to punch through light structures then burn out whatever is on the other side. Will ruin their day and skin."
-	icon_state = "mortar_ammo_flr"
+	icon_state = "howitzer_incend"
 	ammo_type = /obj/projectile/bullet/mortar/howi/incend
-
-
 
 /obj/projectile/bullet/mortar
 	name = "80mm shell"
+	icon = 'modular_thabes/modules/shit_for_event/icons/projectile.dmi'
 	icon_state = "mortar"
 
 	movement_type = PHASING
 	pass_flags = PASSTABLE | PASSGRILLE | PASSGRILLE | PASSMOB | PASSCLOSEDTURF | LETPASSTHROW | PASSPLATFORM
 
-	speed = 0.75
+	speed = 2
 	damage = 0
 	range = 1000
 	light_color = COLOR_VERY_SOFT_YELLOW
 	light_range = 1.5
+	near_miss_sound = FALSE
 
 /obj/projectile/bullet/mortar/proc/payload()
 	explosion(get_turf(src), 1, 2, 5, 0, flame_range = 3)
@@ -265,7 +290,7 @@
 
 /obj/projectile/bullet/mortar/incend/payload()
 	explosion(get_turf(src), 0, 2, 3, 0, flame_range = 7)
-	flame_radius(4, get_turf(src))
+	flame_radius(get_turf(src), 4)
 	playsound(get_turf(src), pick('sound/weapons/gun/flamethrower/flamethrower1.ogg','sound/weapons/gun/flamethrower/flamethrower2.ogg','sound/weapons/gun/flamethrower/flamethrower3.ogg'), 35, 1, 4)
 
 /obj/projectile/bullet/mortar/smoke
@@ -282,6 +307,7 @@
 /obj/projectile/bullet/mortar/howi
 	name = "150mm shell"
 	icon_state = "howi"
+
 
 /obj/projectile/bullet/mortar/howi/payload()
 	explosion(get_turf(src), 1, 6, 7, 0, flame_range = 7)

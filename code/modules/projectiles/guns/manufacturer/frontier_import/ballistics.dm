@@ -312,7 +312,7 @@
 	caliber = "12ga"
 	max_ammo = 40
 	w_class = WEIGHT_CLASS_NORMAL
-
+//sse
 
 /obj/item/gun/ballistic/rocketlauncher/oneshot
 	name = "\improper Hammer"
