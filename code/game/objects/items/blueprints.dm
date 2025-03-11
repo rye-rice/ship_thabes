@@ -240,7 +240,7 @@
 				continue
 			if(!our_phone.auto_name)
 				continue
-			our_phone.phone_id = replacetext(M.phone_id,oldtitle,title)
+			our_phone.phone_id = replacetext(our_phone.phone_id,oldtitle,title)
 //THABES ADDITION END: PHONE SHIT
 		machine.name = replacetext(machine.name,oldtitle,title)
 
