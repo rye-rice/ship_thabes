@@ -119,7 +119,6 @@
 	new /obj/item/storage/belt/fannypack/bustin(src)
 	new /obj/item/clothing/gloves/color/black(src)
 	new /obj/item/clothing/shoes/jackboots(src)
-	new /obj/item/clothing/under/color/khaki/buster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
 	new /obj/item/grenade/chem_grenade/ghostbuster(src)
@@ -144,6 +143,39 @@
 			var/atom/A = V
 			augment_list[initial(A.name)] = A
 	return augment_list
+
+/obj/item/choice_beacon/mothplushies
+	name = "moth box"
+	desc = "Contains your favourite moth plushie!"
+
+/obj/item/choice_beacon/mothplushies/generate_display_names()
+	var/static/list/moth_list
+	if(!moth_list)
+		moth_list = list()
+		var/list/templist = list(
+		/obj/item/toy/plush/moth,
+		/obj/item/toy/plush/moth/atlas,
+		/obj/item/toy/plush/moth/clockwork,
+		/obj/item/toy/plush/moth/deadhead,
+		/obj/item/toy/plush/moth/error,
+		/obj/item/toy/plush/moth/firewatch,
+		/obj/item/toy/plush/moth/gothic,
+		/obj/item/toy/plush/moth/lovers,
+		/obj/item/toy/plush/moth/luna,
+		/obj/item/toy/plush/moth/monarch,
+		/obj/item/toy/plush/moth/moonfly,
+		/obj/item/toy/plush/moth/poison,
+		/obj/item/toy/plush/moth/punished,
+		/obj/item/toy/plush/moth/ragged,
+		/obj/item/toy/plush/moth/rainbow,
+		/obj/item/toy/plush/moth/redish,
+		/obj/item/toy/plush/moth/royal,
+		/obj/item/toy/plush/moth/snow,
+		/obj/item/toy/plush/moth/whitefly)
+		for(var/V in templist)
+			var/atom/A = V
+			moth_list[initial(A.name)] = A
+	return moth_list
 
 /obj/item/skub
 	desc = "It's skub."

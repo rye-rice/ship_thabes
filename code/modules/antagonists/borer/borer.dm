@@ -79,7 +79,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 	mob_size = MOB_SIZE_SMALL
 	faction = list("creature")
 	ventcrawler = VENTCRAWLER_ALWAYS
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	atmos_requirements = IMMUNE_ATMOS_REQS
 	minbodytemp = 0
 	maxbodytemp = 1500
 
@@ -637,7 +637,7 @@ GLOBAL_VAR_INIT(total_borer_hosts_needed, 3)
 		to_chat(src, "<span class='notice'>You send a jolt of energy to your host, reviving them!</span>")
 		victim.grab_ghost(force = TRUE) //brings the host back, no eggscape
 		C.emote("gasp")
-		C.Jitter(100)
+		C.set_jitter(100)
 
 /mob/living/simple_animal/borer/verb/bond_brain()
 	set category = "Borer"

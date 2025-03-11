@@ -33,13 +33,12 @@
 	var/mob/living/simple_animal/mouse/movement_target
 	///Limits how often cats can spam chasing mice.
 	var/emote_cooldown = 0
-	gold_core_spawnable = FRIENDLY_SPAWN
 	collar_type = "cat"
 	held_state = "cat2"
 
 	footstep_type = FOOTSTEP_MOB_CLAW
 
-	var/grace = RAD_GRACE_PERIOD
+	var/grace = RAD_GEIGER_GRACE_PERIOD
 	var/radiation_count = 0
 	var/current_tick_amount = 0
 	var/last_tick_amount = 0
@@ -91,7 +90,6 @@
 	icon_living = "cat"
 	icon_dead = "cat_dead"
 	gender = FEMALE
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 	var/list/family = list()//var restored from savefile, has count of each child type
 	var/list/children = list()//Actual mob weak references of children
@@ -167,7 +165,6 @@
 /mob/living/simple_animal/pet/cat/Proc
 	name = "Proc"
 	gender = MALE
-	gold_core_spawnable = NO_SPAWN
 	unique_pet = TRUE
 
 
@@ -215,7 +212,7 @@
 	radiation_count += current_tick_amount/RAD_MEASURE_SMOOTHING
 
 	if(current_tick_amount)
-		grace = RAD_GRACE_PERIOD
+		grace = RAD_GEIGER_GRACE_PERIOD
 		last_tick_amount = current_tick_amount
 	else
 		grace--

@@ -304,7 +304,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	GLOB.blackbox = src
 	ReadMemory()
 
-/obj/machinery/smartfridge/black_box/process()
+/obj/machinery/smartfridge/black_box/process(seconds_per_tick)
 	..()
 	if(!memory_saved && SSticker.current_state == GAME_STATE_FINISHED)
 		WriteMemory()
@@ -659,7 +659,6 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	pass_flags = PASSTABLE | PASSGRILLE | PASSMOB
 	ventcrawler = VENTCRAWLER_ALWAYS
 	mob_size = MOB_SIZE_TINY
-	gold_core_spawnable = HOSTILE_SPAWN
 	verb_say = "warps"
 	verb_ask = "floats inquisitively"
 	verb_exclaim = "zaps"
@@ -747,7 +746,7 @@ GLOBAL_DATUM(blackbox, /obj/machinery/smartfridge/black_box)
 	resistance_flags = FIRE_PROOF | ACID_PROOF | INDESTRUCTIBLE
 	var/mob/living/simple_animal/holder_animal
 
-/obj/structure/closet/stasis/process()
+/obj/structure/closet/stasis/process(seconds_per_tick)
 	if(holder_animal)
 		if(holder_animal.stat == DEAD)
 			dump_contents()

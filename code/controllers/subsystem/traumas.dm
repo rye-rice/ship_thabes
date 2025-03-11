@@ -52,7 +52,6 @@ SUBSYSTEM_DEF(traumas)
 		/mob/living/simple_animal/pet/penguin)),
 		"birds" = typecacheof(list(/mob/living/simple_animal/parrot, /mob/living/simple_animal/chick, /mob/living/simple_animal/chicken,
 		/mob/living/simple_animal/pet/penguin)),
-		"anime" = typecacheof(list(/mob/living/simple_animal/hostile/guardian))
 	)
 
 	phobia_objs = list(
@@ -69,7 +68,7 @@ SUBSYSTEM_DEF(traumas)
 		"clowns"    = typecacheof(list(
 			/obj/item/clothing/under/rank/civilian/clown,
 			/obj/item/clothing/mask/gas/clown_hat, /obj/item/instrument/bikehorn,
-			/obj/item/pda/clown, /obj/item/grown/bananapeel, /obj/item/reagent_containers/food/snacks/cheesiehonkers,
+			/obj/item/grown/bananapeel, /obj/item/reagent_containers/food/snacks/cheesiehonkers,
 			/obj/item/trash/cheesie)),
 
 		"greytide"  = typecacheof(list(
@@ -124,7 +123,6 @@ SUBSYSTEM_DEF(traumas)
 
 		"the supernatural"  = typecacheof(list(
 			/obj/item/clothing/suit/wizrobe, /obj/item/clothing/head/wizard, /obj/item/spellbook, /obj/item/staff,
-			/obj/item/clothing/suit/space/hardsuit/shielded/wizard, /obj/item/clothing/suit/space/hardsuit/wizard,
 			/obj/item/clothing/under/rank/civilian/chaplain)),
 
 		"aliens"   = typecacheof(list(

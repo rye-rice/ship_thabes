@@ -198,6 +198,17 @@
 		return
 	..()
 
+/datum/action/item_action/toggle_radio
+	name = "Toggle Radio"
+
+/datum/action/item_action/toggle_radio/Trigger()
+	if(istype(target, /obj/item/bodycamera/broadcast_camera))
+		var/obj/item/bodycamera/broadcast_camera/cam = target
+		var/obj/item/radio/radio = cam.radio
+		radio.ui_interact(owner, state = GLOB.deep_inventory_state)
+		return
+	..()
+
 /datum/action/item_action/toggle_hood
 	name = "Toggle Hood"
 
@@ -366,16 +377,13 @@
 
 /datum/action/item_action/nano_picket_sign
 	name = "Retext Nano Picket Sign"
-	var/obj/item/picket_sign/S
-
-/datum/action/item_action/nano_picket_sign/New(Target)
-	..()
-	if(istype(Target, /obj/item/picket_sign))
-		S = Target
 
 /datum/action/item_action/nano_picket_sign/Trigger()
-	if(istype(S))
-		S.retext(owner)
+	if(!istype(target, /obj/item/picket_sign))
+		return
+
+	var/obj/item/picket_sign/sign = target
+	sign.retext(owner)
 
 /datum/action/item_action/adjust
 
@@ -607,7 +615,7 @@
 	UpdateButtonIcon()
 	START_PROCESSING(SSfastprocess, src)
 
-/datum/action/cooldown/process()
+/datum/action/cooldown/process(seconds_per_tick)
 	if(!owner)
 		button.maptext = ""
 		STOP_PROCESSING(SSfastprocess, src)

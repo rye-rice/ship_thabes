@@ -5,9 +5,9 @@
 
 //NORTH default dir
 /obj/docking_port
-	invisibility = INVISIBILITY_ABSTRACT
-	icon = 'icons/obj/device.dmi'
-	icon_state = "pinonfar"
+	invisibility = INVISIBILITY_OBSERVER
+	icon = 'icons/effects/mapping/docking_ports.dmi'
+	icon_state = "static"
 
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | LANDING_PROOF | HYPERSPACE_PROOF
 	anchored = TRUE
@@ -28,6 +28,9 @@
 
 	//The shuttle docked here/dock we're parked at.
 	var/obj/docking_port/docked
+
+	// the connected cargo spawner, if applicable
+	var/obj/hangar_crate_spawner/crate_spawner = null
 
 /obj/docking_port/Destroy(force)
 	if(docked)
@@ -272,7 +275,7 @@
 
 /obj/docking_port/mobile
 	name = "shuttle"
-	icon_state = "pinonclose"
+	icon_state = "mobile"
 
 	var/area_type = SHUTTLE_DEFAULT_SHUTTLE_AREA_TYPE
 
@@ -323,6 +326,9 @@
 
 	///A list of all turrets currently linked to the shuttle.
 	var/list/turret_list = list()
+
+	///A list of all Fax Machines Linked To The Shuttle. God we have a list of all linked
+	var/list/fax_list = list()
 
 	///if this shuttle can move docking ports other than the one it is docked at
 	var/can_move_docking_ports = TRUE
