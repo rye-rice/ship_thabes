@@ -214,30 +214,35 @@
 	sortTim(GLOB.sortedAreas, /proc/cmp_name_asc)
 	return TRUE
 
-/proc/set_area_machinery_title(area/A, title, oldtitle)
+/proc/set_area_machinery_title(area/target, title, oldtitle)
 	if(!oldtitle) // or replacetext goes to infinite loop
 		return
-	for(var/obj/machinery/airalarm/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/power/apc/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_scrubber/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/atmospherics/components/unary/vent_pump/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/door/M in A)
-		M.name = replacetext(M.name,oldtitle,title)
-	for(var/obj/machinery/fax/M in A)
-		M.fax_name = replacetext(M.fax_name,oldtitle,title)
 
-//THABES ADDITION BEGIN: PHONE SHIT
-	for(var/obj/structure/telephone_transmitter/M in A)
-		if(!M.auto_name)
+	var/static/typecache = typecacheof(list(
+		/obj/machinery/airalarm,
+		/obj/machinery/power/apc,
+		/obj/machinery/atmospherics/components/unary/vent_scrubber,
+		/obj/machinery/atmospherics/components/unary/vent_pump,
+		/obj/machinery/door,
+		/obj/machinery/fax,
+		/obj/structure/telephone_transmitter,
+	))
+
+	for(var/obj/machinery/machine as anything in GLOB.machines)
+		if(get_area(machine) != target)
 			continue
-		M.phone_id = replacetext(M.phone_id,oldtitle,title)
+		if(!is_type_in_typecache(machine, typecache))
+			continue
+//THABES ADDITION BEGIN: PHONE SHIT
+		if(istype(machine, /obj/structure/telephone_transmitter))
+			var/obj/structure/telephone_transmitter/our_phone = machine
+			if(!our_phone)
+				continue
+			if(!our_phone.auto_name)
+				continue
+			our_phone.phone_id = replacetext(M.phone_id,oldtitle,title)
 //THABES ADDITION END: PHONE SHIT
-
-	//TODO: much much more. Unnamed airlocks, cameras, etc.
+		machine.name = replacetext(machine.name,oldtitle,title)
 
 /obj/item/areaeditor/shuttle
 	name = "shuttle expansion permit"
