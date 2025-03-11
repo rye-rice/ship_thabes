@@ -104,7 +104,7 @@
 
 /datum/mission/acquire/true_love/strange_crystal
 	name = "Strange crystal needed (urgent!!!)"
-	value = 1000
+	value = 4000
 	weight = 1
 	objective_type = /obj/item/strange_crystal
 
@@ -172,40 +172,16 @@ Acquire: Anomaly
 	value = 1300
 	objective_type = /mob/living/simple_animal/hostile/asteroid/hivelord/legion
 
-/datum/mission/acquire/creature/ice_whelp
-	name = "Capture an ice whelp"
-	desc = "I require a live ice whelp for research purposes. Trap one within the given \
-			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1700
-	weight = 2
-	objective_type = /mob/living/simple_animal/hostile/asteroid/ice_whelp
-
 /datum/mission/acquire/creature/migo
 	name = "Capture a live mi-go"
 	desc = "I require a live mi-go for research purposes. Trap one within the given \
 			Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1050
+	value = 1300
 	weight = 2
 	objective_type = /mob/living/simple_animal/hostile/netherworld/migo/asteroid
 
-/datum/mission/acquire/creature/floorbot
-	name = "Detain a malfunctioning floorbot"
-	desc = "I require a functional abandoned floorbot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/floorbot/rockplanet
-
-/datum/mission/acquire/creature/firebot
-	name = "Detain a malfunctioning firebot"
-	desc = "I require a functional abandoned firebot for \"research\" purposes. Trap one within \
-			the given Lifeform Containment Unit and return it to me and you will be paid handsomely."
-	value = 1450
-	weight = 1
-	objective_type = /mob/living/simple_animal/bot/firebot/rockplanet
-
 /*
-		Acquire: Landmines
+		Acquire: Salvage
 */
 
 /datum/mission/acquire/landmine
@@ -218,6 +194,17 @@ Acquire: Anomaly
 	container_type = /obj/item/storage/toolbox/bounty
 	objective_type = /obj/item/mine/pressure/explosive
 	num_wanted = 2
+
+/datum/mission/acquire/bounty
+	name = "Hunt down Dogtags"
+	desc = "CLIP has posted several bounties for wanted members of both the Frontiersman and the Clique. Bring back their tags, we'll reward you well."
+	weight = 4
+	value = 4000
+	duration = 120 MINUTES
+	dur_mod_range = 0.1
+	container_type = /obj/item/storage/toolbox/bounty/hunt
+	objective_type = /obj/item/clothing/neck/dogtag
+	num_wanted = 3
 
 /*
 		Acquire: Fishing

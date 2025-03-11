@@ -300,7 +300,7 @@
 		clearInternalDamage(MECHA_INT_TANK_BREACH)
 		to_chat(user, span_notice("You repair the damaged gas tank."))
 		return
-	if(obj_integrity < max_integrity)
+	while(obj_integrity < max_integrity)
 		if(!do_after(user, 20, target= src))
 			return
 		if(!W.use_tool(src, user, 0, volume=50, amount=1))
@@ -309,7 +309,7 @@
 		obj_integrity += min(10 * repair_multiplier, max_integrity-obj_integrity)
 		if(obj_integrity == max_integrity)
 			to_chat(user, span_notice("It looks to be fully repaired now."))
-		return
+			return
 	to_chat(user, span_warning("The [name] is at full integrity!"))
 
 /obj/mecha/proc/mech_toxin_damage(mob/living/target)

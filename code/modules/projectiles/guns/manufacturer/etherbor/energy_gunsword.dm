@@ -14,7 +14,7 @@
 	fire_delay = 0.16 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.35
+	wield_slowdown = LASER_RIFLE_SLOWDOWN
 
 	default_ammo_type = /obj/item/stock_parts/cell/gun/kalix
 	allowed_ammo_types = list(
@@ -89,7 +89,7 @@
 	modifystate = FALSE
 
 	wield_delay = 0.2 SECONDS
-	wield_slowdown = 0.15
+	wield_slowdown = LASER_PISTOL_SLOWDOWN
 
 	spread = 2
 	spread_unwielded = 5
@@ -104,6 +104,11 @@
 
 	load_sound = 'sound/weapons/gun/gauss/pistol_reload.ogg'
 
+	refused_attachments = list(
+		/obj/item/attachment/gun,
+		/obj/item/attachment/sling
+		)
+
 /obj/item/ammo_casing/energy/kalix/pistol
 	fire_sound = 'sound/weapons/gun/energy/kalixpistol.ogg'
 	e_cost = 1250 //10 shots per cell
@@ -117,7 +122,6 @@
 	desc = "The HBG-7 is the standard-issue rifle weapon of the PGF. It comes with a special DMR mode that has greater armor piercing for dealing with armored targets."
 	icon_state = "pgfheavy"
 	item_state = "pgfheavy"
-	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 
 	modifystate = FALSE
@@ -128,7 +132,7 @@
 	fire_delay = 0.2 SECONDS
 
 	wield_delay = 0.7 SECONDS
-	wield_slowdown = 0.6
+	wield_slowdown = HEAVY_LASER_RIFLE_SLOWDOWN
 
 	spread = 0
 	spread_unwielded = 20
@@ -181,5 +185,5 @@
 	spread = -5
 	spread_unwielded = 40
 
-	wield_slowdown = 1
+	wield_slowdown = LASER_SNIPER_SLOWDOWN
 	wield_delay = 1.3 SECONDS

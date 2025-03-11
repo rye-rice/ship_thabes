@@ -389,7 +389,7 @@
 /datum/status_effect/good_music/tick()
 	if(owner.can_hear())
 		owner.dizziness = max(0, owner.dizziness - 2)
-		owner.jitteriness = max(0, owner.jitteriness - 2)
+		owner.adjust_jitter(owner.jitteriness - 2, max = 0)
 		owner.confused = max(0, owner.confused - 1)
 		SEND_SIGNAL(owner, COMSIG_ADD_MOOD_EVENT, "goodmusic", /datum/mood_event/goodmusic)
 
@@ -409,7 +409,6 @@
 	owner.adjustBruteLoss(-20)
 	owner.adjustFireLoss(-20)
 	owner.remove_CC()
-	owner.reagents.add_reagent(/datum/reagent/medicine/soulus=15)
 	owner.bodytemperature = owner.get_body_temp_normal()
 	return TRUE
 
