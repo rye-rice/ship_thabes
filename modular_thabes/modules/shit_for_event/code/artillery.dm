@@ -45,7 +45,6 @@
 	can_be_unanchored = TRUE
 	pixel_x = -16
 	anchored = FALSE // You can move this.
-	offset_per_turfs = 25
 
 	/// Number of turfs to offset from target by 1
 	var/offset_per_turfs = 15
@@ -67,7 +66,6 @@
 	/// What type of shells can we use?
 	var/list/allowed_shells = list(
 		/obj/item/mortal_shell/howitzer,
-		/obj/item/mortal_shell/howitzer/he,
 		/obj/item/mortal_shell/howitzer/incendiary,
 	)
 
