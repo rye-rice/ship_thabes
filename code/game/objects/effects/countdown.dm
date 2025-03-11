@@ -41,7 +41,7 @@
 	// Get the value from our atom
 	return
 
-/obj/effect/countdown/process()
+/obj/effect/countdown/process(seconds_per_tick)
 	if(!attached_to || QDELETED(attached_to))
 		qdel(src)
 	forceMove(get_turf(attached_to))
@@ -192,14 +192,14 @@
 		return completion
 
 /obj/effect/countdown/overmap_event
-	name = "overmap event countdown"
+	name = "overmap token countdown"
 	mouse_opacity = FALSE
 	invisibility = 0
 	text_size = 2
 
 /obj/effect/countdown/overmap_event/get_value()
 	var/obj/overmap/token = attached_to
-	var/datum/overmap/event/attached_datum
+	var/datum/overmap/attached_datum
 	if(!istype(token))
 		return
 	attached_datum = token.parent

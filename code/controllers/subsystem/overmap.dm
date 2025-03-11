@@ -14,6 +14,9 @@ SUBSYSTEM_DEF(overmap)
 	var/list/controlled_ships = list()
 	///List of spawned outposts. The default spawn location is the first index.
 	var/list/outposts = list()
+
+	///List of all dynamic overmap datums
+	var/list/dynamic_datums  = list()
 	///List of all events
 	var/list/events = list()
 
@@ -50,6 +53,7 @@ SUBSYSTEM_DEF(overmap)
 	overmap_objects = list()
 	controlled_ships = list()
 	outposts = list()
+	dynamic_datums = list()
 	events = list()
 
 	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
@@ -238,6 +242,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/controlled_ships = list()
 	///List of spawned outposts in the star system
 	var/list/outposts = list()
+	///List of all dynamic overmap datums in the star system.
+	var/list/dynamic_datums  = list()
 	///List of all events in the star system.
 	var/list/events = list()
 
@@ -252,6 +258,8 @@ SUBSYSTEM_DEF(overmap)
 	var/list/list/radius_positions
 	///Width/height of the overmap "zlevel"
 	var/size
+	///The maximum amount of dynamic events that can spawn in this sector.
+	var/max_overmap_dynamic_events
 	///Do we have a outpost in this system?
 	var/has_outpost = FALSE
 	/// Our faction of the outpost
@@ -310,6 +318,8 @@ SUBSYSTEM_DEF(overmap)
 		generator_type = CONFIG_GET(string/overmap_generator_type)
 	if(!size)
 		size = CONFIG_GET(number/overmap_size)
+	if(!max_overmap_dynamic_events)
+		max_overmap_dynamic_events = CONFIG_GET(number/max_overmap_dynamic_events)
 
 	overmap_container = new/list(size, size, 0)
 
@@ -419,11 +429,11 @@ SUBSYSTEM_DEF(overmap)
  * Creates an overmap object for each ruin level, making them accessible.
  */
 /datum/overmap_star_system/proc/spawn_ruin_levels()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+	for(var/i in 1 to max_overmap_dynamic_events)
 		new /datum/overmap/dynamic(system_spawned_in = src)
 
 /datum/overmap_star_system/proc/spawn_ruin_levels_in_orbits()
-	for(var/i in 1 to CONFIG_GET(number/max_overmap_dynamic_events))
+	for(var/i in 1 to max_overmap_dynamic_events)
 		new /datum/overmap/dynamic(system_spawned_in = src)
 
 /**
@@ -476,6 +486,13 @@ SUBSYSTEM_DEF(overmap)
 			if(nearby_event.interference_power)
 				qdel(nearby_event)
 	return
+/**
+ * Spawns a new dynamic encounter when old one is deleted. Called by dynamic encounters being deleted.
+ */
+/datum/overmap_star_system/proc/replace_dynamic_datum()
+	if(length(dynamic_datums) < max_overmap_dynamic_events)
+		var/list/results = get_unused_overmap_square()
+		new /datum/overmap/dynamic(results, src)
 
 /**
  * Reserves a square dynamic encounter area, generates it, and spawns a ruin in it if one is supplied.
