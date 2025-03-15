@@ -224,7 +224,8 @@
 		/obj/machinery/atmospherics/components/unary/vent_scrubber,
 		/obj/machinery/atmospherics/components/unary/vent_pump,
 		/obj/machinery/door,
-		/obj/machinery/fax
+		/obj/machinery/fax,
+		/obj/structure/telephone_transmitter,
 	))
 
 	for(var/obj/machinery/machine as anything in GLOB.machines)
@@ -232,7 +233,15 @@
 			continue
 		if(!is_type_in_typecache(machine, typecache))
 			continue
-
+//THABES ADDITION BEGIN: PHONE SHIT
+		if(istype(machine, /obj/structure/telephone_transmitter))
+			var/obj/structure/telephone_transmitter/our_phone = machine
+			if(!our_phone)
+				continue
+			if(!our_phone.auto_name)
+				continue
+			our_phone.phone_id = replacetext(our_phone.phone_id,oldtitle,title)
+//THABES ADDITION END: PHONE SHIT
 		machine.name = replacetext(machine.name,oldtitle,title)
 
 /obj/item/areaeditor/shuttle
