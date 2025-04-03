@@ -229,7 +229,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	return 1
 
-/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list())
+/mob/living/Hear(message, atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, list/message_mods = list(), radio_sound)
 	SEND_SIGNAL(src, COMSIG_MOVABLE_HEAR, args)
 	if(!client)
 		return
@@ -253,14 +253,14 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		else
 			create_chat_message(speaker, message_language, raw_message, spans)
 
-	if(radio_freq && (client?.prefs.toggles & SOUND_RADIO))
+	if(radio_freq && (client?.prefs.toggles & SOUND_RADIO) && radio_sound)
 		//All calls to hear that include radio_freq will be from radios, so we can assume that the speaker is a virtualspeaker
 		var/atom/movable/virtualspeaker/virt = speaker
 		//Play the walkie sound if this mob is speaking, and don't apply cooldown
 		if(virt.source == src)
 			playsound_local(get_turf(speaker), "sound/effects/walkietalkie.ogg", 20, FALSE)
 		else if(COOLDOWN_FINISHED(src, radio_crackle_cooldown))
-			playsound_local(get_turf(speaker), "sound/effects/radio_chatter.ogg", 20, FALSE)
+			playsound_local(get_turf(speaker), radio_sound, 20, FALSE)
 		//Always start it so that it only crackles when there hasn't been a message in a while
 		COOLDOWN_START(src, radio_crackle_cooldown, 5 SECONDS)
 
@@ -429,3 +429,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(get_minds && mind)
 		return mind.get_language_holder()
 	. = ..()
+
+/mob/living/grant_language(language, understood = TRUE, spoken = TRUE, source = LANGUAGE_ATOM)
+	. = ..()
+	if(. && mind)
+		var/datum/language_holder/langauge_holder = get_language_holder()
+		if(langauge_holder.spoken_languages.len >= 4)
+			message_admins("[ADMIN_LOOKUPFLW(src)] knows [langauge_holder.spoken_languages.len] langauges!")

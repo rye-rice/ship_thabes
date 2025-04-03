@@ -13,7 +13,7 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 
 	var/smash_time = 3 SECONDS
-	var/time_to_harden = 50 SECONDS
+	var/time_to_harden = 20 SECONDS
 	// fraction ranging from 0 to 1 -- 0 is fully soft, 1 is fully hardened
 	// don't change this in subtypes unless you want them to spawn in soft on maps
 	var/harden_lvl = 1
@@ -31,6 +31,9 @@
 	// footprint vars
 	var/entered_dirs
 	var/exited_dirs
+
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
+	canSmoothWith = list(SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_FLOOR_PLASTEEL)
 
 /turf/open/floor/concrete/Initialize()
 	. = ..()
@@ -230,11 +233,11 @@
 	base_icon_state = "hexacrete"
 	has_variation = FALSE
 	smoothing_flags = SMOOTH_BITMASK
-	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_HEXACRETE)
+	smoothing_groups = list(SMOOTH_GROUP_TURF_OPEN, SMOOTH_GROUP_OPEN_FLOOR, SMOOTH_GROUP_FLOOR_PLASTEEL, SMOOTH_GROUP_FLOOR_HEXACRETE)
 	canSmoothWith = list(SMOOTH_GROUP_FLOOR_HEXACRETE)
 
 	smash_time = 8 SECONDS
-	time_to_harden = 80 SECONDS
+	time_to_harden = 40 SECONDS
 	// so that you can remove the overlays
 	shape_types = list(/turf/open/floor/concrete/reinforced)
 

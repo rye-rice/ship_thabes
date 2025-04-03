@@ -59,11 +59,11 @@
 		return
 	switch(severity)
 		if(1)
-			take_damage(INFINITY, BRUTE, "bomb", 0)
+			take_damage(rand(220, 330), BRUTE, "bomb", 0)
 		if(2)
-			take_damage(rand(100, 250), BRUTE, "bomb", 0)
+			take_damage(rand(120, 180), BRUTE, "bomb", 0)
 		if(3)
-			take_damage(rand(10, 90), BRUTE, "bomb", 0)
+			take_damage(rand(20, 80), BRUTE, "bomb", 0)
 
 /obj/bullet_act(obj/projectile/hitting_projectile)
 	. = ..()
@@ -95,6 +95,18 @@
 /obj/attack_alien(mob/living/carbon/alien/humanoid/user)
 	if(attack_generic(user, 60, BRUTE, "melee", 0))
 		playsound(src.loc, 'sound/weapons/slash.ogg', 100, TRUE)
+
+/obj/attack_basic_mob(mob/living/basic/user, list/modifiers)
+	if(!user.melee_damage_upper && !user.obj_damage) //No damage
+		user.emote("custom", message = "[user.friendly_verb_continuous] [src].")
+		return FALSE
+	else
+		if(user.obj_damage)
+			. = attack_generic(user, user.obj_damage, user.melee_damage_type, MELEE, TRUE, user.armour_penetration)
+		else
+			. = attack_generic(user, rand(user.melee_damage_lower,user.melee_damage_upper), user.melee_damage_type, MELEE,TRUE, user.armour_penetration)
+		if(.)
+			playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 
 /obj/attack_animal(mob/living/simple_animal/M)
 	if(!M.melee_damage_upper && !M.obj_damage)

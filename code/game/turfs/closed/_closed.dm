@@ -179,9 +179,9 @@
 			NT.contents_explosion(severity, target)
 			return
 		if(EXPLODE_HEAVY)
-			alter_integrity(rand(-500, -800))
+			alter_integrity(rand(-300, -500))
 		if(EXPLODE_LIGHT)
-			alter_integrity(rand(-200, -700))
+			alter_integrity(rand(-100, -200))
 
 /turf/closed/attack_paw(mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
@@ -197,7 +197,7 @@
 	add_fingerprint(user)
 
 /turf/closed/attackby(obj/item/W, mob/user, params)
-	user.changeNext_move(CLICK_CD_MELEE)
+	user.changeNext_move(W.attack_cooldown)
 	if (!user.IsAdvancedToolUser())
 		to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return
@@ -313,3 +313,10 @@
 		playsound(src, 'sound/effects/meteorimpact.ogg', 100, TRUE)
 		alter_integrity(-400)
 		return
+
+/turf/closed/zap_act(power, zap_flags, shocked_targets)
+	if(QDELETED(src))
+		return FALSE
+	if(alter_integrity(-power) >= 0)
+		return TRUE
+	return power / 2

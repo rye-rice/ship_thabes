@@ -133,7 +133,9 @@ GLOBAL_LIST_INIT(admin_verbs_spawn, list(
 	/datum/admins/proc/beaker_panel,
 	/datum/admins/proc/gift,
 	/client/proc/spawn_ruin,
-	/client/proc/spawn_outpost /* Allows admins to spawn a new outpost. */
+	/client/proc/spawn_outpost, /* Allows admins to spawn a new outpost. */
+	/client/proc/spawn_overmap,
+	/client/proc/spawn_jump_point,
 	))
 GLOBAL_PROTECT(admin_verbs_spawn)
 GLOBAL_LIST_INIT(admin_verbs_server, world.AVerbsServer())
@@ -212,6 +214,7 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	/datum/admins/proc/overmap_view, /* Opens HTML overmap viewer UI */
 	/client/proc/toggle_AI_interact, /*toggle admin ability to interact with machines as an AI*/
 	/client/proc/toggle_cdn,
+	/datum/admins/proc/delete_all_missions,
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
