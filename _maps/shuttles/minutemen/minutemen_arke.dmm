@@ -755,7 +755,9 @@
 	pixel_y = 6;
 	pixel_x = 6
 	},
-/obj/item/radio/intercom/directional/east,
+/obj/machinery/computer/security/telescreen/entertainment{
+	pixel_x = 28
+	},
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "uQ" = (
@@ -825,6 +827,15 @@
 	dir = 6
 	},
 /obj/machinery/light/directional/south,
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = 6;
+	dir = 8;
+	density = 0
+	},
+/obj/item/folder/yellow,
+/obj/item/folder/white,
+/obj/item/pen,
+/obj/item/pen,
 /turf/open/floor/plasteel/dark,
 /area/ship/cargo)
 "wF" = (
@@ -1066,8 +1077,8 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/tinted,
-/obj/machinery/firealarm/directional/east,
 /obj/machinery/door/firedoor/border_only,
+/obj/item/radio/intercom/directional/east,
 /turf/open/floor/plasteel/grimy,
 /area/ship/crew)
 "EN" = (
