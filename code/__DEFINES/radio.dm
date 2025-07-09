@@ -43,6 +43,8 @@
 
 #define RADIO_CHANNEL_WIDEBAND "Wideband"
 
+#define RADIO_CHANNEL_PHONELINE "Phone Line"
+
 #define MIN_FREE_FREQ 1201 // -------------------------------------------------
 // Frequencies are always odd numbers and range from 1201 to 1599.
 
@@ -79,6 +81,8 @@
 #define FREQ_WIDEBAND 1691 // sector wide communication
 
 #define MAX_FREE_FREQ 1699 // -------------------------------------------------
+
+#define FREQ_PHONE 2300
 
 // Transmission types.
 #define TRANSMISSION_WIRE 0 // some sort of wired connection, not used
