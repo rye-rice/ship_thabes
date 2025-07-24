@@ -401,6 +401,23 @@
 	},
 /turf/open/floor/plating/asteroid/rockplanet/lit,
 /area/ruin/rockplanet/rust_base)
+"dZ" = (
+/obj/structure/closet/crate/medical,
+/obj/item/hatchet/wooden,
+/obj/item/melee/knife/survival,
+/obj/item/wirecutters,
+/obj/item/stack/medical/splint/hunter,
+/obj/item/screwdriver,
+/obj/item/bodybag,
+/obj/item/bodybag,
+/obj/item/reagent_containers/glass/bottle/morphine,
+/obj/structure/lattice/catwalk,
+/obj/effect/decal/cleanable/greenglow,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/clothing/gloves/color/latex/nitrile/evil,
+/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "eg" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -481,8 +498,7 @@
 	pixel_y = 11
 	},
 /obj/item/stock_parts/scanning_module{
-	pixel_x = -5;
-	pixel_y = 0
+	pixel_x = -5
 	},
 /obj/item/stock_parts/micro_laser{
 	pixel_x = 1;
@@ -601,7 +617,6 @@
 	},
 /obj/structure/table/chem,
 /obj/item/flamethrower/full{
-	pixel_x = 0;
 	pixel_y = 4
 	},
 /turf/open/floor/plating,
@@ -617,8 +632,7 @@
 	},
 /obj/effect/turf_decal/siding/thinplating,
 /obj/item/mecha_ammo/scattershot{
-	pixel_y = 11;
-	pixel_x = 0
+	pixel_y = 11
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -697,10 +711,10 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "hg" = (
 /obj/structure/rack,
-/obj/item/clothing/head/helmet/bulletproof/x11,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
+/obj/item/clothing/head/helmet/ramzi/bulletproof,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "hl" = (
@@ -1018,6 +1032,10 @@
 /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge{
 	name = "Captain Dwight"
 	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/melee/space/stormtrooper/sledge
+	},
 /turf/open/floor/plasteel/white,
 /area/ruin/rockplanet/rust_base/bridge)
 "ke" = (
@@ -1036,8 +1054,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden/layer2,
 /obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
 /obj/structure/sign/poster/contraband/c20r{
-	pixel_x = 31;
-	pixel_y = 0
+	pixel_x = 31
 	},
 /obj/structure/chair{
 	dir = 8
@@ -1068,7 +1085,6 @@
 	id = "frontbox1"
 	},
 /obj/item/shard{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/structure/cable{
@@ -1491,7 +1507,7 @@
 "nW" = (
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
@@ -1539,10 +1555,10 @@
 "oH" = (
 /obj/structure/rack,
 /obj/machinery/light/directional/north,
-/obj/item/clothing/suit/armor/vest/bulletproof,
 /obj/effect/turf_decal/siding/thinplating{
 	dir = 1
 	},
+/obj/item/clothing/suit/armor/ramzi/bulletproof,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "oL" = (
@@ -1636,7 +1652,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "pz" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
 "pD" = (
@@ -1681,7 +1697,7 @@
 /area/ruin/rockplanet/rust_base/engine_two)
 "qa" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/machinery/light/small/directional/west,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/armory)
@@ -1760,7 +1776,7 @@
 /obj/machinery/light/directional/north,
 /obj/machinery/suit_storage_unit/inherit,
 /obj/item/clothing/suit/space/hardsuit/syndi/ramzi,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/item/tank/internals/emergency_oxygen/engi,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/armory)
@@ -1866,8 +1882,7 @@
 	icon_state = "4-8"
 	},
 /obj/item/radio/intercom/directional/south{
-	pixel_x = 4;
-	pixel_y = -31
+	pixel_x = 4
 	},
 /turf/open/floor/engine/hull/rockplanet,
 /area/ruin/rockplanet/rust_base)
@@ -1899,7 +1914,6 @@
 /obj/structure/rack,
 /obj/item/storage/box/ammo/c9mm,
 /obj/item/storage/box/ammo/c9mm{
-	pixel_x = 0;
 	pixel_y = 8
 	},
 /obj/effect/turf_decal/siding/thinplating,
@@ -2028,10 +2042,10 @@
 /area/ruin/rockplanet/rust_base/hallway2)
 "to" = (
 /obj/structure/closet,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -2056,6 +2070,11 @@
 "tI" = (
 /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun{
 	name = "'Armored' O. Ray"
+	},
+/obj/effect/landmark/mission_poi/main/kill{
+	already_spawned = 1;
+	type_to_spawn = /mob/living/simple_animal/hostile/human/ramzi/ranged/space/stormtrooper/shotgun;
+	mission_index = 2
 	},
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
@@ -2257,8 +2276,7 @@
 /obj/structure/table/chem,
 /obj/structure/sink/chem,
 /obj/item/weldingtool/largetank{
-	pixel_x = -11;
-	pixel_y = 0
+	pixel_x = -11
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
@@ -2278,8 +2296,7 @@
 	},
 /obj/structure/table/chem,
 /obj/item/stack/rods/ten{
-	pixel_x = 11;
-	pixel_y = 0
+	pixel_x = 11
 	},
 /obj/item/pipe{
 	pixel_x = -2;
@@ -2669,20 +2686,20 @@
 /obj/item/clothing/shoes/combat,
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/under/syndicate/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/dorms)
 "AQ" = (
@@ -2991,10 +3008,7 @@
 	},
 /obj/item/storage/guncase/pistol/asp,
 /obj/item/clothing/gloves/combat,
-/obj/item/clothing/under/syndicate/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/head/HoS/syndicate,
 /turf/open/floor/carpet/red,
 /area/ruin/rockplanet/rust_base/hallway2)
 "Da" = (
@@ -3112,7 +3126,7 @@
 /area/ruin/rockplanet/rust_base)
 "DV" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/ash_flora/cactus_fruit,
+/obj/item/food/grown/ash_flora/cactus_fruit,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
 "DZ" = (
@@ -3378,7 +3392,7 @@
 /area/ruin/rockplanet/rust_base/armory)
 "GG" = (
 /obj/machinery/hydroponics/soil,
-/obj/item/reagent_containers/food/snacks/grown/potato/sweet,
+/obj/item/food/grown/sweet_potato,
 /turf/open/floor/plating/dirt/rockplanet,
 /area/ruin/rockplanet/rust_base)
 "GM" = (
@@ -3410,7 +3424,6 @@
 /obj/machinery/light/directional/south,
 /obj/effect/turf_decal/siding/thinplating,
 /obj/item/mecha_parts/mecha_equipment/weapon/energy/laser{
-	pixel_x = 0;
 	pixel_y = -2
 	},
 /turf/open/floor/plasteel/tech,
@@ -3469,8 +3482,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/button/door{
 	pixel_y = 22;
-	id = "rustarmory";
-	pixel_x = 0
+	id = "rustarmory"
 	},
 /obj/structure/chair/handrail{
 	dir = 4
@@ -3564,7 +3576,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "IA" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/mechbay)
@@ -3668,7 +3680,6 @@
 /obj/structure/rack,
 /obj/item/storage/box/ammo/a12g_buckshot,
 /obj/item/storage/box/ammo/a12g_buckshot{
-	pixel_x = 0;
 	pixel_y = 7
 	},
 /obj/effect/turf_decal/siding/thinplating,
@@ -3773,11 +3784,9 @@
 /area/ruin/rockplanet/rust_base/armory)
 "KX" = (
 /obj/item/storage/bottles/moonshine/sealed{
-	pixel_x = 0;
 	pixel_y = -8
 	},
 /obj/item/storage/bottles/moonshine/sealed{
-	pixel_x = 0;
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/techfloor{
@@ -3911,13 +3920,6 @@
 /obj/machinery/atmospherics/pipe/manifold/brown/hidden/layer4,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/engine_two)
-"MA" = (
-/obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/head/helmet/space/syndicate/black/orange,
-/obj/item/clothing/suit/space/syndicate/black/orange,
-/obj/item/tank/internals/oxygen/yellow,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "MB" = (
 /obj/effect/turf_decal/spline/fancy/opaque/syndiered{
 	dir = 8
@@ -3991,20 +3993,20 @@
 /obj/structure/closet,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
-/obj/item/clothing/shoes/combat,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/neck/shemagh/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
+/obj/item/clothing/head/ramzi,
 /turf/open/floor/plating,
 /area/ruin/rockplanet/rust_base/dorms)
 "Nw" = (
@@ -4050,8 +4052,7 @@
 	dir = 1
 	},
 /obj/item/storage/box/stockparts/t2{
-	pixel_x = -8;
-	pixel_y = 0
+	pixel_x = -8
 	},
 /obj/item/stock_parts/cell/super/empty{
 	pixel_x = 7;
@@ -4120,7 +4121,7 @@
 /area/ruin/rockplanet/rust_base/hallway)
 "Ov" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/machinery/light/small/directional/west,
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/tech,
@@ -4290,10 +4291,10 @@
 /obj/item/reagent_containers/condiment/saltshaker,
 /obj/item/reagent_containers/condiment/saltshaker,
 /obj/effect/decal/cleanable/food/salt,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
+/obj/item/food/meat/slab/goliath,
 /turf/open/floor/plasteel/mono,
 /area/ruin/rockplanet/rust_base/slop)
 "PQ" = (
@@ -4325,7 +4326,7 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "Qe" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /turf/open/floor/plating/rust,
 /area/ruin/rockplanet/rust_base/armory)
 "Qg" = (
@@ -4436,6 +4437,13 @@
 	},
 /turf/open/floor/plasteel/patterned/ridged,
 /area/ruin/rockplanet/rust_base/slop)
+"Ru" = (
+/obj/machinery/suit_storage_unit/inherit,
+/obj/item/tank/internals/oxygen/yellow,
+/obj/item/clothing/suit/space/syndicate/ramzi,
+/obj/item/clothing/head/helmet/space/syndicate/ramzi,
+/turf/open/floor/plating,
+/area/ruin/rockplanet/rust_base/engine_two)
 "Rv" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4572,7 +4580,7 @@
 "SW" = (
 /obj/structure/rack,
 /obj/machinery/airalarm/directional/south,
-/obj/item/melee/axe/sledgehammer,
+/obj/item/melee/sledgehammer/gorlex,
 /obj/effect/turf_decal/siding/thinplating,
 /turf/open/floor/plasteel/tech,
 /area/ruin/rockplanet/rust_base/armory)
@@ -4830,23 +4838,6 @@
 	},
 /turf/open/floor/plasteel/patterned,
 /area/ruin/rockplanet/rust_base/hallway)
-"VO" = (
-/obj/structure/closet/crate/medical,
-/obj/item/hatchet/wooden,
-/obj/item/melee/knife/survival,
-/obj/item/wirecutters,
-/obj/item/stack/medical/splint/ghetto,
-/obj/item/screwdriver,
-/obj/item/bodybag,
-/obj/item/bodybag,
-/obj/item/reagent_containers/glass/bottle/morphine,
-/obj/structure/lattice/catwalk,
-/obj/effect/decal/cleanable/greenglow,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/clothing/gloves/color/latex/nitrile/evil,
-/obj/machinery/atmospherics/pipe/simple/brown/hidden/layer4,
-/turf/open/floor/plating,
-/area/ruin/rockplanet/rust_base/engine_two)
 "VX" = (
 /obj/structure/girder/reinforced,
 /turf/open/floor/plating,
@@ -5010,10 +5001,10 @@
 /area/ruin/rockplanet/rust_base/mechbay)
 "Xm" = (
 /obj/structure/closet,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
-/obj/item/clothing/under/syndicate/gorlex,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
+/obj/item/clothing/under/syndicate/ramzi/overalls,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
@@ -5086,7 +5077,7 @@
 /area/ruin/rockplanet/rust_base/armory)
 "XJ" = (
 /obj/machinery/suit_storage_unit/inherit,
-/obj/item/clothing/mask/gas/syndicate,
+/obj/item/clothing/mask/gas/ramzi,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer4,
 /obj/machinery/light/small/directional/east,
 /turf/open/floor/plating/rust,
@@ -5776,7 +5767,7 @@ fj
 gg
 hR
 zX
-MA
+Ru
 fj
 Qg
 aN
@@ -5860,7 +5851,7 @@ fj
 wn
 Sw
 cI
-VO
+dZ
 Cu
 LH
 Qg

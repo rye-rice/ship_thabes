@@ -26,7 +26,7 @@
 	var/activate_sound = SFX_SPARKS
 
 	var/attack_cooldown_check = 0 SECONDS
-	var/attack_cooldown = 2.5 SECONDS
+	var/baton_attack_cooldown = 2.5 SECONDS
 	var/stun_sound = 'sound/weapons/egloves.ogg'
 
 	var/confusion_amt = 10
@@ -234,10 +234,10 @@
 
 	playsound(src, stun_sound, 50, TRUE, -1)
 
-	attack_cooldown_check = world.time + attack_cooldown
+	attack_cooldown_check = world.time + baton_attack_cooldown
 
 	ADD_TRAIT(L, TRAIT_IWASBATONED, user)
-	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, user), attack_cooldown)
+	addtimer(TRAIT_CALLBACK_REMOVE(L, TRAIT_IWASBATONED, user), baton_attack_cooldown)
 
 	return 1
 
@@ -344,6 +344,7 @@
 	righthand_file = 'icons/mob/inhands/equipment/security_righthand.dmi'
 	slot_flags = ITEM_SLOT_BELT
 	force = 12 //9 hit crit
+	wound_bonus = 15
 	w_class = WEIGHT_CLASS_NORMAL
 
 	var/cooldown_check = 0 // Used interally, you don't want to modify
@@ -364,6 +365,7 @@
 	var/active_force // Damage when on - not stunning
 	var/force_off // Damage when off - not stunning
 	var/weight_class_on // What is the new size class when turned on
+
 
 // Description for trying to stun when still on cooldown.
 /obj/item/melee/classic_baton/proc/get_wait_description()
