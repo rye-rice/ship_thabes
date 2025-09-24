@@ -185,6 +185,9 @@
 	base_icon_state = "plaque"
 	tiled_dirt = FALSE
 
+/turf/open/floor/plasteel/goonplaque/tadpole
+	desc = "\"On this spot 27 years ago, the NSSV Nexus landed here, in search of a good colony spot. While not the ideal colony location, the vessel slowly was dismantled and replaced with what stands today, the tallest building in the city: The Nexus. No longer able to fly, it helps others fly far above what they were destined to do.\""
+
 /turf/open/floor/plasteel/lightgrey
 	name = "light grey floor"
 	icon_state = "corner_white_full"
