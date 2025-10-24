@@ -403,7 +403,7 @@
 	// hangar area has UNIQUE_AREA, so do not rename it (annoying)
 
 	//add extra docking ports as needed
-	var/list/obj/docking_port/stationary/found_ports
+	var/list/obj/docking_port/stationary/found_ports = list()
 	var/has_extra_docks = FALSE
 	var/iteration = 1
 	if(h_dock)
@@ -439,7 +439,7 @@
 	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(crate_spawner_mark))
 			continue
-		for(var/obj/docking_port/stationary/available_port in found_ports)
+		for(var/obj/docking_port/stationary/available_port as anything in found_ports)
 			available_port.crate_spawner = crate_spawner_mark.create_spawner()
 	if(!shaft.shaft_elevator)
 		// if there's no elevator in this shaft, then delete the landmarks
