@@ -237,6 +237,7 @@
 
 /obj/docking_port/stationary/Initialize(mapload, datum/overmap/dock_holder)
 	. = ..()
+	dock_holder = SSovermap.get_overmap_object_by_location(src, TRUE)
 	SSshuttle.stationary += src
 	initial_location = list("x" = x, "y" = y, "z" = z)
 	if(name == "dock")

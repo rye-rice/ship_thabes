@@ -442,8 +442,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	var/offset_x = 0
 	var/offset_y = 0
 
-/obj/effect/landmark/subship/New(loc, datum/map_template/shuttle/ship_template, datum/overmap/dock_holder)
+/obj/effect/landmark/subship/New(loc, datum/map_template/shuttle/ship_template)
 	..(loc)
+	var/dock_holder = SSovermap.get_overmap_object_by_location(src, TRUE)
 	if(ship_template)
 		subship_template = ship_template
 	var/datum/map_template/shuttle/template = SSmapping.shuttle_templates[initial(subship_template.file_name)]

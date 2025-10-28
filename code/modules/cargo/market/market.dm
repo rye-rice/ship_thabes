@@ -98,3 +98,25 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 
 /datum/cargo_market/outpost
 	name = "outpost market"
+
+
+/datum/cargo_market/outpost/general_store
+	name = "general store"
+
+/datum/cargo_market/outpost/general_store/generate_supply_packs()
+	for(var/datum/supply_pack/current_pack as anything in subtypesof(supply_pack_types))
+		current_pack = new current_pack()
+
+		var/match_found = FALSE
+		for(var/market_type in current_pack.markets)
+			if(istype(src, market_type))
+				match_found = TRUE
+		if(!match_found)
+			continue
+
+		if(current_pack.faction)
+			current_pack.faction = SSfactions.factions[current_pack.faction]
+		if(!current_pack.contains)
+			continue
+		supply_packs += current_pack
+	supply_packs = sortNames(supply_packs)

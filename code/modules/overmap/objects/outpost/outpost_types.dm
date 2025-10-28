@@ -333,6 +333,10 @@
 		docks.name = "[name] subshuttle dock"
 		docks.load_roundstart()
 
+	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+		if((port.virtual_z() == (vlevel.id || vlevel2.id || vlevel3.id)) && !(port in main_floor_docks))
+			reserve_docks += port
+
 	for(var/shaft_name in shaft_lists)
 		var/list/obj/shaft_li = shaft_lists[shaft_name]
 		var/obj/effect/landmark/outpost/elevator/anchor_landmark = shaft_li[1]
@@ -387,6 +391,15 @@
 	dock_width = 56
 	dock_height = 40
 
+/datum/overmap/outpost/indie_smallshop
+	token_icon_state = "ship_massive_generic"
+	main_template = /datum/map_template/outpost/indie_smallshop
+	faction = FACTION_INDEPENDENT
+//	market = /datum/cargo_market/outpost
+
+/datum/map_template/outpost/indie_smallshop
+	name = "indie_smallshop"
+	outpost_name = "SMV Bearcat"
 
 /datum/overmap/outpost/no_main_level // For example and adminspawn.
 	main_template = null

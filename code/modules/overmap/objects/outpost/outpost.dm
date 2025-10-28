@@ -224,8 +224,11 @@
 		sub_dock.set_up_dock(src)
 
 	for(var/obj/docking_port/stationary/docks in main_floor_docks)
-		docks.name = "[name] subshuttle dock"
 		docks.load_roundstart()
+
+	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+		if((port.virtual_z() == vlevel.id) && !(port.roundstart_template))
+			reserve_docks += port
 
 	for(var/shaft_name in shaft_lists)
 		var/list/obj/shaft_li = shaft_lists[shaft_name]
@@ -251,7 +254,7 @@
 		return new /datum/docking_ticket(override_dock, src, dock_requester)
 
 	if(!h_template || !length(shaft_datums))
-		return FALSE
+		return  new /datum/docking_ticket(get_dockable_locations(dock_requester)[1], src, dock_requester)
 
 	h_dock = ensure_hangar(h_template)
 	if(!h_dock)
