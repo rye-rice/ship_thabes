@@ -14,6 +14,8 @@
 	contains = list(/obj/item/storage/guncase/pistol/disposable)
 	crate_name = "disposable gun crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/derringer
 	name = ".38 Derringer Crate"
 	desc = "A cheap, concealable pistol manufactured by the reputable Hunter's Pride. At least it's better than a disposable pistol. Chambered in .38 rounds."
@@ -28,6 +30,7 @@
 	cost = 400
 	contains = list(/obj/item/storage/guncase/pistol/m17)
 	crate_name = "pistol crate"
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/gun/m20_auto_elite
 	name = "M20 Auto Elite Pistol Crate"
@@ -35,6 +38,7 @@
 	cost = 1250
 	contains = list(/obj/item/storage/guncase/pistol/m20_auto_elite)
 	crate_name = "pistol crate"
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/gun/commanders
 	name = "PS9 Challenger Pistol Crate"
@@ -44,12 +48,16 @@
 	faction = /datum/faction/nt
 	faction_discount = 20
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/gun/ringneck
 	name = "Ringneck Pistol Crate"
 	desc = "Contains a civilian variant of the Ringneck pistol, produced by Scarborough Arms and chambered in 10x22mm."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/ringneck)
 	faction = /datum/faction/syndicate/scarborough
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/gun/pc76
 	name = "PC-76 'Ringneck' Pistol Crate"
@@ -60,6 +68,8 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/gun/cm23
 	name = "CM-23 Pistol Crate"
 	desc = "Contains a 10x22mm CM-23 Pistol, standard issue of the Confederated Minutemen."
@@ -68,6 +78,8 @@
 	faction = /datum/faction/clip
 	faction_discount = 0
 	faction_locked = TRUE
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/gun/cm70
 	name = "CM-70 Machinepistol Crate"
@@ -87,12 +99,16 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/gun/candors
 	name = "Candor Pistol Crate"
 	desc = "Contains a Candor pistol, the trusty sidearm of any spacer, produced by Hunter's Pride and chambered in .45 ACP."
 	cost = 1000
 	contains = list(/obj/item/storage/guncase/pistol/candor)
 	faction = /datum/faction/srm
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/asp
 	name = "BC-81 'Asp' Crate"
@@ -112,6 +128,8 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/gun/podium_inteq
 	name = "P46 Schnauzer"
 	desc = "Contains a compact armor-piercing sidearm, chambered in 4.6mm."
@@ -130,6 +148,8 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/gun/modelh
 	name = "Model 'H' Gauss Pistol Crate"
 	desc = "Contains a compact solarian-produced gauss pistol, chambered in ferromagnetic slugs. Remember to sign your necessary forms upon arrival."
@@ -146,12 +166,15 @@
 	contains = list(/obj/item/storage/guncase/pistol/firebrand)
 	faction = /datum/faction/srm
 
+
 /datum/supply_pack/gun/detrevolver
 	name = "Hunter's Pride Detective Revolver Crate"
 	desc = "Contains a concealable revolver favored by police departments around the sector, chambered in .38."
 	cost = 600
 	contains = list(/obj/item/storage/guncase/pistol/detective)
 	faction = /datum/faction/srm
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/shadowrevolver
 	name = "Shadow Revolver Crate"
@@ -160,6 +183,8 @@
 	contains = list(/obj/item/storage/guncase/pistol/shadow)
 	faction = /datum/faction/srm
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/viperrevolver
 	name = "Viper-23 Revolver Crate"
 	desc = "Contains a civilian variant of the Viper revolver, chambered in .357 magnum."
@@ -167,6 +192,8 @@
 	contains = list(/obj/item/storage/guncase/pistol/viper)
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 5
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/a357
 	name = "R-23 'Viper' Revolver Crate"
@@ -363,6 +390,8 @@
 	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/conflagration
 	name = "Conflagration Lever Action Shotgun Crate"
 	desc = "For when you need to deal with 6 hooligans and look good doing it. Contains one lever-action shotgun, with a 6 round capacity."
@@ -370,6 +399,8 @@
 	contains = list(/obj/item/storage/guncase/conflagration)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/hellfire_shotgun
 	name = "Hellfire Shotgun Crate"
@@ -379,6 +410,8 @@
 	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/brimstone_shotgun
 	name = "Brimstone Shotgun Crate"
 	desc = "For when you need to deal with 5 hooligans, and QUICKLY. Contains a slamfire shotgun, with a 5-round capacity. Warranty voided if sawed off."
@@ -386,6 +419,8 @@
 	contains = list(/obj/item/storage/guncase/brimstone)
 	crate_name = "shotgun crate"
 	faction = /datum/faction/srm
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/buckmaster
 	name = "Buckmaster Shotgun Crate"
@@ -463,6 +498,8 @@
 	crate_name = "SMG crate"
 	faction = /datum/faction/syndicate/scarborough
 	faction_discount = 10
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/c20r
 	name = "C-20r 'Cobra' SMG Crate"
@@ -610,6 +647,8 @@
 	faction = /datum/faction/srm
 	faction_discount = 20
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/absolution
 	name = "Absolution Lever Action Rifle Crate"
 	desc = "Contains a powerful lever-action rifle for hunting larger wildlife. Chambered in .357."
@@ -618,6 +657,8 @@
 	crate_name = "shotguns crate"
 	faction = /datum/faction/srm
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/gun/illestren
 	name = "Illestren Rifle Crate"
 	desc = "Contains an expertly made bolt action rifle intended for hunting wildlife. Chambered in 8x50mmR rounds."
@@ -625,6 +666,8 @@
 	contains = list(/obj/item/storage/guncase/illestren)
 	crate_name = "rifle crate"
 	faction = /datum/faction/srm
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/beacon
 	name = "Beacon Break Action Rifle Crate"
@@ -640,6 +683,8 @@
 	cost = 5000
 	contains = list(/obj/item/storage/guncase/skm)
 	crate_name = "auto rifle crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/gun/inteq_skm
 	name = "SKM-44 Rifle Crate"
@@ -801,19 +846,6 @@
 	faction = /datum/faction/srm
 	faction_discount = 0
 	faction_locked = TRUE
-
-//turn into l201
-/*
-/datum/supply_pack/gun/gauss
-	name = "Prototype Gauss Rifle"
-	desc = "Contains a high-powered prototype armor-piercing gauss rifle, operable with ferromagnetic pellets. For NT employee use only."
-	cost = 3500
-	contains = list(/obj/item/storage/guncase/gauss)
-	crate_name = "dmr crate"
-	faction = /datum/faction/nt
-	faction_discount = 0
-	faction_locked = TRUE
-*/
 
 /datum/supply_pack/gun/claris
 	name = "Claris Gauss Rifle"

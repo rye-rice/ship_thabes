@@ -10,6 +10,7 @@
 	desc = "One bowman radio headset. Protects the ears from loud noises."
 	cost = 100
 	contains = list(/obj/item/radio/headset/alt)
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/tcomms/pda
 	name = "Personal Data Assistant Crate"

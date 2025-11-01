@@ -15,6 +15,8 @@
 	)
 	crate_name = "Lava Exploration Kit"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/exploration/ice
 	name = "Ice Exploration Kit"
 	desc = "Contains a set of winter clothes and ice hiking boots, along with goggles to protect eyes from the cold."
@@ -25,6 +27,8 @@
 		/obj/item/clothing/shoes/winterboots/ice_boots,
 	)
 	crate_name = "Ice Exploration Kit"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 
 /*
@@ -47,6 +51,8 @@
 		/obj/item/binoculars
 	)
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/exploration/anom_neutralizer
 	name = "Anomaly Neutralizer"
 	desc = "Contains a single use anomaly neutralizer for stabilizing hazardous anomalies."
@@ -54,6 +60,8 @@
 	contains = list(
 		/obj/item/anomaly_neutralizer
 	)
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/exploration/mineral_scanner
 	name = "Underground Mineral Scanner"
@@ -63,6 +71,8 @@
 		/obj/item/pinpointer/mineral
 	)
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/exploration/gps
 	name = "GPS"
 	desc = "Contains a GPS device, useful for keeping track of yourself and others."
@@ -70,6 +80,8 @@
 	contains = list(
 		/obj/item/gps
 	)
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/exploration/flares
 	name = "Flare Supply Pack"
@@ -79,6 +91,8 @@
 		/obj/item/storage/box/flares,
 	)
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/exploration/nvg
 	name = "Night Vision Goggles"
 	desc = "Contains a singular pair of Night Vision Goggles, for all your spelunking and military LARP occasions."
@@ -86,3 +100,5 @@
 	contains = list(
 		/obj/item/clothing/glasses/night
 	)
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)

@@ -12,12 +12,16 @@
 	contains = list(/obj/item/clothing/accessory/holster)
 	crate_name = "holster crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/seclite
 	name = "Seclite Crate"
 	desc = "Contains a single high power flashlight, complete with the hardware for attachment to standard helmet mounting brackets"
 	contains = list(/obj/item/flashlight/seclite)
 	cost = 100
 	crate_name = "seclite crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/securitybarriers
 	name = "Security Barrier Grenade"
@@ -33,12 +37,16 @@
 	cost = 150
 	crate_name = "sandbag crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/maintenance_kit
 	name = "Firearm Maintenance Kit"
 	desc = "Contains a five-use firearm maintenance kit, useful for cleaning blood, sand, and mud out of guns."
 	contains = list(/obj/item/gun_maint_kit)
 	cost = 100 //Price check this later. It's probably fine but it might be okay if it's a little more expensive
 	crate_name = "maintenance kit crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/flashbangs
 	name = "Flashbang Crate"
@@ -68,6 +76,8 @@
 	contains = list(/obj/item/circuitboard/computer/security)
 	crate_name = "camera console crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /*
 		Pouches
 */
@@ -79,12 +89,15 @@
 	contains = list(/obj/item/storage/pouch)
 	crate_name = "pouch crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 /datum/supply_pack/sec_supply/pouch_medical
 	name = "Medical Pouch Crate"
 	desc = "Contains a small IFAK for issuing to your crew for field triage. Comes pre-stocked with basic medical gear."
 	cost = 250
 	contains = list(/obj/item/storage/pouch/medical)
 	crate_name = "pouch crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/pouch_engi
 	name = "Engineering Pouch Crate"
@@ -93,12 +106,16 @@
 	contains = list(/obj/item/storage/pouch/engi)
 	crate_name = "pouch crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/pouch_ammo
 	name = "Ammo Pouch Crate"
 	desc = "Contains a small pouch for holding either magazines or loose ammunition on the field. Remember, make them count!"
 	cost = 150
 	contains = list(/obj/item/storage/pouch/ammo)
 	crate_name = "pouch crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/pouch_grenade
 	name = "Explosives Pouch Crate"
@@ -107,12 +124,16 @@
 	contains = list(/obj/item/storage/pouch/grenade)
 	crate_name = "pouch crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/pouch_squad
 	name = "Communications & Command Pouch Crate"
 	desc = "Contains a medium command pouch for holding various items often used by commanders everywhere."
 	cost = 150
 	contains = list(/obj/item/storage/pouch/squad)
 	crate_name = "pouch crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /*
 		Misc. weapons / protection
@@ -125,12 +146,16 @@
 	contains = list(/obj/item/shield/riot)
 	crate_name = "riot shield crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/teleriotshields
 	name = "Telescopic Riot Shield Crate"
 	desc = "Contains a telescopic riot shield, effective at holding back hostile fauna, xenofauna, or large crowds in tight spaces."
 	cost = 750
 	contains = list(/obj/item/shield/riot/tele)
 	crate_name = "riot shield crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/survknives
 	name = "Survival Knife Crate"
@@ -139,12 +164,16 @@
 	contains = list(/obj/item/melee/knife/survival)
 	crate_name = "survival knife crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/machete
 	name = "Stamped Steel Machete Crate"
 	desc = "Contains one mass produced machete. A perfect choice for crews on a budget."
 	cost = 250
 	contains = list(/obj/item/melee/sword/mass)
 	crate_name = "machete crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/solarian_sabre
 	name = "Solarian Ceremonial Sabre Crate"
@@ -186,6 +215,7 @@
 	faction_discount = 0
 	faction_locked = TRUE
 
+
 /datum/supply_pack/sec_supply/pgf_boarding_cutlass
 	name = "PGF Boarding Cutlass Crate"
 	desc = "Contains a finely crafted cutlass, issued to boarding parties of the Pan-Gezena Federation."
@@ -203,6 +233,8 @@
 	contains = list(/obj/item/melee/knife/combat)
 	crate_name = "combat knife crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/flamethrower
 	name = "Flamethrower Crate"
 	desc = "Contains one flamethrower. Point the nozzle away from anything important."
@@ -213,6 +245,8 @@
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 20
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/sec_supply/frag_grenade
 	name = "Frag Grenade Crate"
 	desc = "Contains one fragmentation grenade. Better not let it go off in your hands."
@@ -220,6 +254,8 @@
 	contains = list(/obj/item/grenade/frag)
 	crate_name = "frag grenade crate"
 	crate_type = /obj/structure/closet/crate/secure/weapon
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/c4duffel
 	name = "C-4 Demolitions Charge Crate"
@@ -230,6 +266,8 @@
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction = /datum/faction/syndicate/ngr
 	faction_discount = 10
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/sec_supply/halberd
 	name = "Energy Halberd Crate"
@@ -247,6 +285,8 @@
 	cost = 60
 	contains = list(/obj/item/reagent_containers/spray/pepper)
 	crate_name = "pepper spray crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /*
 		Stamina / PVP weapons (intentionally overpriced due to odd balance position of stamina weapons)

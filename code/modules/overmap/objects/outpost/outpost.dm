@@ -227,7 +227,7 @@
 		docks.load_roundstart()
 
 	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
-		if((port.virtual_z() == vlevel.id) && !(port.roundstart_template))
+		if((port.virtual_z() == vlevel.id) && !(port.roundstart_template) && !(port in main_floor_docks))
 			reserve_docks += port
 
 	for(var/shaft_name in shaft_lists)

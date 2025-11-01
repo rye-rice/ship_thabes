@@ -2,6 +2,8 @@
 	category = "Vendor Refills"
 	crate_type = /obj/structure/closet/crate
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/vendor_refill/bartending
 	name = "Booze-o-mat and Coffee Supply Crate"
 	desc = "Bring on the booze and coffee vending machine refills."

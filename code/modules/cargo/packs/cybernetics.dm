@@ -2,6 +2,8 @@
 	category = "Cybernetics"
 	crate_type = /obj/structure/closet/crate/medical
 
+	markets = list(/datum/cargo_market/outpost)
+
 
 // CYBERNETICS
 

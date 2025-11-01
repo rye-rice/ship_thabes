@@ -2,6 +2,8 @@
 	category = "Emergency & Life Support"
 	crate_type = /obj/structure/closet/crate/internals
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /*
 		Life support
 */
@@ -55,6 +57,8 @@
 	crate_name = "firefighting backpack crate"
 	crate_type = /obj/structure/closet/crate/secure
 
+	markets = list(/datum/cargo_market/outpost)
+
 /datum/supply_pack/emergency/firefighting
 	name = "Firefighting Crate"
 	desc = "Only you can prevent plasma fires. Contains a single set of firefighter's equipment."
@@ -65,6 +69,8 @@
 					/obj/item/clothing/head/hardhat/red)
 	crate_name = "firefighting crate"
 	crate_type = /obj/structure/closet/crate/secure
+
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/emergency/radiation
 	name = "Radiation Protection Crate"
@@ -78,6 +84,8 @@
 	crate_name = "radiation protection crate"
 	crate_type = /obj/structure/closet/crate/radiation
 
+	markets = list(/datum/cargo_market/outpost)
+
 /datum/supply_pack/emergency/bio
 	name = "Biological Emergency Crate"
 	desc = "This crate holds one full bio suit, a pair of latex gloves, a biohazard bag, and a spaceacillin syringe. Offers excellent protection from diseases and acid attacks alike."
@@ -89,6 +97,8 @@
 					/obj/item/reagent_containers/syringe/antiviral)
 	crate_name = "bio suit crate"
 	crate_type = /obj/structure/closet/crate/science
+
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/emergency/bomb
 	name = "Explosive Emergency Crate"
@@ -102,3 +112,5 @@
 					/obj/item/multitool)
 	crate_name = "bomb suit crate"
 	crate_type = /obj/structure/closet/crate/science
+
+	markets = list(/datum/cargo_market/outpost)

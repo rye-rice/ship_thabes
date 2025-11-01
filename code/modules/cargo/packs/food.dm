@@ -17,6 +17,8 @@
 	crate_type = /obj/structure/closet/crate/freezer
 	faction = /datum/faction/syndicate
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/food/donkpockets/fill(obj/structure/closet/crate/C)
 	for(var/i in 1 to 3)
 		var/item = pick(contains)
@@ -34,6 +36,8 @@
 	crate_name = "pizza crate"
 	crate_type = /obj/structure/closet/crate/freezer
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/food/ration
 	name = "Ration Crate"
 	desc = "One standard issue ration pack. For your inner jarhead."
@@ -41,6 +45,8 @@
 	contains = list(/obj/effect/spawner/random/food_or_drink/ration)
 	crate_name = "ration crate"
 	crate_type = /obj/structure/closet/crate
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /*
 		Ingredients
@@ -386,6 +392,8 @@
 	crate_name = "hydroponics backpack crate"
 	crate_type = /obj/structure/closet/crate/hydroponics
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/food/gardening
 	name = "Gardening Crate"
 	desc = "Supplies for growing a great garden! Contains two bottles of ammonia, two Plant-B-Gone spray bottles, a hatchet, cultivator, plant analyzer, as well as a pair of leather gloves and a botanist's apron."
@@ -496,6 +504,8 @@
 	contains = list(/obj/item/melee/knife/kitchen)
 	crate_name = "kitchen knife crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 
 /* Probably write better descriptions*/

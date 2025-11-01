@@ -99,24 +99,178 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 /datum/cargo_market/outpost
 	name = "outpost market"
 
+/datum/supply_pack/gun/e11
+	name = "E-11 Energy Gun"
+	desc = "Look. I'll be straight with you. These guns are awful. But, they are cheap if you're that desperate."
+	contains = list(/obj/item/gun/energy/e_gun/e11)
 
-/datum/cargo_market/outpost/general_store
+	cost = 200
+	markets = list(/datum/cargo_market/general_store)
+
+/datum/supply_pack/gun/e10
+	name = "E-10 Laser Pistol"
+	desc = "Sharplite letting you down? Try these classic Eoehoma Firearms E-10 Laser Pistols."
+	contains = list(/obj/item/gun/energy/laser/e10)
+	cost = 1250
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/e50
+	name = "E-50 Energy Emitter"
+	desc = "An Eoehoma Firearms E-50 Emitter cannon. For when you want a send a message. A really big message."
+	contains = list(/obj/item/gun/energy/laser/e50)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+
+	cost = 5000
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/syndi_derringer
+	name = ".357 Derringer"
+	desc = "A concealable hangun with a tasteful red and black paintjob, which makes it slightly more noticable. Chambered in .357, so you actually have a chance at killing something."
+	contains = list(/obj/item/gun/ballistic/derringer/traitor)
+
+	cost = 800
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/e60
+	name = "E-60 Disabler"
+	desc = "Looking for a live capture? This Eoehoma Firearms E-60 disabler will get your man."
+	contains = list(/obj/item/gun/energy/disabler/e60)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+	cost = 750
+
+/datum/supply_pack/gun/larker
+	name = "Model 13 \"Larker\""
+	desc = "Not offically approved or sold by Serene Sporting."
+	contains = list(/obj/item/storage/guncase/m13)
+	faction = /datum/faction/frontiersmen
+	faction_discount = 0
+
+	cost = 1000
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/mauler
+	name = "Mauler Machine Pistol"
+	desc = "This gun's got teeth! Twelve 9mm teeth to be exact. Hardly a full smile, and you'll be losing the rest pretty quick with this thing's rate of fire."
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/mauler, /obj/item/ammo_box/magazine/m9mm_mauler/empty, /obj/item/ammo_box/magazine/m9mm_mauler/empty)
+	faction = /datum/faction/frontiersmen
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+	cost = 2000
+	faction_discount = 0
+
+/datum/supply_pack/gun/spitter
+	name = "Spitter Submachine Gun"
+	desc = "The aptly named Spitter won't be hitting anything outside of spitting distance. Anything in that range on the otherhand? Let's just say the bereaved will be wanting a closed casket funeral. Chambered in 9mm."
+	contains = list(/obj/item/gun/ballistic/automatic/pistol/spitter, /obj/item/ammo_box/magazine/spitter_9mm/empty, /obj/item/ammo_box/magazine/spitter_9mm/empty)
+	faction = /datum/faction/frontiersmen
+
+	cost = 2500
+	faction_discount = 0
+
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/pounder
+	name = "Pounder Submachine Gun"
+	desc = "There's a certain quality to quantity. With a massive 50 round capacity, this .22lr submachine is capable of laying down an jawdropping amount of fire."
+	contains = list(/obj/item/gun/ballistic/automatic/smg/pounder, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty, /obj/item/ammo_box/magazine/c22lr_pounder_pan/empty)
+	faction = /datum/faction/frontiersmen
+	cost = 2000
+	faction_discount = 0
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/polymer
+	name = "Polymer Survivor Rifle"
+	desc = "A slapdash rifle held together by spite, dreams and a good helping of duct tape. Chambered in 7.62x40mm CLIP."
+	contains = list(/obj/item/gun/ballistic/rifle/polymer)
+
+	cost = 800
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/gun/skm_carbine
+	name = "SKM-24v Carbine"
+	desc = "Technically this is just a sawn down SKM-24 assault rifle, but what's CLIP going to do? Sue us? Chambered in 4.6x30mm."
+	contains = list(/obj/item/gun/ballistic/automatic/smg/skm_carbine)
+
+	cost = 3000
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+
+/datum/supply_pack/magazine/mauler_mag
+	name = "Mauler Magazine"
+	desc = "A 12 round 9mm magazine for the Mauler Machine Pistol."
+	contains = list(/obj/item/ammo_box/magazine/m9mm_mauler)
+	faction = /datum/faction/frontiersmen
+	cost = 400
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+
+/datum/supply_pack/magazine/spitter_mag
+	name = "Spitter Magazine"
+	desc = "A 30 round 9mm magazine for the Spitter submachine gun."
+	contains = list(/obj/item/ammo_box/magazine/spitter_9mm)
+	faction = /datum/faction/frontiersmen
+
+	cost = 650
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/magazine/pounder_mag
+	name = "Pounder Pan Magazine"
+	desc = "A 50 round pan magazine for the Pounder submachine gun. Heavy enough to double as an emergency melee weapon to beat off your enemies in a pinch."
+	contains = list(/obj/item/ammo_box/magazine/c22lr_pounder_pan)
+	faction = /datum/faction/frontiersmen
+
+	cost = 700
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/magazine/carbine_mag
+	name = "SKM-24v Magazine"
+	desc = "A 30 round magazine of 4.6x30mm for the SKM-24v. A hermit classic."
+	contains = list(/obj/item/ammo_box/magazine/skm_46_30)
+
+	cost = 500
+
+	markets = list(/datum/cargo_market/tadpole_city)
+
+/datum/supply_pack/general_store_smoothie
+	category = "!Outpost Exclusive"
+	name = "Smoothie"
+	desc = "Placeholder"
+	cost = 20
+	contains = list(/obj/item/storage/box/donkpockets/donkpocketspicy,
+					)
+	crate_name = "smoothie crate"
+	crate_type = /obj/structure/closet/crate/freezer
+	markets = list(/datum/cargo_market/general_store)
+
+
+/datum/cargo_market/general_store
 	name = "general store"
+	var/list/packs_to_add_indvidually
+	var/list/packs_to_enable
 
-/datum/cargo_market/outpost/general_store/generate_supply_packs()
-	for(var/datum/supply_pack/current_pack as anything in subtypesof(supply_pack_types))
-		current_pack = new current_pack()
+/datum/cargo_market/tadpole_city
+	name = "tadpole city"
 
-		var/match_found = FALSE
-		for(var/market_type in current_pack.markets)
-			if(istype(src, market_type))
-				match_found = TRUE
-		if(!match_found)
-			continue
+/datum/cargo_market/tadpole_city/generate_supply_packs()
+	. = ..()
+	for(var/datum/supply_pack/current_pack as anything in supply_packs)
+		if(istype(current_pack, /datum/supply_pack/medical))
+			current_pack.cost *= 1.2
+		if(istype(current_pack, /datum/supply_pack/food))
+			current_pack.cost *= 1.7
+		if(istype(current_pack, /datum/supply_pack/ammo))
+			current_pack.cost *= 1.3
 
-		if(current_pack.faction)
-			current_pack.faction = SSfactions.factions[current_pack.faction]
-		if(!current_pack.contains)
-			continue
-		supply_packs += current_pack
-	supply_packs = sortNames(supply_packs)

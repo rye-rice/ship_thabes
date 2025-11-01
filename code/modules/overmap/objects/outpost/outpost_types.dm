@@ -244,7 +244,9 @@
 /datum/overmap/outpost/tadpole_city/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
 	z2_template = SSmapping.outpost_templates[z2_template]
 	z3_template = SSmapping.outpost_templates[z3_template]
-	return ..()
+	. = ..()
+	market = new /datum/cargo_market/tadpole_city()
+	market.name = "[name] market"
 
 /datum/overmap/outpost/tadpole_city/load_main_level()
 	if(!main_template)
@@ -396,6 +398,11 @@
 	main_template = /datum/map_template/outpost/indie_smallshop
 	faction = FACTION_INDEPENDENT
 //	market = /datum/cargo_market/outpost
+
+/datum/overmap/outpost/indie_smallshop/Initialize(position, datum/overmap_star_system/system_spawned_in, ...)
+	. = ..()
+	market = new /datum/cargo_market/general_store()
+	market.name = "[name] market"
 
 /datum/map_template/outpost/indie_smallshop
 	name = "indie_smallshop"

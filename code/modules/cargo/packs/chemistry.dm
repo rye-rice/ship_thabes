@@ -2,6 +2,8 @@
 	category = "Chemistry"
 	crate_type = /obj/structure/closet/crate/chem
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /*
 		Tools
 */
