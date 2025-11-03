@@ -57,8 +57,7 @@ SUBSYSTEM_DEF(overmap)
 	dynamic_encounters = list()
 	events = list()
 
-	var/list/sector_types = pick(subtypesof(/datum/overmap_star_system/safezone))
-	default_system = create_new_star_system(new sector_types)
+	default_system = create_new_star_system(new /datum/overmap_star_system/safezone)
 	wild_system = create_new_star_system (new /datum/overmap_star_system/shiptest)
 	return ..()
 
@@ -944,6 +943,8 @@ SUBSYSTEM_DEF(overmap)
 /datum/overmap_star_system/safezone
 	name = "Lymantria Teagarden Memorial sector"
 	has_outpost = TRUE
+
+	default_outpost_type = /datum/overmap/outpost/indie_space
 
 	//main colors, used for dockable terrestrials, and background
 	primary_color = "#ffffdf"

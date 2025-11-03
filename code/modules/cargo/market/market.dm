@@ -243,7 +243,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	cost = 500
 
 	markets = list(/datum/cargo_market/tadpole_city)
-
+/*
 /datum/supply_pack/general_store_smoothie
 	category = "!Outpost Exclusive"
 	name = "Smoothie"
@@ -254,7 +254,7 @@ GLOBAL_LIST_EMPTY(cargo_landing_zones)
 	crate_name = "smoothie crate"
 	crate_type = /obj/structure/closet/crate/freezer
 	markets = list(/datum/cargo_market/general_store)
-
+*/
 
 /datum/cargo_market/general_store
 	name = "general store"
