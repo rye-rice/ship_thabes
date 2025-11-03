@@ -161,6 +161,11 @@
 		/obj/effect/meteor/flaming=10,
 	)
 
+/datum/overmap/event/meteor/major/alter_token_appearance()
+	. = ..()
+	token.opacity = TRUE
+	current_overmap.post_edit_token_state(src)
+
 ///Electromagnetic - explodes your IPCs
 /datum/overmap/event/emp
 	name = "electromagnetic storm (moderate)"
