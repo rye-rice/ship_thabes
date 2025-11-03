@@ -220,6 +220,13 @@ GLOBAL_LIST_INIT(shove_disarming_types, typecacheof(list(/obj/item/gun)))
 //We will round to this value in damage calculations.
 #define DAMAGE_PRECISION 0.1
 
+#define SWINGABLE_STAB			"stab"
+#define SWINGABLE_SWING			"swing"
+#define SWINGABLE_FLAIL			"flail"
+#define SWINGABLE_THRUST		"thrust"
+
+#define SWING_COOLDOWN_TIME		1 SECONDS
+
 /// Alternate attack defines. Return these at the end of procs like afterattack_secondary.
 /// Calls the normal attack proc. For example, if returned in afterattack_secondary, will call afterattack.
 /// Will continue the chain depending on the return value of the non-alternate proc, like with normal attacks.

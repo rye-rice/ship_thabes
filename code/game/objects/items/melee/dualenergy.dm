@@ -55,6 +55,7 @@
 /obj/item/melee/duelenergy/proc/on_wield(obj/item/source, mob/living/carbon/user)
 	SIGNAL_HANDLER
 
+	swing_type = SWINGABLE_SWING
 	sharpness = SHARP_EDGED
 	w_class = active_w_class
 	hitsound = 'sound/weapons/blade1.ogg'
@@ -69,6 +70,7 @@
 
 	sharpness = initial(sharpness)
 	w_class = initial(w_class)
+	swing_type = null
 	hitsound = "swing_hit"
 	STOP_PROCESSING(SSobj, src)
 	set_light_on(FALSE)
