@@ -324,6 +324,15 @@
 	planetary_atmos = 1
 	},
 /area/hangar)
+"VK" = (
+/obj/effect/turf_decal/trimline/opaque/yellow/warning{
+	dir = 8
+	},
+/obj/effect/landmark/outpost/hangar_dock,
+/turf/open/floor/plasteel/tech{
+	planetary_atmos = 1
+	},
+/area/hangar)
 "WI" = (
 /obj/effect/landmark/outpost/hangar_numbers,
 /turf/open/floor/hangar/plasteel,
@@ -392,7 +401,7 @@ aL
 aL
 aL
 aL
-aL
+VK
 aY
 aP
 aB
@@ -494,7 +503,7 @@ aJ
 aJ
 aJ
 aJ
-ao
+aJ
 az
 aM
 aB
@@ -766,7 +775,7 @@ aJ
 aJ
 aJ
 aJ
-aJ
+ao
 az
 aM
 am

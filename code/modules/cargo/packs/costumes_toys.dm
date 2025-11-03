@@ -1,6 +1,8 @@
 /datum/supply_pack/costumes_toys
 	category = "Costumes & Toys"
 
+	markets = list(/datum/cargo_market/outpost)
+
 /*
 		Toys
 */

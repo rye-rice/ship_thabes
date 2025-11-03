@@ -3,6 +3,8 @@
 	crate_type = /obj/structure/closet/crate/secure/gear
 	crate_name = "ammo crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /* Misc */
 
 /datum/supply_pack/ammo/blank_ammo_disk
@@ -18,6 +20,8 @@
 	desc = "Contains a 100-round ammo box for refilling .22 LR weapons."
 	contains = list(/obj/item/storage/box/ammo/c22lr)
 	cost = 250 //8 ammo efficiency at 20 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/c22lr_hp
 	name = ".22 LR HP Ammo Box Crate"
@@ -39,6 +43,8 @@
 	desc = "Contains a 60-round 9x18mm box for pistols and SMGs such as the Commander or Saber."
 	contains = list(/obj/item/storage/box/ammo/c9mm)
 	cost = 200 //6 ammo efficiency at 20 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/c9mmap_ammo_box
 	name = "9x18mm AP Ammo Box Crate"
@@ -67,6 +73,8 @@
 	contains = list(/obj/item/storage/box/ammo/c38)
 	crate_name = "ammo crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /* 10x22mm */
 
 /datum/supply_pack/ammo/c10mm_ammo_box
@@ -74,6 +82,8 @@
 	desc = "Contains a 48-round 10x22mm box for pistols and SMGs like the Ringneck or the SkM-44(k)."
 	contains = list(/obj/item/storage/box/ammo/c10mm)
 	cost = 210 //5.7 ammo efficiency at 25 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/c10mmap_ammo_box
 	name = "10x22mm AP Ammo Box Crate"
@@ -101,6 +111,8 @@
 	contains = list(/obj/item/storage/box/ammo/c45)
 	cost = 210 //5.7 ammo efficiency at 25 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/c45ap_ammo_box
 	name = ".45 AP Ammo Box Crate"
 	desc = "Contains a 48-round .45 box loaded with armor piercing ammo."
@@ -127,6 +139,8 @@
 	contains = list(/obj/item/storage/box/ammo/a357)
 	cost = 255 //5.6 ammo efficiency at 30 damage //TTD: boost this to 300 if revolvers get 35 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/a357hp_ammo_box
 	name = ".357 HP Ammo Box Crate"
 	desc = "Contains a 48-round .357 box loaded with hollow point ammo, great against unarmored targets."
@@ -146,6 +160,8 @@
 	desc = "Contains a 48-round box of .44 roumain ammo for revolvers such as the Shadow and Montagne."
 	contains = list(/obj/item/storage/box/ammo/a44roum)
 	cost = 210 //5.6 ammo efficiency at 25 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/a44roum_rubber
 	name = ".44 Roumain Rubber Ammo Box Crate"
@@ -188,6 +204,8 @@
 	contains = list(/obj/item/storage/box/ammo/c57x39)
 	cost = 295 //5.4 ammo efficiency at 20 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/c57x39mm_ap
 	name = "5.7x39mm Armour Piercing Ammo Box Crate"
 	desc = "Contains one 80-round 5.7x39mm box for PDWs such as the Sidewinder."
@@ -208,11 +226,15 @@
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_buckshot)
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/slugs
 	name = "Shotgun Slug Crate"
 	desc = "Contains a box of 32 slug shells for use in lethal persuasion."
 	cost = 225 //5.6 ammo efficiency at 40 damage
 	contains = list(/obj/item/storage/box/ammo/a12g_slug)
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/blank_shells
 	name = "Blank Shell Crate"
@@ -220,11 +242,15 @@
 	cost = 110
 	contains = list(/obj/item/storage/box/ammo/a12g_blank)
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/rubbershot
 	name = "Rubbershot Crate"
 	desc = "Contains a box of 32 12 gauge rubbershot shells. Perfect for crowd control and training."
 	cost = 350
 	contains = list(/obj/item/storage/box/ammo/a12g_rubbershot)
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/techshells
 	name = "Unloaded Shotgun Technological Shells Crate"
@@ -240,11 +266,15 @@
 	contains = list(/obj/item/storage/box/ammo/a4570)
 	cost = 190 //5.6 ammo efficiency at 45 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/a4570_box/match
 	name = ".45-70 Match Crate"
 	desc = "Contains a 24-round box containing devastatingly powerful .45-70 caliber ammunition, that travels faster, pierces armour better, and ricochets off targets."
 	contains = list(/obj/item/storage/box/ammo/a4570_match)
 	cost = 235
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /* 7.62 */
 
@@ -253,6 +283,8 @@
 	desc = "Contains one 60-round 7.62x40mm CLIP box for the SKM rifles."
 	contains = list(/obj/item/storage/box/ammo/a762_40)
 	cost = 360 //5 ammo efficiency at 30 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/a762_ap
 	name = "7.62x40mm CLIP Armour Piercing Ammo Box Crate"
@@ -274,6 +306,8 @@
 	contains = list(/obj/item/storage/box/ammo/a556_42)
 	cost = 300 //5 ammo efficiency at 25 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/a556_ap
 	name = "5.56x42mm CLIP Armour Piercing Ammo Box Crate"
 	desc = "Contains one 60-round 5.56x42mm CLIP Armour Piercing box for most newer rifles."
@@ -293,6 +327,8 @@
 	desc = "Contains a 48-round 5.56mm caseless box for SolGov sidearms like the Pistole C."
 	contains = list(/obj/item/storage/box/ammo/c556mm)
 	cost = 165 //5.7 ammo efficiency at 20 damage
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/c556mmHITPap_ammo_box
 	name = "5.56 caseless AP Ammo Box Crate"
@@ -328,6 +364,8 @@
 	contains = list(/obj/item/storage/box/ammo/a8_50r)
 	cost = 290 //4.8 ammo efficiency at 35 damage //TTD 37 damage 308 cr DMR buff
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/c8x50mm_boxhp_boxcrate
 	name = "8x50mm Hollow Point Crate"
 	desc = "Contains a 40-round 8x50mm ammo box loaded with hollow point ammo, great against unarmored targets."
@@ -349,6 +387,8 @@
 	contains = list(/obj/item/storage/box/ammo/a300)
 	cost = 200 //4 ammo efficiency at 40 damage //TTD 50 damage 250 cr DMR buff
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/a300_trac
 	name = ".300 Trac Ammo Box Crate"
 	desc = "Contains a ten-round .300 TRAC ammo box for sniper rifles such as the HP Scout."
@@ -363,6 +403,8 @@
 	desc = "Contains a thirty-round .308 box for DMRs such as the SsG-04 and CM-GAL-S."
 	contains = list(/obj/item/storage/box/ammo/a308)
 	cost = 185 //4.8 ammo efficiency at 30 damage //TTD 35 damage 215 cr DMR buff
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/a308_ap
 	name = "308 Armour Piercing Ammo Box Crate"
@@ -384,6 +426,8 @@
 	contains = list(/obj/item/storage/box/ammo/a65clip)
 	cost = 200 //4 ammo efficiency at 40 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/a65clip_trackers
 	name = "6.5mm CLIP Tracker Shell Crate"
 	desc = "Contains a 10-round 6.5mm CLIP tracker box for various sniper rifles such as the CM-F90 and the Boomslang series."
@@ -397,6 +441,8 @@
 	desc = "Contains a twenty-round 8x58 ammo box for Solarian-manufactured sniper rifles, such as the SSG-69."
 	contains = list(/obj/item/storage/box/ammo/a858)
 	cost = 200 //4 ammo efficiency at 40 damage //TTD 225
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /* .50 BMG */
 
@@ -415,6 +461,8 @@
 	contains = list(/obj/item/storage/box/ammo/ferropellet)
 	cost = 250 //5.7 ammo efficiency at 25 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/hcpellets
 	name = "High Conductivity Pellet Box Crate"
 	desc = "Contains a 48-round high conductivity pellet ammo box for gauss guns such as the Claris."
@@ -429,6 +477,8 @@
 	contains = list(/obj/item/storage/box/ammo/ferroslug)
 	cost = 175 //5.7 ammo efficiency at 50 damage
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
+
 /datum/supply_pack/ammo/hcslugs
 	name = "High Conductivity Slug Box Crate"
 	desc = "Contains a twenty-round high conductivity slug for gauss guns such as the Model-H."
@@ -442,6 +492,8 @@
 	desc = "Contains a 60-round box for high-powered gauss guns such as the GAR assault rifle."
 	contains = list(/obj/item/storage/box/ammo/ferrolance)
 	cost = 300 //5 ammo efficiency at 30 damage - I don't know how this formula works so I just eyeballed it to be on par with 556CLIP
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city, /datum/cargo_market/general_store)
 
 /datum/supply_pack/ammo/ferrolanceboxcrate_hc
 	name = "High Conductivity Lance Box Crate"

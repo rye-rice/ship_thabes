@@ -1,6 +1,8 @@
 /datum/supply_pack/fish
 	category = "Fishing Essentials"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 
 /datum/supply_pack/fish/fishingkit
 	name = "Fishing Starter Kit"
@@ -27,6 +29,8 @@
 	contains = list(/obj/item/bait_can/worm/premium)
 	crate_name = "premium worm crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/fish/masterworkpole
 	name = "Custom Made Masterwork Fishing Rod"
 	desc = "Fishing rod forged after grueling hours of labor by a master rodsmith, truly a work of fishing art. Required to catch size 2 fish."
@@ -43,6 +47,8 @@
 	crate_name = "fishing hook crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/fish/fishinglines
 	name = "Fishing Line Pack"
 	desc = "Contains the necessary fishing lines for catching more exotic fish."
@@ -50,6 +56,8 @@
 	contains = list(/obj/item/storage/box/fishing_lines)
 	crate_name = "fishing line crate"
 	crate_type = /obj/structure/closet/crate/wooden
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/fish/aquarium
 	name = "Aquarium Construction Kit"

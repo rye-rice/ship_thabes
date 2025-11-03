@@ -92,13 +92,16 @@
 
 /datum/overmap/outpost/Destroy(...)
 	SSpoints_of_interest.remove_point_of_interest(token)
-	// cleanup our data structures. behavior here is currently relatively restrained; may be made more expansive in the future
 	for(var/list/datum/hangar_shaft/h_shaft as anything in shaft_datums)
 		qdel(h_shaft)
 		shaft_datums -= h_shaft
 
 	SSovermap.outposts -= src
 	. = ..()
+	//This NEEDS to be last so any docked ships get deleted properly
+	if(mapzone)
+		mapzone.clear_reservation()
+		QDEL_NULL(mapzone)
 
 /datum/overmap/outpost/get_jump_to_turf()
 	if(main_template)
@@ -221,8 +224,11 @@
 		sub_dock.set_up_dock(src)
 
 	for(var/obj/docking_port/stationary/docks in main_floor_docks)
-		docks.name = "[name] subshuttle dock"
 		docks.load_roundstart()
+
+	for(var/obj/docking_port/stationary/port as obj in SSshuttle.stationary)
+		if((port.virtual_z() == vlevel.id) && !(port.roundstart_template) && !(port in main_floor_docks))
+			reserve_docks += port
 
 	for(var/shaft_name in shaft_lists)
 		var/list/obj/shaft_li = shaft_lists[shaft_name]
@@ -248,7 +254,7 @@
 		return new /datum/docking_ticket(override_dock, src, dock_requester)
 
 	if(!h_template || !length(shaft_datums))
-		return FALSE
+		return  new /datum/docking_ticket(get_dockable_locations(dock_requester)[1], src, dock_requester)
 
 	h_dock = ensure_hangar(h_template)
 	if(!h_dock)
@@ -381,23 +387,48 @@
 			dock_turf = dock_mark.loc
 			qdel(dock_mark, TRUE)
 			break
-	if(!dock_turf)
-		CRASH("[src] ([src.type]) could not find a hangar docking port landmark for its spawned hangar [h_template]!")
+	var/obj/docking_port/stationary/h_dock
 
-	var/obj/docking_port/stationary/h_dock = new(dock_turf)
-	h_dock.adjust_dock_for_landing = TRUE
-	h_dock.dir = NORTH
-	h_dock.width = h_template.dock_width
-	h_dock.height = h_template.dock_height
-	h_dock.initial_hangar_template = h_template
-	shaft.hangar_docks += h_dock
+	if(dock_turf)
+		h_dock = new(dock_turf)
+		h_dock.adjust_dock_for_landing = TRUE
+		h_dock.dir = NORTH
+		h_dock.width = h_template.dock_width
+		h_dock.height = h_template.dock_height
+		h_dock.initial_hangar_template = h_template
+		shaft.hangar_docks += h_dock
 
 	// important not to CHECK_TICK after this point, so that the number is guaranteed to be correct
 	var/hangar_num = length(shaft.hangar_docks)
 	var/hangar_name = "Elevator [shaft.name] - Floor [hangar_num] ([src.name])"
-	h_dock.name = hangar_name
+
 	vlevel.name = hangar_name
 	// hangar area has UNIQUE_AREA, so do not rename it (annoying)
+
+	//add extra docking ports as needed
+	var/list/obj/docking_port/stationary/found_ports = list()
+	var/has_extra_docks = FALSE
+	var/iteration = 1
+	if(h_dock)
+		h_dock.name = hangar_name
+		found_ports += h_dock
+		iteration++
+	for(var/obj/docking_port/stationary/extra_docking in GLOB.outpost_landmarks)
+		if(vlevel.is_in_bounds(extra_docking) && extra_docking != h_dock)
+			shaft.hangar_docks += extra_docking
+			found_ports += extra_docking
+			if(!h_dock)
+				h_dock = extra_docking
+				extra_docking.name = hangar_name
+			if(iteration > 1)
+				has_extra_docks = TRUE
+				extra_docking.name = hangar_name + " - Landing Zone [iteration]"
+			iteration++
+	if(has_extra_docks)
+		h_dock.name = hangar_name + " - Landing Zone 1"
+
+	if(!h_dock)
+		CRASH("[src] ([src.type]) could not find a hangar docking port landmark for its spawned hangar [h_template]!")
 
 	// now that we have the hangar num, we can add decals where necessary
 	for(var/obj/effect/landmark/outpost/hangar_numbers/num_mark in GLOB.outpost_landmarks)
@@ -411,7 +442,8 @@
 	for(var/obj/effect/landmark/outpost/hangar_crate_spawner/crate_spawner_mark in GLOB.outpost_landmarks)
 		if(!vlevel.is_in_bounds(crate_spawner_mark))
 			continue
-		h_dock.crate_spawner = crate_spawner_mark.create_spawner()
+		for(var/obj/docking_port/stationary/available_port as anything in found_ports)
+			available_port.crate_spawner = crate_spawner_mark.create_spawner()
 	if(!shaft.shaft_elevator)
 		// if there's no elevator in this shaft, then delete the landmarks
 		for(var/obj/effect/landmark/outpost/mark as anything in GLOB.outpost_landmarks)
@@ -492,10 +524,16 @@
 
 	port_to_fix.adjust_dock_for_landing = TRUE
 	port_to_fix.dir = NORTH
-	port_to_fix.width = port_to_fix.initial_hangar_template.dock_width
-	port_to_fix.height = port_to_fix.initial_hangar_template.dock_height
-	port_to_fix.dwidth = 0
-	port_to_fix.dheight = 0
+	if(port_to_fix::width || port_to_fix::height)
+		port_to_fix.width = port_to_fix::width
+		port_to_fix.height = port_to_fix::height
+		port_to_fix.dwidth = port_to_fix::dwidth
+		port_to_fix.dheight = port_to_fix::dheight
+	else
+		port_to_fix.width = port_to_fix.initial_hangar_template.dock_width
+		port_to_fix.height = port_to_fix.initial_hangar_template.dock_height
+		port_to_fix.dwidth = 0
+		port_to_fix.dheight = 0
 	//fixed? return to service after
 	port_to_fix.is_adjusting_now = FALSE
 	return TRUE

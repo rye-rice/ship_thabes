@@ -14,13 +14,10 @@
 	/// How many of this type of item is available, if not set creates a cost according to the *_min and *_max vars.
 	var/stock = INFINITY
 
-	//TODO: Deprecate contains in favor of item
-	var/list/contains = null
-
-	/*
 	/// Path to or the item itself what this entry is for, this should be set even if you override spawn_item to spawn your item.
-	var/item
+	var/list/contains = null
 	/// Should another item spawn alongside this one in the catalogue?
+	/*
 	var/list/pair_item = null
 	*/
 

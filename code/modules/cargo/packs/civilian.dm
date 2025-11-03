@@ -3,6 +3,7 @@
 	crate_name = "civilian supply crate"
 	crate_type = /obj/structure/closet/crate/wooden
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 /*
 		Janitorial
 */
@@ -68,6 +69,7 @@
 					/obj/item/book/random,
 					/obj/item/book/random)
 	crate_type = /obj/structure/closet/crate/wooden
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/civilian/fountainpens
 	name = "Calligraphy Crate"
@@ -145,6 +147,8 @@
 					/obj/item/flashlight/glowstick/yellow,
 					/obj/item/flashlight/glowstick/pink)
 	crate_name = "party equipment crate"
+
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/civilian/coffee_starter
 	name = "Personal Coffee Starter Kit"
@@ -256,6 +260,8 @@
 					/obj/item/kirbyplants/random)
 	crate_name = "potted plants crate"
 
+	markets = list(/datum/cargo_market/outpost)
+
 /datum/supply_pack/civilian/artsupply
 	name = "Art Supplies"
 	desc = "Make some happy little accidents with an easel, and unlimited imagination! Imagination not included." //removed the rcl, shiptest doesn't have the space for wireart (literally)
@@ -282,6 +288,8 @@
 					/obj/item/stack/tile/carpet/black/fifty)
 	crate_name = "premium carpet crate"
 
+	markets = list(/datum/cargo_market/outpost)
+
 /datum/supply_pack/civilian/carpet_exotic
 	name = "Exotic Carpet Crate"
 	desc = "Exotic carpets for all your decorating needs. Contains 50 tiles each of 8 different flooring patterns."
@@ -295,6 +303,8 @@
 					/obj/item/stack/tile/carpet/royalblue/fifty,
 					/obj/item/stack/tile/carpet/royalblack/fifty)
 	crate_name = "exotic carpet crate"
+
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/civilian/noslipfloor
 	name = "High-traction Floor Tiles"
@@ -316,6 +326,8 @@
 	cost = 5000
 	contains = list(/obj/machinery/roulette)
 	crate_name = "roulette table crate"
+
+	markets = list(/datum/cargo_market/outpost)
 
 /datum/supply_pack/civilian/id_crate
 	name = "Box of Spare IDs"

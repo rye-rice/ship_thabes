@@ -7,6 +7,8 @@
 	crate_type = /obj/structure/closet/crate/secure/weapon
 	faction_discount = 10
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/attachment/rail_light
 	name = "Tactical Rail Light Crate"
 	desc = "Contains a single rail light to be mounted on a firearm."
@@ -73,12 +75,16 @@
 	contains = list(/obj/item/storage/guncase/underbarrel_shotgun)
 	crate_name = "underbarrel shotgun crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/attachment/hognose
 	name = "Underbarrel Hognose Crate"
 	desc = "Contains an eight shot underbarrel 22lr pistol to be mounted on a firearm."
 	cost = 500
 	contains = list(/obj/item/storage/guncase/underbarrel_hognose)
 	crate_name = "underbarrel hognose crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
 
 /datum/supply_pack/attachment/flamethrower
 	name = "Underbarrel Flamethrower Crate"
@@ -87,6 +93,8 @@
 	contains = list(/obj/item/storage/guncase/underbarrel_flamethrower)
 	crate_name = "underbarrel flamethrower crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/attachment/e_gun
 	name = "Underbarrel Energy Gun Crate"
 	desc = "Contains an underbarrel energy gun to be mounted on a firearm."
@@ -94,9 +102,13 @@
 	contains = list(/obj/item/storage/guncase/energy/underbarrel_e_gun)
 	crate_name = "underbarrel energy gun crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /datum/supply_pack/attachment/flare
 	name = "Underbarrel Flare Gun Crate"
 	desc = "Contains a single shot underbarrel flare gun to be mounted on a firearm. One box of flares included."
 	cost = 200
 	contains = list(/obj/item/attachment/gun/flare)
 	crate_name = "underbarrel flare gun crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)

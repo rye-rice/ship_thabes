@@ -13,6 +13,7 @@
 	cost = 500
 	contains = list(/obj/item/stack/sheet/glass/fifty)
 	crate_name = "glass sheets crate"
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/material/metal50
 	name = "50 Metal Sheets"
@@ -20,6 +21,8 @@
 	cost = 500
 	contains = list(/obj/item/stack/sheet/metal/fifty)
 	crate_name = "metal sheets crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/material/plasteel20
 	name = "20 Plasteel Sheets"
@@ -40,6 +43,8 @@
 	crate_name = "plasma sheets crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/material/uranium20
 	name = "20 Uranium Sheets"
 	desc = "Twenty sheets of mildly radioactive uranium. Lead gloves for safe handling not included."
@@ -47,6 +52,7 @@
 	contains = list(/obj/item/stack/sheet/mineral/uranium/twenty)
 	crate_name = "uranium sheets crate"
 	crate_type = /obj/structure/closet/crate/radiation
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /*
 		Misc. mineral sheets
@@ -98,12 +104,16 @@
 	contains = list(/obj/item/stack/sheet/plastic/fifty)
 	crate_name = "plastic sheets crate"
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
+
 /datum/supply_pack/material/cardboard50
 	name = "50 Cardboard Sheets"
 	desc = "Arm and armor a cardborg army."
 	cost = 250
 	contains = list(/obj/item/stack/sheet/cardboard/fifty)
 	crate_name = "cardboard sheets crate"
+
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/general_store)
 
 /datum/supply_pack/material/wood50
 	name = "50 Wood Planks"

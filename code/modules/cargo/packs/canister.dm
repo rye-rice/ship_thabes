@@ -3,6 +3,8 @@
 	crate_type = /obj/structure/closet/crate/large
 	no_bundle = TRUE
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /*
 		Canisters
 */

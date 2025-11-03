@@ -2,6 +2,8 @@
 	category = "Spacesuits"
 	crate_type = /obj/structure/closet/crate/secure
 
+	markets = list(/datum/cargo_market/outpost, /datum/cargo_market/tadpole_city)
+
 /*
 		Spacesuits (two parts, helm and suit)
 */

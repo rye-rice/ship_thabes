@@ -3,6 +3,8 @@
 	crate_type = /obj/structure/closet/crate/critter
 	no_bundle = TRUE
 
+	markets = list(/datum/cargo_market/outpost)
+
 /*
 		Vaguely useful animals
 */
