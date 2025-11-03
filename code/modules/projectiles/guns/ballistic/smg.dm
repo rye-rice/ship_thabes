@@ -13,8 +13,9 @@
 	zoom_amt = SMG_ZOOM
 	recoil_unwielded = 4
 	w_class = WEIGHT_CLASS_BULKY
+	//attachment_icon_overlay_prefix = "medium_"
 
-	light_range = 1
+	light_range = 2
 
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_FULLAUTO)
 	default_firemode = FIREMODE_SEMIAUTO
@@ -31,7 +32,6 @@
 	wear_minor_threshold = 240
 	wear_major_threshold = 720
 	wear_maximum = 1200
-
 
 /obj/item/gun/ballistic/automatic/smg/skm_carbine
 	name = "\improper SKM-24v"

@@ -1,4 +1,4 @@
-#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
+#define SCARBOROUGH_ATTACHMENTS list(/obj/item/attachment/silencer, /obj/item/attachment/muzzle_brake, /obj/item/attachment/laser_sight, /obj/item/attachment/rail_light, /obj/item/attachment/bayonet, /obj/item/attachment/energy_bayonet, /obj/item/attachment/gun, /obj/item/attachment/ammo_counter)
 #define SCARBOROUGH_ATTACH_SLOTS list(ATTACHMENT_SLOT_MUZZLE = 1, ATTACHMENT_SLOT_SCOPE = 1, ATTACHMENT_SLOT_RAIL = 1)
 
 //########### PISTOLS ###########//
@@ -20,7 +20,6 @@
 
 	fire_sound = 'sound/weapons/gun/pistol/shot.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -97,6 +96,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/ringneck/indie)
 	mob_overlay_icon = 'icons/obj/guns/manufacturer/scarborough/onmob.dmi'
 	icon_state = "asp"
 	item_state = "sa_generic"
+
+	light_range = 3
 
 	default_ammo_type = /obj/item/ammo_box/magazine/m57_39_asp
 	allowed_ammo_types = list(
@@ -229,7 +230,6 @@ NO_MAG_GUN_HELPER(automatic/pistol/asp)
 
 	fire_sound = 'sound/weapons/gun/pistol/rattlesnake.ogg'
 	dry_fire_sound = 'sound/weapons/gun/pistol/dry_fire.ogg'
-	suppressed_sound = 'sound/weapons/gun/pistol/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -343,6 +343,8 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 	icon_state = "himehabu"
 	item_state = "sa_generic"
 
+	light_range = 1
+
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -355,6 +357,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/rattlesnake/inteq)
 		/obj/item/ammo_box/magazine/m22lr_himehabu,
 	)
 	fire_sound = 'sound/weapons/gun/pistol/himehabu.ogg'
+	suppressed_sound = 'sound/weapons/gun/smg/shot_suppressed.ogg'
 
 	load_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
 	load_empty_sound = 'sound/weapons/gun/pistol/mag_insert_alt.ogg'
@@ -411,7 +414,7 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 
 /obj/item/gun/ballistic/automatic/smg/cobra
 	name = "C-20r \"Cobra\""
-	desc = "A bullpup submachine gun with an integrated suppressor, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
+	desc = "A bullpup submachine gun, heavily used by Syndicate strike teams during the ICW. Still sees widespread use by the descendants of the Gorlex Marauders. Chambered in .45."
 	icon = 'icons/obj/guns/manufacturer/scarborough/48x32.dmi'
 	lefthand_file = 'icons/obj/guns/manufacturer/scarborough/lefthand.dmi'
 	righthand_file = 'icons/obj/guns/manufacturer/scarborough/righthand.dmi'
@@ -437,16 +440,15 @@ NO_MAG_GUN_HELPER(automatic/pistol/himehabu)
 	manufacturer = MANUFACTURER_SCARBOROUGH
 
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
-	default_attachments = list(/obj/item/attachment/silencer/cobra)
-	unique_attachments = list(/obj/item/attachment/silencer/cobra)
+
 	slot_available = list(
 		ATTACHMENT_SLOT_MUZZLE = 1,
 		ATTACHMENT_SLOT_RAIL = 1
 	)
 	slot_offsets = list(
 		ATTACHMENT_SLOT_MUZZLE = list(
-			"x" = 27,
-			"y" = 23,
+			"x" = 37,
+			"y" = 18,
 		),
 		ATTACHMENT_SLOT_RAIL = list(
 			"x" = 28,
@@ -467,9 +469,7 @@ NO_MAG_GUN_HELPER(automatic/smg/cobra)
 	gun_firemodes = list(FIREMODE_SEMIAUTO, FIREMODE_BURST)
 	gun_firenames = list(FIREMODE_SEMIAUTO = "single", FIREMODE_BURST = "burst")
 	default_firemode = FIREMODE_BURST
-	default_attachments = null
 	valid_attachments = SCARBOROUGH_ATTACHMENTS
-	unique_attachments = null
 
 
 NO_MAG_GUN_HELPER(automatic/smg/cobra/indie)
